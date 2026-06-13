@@ -66,14 +66,16 @@ svg text{font-family:var(--font-sans)}
 .tt{position:absolute;pointer-events:none;background:var(--color-background-primary);border:.5px solid var(--color-border-primary);border-radius:8px;padding:7px 10px;font-size:12px;opacity:0;transition:opacity .1s;z-index:10;box-shadow:0 4px 16px rgba(0,0,0,.12);white-space:nowrap}
 .chart-shell{position:relative}
 
-.nav{position:sticky;top:0;z-index:50;background:var(--color-background-primary);border-bottom:.5px solid var(--color-border-tertiary);margin-bottom:0}
-.nav-inner{max-width:1000px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;gap:4px;flex-wrap:wrap;min-height:52px}
-.nav-brand{font-size:13px;font-weight:600;color:var(--color-text-primary);margin-right:14px;white-space:nowrap}
+.nav{position:sticky;top:0;z-index:50;background:var(--color-background-primary);border-bottom:1px solid var(--color-border-secondary);margin-bottom:0;box-shadow:0 1px 0 rgba(0,0,0,0.02)}
+.nav-inner{max-width:1000px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;gap:6px;flex-wrap:wrap;min-height:58px}
+.nav-brand{font-size:13px;font-weight:600;color:var(--color-text-primary);margin-right:18px;white-space:nowrap;display:flex;align-items:center;gap:7px}
+.nav-brand::before{content:"";width:7px;height:7px;border-radius:50%;background:#1D9E75;display:inline-block}
 .nav-brand span{color:var(--color-text-tertiary);font-weight:400}
-.nav-link{font-size:13px;padding:7px 13px;border-radius:8px;color:var(--color-text-secondary);text-decoration:none;white-space:nowrap;transition:all .12s}
+.nav-tabs{display:flex;gap:4px;flex-wrap:wrap}
+.nav-link{font-size:13px;font-weight:500;padding:8px 15px;border-radius:8px;color:var(--color-text-secondary);text-decoration:none;white-space:nowrap;transition:all .12s;border:1px solid transparent;position:relative}
 .nav-link:hover{background:var(--color-background-secondary);color:var(--color-text-primary)}
-.nav-link.active{background:var(--color-background-secondary);color:var(--color-text-primary);font-weight:500}
-@media(max-width:560px){.nav-brand{width:100%;margin-bottom:4px}}
+.nav-link.active{background:var(--color-text-primary);color:var(--color-background-primary)}
+@media(max-width:600px){.nav-brand{width:100%;margin:0 0 6px 0}.nav-inner{padding:10px 1rem}.nav-link{font-size:12px;padding:7px 12px}}
 
 </style>
 </head>
@@ -170,11 +172,11 @@ function initSlider(){
     const lp=((yL-MINY)/RG*100),rp=((yR-MINY)/RG*100);
     tl.style.left=`calc(${lp}% - 8px)`;tr.style.left=`calc(${rp}% - 8px)`;
     fill.style.left=lp+'%';fill.style.width=(rp-lp)+'%';
-    document.getElementById('rdsp').textContent=yL+' – '+yR;
+    document.getElementById('rdsp').textContent=yL===yR?String(yL):yL+' – '+yR;
   }
   function drag(isL){return function(e){
     const r=wrap.getBoundingClientRect();const x=Math.max(0,Math.min(1,(e.clientX-r.left)/r.width));
-    const y=Math.round(MINY+x*RG);if(isL)yL=Math.min(y,yR-1);else yR=Math.max(y,yL+1);upd();refresh();
+    const y=Math.round(MINY+x*RG);if(isL)yL=Math.min(y,yR);else yR=Math.max(y,yL);upd();refresh();
   };}
   [tl,tr].forEach((t,i)=>t.addEventListener('mousedown',e=>{
     const mv=drag(i===0),up=()=>{document.removeEventListener('mousemove',mv);document.removeEventListener('mouseup',up);};
