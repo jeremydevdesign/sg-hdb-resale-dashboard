@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MRT Proximity — SG HDB Resale</title>
+<style>
+:root{
+  --font-sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --color-background-primary:#fff;--color-background-secondary:#f5f5f4;--color-background-info:#eef4fb;--color-background-warning:#fdf4e7;
+  --color-text-primary:#1a1a1a;--color-text-secondary:#6b6b6b;--color-text-tertiary:#a8a8a8;
+  --color-text-info:#2c6cb0;--color-text-success:#0f6e56;--color-text-danger:#993c1d;--color-text-warning:#8a5a1a;
+  --color-border-primary:#d4d4d4;--color-border-secondary:#e0e0e0;--color-border-tertiary:#ececec;--color-border-warning:#ecd9b8;
+  --border-radius-md:10px;--border-radius-lg:14px;
+}
+@media(prefers-color-scheme:dark){:root{
+  --color-background-primary:#1c1c1a;--color-background-secondary:#2a2a28;--color-background-info:#1e2a38;--color-background-warning:#2e2415;
+  --color-text-primary:#f5f5f3;--color-text-secondary:#a8a8a4;--color-text-tertiary:#6b6b68;
+  --color-text-info:#6aa9e0;--color-text-success:#4cc4a0;--color-text-danger:#e08a6a;--color-text-warning:#d6a85a;
+  --color-border-primary:#3a3a38;--color-border-secondary:#333331;--color-border-tertiary:#2c2c2a;--color-border-warning:#4a3c20;
+}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--color-background-primary);color:var(--color-text-primary);font-family:var(--font-sans)}
+.wrap{max-width:1000px;margin:0 auto;padding:2rem 1.5rem}
+.pg-title{font-size:22px;font-weight:500;margin:0 0 3px}
+.pg-sub{font-size:13px;color:var(--color-text-secondary);margin:0 0 1.5rem}
+.fbar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:11px 16px;background:var(--color-background-secondary);border-radius:var(--border-radius-md);margin-bottom:6px}
+.flbl{font-size:11px;font-weight:500;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:.07em;white-space:nowrap;min-width:62px}
+.pill{font-size:12px;padding:5px 12px;border-radius:20px;border:.5px solid var(--color-border-secondary);background:transparent;color:var(--color-text-secondary);cursor:pointer;transition:all .15s;white-space:nowrap}
+.pill.on{background:var(--color-text-primary);color:var(--color-background-primary);border-color:var(--color-text-primary)}
+.kgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:9px;margin:1.25rem 0}
+@media(max-width:640px){.kgrid{grid-template-columns:repeat(2,1fr)}.two-col{grid-template-columns:1fr!important}}
+.kcard{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:12px 13px}
+.klbl{font-size:11px;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:.05em;margin:0 0 4px;display:flex;align-items:center;gap:5px}
+.kval{font-size:18px;font-weight:500;margin:0;line-height:1.1}
+.ksub{font-size:11px;margin:3px 0 0;color:var(--color-text-secondary)}
+.ksub.up{color:var(--color-text-success)}.ksub.dn{color:var(--color-text-danger)}
+.sec{margin-bottom:1.75rem}
+.seclbl{font-size:12px;font-weight:500;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:.07em;margin:0 0 10px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.chip{font-size:11px;padding:2px 9px;border-radius:20px;background:var(--color-background-info);color:var(--color-text-info)}
+.div{border:none;border-top:.5px solid var(--color-border-tertiary);margin:0 0 1.5rem}
+.legend{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:10px}
+.li{display:flex;align-items:center;gap:5px;font-size:12px;color:var(--color-text-secondary)}
+.lline{width:14px;height:3px;border-radius:2px;display:inline-block}
+.ldot{width:10px;height:10px;border-radius:50%;display:inline-block}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:1.75rem}
+.ibox{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:14px 16px}
+.irow{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:.5px solid var(--color-border-tertiary)}
+.irow:last-child{border-bottom:none}
+.iband{font-size:13px;display:flex;align-items:center;gap:7px}
+.idot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+.ivals{display:flex;gap:12px}
+.ihdr{font-size:11px;font-weight:500;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:.05em;min-width:54px;text-align:right}
+.ival{font-size:13px;font-weight:500;min-width:54px;text-align:right}
+.note{font-size:12px;color:var(--color-text-secondary);line-height:1.6;margin-top:1rem;padding:12px 15px;background:var(--color-background-secondary);border-radius:var(--border-radius-md)}
+.chart-shell{position:relative}
+.tt{position:absolute;pointer-events:none;background:var(--color-background-primary);border:.5px solid var(--color-border-primary);border-radius:8px;padding:7px 10px;font-size:12px;opacity:0;transition:opacity .1s;z-index:10;box-shadow:0 4px 16px rgba(0,0,0,.12);white-space:nowrap}
+svg text{font-family:var(--font-sans)}
+.warn{display:none;align-items:flex-start;gap:8px;padding:10px 14px;background:var(--color-background-warning);border-radius:var(--border-radius-md);margin-bottom:10px;border:.5px solid var(--color-border-warning)}
+.warn.show{display:flex}
+.warn-text{font-size:12px;color:var(--color-text-warning);line-height:1.5}
+
+.nav{position:sticky;top:0;z-index:50;background:var(--color-background-primary);border-bottom:.5px solid var(--color-border-tertiary);margin-bottom:0}
+.nav-inner{max-width:1000px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;gap:4px;flex-wrap:wrap;min-height:52px}
+.nav-brand{font-size:13px;font-weight:600;color:var(--color-text-primary);margin-right:14px;white-space:nowrap}
+.nav-brand span{color:var(--color-text-tertiary);font-weight:400}
+.nav-link{font-size:13px;padding:7px 13px;border-radius:8px;color:var(--color-text-secondary);text-decoration:none;white-space:nowrap;transition:all .12s}
+.nav-link:hover{background:var(--color-background-secondary);color:var(--color-text-primary)}
+.nav-link.active{background:var(--color-background-secondary);color:var(--color-text-primary);font-weight:500}
+@media(max-width:560px){.nav-brand{width:100%;margin-bottom:4px}}
+
+</style>
+</head>
+<body>
+<div class="nav"><div class="nav-inner"><span class="nav-brand">SG HDB Resale <span>&middot; 2012–2025</span></span><a class="nav-link" href="index.html">Overview</a><a class="nav-link" href="page2_find_your_flat.html">Find a Flat</a><a class="nav-link active" href="page3_mrt_proximity.html">MRT Proximity</a><a class="nav-link" href="page4_hidden_insights.html">Insights</a></div></div>
+<div class="wrap">
+<p class="pg-title">HDB resale prices by MRT proximity</p>
+<p class="pg-sub">321,762 transactions &middot; 2012&ndash;2025 &middot; Precise block-level geocoding &middot; Source: data.gov.sg + OneMap</p>
+
+<div class="fbar"><span class="flbl">Flat type</span>
+  <button class="pill on" data-ft="ALL" onclick="setFT(this)">All</button>
+  <button class="pill" data-ft="3 ROOM" onclick="setFT(this)">3-room</button>
+  <button class="pill" data-ft="4 ROOM" onclick="setFT(this)">4-room</button>
+  <button class="pill" data-ft="5 ROOM" onclick="setFT(this)">5-room</button>
+  <button class="pill" data-ft="EXECUTIVE" onclick="setFT(this)">Executive</button>
+</div>
+<div class="fbar"><span class="flbl">Town</span><div id="town-pills" style="display:flex;gap:6px;flex-wrap:wrap"></div></div>
+
+<div class="warn" id="warn"><span style="font-size:14px">&#9432;</span><span class="warn-text" id="warn-text"></span></div>
+
+<div class="kgrid" id="kgrid"></div>
+<hr class="div">
+
+<div class="sec">
+  <p class="seclbl">Price trend by distance band <span class="chip" id="trend-chip"></span></p>
+  <div class="legend" id="trend-leg"></div>
+  <div class="chart-shell"><svg id="trend-svg" viewBox="0 0 700 300" style="width:100%;height:auto"></svg><div class="tt" id="trend-tt"></div></div>
+</div>
+<hr class="div">
+
+<div class="two-col">
+  <div class="sec">
+    <p class="seclbl">2025 median by band <span class="chip" id="bar-chip"></span></p>
+    <div class="chart-shell"><svg id="bar-svg" viewBox="0 0 340 260" style="width:100%;height:auto"></svg></div>
+  </div>
+  <div class="sec">
+    <p class="seclbl">Transaction share <span class="chip" id="donut-chip"></span></p>
+    <div class="chart-shell"><svg id="donut-svg" viewBox="0 0 340 220" style="width:100%;height:auto"></svg></div>
+    <div class="legend" id="donut-leg" style="margin-top:8px"></div>
+  </div>
+</div>
+<hr class="div">
+
+<div class="sec">
+  <p class="seclbl">2025 median by band &times; flat type <span class="chip" id="table-chip"></span></p>
+  <div class="ibox">
+    <div style="display:flex;justify-content:space-between;margin-bottom:8px;padding-bottom:6px;border-bottom:.5px solid var(--color-border-tertiary)">
+      <span style="font-size:11px;font-weight:500;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:.05em">Distance band</span>
+      <div class="ivals"><span class="ihdr">3-rm</span><span class="ihdr">4-rm</span><span class="ihdr">5-rm</span><span class="ihdr">Exec</span></div>
+    </div>
+    <div id="table-rows"></div>
+  </div>
+  <p class="note">The "Over 2km" band commands surprisingly high prices in some towns (Punggol, Tampines, Pasir Ris) &mdash; not a proximity premium but a composition effect: flats far from MRT in these towns tend to be newer, larger builds in less dense areas. The &le;200m band reflects genuine station-proximity value, strongest for 4-room and executive flats.</p>
+</div>
+</div>
+
+<script>
+const D={"BAND_COUNT":{"W200":12086,"W500":79417,"5001k":134806,"1k2k":76269,"O2k":8454},"BAND_TREND":{"W200":{"2012":471500,"2013":495000,"2014":470000,"2015":450000,"2016":453000,"2017":468888,"2018":464000,"2019":475000,"2020":475000,"2021":525000,"2022":555000,"2023":572000,"2024":605000,"2025":680000},"W500":{"2012":460000,"2013":475000,"2014":437000,"2015":435000,"2016":438000,"2017":444500,"2018":438000,"2019":430000,"2020":450000,"2021":521000,"2022":550000,"2023":568000,"2024":615000,"2025":656400},"5001k":{"2012":432000,"2013":440000,"2014":400000,"2015":388000,"2016":389000,"2017":392000,"2018":386000,"2019":378000,"2020":400000,"2021":463000,"2022":505000,"2023":530000,"2024":560000,"2025":598888},"1k2k":{"2012":457000,"2013":456000,"2014":420000,"2015":400000,"2016":408000,"2017":405000,"2018":405000,"2019":400000,"2020":436000,"2021":485000,"2022":530000,"2023":560000,"2024":600000,"2025":632000},"O2k":{"2012":520000,"2013":520000,"2014":470000,"2015":450000,"2016":430000,"2017":421888,"2018":425000,"2019":425000,"2020":435000,"2021":480000,"2022":535000,"2023":575000,"2024":630000,"2025":693000}},"BAND_FT":{"W200":{"3 ROOM":{"2012":366000,"2013":375000,"2014":357000,"2015":345000,"2016":338000,"2017":325000,"2018":325000,"2019":324444,"2020":310000,"2021":350444,"2022":380000,"2023":420000,"2024":450000,"2025":470000},"4 ROOM":{"2012":492000,"2013":545000,"2014":507000,"2015":470000,"2016":485000,"2017":472000,"2018":480000,"2019":511000,"2020":500000,"2021":538000,"2022":590000,"2023":610000,"2024":630000,"2025":735000},"5 ROOM":{"2012":540000,"2013":566000,"2014":520000,"2015":492500,"2016":500000,"2017":520000,"2018":532766,"2019":547500,"2020":530000,"2021":658000,"2022":666000,"2023":674000,"2024":718000,"2025":787500},"EXECUTIVE":{"2012":708000,"2013":715000,"2014":750000,"2015":690000,"2016":690000,"2017":705000,"2018":831500,"2019":605000,"2020":790000,"2021":850000,"2022":920000,"2023":965000,"2024":1000000,"2025":1170000}},"W500":{"3 ROOM":{"2012":360000,"2013":365000,"2014":347000,"2015":330000,"2016":325000,"2017":321000,"2018":310000,"2019":298500,"2020":300000,"2021":341250,"2022":375000,"2023":398000,"2024":420000,"2025":460000},"4 ROOM":{"2012":465000,"2013":485800,"2014":450000,"2015":438000,"2016":439000,"2017":445000,"2018":432500,"2019":430000,"2020":453000,"2021":520000,"2022":546888,"2023":570000,"2024":620444,"2025":668000},"5 ROOM":{"2012":538000,"2013":560000,"2014":525500,"2015":508000,"2016":515000,"2017":525000,"2018":535000,"2019":520000,"2020":526000,"2021":605000,"2022":649000,"2023":670000,"2024":710000,"2025":761000},"EXECUTIVE":{"2012":604000,"2013":635000,"2014":610000,"2015":595000,"2016":600900,"2017":600000,"2018":595000,"2019":595000,"2020":610888,"2021":685000,"2022":752500,"2023":800000,"2024":850000,"2025":891000}},"5001k":{"3 ROOM":{"2012":340000,"2013":348000,"2014":325000,"2015":308000,"2016":300000,"2017":295000,"2018":280000,"2019":272800,"2020":282000,"2021":325000,"2022":360000,"2023":380000,"2024":401000,"2025":430000},"4 ROOM":{"2012":433000,"2013":445000,"2014":410000,"2015":393400,"2016":388000,"2017":390000,"2018":380000,"2019":375000,"2020":395000,"2021":450000,"2022":495000,"2023":530000,"2024":560000,"2025":599000},"5 ROOM":{"2012":510000,"2013":527000,"2014":490500,"2015":467250,"2016":468000,"2017":470000,"2018":465000,"2019":466000,"2020":482500,"2021":542000,"2022":600000,"2023":630000,"2024":668000,"2025":710000},"EXECUTIVE":{"2012":622000,"2013":650000,"2014":638000,"2015":613118,"2016":620000,"2017":615000,"2018":620000,"2019":601000,"2020":625000,"2021":695000,"2022":780000,"2023":828000,"2024":865888,"2025":911000}},"1k2k":{"3 ROOM":{"2012":328000,"2013":335000,"2014":315000,"2015":290000,"2016":290000,"2017":282000,"2018":280000,"2019":285000,"2020":315000,"2021":350000,"2022":385000,"2023":419444,"2024":450000,"2025":475000},"4 ROOM":{"2012":430000,"2013":437000,"2014":405000,"2015":380000,"2016":395000,"2017":400000,"2018":400000,"2019":400000,"2020":430000,"2021":472000,"2022":520000,"2023":558000,"2024":600888,"2025":635000},"5 ROOM":{"2012":518000,"2013":525000,"2014":493000,"2015":450000,"2016":450000,"2017":440000,"2018":435000,"2019":471000,"2020":520000,"2021":577500,"2022":620000,"2023":660000,"2024":695000,"2025":738000},"EXECUTIVE":{"2012":605000,"2013":617444,"2014":590000,"2015":575000,"2016":565000,"2017":570000,"2018":585000,"2019":565000,"2020":590000,"2021":663000,"2022":720000,"2023":790444,"2024":830000,"2025":870000}},"O2k":{"3 ROOM":{"2012":318250,"2013":378000,"2014":355000,"2015":352000,"2016":363888,"2017":345000,"2018":338000,"2019":334000,"2020":343000,"2021":370000,"2022":420000,"2023":463944,"2024":500000,"2025":550000},"4 ROOM":{"2012":455000,"2013":480000,"2014":435500,"2015":415000,"2016":412000,"2017":408000,"2018":410000,"2019":415000,"2020":415000,"2021":455000,"2022":515000,"2023":555000,"2024":610000,"2025":665000},"5 ROOM":{"2012":536500,"2013":550000,"2014":515000,"2015":480000,"2016":477000,"2017":473000,"2018":466000,"2019":490000,"2020":500000,"2021":545000,"2022":610000,"2023":648000,"2024":708000,"2025":780000},"EXECUTIVE":{"2012":665500,"2013":677500,"2014":650000,"2015":635000,"2016":628000,"2017":635500,"2018":626500,"2019":630000,"2020":639000,"2021":700000,"2022":801500,"2023":827500,"2024":879444,"2025":978000}}},"BP25":{"W200":{"3 ROOM":470000,"4 ROOM":735000,"5 ROOM":787500,"EXECUTIVE":1170000,"ALL":680000},"W500":{"3 ROOM":460000,"4 ROOM":668000,"5 ROOM":761000,"EXECUTIVE":891000,"ALL":656400},"5001k":{"3 ROOM":430000,"4 ROOM":599000,"5 ROOM":710000,"EXECUTIVE":911000,"ALL":598888},"1k2k":{"3 ROOM":475000,"4 ROOM":635000,"5 ROOM":738000,"EXECUTIVE":870000,"ALL":632000},"O2k":{"3 ROOM":550000,"4 ROOM":665000,"5 ROOM":780000,"EXECUTIVE":978000,"ALL":693000}},"TOWN_DIST":{"ANG MO KIO":{"W200":528,"W500":3799,"5001k":7995,"1k2k":1081,"O2k":0},"BEDOK":{"W200":482,"W500":4757,"5001k":12078,"1k2k":12,"O2k":0},"BISHAN":{"W200":296,"W500":1541,"5001k":2910,"1k2k":759,"O2k":0},"BUKIT BATOK":{"W200":324,"W500":3224,"5001k":6760,"1k2k":2556,"O2k":0},"BUKIT MERAH":{"W200":1036,"W500":4120,"5001k":4857,"1k2k":1956,"O2k":0},"BUKIT PANJANG":{"W200":208,"W500":1035,"5001k":4848,"1k2k":5003,"O2k":0},"BUKIT TIMAH":{"W200":196,"W500":533,"5001k":0,"1k2k":0,"O2k":0},"CENTRAL AREA":{"W200":393,"W500":1850,"5001k":218,"1k2k":0,"O2k":0},"CHOA CHU KANG":{"W200":368,"W500":2871,"5001k":6880,"1k2k":3718,"O2k":0},"CLEMENTI":{"W200":279,"W500":1928,"5001k":3200,"1k2k":1771,"O2k":0},"GEYLANG":{"W200":419,"W500":5291,"5001k":2331,"1k2k":0,"O2k":0},"HOUGANG":{"W200":126,"W500":1380,"5001k":8107,"1k2k":6185,"O2k":0},"JURONG EAST":{"W200":0,"W500":758,"5001k":3902,"1k2k":1923,"O2k":0},"JURONG WEST":{"W200":857,"W500":4789,"5001k":9298,"1k2k":6936,"O2k":0},"KALLANG/WHAMPOA":{"W200":853,"W500":5024,"5001k":3308,"1k2k":284,"O2k":0},"MARINE PARADE":{"W200":194,"W500":1320,"5001k":481,"1k2k":0,"O2k":0},"PASIR RIS":{"W200":352,"W500":1566,"5001k":2887,"1k2k":1581,"O2k":2970},"PUNGGOL":{"W200":0,"W500":0,"5001k":541,"1k2k":17469,"O2k":1135},"QUEENSTOWN":{"W200":569,"W500":3879,"5001k":3940,"1k2k":0,"O2k":0},"SEMBAWANG":{"W200":435,"W500":3308,"5001k":4810,"1k2k":365,"O2k":0},"SENGKANG":{"W200":917,"W500":4503,"5001k":7947,"1k2k":7036,"O2k":3465},"SERANGOON":{"W200":222,"W500":1808,"5001k":1360,"1k2k":1967,"O2k":557},"TAMPINES":{"W200":973,"W500":5098,"5001k":10095,"1k2k":5135,"O2k":293},"TOA PAYOH":{"W200":574,"W500":4463,"5001k":3199,"1k2k":1785,"O2k":0},"WOODLANDS":{"W200":907,"W500":6667,"5001k":13482,"1k2k":1759,"O2k":0},"YISHUN":{"W200":578,"W500":3905,"5001k":9372,"1k2k":6988,"O2k":34}},"TOWN_MED25":{"ANG MO KIO":{"W200":498500,"W500":550000,"5001k":475000,"1k2k":456944,"O2k":null},"BEDOK":{"W200":618000,"W500":588000,"5001k":525000,"1k2k":395000,"O2k":null},"BISHAN":{"W200":685000,"W500":716500,"5001k":877444,"1k2k":888000,"O2k":null},"BUKIT BATOK":{"W200":610000,"W500":547500,"5001k":550000,"1k2k":670000,"O2k":null},"BUKIT MERAH":{"W200":1035000,"W500":835000,"5001k":781500,"1k2k":667500,"O2k":null},"BUKIT PANJANG":{"W200":869000,"W500":790000,"5001k":635000,"1k2k":566500,"O2k":null},"BUKIT TIMAH":{"W200":936500,"W500":963722,"5001k":null,"1k2k":null,"O2k":null},"CENTRAL AREA":{"W200":575000,"W500":638000,"5001k":1300000,"1k2k":null,"O2k":null},"CHOA CHU KANG":{"W200":690000,"W500":638000,"5001k":570000,"1k2k":610000,"O2k":null},"CLEMENTI":{"W200":470000,"W500":850000,"5001k":638000,"1k2k":420000,"O2k":null},"GEYLANG":{"W200":646944,"W500":560000,"5001k":580000,"1k2k":null,"O2k":null},"HOUGANG":{"W200":842000,"W500":660000,"5001k":577444,"1k2k":640000,"O2k":null},"JURONG EAST":{"W200":null,"W500":498000,"5001k":554500,"1k2k":488888,"O2k":null},"JURONG WEST":{"W200":650000,"W500":608000,"5001k":535000,"1k2k":560000,"O2k":null},"KALLANG/WHAMPOA":{"W200":695000,"W500":800444,"5001k":630000,"1k2k":870000,"O2k":null},"MARINE PARADE":{"W200":482000,"W500":668000,"5001k":500000,"1k2k":null,"O2k":null},"PASIR RIS":{"W200":712500,"W500":720000,"5001k":696888,"1k2k":768000,"O2k":708000},"PUNGGOL":{"W200":null,"W500":null,"5001k":645000,"1k2k":675000,"O2k":665000},"QUEENSTOWN":{"W200":888000,"W500":850000,"5001k":766500,"1k2k":null,"O2k":null},"SEMBAWANG":{"W200":692500,"W500":625000,"5001k":620000,"1k2k":555000,"O2k":null},"SENGKANG":{"W200":822544,"W500":730888,"5001k":658000,"1k2k":648888,"O2k":635000},"SERANGOON":{"W200":800000,"W500":720000,"5001k":630000,"1k2k":642888,"O2k":770000},"TAMPINES":{"W200":610000,"W500":661250,"5001k":640000,"1k2k":760000,"O2k":790000},"TOA PAYOH":{"W200":419000,"W500":905000,"5001k":695000,"1k2k":462250,"O2k":null},"WOODLANDS":{"W200":623000,"W500":629000,"5001k":585000,"1k2k":400000,"O2k":null},"YISHUN":{"W200":530000,"W500":535500,"5001k":515000,"1k2k":580000,"O2k":390000}}};
+const YEARS=[2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025];
+const BK=['W200','W500','5001k','1k2k','O2k'];
+const BLABELS=['Within 200m','200m\u2013500m','500m\u20131km','1km\u20132km','Over 2km'];
+const BSHORT=['\u2264200m','200\u2013500m','500m\u20131km','1\u20132km','>2km'];
+const BCOLORS=['#7F77DD','#1D9E75','#378ADD','#D85A30','#888780'];
+const FTS=['3 ROOM','4 ROOM','5 ROOM','EXECUTIVE'];
+const FT_LABELS={'ALL':'All types','3 ROOM':'3-room','4 ROOM':'4-room','5 ROOM':'5-room','EXECUTIVE':'Executive'};
+const TOWN_LABELS={"ANG MO KIO":"Ang Mo Kio","BEDOK":"Bedok","BISHAN":"Bishan","BUKIT BATOK":"Bukit Batok","BUKIT MERAH":"Bukit Merah","BUKIT PANJANG":"Bukit Panjang","BUKIT TIMAH":"Bukit Timah","CENTRAL AREA":"Central Area","CHOA CHU KANG":"Choa Chu Kang","CLEMENTI":"Clementi","GEYLANG":"Geylang","HOUGANG":"Hougang","JURONG EAST":"Jurong East","JURONG WEST":"Jurong West","KALLANG/WHAMPOA":"Kallang","MARINE PARADE":"Marine Pde","PASIR RIS":"Pasir Ris","PUNGGOL":"Punggol","QUEENSTOWN":"Queenstown","SEMBAWANG":"Sembawang","SENGKANG":"Sengkang","SERANGOON":"Serangoon","TAMPINES":"Tampines","TOA PAYOH":"Toa Payoh","WOODLANDS":"Woodlands","YISHUN":"Yishun"};
+const isDark=matchMedia('(prefers-color-scheme: dark)').matches;
+const grid=isDark?'rgba(255,255,255,0.08)':'rgba(0,0,0,0.07)';
+const axc=isDark?'rgba(255,255,255,0.5)':'rgba(0,0,0,0.4)';
+let activeFT='ALL',activeTown='ALL';
+function fmtK(v){return '$'+Math.round(v/1000)+'K';}
+function counts(){return activeTown==='ALL'?BK.map(b=>D.BAND_COUNT[b]||0):BK.map(b=>D.TOWN_DIST[activeTown]?.[b]||0);}
+function bp25(b){if(activeTown==='ALL'){return activeFT==='ALL'?D.BP25[b]['ALL']:(D.BP25[b][activeFT]||null);}return D.TOWN_MED25[activeTown]?.[b]||null;}
+function trend(b){if(activeTown!=='ALL')return YEARS.map(()=>null);if(activeFT==='ALL')return YEARS.map(y=>D.BAND_TREND[b]?.[y]||null);return YEARS.map(y=>D.BAND_FT[b]?.[activeFT]?.[y]||null);}
+function singleBand(){return counts().filter(c=>c>0).length<=1;}
+
+function buildKPIs(){
+  const p200=bp25('W200');
+  document.getElementById('kgrid').innerHTML=BK.map((b,i)=>{
+    const p=bp25(b);const diff=p&&p200&&i>0?((p-p200)/p200*100).toFixed(1):null;
+    const ds=i===0?'Reference (closest)':(diff!==null?(parseFloat(diff)>=0?'+':'')+diff+'% vs \u2264200m':'\u2014');
+    const dc=diff!==null&&parseFloat(diff)<0?'dn':'up';
+    return `<div class="kcard"><p class="klbl"><span style="width:8px;height:8px;border-radius:50%;background:${BCOLORS[i]};display:inline-block"></span>${BSHORT[i]}</p><p class="kval">${p?fmtK(p):'\u2014'}</p><p class="ksub ${i>0&&diff!==null?dc:''}">${ds}</p></div>`;
+  }).join('');
+}
+function buildTrend(){
+  document.getElementById('trend-chip').textContent=FT_LABELS[activeFT]+' \u00b7 '+(activeTown==='ALL'?'All towns':TOWN_LABELS[activeTown]);
+  const leg=document.getElementById('trend-leg');
+  const svg=document.getElementById('trend-svg');
+  if(activeTown!=='ALL'){
+    // town selected -> bar of 2025 by band
+    leg.innerHTML='<span class="li" style="color:var(--color-text-tertiary)">Showing 2025 median by band for '+TOWN_LABELS[activeTown]+' (town-level yearly trends are too sparse to chart)</span>';
+    const data=BK.map(b=>bp25(b));const W=700,H=300,PL=52,PR=16,PT=16,PB=40;
+    const vmax=Math.max(...data.filter(v=>v));const bw=(W-PL-PR)/BK.length*0.6,step=(W-PL-PR)/BK.length;
+    let g='';for(let k=0;k<=4;k++){const v=vmax*k/4;const yy=PT+(H-PT-PB)*(1-k/4);g+=`<line x1="${PL}" y1="${yy}" x2="${W-PR}" y2="${yy}" stroke="${grid}"/><text x="${PL-6}" y="${yy+3}" text-anchor="end" font-size="10" fill="${axc}">${fmtK(v)}</text>`;}
+    data.forEach((v,i)=>{const xx=PL+i*step+step/2-bw/2;if(v){const h=(H-PT-PB)*(v/vmax);g+=`<rect x="${xx}" y="${H-PB-h}" width="${bw}" height="${h}" rx="3" fill="${BCOLORS[i]}CC"/><text x="${xx+bw/2}" y="${H-PB-h-5}" text-anchor="middle" font-size="10" fill="var(--color-text-primary)">${fmtK(v)}</text>`;}g+=`<text x="${xx+bw/2}" y="${H-22}" text-anchor="middle" font-size="10" fill="${axc}">${BSHORT[i]}</text>`;});
+    svg.innerHTML=g;return;
+  }
+  leg.innerHTML=BK.map((b,i)=>`<span class="li"><span class="lline" style="${i===4?'border-top:2px dashed '+BCOLORS[i]+';background:transparent':'background:'+BCOLORS[i]}"></span>${BLABELS[i]}</span>`).join('');
+  const lines=BK.map((b,i)=>({color:BCOLORS[i],dash:i===4,data:trend(b)}));
+  const W=700,H=300,PL=52,PR=16,PT=14,PB=28;
+  const allv=[];lines.forEach(l=>l.data.forEach(v=>{if(v)allv.push(v);}));
+  let vmin=Math.floor(Math.min(...allv)/50000)*50000,vmax=Math.ceil(Math.max(...allv)/50000)*50000;
+  const x=i=>PL+(W-PL-PR)*i/(YEARS.length-1),y=v=>PT+(H-PT-PB)*(1-(v-vmin)/(vmax-vmin));
+  let g='';for(let v=vmin;v<=vmax;v+=(vmax-vmin)/4){g+=`<line x1="${PL}" y1="${y(v)}" x2="${W-PR}" y2="${y(v)}" stroke="${grid}"/><text x="${PL-6}" y="${y(v)+3.5}" text-anchor="end" font-size="10" fill="${axc}">${fmtK(v)}</text>`;}
+  YEARS.forEach((yr,i)=>{if(i%2===0)g+=`<text x="${x(i)}" y="${H-9}" text-anchor="middle" font-size="10" fill="${axc}">${yr}</text>`;});
+  lines.forEach(l=>{const pts=l.data.map((v,i)=>v?`${x(i)},${y(v)}`:null).filter(Boolean).join(' ');g+=`<polyline points="${pts}" fill="none" stroke="${l.color}" stroke-width="2.2" stroke-dasharray="${l.dash?'5 3':''}" stroke-linejoin="round"/>`;});
+  svg.innerHTML=g;
+}
+function buildBar(){
+  document.getElementById('bar-chip').textContent=FT_LABELS[activeFT];
+  const data=BK.map(b=>bp25(b));const W=340,H=260,PL=44,PR=8,PT=12,PB=44;
+  const vmax=Math.max(...data.filter(v=>v));const step=(W-PL-PR)/BK.length,bw=step*0.62;
+  let g='';for(let k=0;k<=3;k++){const v=vmax*k/3;const yy=PT+(H-PT-PB)*(1-k/3);g+=`<line x1="${PL}" y1="${yy}" x2="${W-PR}" y2="${yy}" stroke="${grid}"/><text x="${PL-5}" y="${yy+3}" text-anchor="end" font-size="9" fill="${axc}">${Math.round(v/1000)}K</text>`;}
+  data.forEach((v,i)=>{const xx=PL+i*step+step/2-bw/2;if(v){const h=(H-PT-PB)*(v/vmax);g+=`<rect x="${xx}" y="${H-PB-h}" width="${bw}" height="${h}" rx="3" fill="${BCOLORS[i]}CC"/>`;}g+=`<text x="${xx+bw/2}" y="${H-PB+13}" text-anchor="middle" font-size="8.5" fill="${axc}">${BSHORT[i]}</text>`;});
+  document.getElementById('bar-svg').innerHTML=g;
+}
+function buildDonut(){
+  document.getElementById('donut-chip').textContent=activeTown==='ALL'?'All towns':TOWN_LABELS[activeTown];
+  const c=counts();const tot=c.reduce((a,b)=>a+b,0);
+  const W=340,H=220,cx=W/2,cy=H/2,r=78,ir=48;let ang=-Math.PI/2,g='';
+  c.forEach((v,i)=>{if(!v)return;const p=v/tot,a2=ang+p*2*Math.PI;const x1=cx+r*Math.cos(ang),y1=cy+r*Math.sin(ang),x2=cx+r*Math.cos(a2),y2=cy+r*Math.sin(a2);const xi1=cx+ir*Math.cos(a2),yi1=cy+ir*Math.sin(a2),xi2=cx+ir*Math.cos(ang),yi2=cy+ir*Math.sin(ang);const large=p>0.5?1:0;g+=`<path d="M${x1} ${y1} A${r} ${r} 0 ${large} 1 ${x2} ${y2} L${xi1} ${yi1} A${ir} ${ir} 0 ${large} 0 ${xi2} ${yi2} Z" fill="${BCOLORS[i]}"/>`;ang=a2;});
+  document.getElementById('donut-svg').innerHTML=g;
+  document.getElementById('donut-leg').innerHTML=BK.map((b,i)=>c[i]>0?`<span class="li"><span class="ldot" style="background:${BCOLORS[i]}"></span>${BLABELS[i]} ${(c[i]/tot*100).toFixed(1)}%</span>`:'').join('');
+}
+function buildTable(){
+  document.getElementById('table-chip').textContent=activeTown==='ALL'?'All towns':TOWN_LABELS[activeTown];
+  const c=counts();
+  document.getElementById('table-rows').innerHTML=BK.map((b,i)=>{
+    if(activeTown!=='ALL'&&c[i]===0)return '';
+    const vals=FTS.map(ft=>activeTown==='ALL'?(D.BP25[b]?.[ft]||null):(D.TOWN_MED25[activeTown]?.[b]||null));
+    if(activeTown!=='ALL'&&vals.every(v=>!v))return '';
+    return `<div class="irow"><span class="iband"><span class="idot" style="background:${BCOLORS[i]}"></span>${BLABELS[i]}</span><div class="ivals">${vals.map(v=>`<span class="ival">${v?fmtK(v):'\u2014'}</span>`).join('')}</div></div>`;
+  }).join('');
+}
+function updWarn(){
+  const sb=singleBand()&&activeTown!=='ALL';
+  const w=document.getElementById('warn');w.classList.toggle('show',sb);
+  if(sb){const ab=BK.filter((_,i)=>counts()[i]>0).map(b=>BLABELS[BK.indexOf(b)]);document.getElementById('warn-text').textContent=TOWN_LABELS[activeTown]+' transactions are almost entirely in the '+ab[0]+' band \u2014 cross-band comparison has limited meaning here.';}
+}
+function refresh(){updWarn();buildKPIs();buildTrend();buildBar();buildDonut();buildTable();}
+function setFT(b){document.querySelectorAll('.pill[data-ft]').forEach(x=>x.classList.remove('on'));b.classList.add('on');activeFT=b.dataset.ft;refresh();}
+function setTown(t){activeTown=t;document.querySelectorAll('.pill[data-town]').forEach(b=>b.classList.toggle('on',b.dataset.town===t));refresh();}
+const tp=document.getElementById('town-pills');
+const ap=document.createElement('button');ap.className='pill on';ap.dataset.town='ALL';ap.textContent='All';ap.onclick=()=>setTown('ALL');tp.appendChild(ap);
+Object.entries(TOWN_LABELS).forEach(([k,v])=>{const b=document.createElement('button');b.className='pill';b.dataset.town=k;b.textContent=v;b.onclick=()=>setTown(k);tp.appendChild(b);});
+refresh();
+</script>
+</body>
+</html>

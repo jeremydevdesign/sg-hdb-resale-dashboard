@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hidden Insights — SG HDB Resale</title>
+<style>
+:root{
+  --font-sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --color-background-primary:#fff;--color-background-secondary:#f5f5f4;--color-background-info:#eef4fb;
+  --color-text-primary:#1a1a1a;--color-text-secondary:#6b6b6b;--color-text-tertiary:#a8a8a8;
+  --color-text-info:#2c6cb0;--color-text-success:#0f6e56;--color-text-danger:#993c1d;
+  --color-border-primary:#d4d4d4;--color-border-secondary:#e0e0e0;--color-border-tertiary:#ececec;
+  --border-radius-md:10px;--border-radius-lg:14px;
+}
+@media(prefers-color-scheme:dark){:root{
+  --color-background-primary:#1c1c1a;--color-background-secondary:#2a2a28;--color-background-info:#1e2a38;
+  --color-text-primary:#f5f5f3;--color-text-secondary:#a8a8a4;--color-text-tertiary:#6b6b68;
+  --color-text-info:#6aa9e0;--color-text-success:#4cc4a0;--color-text-danger:#e08a6a;
+  --color-border-primary:#3a3a38;--color-border-secondary:#333331;--color-border-tertiary:#2c2c2a;
+}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--color-background-primary);color:var(--color-text-primary);font-family:var(--font-sans)}
+.wrap{max-width:1000px;margin:0 auto;padding:2rem 1.5rem}
+.pg-title{font-size:22px;font-weight:500;margin:0 0 3px}
+.pg-sub{font-size:13px;color:var(--color-text-secondary);margin:0 0 1.75rem}
+.card{background:var(--color-background-secondary);border-radius:var(--border-radius-lg);padding:24px 26px;margin-bottom:1.25rem}
+.card-kicker{font-size:11px;font-weight:500;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:.08em;margin:0 0 8px}
+.card-headline{font-size:19px;font-weight:500;line-height:1.35;margin:0 0 10px}
+.card-body{font-size:13.5px;color:var(--color-text-secondary);line-height:1.65;margin:0 0 18px;max-width:680px}
+.card-body strong{color:var(--color-text-primary);font-weight:500}
+.bigstat{display:flex;gap:34px;flex-wrap:wrap;margin-bottom:18px}
+.bs-item{display:flex;flex-direction:column}
+.bs-val{font-size:30px;font-weight:500;line-height:1.1}
+.bs-lbl{font-size:11px;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:.06em;margin-top:4px}
+.hbar-row{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.hbar-lbl{font-size:12px;width:74px;flex-shrink:0;text-align:right;color:var(--color-text-secondary)}
+.hbar-lbl.town{width:118px;color:var(--color-text-primary)}
+.hbar-track{flex:1;height:16px;border-radius:3px;overflow:hidden;background:var(--color-background-primary);position:relative}
+.hbar-fill{height:100%;border-radius:3px}
+.hbar-val{font-size:12px;font-weight:500;width:72px;flex-shrink:0}
+.hbar-n{font-size:10.5px;color:var(--color-text-tertiary);width:64px;flex-shrink:0}
+.vbars{display:flex;align-items:flex-end;gap:5px;height:130px;margin-bottom:4px}
+.vbar{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%;cursor:pointer}
+.vbar-fill{width:100%;border-radius:3px 3px 0 0;background:rgba(216,90,48,.45);transition:background .15s;min-height:2px}
+.vbar.sel .vbar-fill{background:#D85A30}
+.vbar-x{font-size:9.5px;color:var(--color-text-tertiary);margin-top:5px}
+.vbar-top{font-size:9.5px;color:var(--color-text-secondary);margin-bottom:3px}
+.scrub-note{font-size:11px;color:var(--color-text-tertiary);margin:2px 0 16px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+@media(max-width:640px){.split{grid-template-columns:1fr}}
+.subhead{font-size:11px;font-weight:500;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:.07em;margin:0 0 10px}
+.note{font-size:12px;color:var(--color-text-secondary);line-height:1.6;margin-top:14px;padding:11px 14px;background:var(--color-background-primary);border-radius:var(--border-radius-md)}
+svg text{font-family:var(--font-sans)}
+.legend{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:10px}
+.li{display:flex;align-items:center;gap:5px;font-size:12px;color:var(--color-text-secondary)}
+.lline{width:14px;height:3px;border-radius:2px;display:inline-block}
+.divider-lbl{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--color-text-tertiary);margin:8px 0}
+
+.nav{position:sticky;top:0;z-index:50;background:var(--color-background-primary);border-bottom:.5px solid var(--color-border-tertiary);margin-bottom:0}
+.nav-inner{max-width:1000px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;gap:4px;flex-wrap:wrap;min-height:52px}
+.nav-brand{font-size:13px;font-weight:600;color:var(--color-text-primary);margin-right:14px;white-space:nowrap}
+.nav-brand span{color:var(--color-text-tertiary);font-weight:400}
+.nav-link{font-size:13px;padding:7px 13px;border-radius:8px;color:var(--color-text-secondary);text-decoration:none;white-space:nowrap;transition:all .12s}
+.nav-link:hover{background:var(--color-background-secondary);color:var(--color-text-primary)}
+.nav-link.active{background:var(--color-background-secondary);color:var(--color-text-primary);font-weight:500}
+@media(max-width:560px){.nav-brand{width:100%;margin-bottom:4px}}
+
+</style>
+</head>
+<body>
+<div class="nav"><div class="nav-inner"><span class="nav-brand">SG HDB Resale <span>&middot; 2012–2025</span></span><a class="nav-link" href="index.html">Overview</a><a class="nav-link" href="page2_find_your_flat.html">Find a Flat</a><a class="nav-link" href="page3_mrt_proximity.html">MRT Proximity</a><a class="nav-link active" href="page4_hidden_insights.html">Insights</a></div></div>
+<div class="wrap">
+<p class="pg-title">Hidden insights</p>
+<p class="pg-sub">Five things buried in 321,762 transactions that most buyers never see &middot; Source: data.gov.sg + OneMap</p>
+
+<!-- CARD 1: MILLION DOLLAR -->
+<div class="card">
+  <p class="card-kicker">01 &middot; The million-dollar explosion</p>
+  <p class="card-headline">In 2012, exactly two HDB flats crossed $1M. In 2025, it was 1,593 &mdash; one in every sixteen sales.</p>
+  <p class="card-body">The million-dollar flat went from statistical anomaly to a routine Tuesday. The first was a Queenstown executive in July 2012 at exactly $1,000,000; the current record is <strong>$1.66M for a Queenstown 5-room</strong> (June 2025, floors 22&ndash;24). And the million-dollar capital isn't where you'd guess &mdash; it's <strong>Toa Payoh</strong>, whose post-2008 high-rise builds near the city now dominate the leaderboard.</p>
+  <div class="bigstat" id="mil-stats"></div>
+  <div class="vbars" id="mil-bars"></div>
+  <p class="scrub-note">Click a year to explore its breakdown</p>
+  <div id="mil-towns"></div>
+</div>
+
+<!-- CARD 2: LEASE CLIFF -->
+<div class="card">
+  <p class="card-kicker">02 &middot; The 80-year lease cliff</p>
+  <p class="card-headline">Lease decay isn't a slope &mdash; it's a cliff at 80 years, then a long flat shelf.</p>
+  <p class="card-body">Conventional wisdom says every year of lease lost costs you steadily. The 2025 data says otherwise: 4-room flats with 80+ years left command <strong>~$700K</strong>, but cross below the 80-year line and the median drops to <strong>~$580K</strong> &mdash; then barely moves for the next 30 years of decay. A 75-year flat and a 52-year flat trade within $30K of each other. The market prices the cliff, not the slope &mdash; partly because CPF and loan financing rules tighten for shorter leases, and partly because 80+ means a newer flat in every other way too.</p>
+  <div id="cliff-bars"></div>
+  <p class="note">Median 2025 resale price of 4-room flats by remaining lease band. The 80&ndash;85 band spikes higher ($830K) because it's dominated by prime central blocks built around 2008&ndash;2010 (Toa Payoh, Kallang) &mdash; a composition effect on top of the cliff.</p>
+</div>
+
+<!-- CARD 3: SKY PREMIUM -->
+<div class="card">
+  <p class="card-kicker">03 &middot; The sky premium</p>
+  <p class="card-headline">The same 4-room flat costs 89% more on floor 28 than on floor 2.</p>
+  <p class="card-body">Height is one of the strongest price drivers in the entire dataset &mdash; bigger than most town-to-town differences. A ground-band 4-room medians <strong>$570K</strong> in 2025; the same flat type above floor 28 medians <strong>$1.08M</strong>. The premium compounds quietly floor by floor, then accelerates sharply past floor 16 &mdash; where unblocked views begin and supply thins out fast (only ~500 sales above floor 22 all year).</p>
+  <div id="sky-bars"></div>
+</div>
+
+<!-- CARD 4: BOOM FORGOT -->
+<div class="card">
+  <p class="card-kicker">04 &middot; The towns the boom forgot</p>
+  <p class="card-headline">Everyone knows prices surged after COVID. Nobody mentions that Central Area <em>fell</em>.</p>
+  <p class="card-body">From 2021 to 2025, the median Singapore town gained ~30%. <strong>Toa Payoh gained 68%</strong>. But the boom was wildly uneven: prime-adjacent Clementi (+11%) and Marine Parade (+10%) barely moved, and <strong>Central Area actually declined 8%</strong> &mdash; its 2021 median was inflated by a wave of premium flats hitting their 5-year mark, a mix that later normalised. The lesson: town-level "averages" can move on composition, not just demand.</p>
+  <div id="boom-bars"></div>
+</div>
+
+<!-- CARD 5: SMALL FLATS -->
+<div class="card">
+  <p class="card-kicker">05 &middot; Small flats left behind</p>
+  <p class="card-headline">The boom rewarded space: 3-room flats grew 29% in 13 years while executives grew 46%.</p>
+  <p class="card-body">Index every flat type to 100 in 2012 and the gap is unmistakable &mdash; the lines move together until 2020, then fan out. Post-COVID demand chased <strong>space</strong>: families upgrading, working from home, multi-generation living. The humble 3-room &mdash; the most affordable entry point &mdash; appreciated at barely 60% the rate of an executive flat. For buyers, that's a double-edged finding: 3-rooms are the relative bargain of 2025, but history says they also climb slowest.</p>
+  <div class="legend">
+    <span class="li"><span class="lline" style="background:#378ADD"></span>3-room</span>
+    <span class="li"><span class="lline" style="background:#1D9E75"></span>4-room</span>
+    <span class="li"><span class="lline" style="background:#D85A30"></span>5-room</span>
+    <span class="li"><span class="lline" style="background:#7F77DD"></span>Executive</span>
+  </div>
+  <svg id="idx-chart" viewBox="0 0 700 260" style="width:100%;height:auto"></svg>
+</div>
+
+</div>
+<script>
+const D={"MIL":{"2012":{"total":2,"share":0.01,"towns":{"BISHAN":1,"QUEENSTOWN":1},"max":1010000},"2013":{"total":3,"share":0.02,"towns":{"BISHAN":1,"BUKIT TIMAH":1,"KALLANG/WHAMPOA":1},"max":1050000},"2014":{"total":2,"share":0.01,"towns":{"BISHAN":2},"max":1088888},"2015":{"total":12,"share":0.07,"towns":{"CENTRAL AREA":9,"BISHAN":1,"BUKIT TIMAH":1,"KALLANG/WHAMPOA":1},"max":1088000},"2016":{"total":20,"share":0.1,"towns":{"CENTRAL AREA":11,"KALLANG/WHAMPOA":6,"BISHAN":2,"CLEMENTI":1},"max":1150000},"2017":{"total":46,"share":0.22,"towns":{"BISHAN":17,"CENTRAL AREA":10,"TOA PAYOH":6,"QUEENSTOWN":5,"KALLANG/WHAMPOA":3,"BUKIT TIMAH":2,"CLEMENTI":2,"SERANGOON":1},"max":1180000},"2018":{"total":71,"share":0.33,"towns":{"CENTRAL AREA":18,"BISHAN":12,"QUEENSTOWN":12,"TOA PAYOH":9,"KALLANG/WHAMPOA":8,"BUKIT MERAH":7,"BUKIT TIMAH":3,"CLEMENTI":1,"HOUGANG":1},"max":1185000},"2019":{"total":64,"share":0.29,"towns":{"CENTRAL AREA":22,"BISHAN":11,"QUEENSTOWN":9,"TOA PAYOH":8,"KALLANG/WHAMPOA":5,"BUKIT MERAH":5,"BUKIT TIMAH":3,"CLEMENTI":1},"max":1205000},"2020":{"total":82,"share":0.35,"towns":{"CENTRAL AREA":22,"QUEENSTOWN":16,"BISHAN":14,"BUKIT MERAH":13,"TOA PAYOH":7,"CLEMENTI":4,"KALLANG/WHAMPOA":3,"ANG MO KIO":2,"GEYLANG":1},"max":1258000},"2021":{"total":259,"share":0.89,"towns":{"CENTRAL AREA":75,"QUEENSTOWN":38,"BISHAN":37,"TOA PAYOH":31,"BUKIT MERAH":24,"KALLANG/WHAMPOA":19,"BUKIT TIMAH":13,"CLEMENTI":10,"SERANGOON":7,"ANG MO KIO":5},"max":1360000},"2022":{"total":369,"share":1.38,"towns":{"BISHAN":50,"CENTRAL AREA":50,"BUKIT MERAH":45,"TOA PAYOH":45,"QUEENSTOWN":38,"ANG MO KIO":30,"KALLANG/WHAMPOA":26,"CLEMENTI":21,"SERANGOON":15,"BUKIT TIMAH":10},"max":1418000},"2023":{"total":469,"share":1.82,"towns":{"BUKIT MERAH":62,"TOA PAYOH":56,"KALLANG/WHAMPOA":54,"QUEENSTOWN":48,"CENTRAL AREA":48,"BISHAN":45,"CLEMENTI":31,"ANG MO KIO":31,"SERANGOON":15,"WOODLANDS":14},"max":1500000},"2024":{"total":1035,"share":3.72,"towns":{"KALLANG/WHAMPOA":156,"TOA PAYOH":144,"BUKIT MERAH":135,"QUEENSTOWN":109,"BISHAN":78,"ANG MO KIO":67,"CLEMENTI":52,"GEYLANG":50,"CENTRAL AREA":47,"HOUGANG":31},"max":1588000},"2025":{"total":1593,"share":6.35,"towns":{"TOA PAYOH":302,"BUKIT MERAH":216,"QUEENSTOWN":173,"KALLANG/WHAMPOA":147,"CLEMENTI":106,"BISHAN":98,"ANG MO KIO":80,"TAMPINES":68,"GEYLANG":62,"CENTRAL AREA":55},"max":1658888}},"CLIFF":[{"band":"40-45","med":503944,"n":16},{"band":"45-50","med":530000,"n":123},{"band":"50-55","med":548000,"n":571},{"band":"55-60","med":570000,"n":1162},{"band":"60-65","med":560088,"n":1271},{"band":"65-70","med":600000,"n":526},{"band":"70-75","med":585000,"n":1523},{"band":"75-80","med":578000,"n":910},{"band":"80-85","med":830000,"n":412},{"band":"85-90","med":684000,"n":1512},{"band":"90-95","med":700000,"n":2455},{"band":"95-100","med":707500,"n":362}],"SKY":[{"band":"01-03","med":570000,"n":1767},{"band":"04-06","med":608000,"n":2338},{"band":"07-09","med":620000,"n":2242},{"band":"10-12","med":635000,"n":2060},{"band":"13-15","med":678888,"n":1149},{"band":"16-21","med":745000,"n":760},{"band":"22-27","med":962000,"n":283},{"band":"28+","med":1080000,"n":244}],"BOOM":[{"town":"TOA PAYOH","g":67.7,"m21":468000,"m25":785000},{"town":"TAMPINES","g":40.6,"m21":505000,"m25":710000},{"town":"BUKIT BATOK","g":40.2,"m21":428000,"m25":600000},{"town":"BUKIT TIMAH","g":36.9,"m21":703300,"m25":962944},{"town":"SEMBAWANG","g":36.3,"m21":455000,"m25":620000},{"town":"SENGKANG","g":36.3,"m21":485000,"m25":660888},{"town":"PUNGGOL","g":34.4,"m21":500000,"m25":672000},{"town":"ANG MO KIO","g":33.1,"m21":375000,"m25":499000},{"town":"BISHAN","g":32.6,"m21":640444,"m25":849000},{"town":"KALLANG/WHAMPOA","g":31.8,"m21":538000,"m25":709000},{"town":"WOODLANDS","g":31.7,"m21":448000,"m25":590000},{"town":"SERANGOON","g":30.4,"m21":514000,"m25":670000},{"town":"HOUGANG","g":28.7,"m21":478000,"m25":615000},{"town":"PASIR RIS","g":28.6,"m21":555000,"m25":714000},{"town":"BUKIT PANJANG","g":28.4,"m21":475000,"m25":610000},{"town":"BEDOK","g":27.2,"m21":430944,"m25":548000},{"town":"YISHUN","g":27.2,"m21":430000,"m25":547000},{"town":"JURONG WEST","g":24.8,"m21":455000,"m25":568000},{"town":"BUKIT MERAH","g":24.6,"m21":630000,"m25":785000},{"town":"CHOA CHU KANG","g":24.2,"m21":477500,"m25":592888},{"town":"JURONG EAST","g":16.4,"m21":450000,"m25":524000},{"town":"GEYLANG","g":16.3,"m21":490000,"m25":570000},{"town":"QUEENSTOWN","g":15.6,"m21":705000,"m25":815000},{"town":"CLEMENTI","g":11.0,"m21":531500,"m25":590000},{"town":"MARINE PARADE","g":10.5,"m21":488444,"m25":539750},{"town":"CENTRAL AREA","g":-8.0,"m21":665000,"m25":611944}],"IDX":{"3 ROOM":{"2012":100.0,"2013":102.0,"2014":95.7,"2015":89.9,"2016":89.3,"2017":87.5,"2018":84.1,"2019":82.0,"2020":85.5,"2021":97.1,"2022":107.2,"2023":113.0,"2024":121.2,"2025":129.0},"4 ROOM":{"2012":100.0,"2013":103.6,"2014":96.4,"2015":91.6,"2016":92.0,"2017":92.7,"2018":90.9,"2019":90.9,"2020":95.5,"2021":106.8,"2022":117.0,"2023":125.0,"2024":134.1,"2025":143.2},"5 ROOM":{"2012":100.0,"2013":103.3,"2014":96.2,"2015":91.1,"2016":91.3,"2017":91.9,"2018":91.3,"2019":92.8,"2020":97.9,"2021":109.6,"2022":119.2,"2023":125.0,"2024":132.7,"2025":141.5},"EXECUTIVE":{"2012":100.0,"2013":103.9,"2014":100.6,"2015":97.4,"2016":97.4,"2017":97.4,"2018":99.0,"2019":96.6,"2020":100.3,"2021":112.0,"2022":123.4,"2023":132.3,"2024":138.9,"2025":146.2}}};
+const YEARS=[2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025];
+const TOWN_LABELS={"ANG MO KIO":"Ang Mo Kio","BEDOK":"Bedok","BISHAN":"Bishan","BUKIT BATOK":"Bukit Batok","BUKIT MERAH":"Bukit Merah","BUKIT PANJANG":"Bukit Panjang","BUKIT TIMAH":"Bukit Timah","CENTRAL AREA":"Central Area","CHOA CHU KANG":"Choa Chu Kang","CLEMENTI":"Clementi","GEYLANG":"Geylang","HOUGANG":"Hougang","JURONG EAST":"Jurong East","JURONG WEST":"Jurong West","KALLANG/WHAMPOA":"Kallang","MARINE PARADE":"Marine Pde","PASIR RIS":"Pasir Ris","PUNGGOL":"Punggol","QUEENSTOWN":"Queenstown","SEMBAWANG":"Sembawang","SENGKANG":"Sengkang","SERANGOON":"Serangoon","TAMPINES":"Tampines","TOA PAYOH":"Toa Payoh","WOODLANDS":"Woodlands","YISHUN":"Yishun"};
+function fmtK(v){return v>=1000000?('$'+(v/1000000).toFixed(2)+'M'):('$'+Math.round(v/1000)+'K');}
+
+// ---- CARD 1: million dollar ----
+let milYear=2025;
+function buildMilBars(){
+  const max=Math.max(...YEARS.map(y=>D.MIL[y].total));
+  document.getElementById('mil-bars').innerHTML=YEARS.map(y=>{
+    const v=D.MIL[y].total;
+    const h=Math.max(2,(v/max*100));
+    return `<div class="vbar ${y===milYear?'sel':''}" onclick="setMilYear(${y})"><span class="vbar-top">${v>=10?v.toLocaleString():''}</span><div class="vbar-fill" style="height:${h}%"></div><span class="vbar-x">${String(y).slice(2)}</span></div>`;
+  }).join('');
+}
+function buildMilDetail(){
+  const d=D.MIL[milYear];
+  document.getElementById('mil-stats').innerHTML=`
+    <div class="bs-item"><span class="bs-val">${d.total.toLocaleString()}</span><span class="bs-lbl">$1M+ sales in ${milYear}</span></div>
+    <div class="bs-item"><span class="bs-val">${d.share}%</span><span class="bs-lbl">of all ${milYear} sales</span></div>
+    <div class="bs-item"><span class="bs-val">${d.max?fmtK(d.max):'\u2014'}</span><span class="bs-lbl">highest sale</span></div>`;
+  const towns=Object.entries(d.towns);
+  if(!towns.length){document.getElementById('mil-towns').innerHTML='';return;}
+  const tmax=towns[0][1];
+  document.getElementById('mil-towns').innerHTML='<p class="subhead">Top towns in '+milYear+'</p>'+towns.slice(0,8).map(([t,c])=>`
+    <div class="hbar-row"><span class="hbar-lbl town">${TOWN_LABELS[t]||t}</span><div class="hbar-track"><div class="hbar-fill" style="width:${(c/tmax*100).toFixed(0)}%;background:rgba(216,90,48,.6)"></div></div><span class="hbar-val">${c.toLocaleString()}</span></div>`).join('');
+}
+function setMilYear(y){milYear=y;buildMilBars();buildMilDetail();}
+
+// ---- CARD 2: lease cliff ----
+(function(){
+  const rows=D.CLIFF;
+  const max=Math.max(...rows.map(r=>r.med));
+  document.getElementById('cliff-bars').innerHTML=rows.map(r=>{
+    const lo=parseInt(r.band);
+    const isHigh=lo>=80;
+    const col=isHigh?'rgba(29,158,117,.65)':'rgba(216,90,48,.5)';
+    return `<div class="hbar-row"><span class="hbar-lbl">${r.band}y</span><div class="hbar-track"><div class="hbar-fill" style="width:${(r.med/max*100).toFixed(0)}%;background:${col}"></div></div><span class="hbar-val">${fmtK(r.med)}</span><span class="hbar-n">n=${r.n.toLocaleString()}</span></div>`
+      + (r.band==='75-80'?'<div class="divider-lbl">&uarr; below the cliff &middot; above the cliff &darr;</div>':'');
+  }).join('');
+})();
+
+// ---- CARD 3: sky ----
+(function(){
+  const rows=D.SKY;
+  const max=Math.max(...rows.map(r=>r.med));
+  document.getElementById('sky-bars').innerHTML=rows.map(r=>{
+    const t=(r.med-570000)/(1080000-570000);
+    const col=`rgba(55,138,221,${(0.3+Math.max(0,Math.min(1,t))*0.55).toFixed(2)})`;
+    return `<div class="hbar-row"><span class="hbar-lbl">Flr ${r.band}</span><div class="hbar-track"><div class="hbar-fill" style="width:${(r.med/max*100).toFixed(0)}%;background:${col}"></div></div><span class="hbar-val">${fmtK(r.med)}</span><span class="hbar-n">n=${r.n.toLocaleString()}</span></div>`;
+  }).join('');
+})();
+
+// ---- CARD 4: boom ----
+(function(){
+  const rows=D.BOOM;
+  const maxAbs=Math.max(...rows.map(r=>Math.abs(r.g)));
+  document.getElementById('boom-bars').innerHTML=rows.map(r=>{
+    const pos=r.g>=0;
+    const w=(Math.abs(r.g)/maxAbs*100).toFixed(0);
+    const col=pos?'rgba(29,158,117,.6)':'rgba(216,90,48,.75)';
+    return `<div class="hbar-row"><span class="hbar-lbl town">${TOWN_LABELS[r.town]||r.town}</span><div class="hbar-track"><div class="hbar-fill" style="width:${w}%;background:${col}"></div></div><span class="hbar-val" style="color:${pos?'var(--color-text-success)':'var(--color-text-danger)'}">${pos?'+':''}${r.g}%</span><span class="hbar-n">${fmtK(r.m25)}</span></div>`;
+  }).join('');
+})();
+
+// ---- CARD 5: indexed lines ----
+(function(){
+  const svg=document.getElementById('idx-chart');
+  const W=700,H=260,PL=42,PR=14,PT=14,PB=26;
+  const series={'3 ROOM':'#378ADD','4 ROOM':'#1D9E75','5 ROOM':'#D85A30','EXECUTIVE':'#7F77DD'};
+  let vmin=70,vmax=150;
+  const allv=[];
+  Object.keys(series).forEach(ft=>YEARS.forEach(y=>{const v=D.IDX[ft][y];if(v!=null)allv.push(v);}));
+  vmin=Math.floor(Math.min(...allv)/10)*10; vmax=Math.ceil(Math.max(...allv)/10)*10;
+  const x=i=>PL+(W-PL-PR)*i/(YEARS.length-1);
+  const y=v=>PT+(H-PT-PB)*(1-(v-vmin)/(vmax-vmin));
+  let g='';
+  // gridlines
+  for(let v=vmin;v<=vmax;v+=20){
+    g+=`<line x1="${PL}" y1="${y(v)}" x2="${W-PR}" y2="${y(v)}" stroke="var(--color-border-tertiary)" stroke-width="1"/>`;
+    g+=`<text x="${PL-6}" y="${y(v)+3.5}" text-anchor="end" font-size="10" fill="var(--color-text-tertiary)">${v}</text>`;
+  }
+  // baseline at 100
+  g+=`<line x1="${PL}" y1="${y(100)}" x2="${W-PR}" y2="${y(100)}" stroke="var(--color-text-tertiary)" stroke-width="1" stroke-dasharray="4 3"/>`;
+  // x labels
+  YEARS.forEach((yr,i)=>{if(i%2===0)g+=`<text x="${x(i)}" y="${H-8}" text-anchor="middle" font-size="10" fill="var(--color-text-tertiary)">${yr}</text>`;});
+  // lines
+  Object.entries(series).forEach(([ft,col])=>{
+    const pts=YEARS.map((yr,i)=>{const v=D.IDX[ft][yr];return v!=null?`${x(i)},${y(v)}`:null;}).filter(Boolean).join(' ');
+    g+=`<polyline points="${pts}" fill="none" stroke="${col}" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>`;
+    const lastV=D.IDX[ft][2025];
+    g+=`<text x="${W-PR+2}" y="${y(lastV)+3.5}" font-size="10" fill="${col}" text-anchor="start"></text>`;
+  });
+  svg.innerHTML=g;
+})();
+
+setMilYear(2025);
+</script>
+</body>
+</html>
