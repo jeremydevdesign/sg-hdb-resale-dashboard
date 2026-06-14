@@ -75,7 +75,7 @@ svg text{font-family:var(--font-sans)}
 </style>
 </head>
 <body>
-<div class="nav"><div class="nav-inner"><span class="nav-brand">SG HDB Resale <span>&middot; 2012&ndash;2025</span></span><a class="nav-link" href="index.html">Overview</a><a class="nav-link" href="page2_find_your_flat.html">Find a Flat</a><a class="nav-link active" href="page3_mrt_proximity.html">Analysis by Town</a><a class="nav-link" href="page4_hidden_insights.html">Insights</a></div></div>
+<div class="nav"><div class="nav-inner"><span class="nav-brand">SG HDB Resale <span>&middot; 2012–2025</span></span><a class="nav-link" href="index.html">Overview</a><a class="nav-link" href="page2_find_your_flat.html">Find a Flat</a><a class="nav-link active" href="page3_mrt_proximity.html">Analysis by Town</a><a class="nav-link" href="page4_hidden_insights.html">Insights</a></div></div>
 <div class="wrap">
 <p class="pg-title">Analysis by town</p>
 <p class="pg-sub">HDB resale prices by MRT proximity &middot; 321,762 transactions &middot; 2012&ndash;2025 &middot; Source: data.gov.sg + OneMap</p>
@@ -170,9 +170,30 @@ function scopeChip(){return FT_LABELS[activeFT]+' \u00b7 '+(activeTown==='ALL'?'
 // ---- slider ----
 function initSlider(){
   const wrap=document.getElementById('rw'),fill=document.getElementById('rf'),tl=document.getElementById('tl'),tr=document.getElementById('tr');
-  function upd(){const lp=((yL-MINY)/RG*100),rp=((yR-MINY)/RG*100);tl.style.left=`calc(${lp}% - 8px)`;tr.style.left=`calc(${rp}% - 8px)`;fill.style.left=lp+'%';fill.style.width=(rp-lp)+'%';document.getElementById('rdsp').textContent=yL===yR?String(yL):yL+' – '+yR;}
-  function drag(isL){return function(e){const r=wrap.getBoundingClientRect();const x=Math.max(0,Math.min(1,(e.clientX-r.left)/r.width));const y=Math.round(MINY+x*RG);if(isL)yL=Math.min(y,yR);else yR=Math.max(y,yL);upd();refresh();};}
-  [tl,tr].forEach((t,i)=>t.addEventListener('mousedown',e=>{const mv=drag(i===0),up=()=>{document.removeEventListener('mousemove',mv);document.removeEventListener('mouseup',up);};document.addEventListener('mousemove',mv);document.addEventListener('mouseup',up);e.preventDefault();}));
+  function upd(){const lp=((yL-MINY)/RG*100),rp=((yR-MINY)/RG*100);tl.style.left=`calc(${lp}% - 8px)`;tr.style.left=`calc(${rp}% - 8px)`;fill.style.left=lp+'%';fill.style.width=(rp-lp)+'%';document.getElementById('rdsp').textContent=yL===yR?String(yL):yL+' – '+yR;
+    // when stacked, lift the handle that still has room to move so it's clickable
+    if(yL===yR){if(yR>=MAXY){tl.style.zIndex=3;tr.style.zIndex=2;}else{tr.style.zIndex=3;tl.style.zIndex=2;}}else{tl.style.zIndex=2;tr.style.zIndex=2;}}
+  function yearAt(e){const r=wrap.getBoundingClientRect();const x=Math.max(0,Math.min(1,(e.clientX-r.left)/r.width));return Math.round(MINY+x*RG);}
+  function startDrag(e){
+    e.preventDefault();
+    const stacked=(yL===yR);
+    // which handle: if separated, the nearer one; if stacked, decide on first move by direction
+    let active=null; // 'L' or 'R'
+    if(!stacked){active=Math.abs(yearAt(e)-yL)<=Math.abs(yearAt(e)-yR)?'L':'R';}
+    const mv=ev=>{
+      const y=yearAt(ev);
+      if(active===null){ // stacked: pick by direction of first move
+        if(y<yL)active='L';else if(y>yR)active='R';else return;
+      }
+      if(active==='L')yL=Math.min(y,yR);else yR=Math.max(y,yL);
+      upd();refresh();
+    };
+    const up=()=>{document.removeEventListener('mousemove',mv);document.removeEventListener('mouseup',up);};
+    document.addEventListener('mousemove',mv);document.addEventListener('mouseup',up);
+  }
+  [tl,tr].forEach(t=>t.addEventListener('mousedown',startDrag));
+  // also allow grabbing by clicking the track directly
+  wrap.addEventListener('mousedown',e=>{if(e.target===tl||e.target===tr)return;startDrag(e);});
   upd();
 }
 
