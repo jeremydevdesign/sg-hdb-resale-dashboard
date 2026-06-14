@@ -71,7 +71,6 @@ svg text{font-family:var(--font-sans)}
 .nav-brand{font-size:13px;font-weight:600;color:var(--color-text-primary);margin-right:18px;white-space:nowrap;display:flex;align-items:center;gap:7px}
 .nav-brand::before{content:"";width:7px;height:7px;border-radius:50%;background:#1D9E75;display:inline-block}
 .nav-brand span{color:var(--color-text-tertiary);font-weight:400}
-.nav-tabs{display:flex;gap:4px;flex-wrap:wrap}
 .nav-link{font-size:13px;font-weight:500;padding:8px 15px;border-radius:8px;color:var(--color-text-secondary);text-decoration:none;white-space:nowrap;transition:all .12s;border:1px solid transparent;position:relative}
 .nav-link:hover{background:var(--color-background-secondary);color:var(--color-text-primary)}
 .nav-link.active{background:var(--color-text-primary);color:var(--color-background-primary)}
@@ -80,7 +79,7 @@ svg text{font-family:var(--font-sans)}
 </style>
 </head>
 <body>
-<div class="nav"><div class="nav-inner"><span class="nav-brand">SG HDB Resale <span>&middot; 2012–2025</span></span><a class="nav-link active" href="index.html">Overview</a><a class="nav-link" href="page2_find_your_flat.html">Find a Flat</a><a class="nav-link" href="page3_mrt_proximity.html">MRT Proximity</a><a class="nav-link" href="page4_hidden_insights.html">Insights</a></div></div>
+<div class="nav"><div class="nav-inner"><span class="nav-brand">SG HDB Resale <span>&middot; 2012–2025</span></span><a class="nav-link active" href="index.html">Overview</a><a class="nav-link" href="page2_find_your_flat.html">Find a Flat</a><a class="nav-link" href="page3_mrt_proximity.html">Analysis by Town</a><a class="nav-link" href="page4_hidden_insights.html">Insights</a></div></div>
 <div class="wrap">
 <p class="pg-title">Singapore HDB resale market</p>
 <p class="pg-sub">321,762 transactions &middot; Mar 2012 &ndash; Dec 2025 &middot; Source: data.gov.sg</p>
@@ -173,15 +172,25 @@ function initSlider(){
     tl.style.left=`calc(${lp}% - 8px)`;tr.style.left=`calc(${rp}% - 8px)`;
     fill.style.left=lp+'%';fill.style.width=(rp-lp)+'%';
     document.getElementById('rdsp').textContent=yL===yR?String(yL):yL+' – '+yR;
+    if(yL===yR){if(yR>=MAXY){tl.style.zIndex=3;tr.style.zIndex=2;}else{tr.style.zIndex=3;tl.style.zIndex=2;}}else{tl.style.zIndex=2;tr.style.zIndex=2;}
   }
-  function drag(isL){return function(e){
-    const r=wrap.getBoundingClientRect();const x=Math.max(0,Math.min(1,(e.clientX-r.left)/r.width));
-    const y=Math.round(MINY+x*RG);if(isL)yL=Math.min(y,yR);else yR=Math.max(y,yL);upd();refresh();
-  };}
-  [tl,tr].forEach((t,i)=>t.addEventListener('mousedown',e=>{
-    const mv=drag(i===0),up=()=>{document.removeEventListener('mousemove',mv);document.removeEventListener('mouseup',up);};
-    document.addEventListener('mousemove',mv);document.addEventListener('mouseup',up);e.preventDefault();
-  }));
+  function yearAt(e){const r=wrap.getBoundingClientRect();const x=Math.max(0,Math.min(1,(e.clientX-r.left)/r.width));return Math.round(MINY+x*RG);}
+  function startDrag(e){
+    e.preventDefault();
+    const stacked=(yL===yR);
+    let active=null;
+    if(!stacked){active=Math.abs(yearAt(e)-yL)<=Math.abs(yearAt(e)-yR)?'L':'R';}
+    const mv=ev=>{
+      const y=yearAt(ev);
+      if(active===null){if(y<yL)active='L';else if(y>yR)active='R';else return;}
+      if(active==='L')yL=Math.min(y,yR);else yR=Math.max(y,yL);
+      upd();refresh();
+    };
+    const up=()=>{document.removeEventListener('mousemove',mv);document.removeEventListener('mouseup',up);};
+    document.addEventListener('mousemove',mv);document.addEventListener('mouseup',up);
+  }
+  [tl,tr].forEach(t=>t.addEventListener('mousedown',startDrag));
+  wrap.addEventListener('mousedown',e=>{if(e.target===tl||e.target===tr)return;startDrag(e);});
   upd();
 }
 
