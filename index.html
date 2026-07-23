@@ -3,6 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1c1c1a" media="(prefers-color-scheme: dark)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="HDB Resale">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16.png">
+<!-- Google AdSense: after approval, insert your Publisher ID and uncomment the next line -->
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
 <title>Market Overview — SG HDB Resale</title>
 <style>
 :root{
@@ -28,7 +40,7 @@ body{margin:0;background:var(--color-background-primary);color:var(--color-text-
 .headline strong{font-weight:600}
 .filter-block{padding:12px 16px;background:var(--color-background-secondary);border-radius:var(--border-radius-md);margin-bottom:6px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
 .flbl{font-size:11px;font-weight:500;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:.06em;white-space:nowrap;min-width:74px}
-.range-wrap{flex:1;min-width:220px;position:relative;height:22px;display:flex;align-items:center}
+.range-wrap{flex:1;min-width:220px;position:relative;height:22px;display:flex;align-items:center;touch-action:none}
 .r-track{position:absolute;left:0;right:0;height:4px;background:var(--color-border-secondary);border-radius:2px}
 .r-fill{position:absolute;height:4px;background:var(--color-text-primary);border-radius:2px}
 .r-thumb{position:absolute;width:16px;height:16px;border-radius:50%;background:var(--color-background-primary);border:2px solid var(--color-text-primary);transform:translateX(-50%);cursor:pointer;top:50%;margin-top:-8px}
@@ -79,7 +91,7 @@ svg text{font-family:var(--font-sans)}
 </style>
 </head>
 <body>
-<div class="nav"><div class="nav-inner"><span class="nav-brand">SG HDB Resale <span>&middot; 2012–2025</span></span><a class="nav-link active" href="index.html">Overview</a><a class="nav-link" href="page2_find_your_flat.html">Find a Flat</a><a class="nav-link" href="page3_mrt_proximity.html">Analysis by Town</a><a class="nav-link" href="page4_hidden_insights.html">Insights</a></div></div>
+<div class="nav"><div class="nav-inner"><span class="nav-brand">SG HDB Resale <span>&middot; 2012–2025</span></span><a class="nav-link active" href="index.html">Overview</a><a class="nav-link" href="page2_find_your_flat.html">Find a Flat</a><a class="nav-link" href="page3_mrt_proximity.html">Analysis by Town</a><a class="nav-link" href="page4_hidden_insights.html">Insights</a><a class="nav-link" href="privacy.html">Privacy</a></div></div>
 <div class="wrap">
 <p class="pg-title">Singapore HDB resale market</p>
 <p class="pg-sub">321,762 transactions &middot; Mar 2012 &ndash; Dec 2025 &middot; Source: data.gov.sg</p>
@@ -186,11 +198,11 @@ function initSlider(){
       if(active==='L')yL=Math.min(y,yR);else yR=Math.max(y,yL);
       upd();refresh();
     };
-    const up=()=>{document.removeEventListener('mousemove',mv);document.removeEventListener('mouseup',up);};
-    document.addEventListener('mousemove',mv);document.addEventListener('mouseup',up);
+    const up=()=>{document.removeEventListener('pointermove',mv);document.removeEventListener('pointerup',up);document.removeEventListener('pointercancel',up);};
+    document.addEventListener('pointermove',mv);document.addEventListener('pointerup',up);document.addEventListener('pointercancel',up);
   }
-  [tl,tr].forEach(t=>t.addEventListener('mousedown',startDrag));
-  wrap.addEventListener('mousedown',e=>{if(e.target===tl||e.target===tr)return;startDrag(e);});
+  [tl,tr].forEach(t=>t.addEventListener('pointerdown',startDrag));
+  wrap.addEventListener('pointerdown',e=>{if(e.target===tl||e.target===tr)return;startDrag(e);});
   upd();
 }
 
@@ -332,5 +344,12 @@ function refresh(){buildKPIs();buildTrend();buildVol();buildMix();buildTowns();}
 buildHeadline();initSlider();refresh();buildBubble();
 </script>
 <script data-goatcounter="https://jeremydevdesign.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('sw.js').catch(function () {});
+  });
+}
+</script>
 </body>
 </html>
