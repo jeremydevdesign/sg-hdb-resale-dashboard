@@ -114,7 +114,7 @@ table.dt tbody tr.sel{background:var(--color-background-secondary)}
 </style>
 </head>
 <body>
-<div class="nav"><div class="nav-inner"><span class="nav-brand">SG HDB Resale <span>&middot; 2012–2025</span></span><a class="nav-link" href="index.html">Overview</a><a class="nav-link" href="page2_find_your_flat.html">Find a Flat</a><a class="nav-link" href="page3_mrt_proximity.html">Analysis by Town</a><a class="nav-link active" href="page5_by_district.html">By District</a><a class="nav-link" href="page4_hidden_insights.html">Insights</a><a class="nav-link" href="privacy.html">Privacy</a></div></div>
+<div class="nav"><div class="nav-inner"><span class="nav-brand">SG HDB Resale <span>&middot; 2012–2025</span></span><a class="nav-link" href="index.html">Overview</a><a class="nav-link" href="page2_find_your_flat.html">Find a Flat</a><a class="nav-link" href="page3_mrt_proximity.html">Analysis by Town</a><a class="nav-link active" href="page5_by_district.html">By District</a><a class="nav-link" href="page6_this_year.html">This Year</a><a class="nav-link" href="page4_hidden_insights.html">Insights</a><a class="nav-link" href="privacy.html">Privacy</a></div></div>
 <div class="wrap">
 <p class="pg-title">HDB resale by postal district</p>
 <p class="pg-sub" id="pg-sub"></p>
@@ -378,7 +378,11 @@ function bindRankHover(list){
   const shell=tt.parentElement;
   document.querySelectorAll('.d-row').forEach(row=>{
     const r=list.find(x=>x.d===row.dataset.d);
-    row.addEventListener('mousemove',e=>{
+    // Mouse only: on touch a tap emits a synthetic mousemove that shows the
+    // tooltip, but no mouseleave ever follows, so it used to stick forever.
+    // Touch users select the row instead and read the same figures in the table.
+    row.addEventListener('pointermove',e=>{
+      if(e.pointerType!=='mouse')return;
       const b=shell.getBoundingClientRect();
       tt.innerHTML=`<b>D${r.d} ${r.name}</b><br>${fmtMoney(r.price)} median &middot; ${fmtPsf(r.psf)} psf<br>`+
         `${r.count.toLocaleString()} sales &middot; ${fmtPct(r.growth)} &middot; ${fmtM(r.mrt)} to MRT`;
@@ -386,7 +390,8 @@ function bindRankHover(list){
       const x=Math.min(e.clientX-b.left+12,b.width-230);
       tt.style.left=Math.max(0,x)+'px';tt.style.top=(e.clientY-b.top+14)+'px';
     });
-    row.addEventListener('mouseleave',()=>tt.style.opacity=0);
+    row.addEventListener('pointerleave',()=>tt.style.opacity=0);
+    row.addEventListener('pointercancel',()=>tt.style.opacity=0);
     row.addEventListener('click',()=>toggle(row.dataset.d));
     row.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle(row.dataset.d);}});
   });
@@ -442,7 +447,10 @@ function buildTrend(){
 }
 function bindTrendHover(svg,ys,lines,x,y,PL,PR,W){
   const tt=document.getElementById('trend-tt'),shell=svg.parentElement,cross=svg.querySelector('#cross');
-  svg.addEventListener('mousemove',e=>{
+  // Mouse only, same reason as bindRankHover: a touch would strand the
+  // tooltip and crosshair with no mouseleave to clear them.
+  svg.addEventListener('pointermove',e=>{
+    if(e.pointerType!=='mouse')return;
     const b=svg.getBoundingClientRect();
     const px=(e.clientX-b.left)/b.width*W;
     let idx=0,best=1e9;
@@ -457,7 +465,9 @@ function bindTrendHover(svg,ys,lines,x,y,PL,PR,W){
     tt.style.left=Math.max(0,Math.min(e.clientX-sb.left+12,sb.width-190))+'px';
     tt.style.top=(e.clientY-sb.top+14)+'px';
   });
-  svg.addEventListener('mouseleave',()=>{tt.style.opacity=0;cross.setAttribute('opacity','0');});
+  const clearTrend=()=>{tt.style.opacity=0;cross.setAttribute('opacity','0');};
+  svg.addEventListener('pointerleave',clearTrend);
+  svg.addEventListener('pointercancel',clearTrend);
 }
 
 /* ---------- table ---------- */

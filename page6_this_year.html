@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1c1c1a" media="(prefers-color-scheme: dark)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="HDB Resale">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="description" content="Singapore HDB median resale prices month by month this year, by town and flat type — a live year-to-date view of the resale market.">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16.png">
+<!-- Google AdSense: after approval, insert your Publisher ID and uncomment the next line -->
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+<title>This Year — SG HDB Resale</title>
+<style>
+:root{
+  --font-sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --color-background-primary:#fff;--color-background-secondary:#f5f5f4;--color-background-info:#eef4fb;
+  --color-text-primary:#1a1a1a;--color-text-secondary:#6b6b6b;--color-text-tertiary:#a8a8a8;
+  --color-text-info:#2c6cb0;--color-text-success:#0f6e56;--color-text-danger:#993c1d;
+  --color-border-primary:#d4d4d4;--color-border-secondary:#e0e0e0;--color-border-tertiary:#ececec;
+  --border-radius-md:10px;--border-radius-lg:14px;
+}
+@media(prefers-color-scheme:dark){:root{
+  --color-background-primary:#1c1c1a;--color-background-secondary:#2a2a28;--color-background-info:#1e2a38;
+  --color-text-primary:#f5f5f3;--color-text-secondary:#a8a8a4;--color-text-tertiary:#6b6b68;
+  --color-text-info:#6aa9e0;--color-text-success:#4cc4a0;--color-text-danger:#e08a6a;
+  --color-border-primary:#3a3a38;--color-border-secondary:#333331;--color-border-tertiary:#2c2c2a;
+}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--color-background-primary);color:var(--color-text-primary);font-family:var(--font-sans)}
+.wrap{max-width:1000px;margin:0 auto;padding:2rem 1.5rem}
+.pg-title{font-size:22px;font-weight:500;margin:0 0 3px}
+.pg-sub{font-size:13px;color:var(--color-text-secondary);margin:0 0 4px}
+.headline{font-size:14px;color:var(--color-text-primary);margin:0 0 1.5rem;padding:11px 15px;background:var(--color-background-info);border-radius:var(--border-radius-md);line-height:1.5}
+/* nav — kept identical to page5_template.html so the bar doesn't shift between pages */
+.nav{position:sticky;top:0;z-index:50;background:var(--color-background-primary);border-bottom:1px solid var(--color-border-secondary);margin-bottom:0;box-shadow:0 1px 0 rgba(0,0,0,0.02)}
+.nav-inner{max-width:1000px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;gap:6px;flex-wrap:wrap;min-height:58px}
+.nav-brand{font-size:13px;font-weight:600;color:var(--color-text-primary);margin-right:18px;white-space:nowrap;display:flex;align-items:center;gap:7px}
+.nav-brand::before{content:"";width:7px;height:7px;border-radius:50%;background:#1D9E75;display:inline-block}
+.nav-brand span{color:var(--color-text-tertiary);font-weight:400}
+.nav-link{font-size:13px;font-weight:500;padding:8px 15px;border-radius:8px;color:var(--color-text-secondary);text-decoration:none;white-space:nowrap;transition:all .12s;border:1px solid transparent;position:relative}
+.nav-link:hover{background:var(--color-background-secondary);color:var(--color-text-primary)}
+.nav-link.active{background:var(--color-text-primary);color:var(--color-background-primary)}
+@media(max-width:600px){.nav-brand{width:100%;margin:0 0 6px 0}.nav-inner{padding:10px 1rem}.nav-link{font-size:12px;padding:7px 12px}}
+/* controls */
+.ctl{background:var(--color-background-secondary);border-radius:var(--border-radius-lg);padding:13px 15px;margin-bottom:14px}
+.ctl+.ctl{margin-top:-4px}
+.ctl-label{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--color-text-secondary);margin-bottom:8px}
+.pills{display:flex;flex-wrap:wrap;gap:6px}
+.pill{font-size:12px;padding:5px 13px;border-radius:20px;border:.5px solid var(--color-border-secondary);background:transparent;color:var(--color-text-secondary);cursor:pointer;transition:all .15s;white-space:nowrap}
+.pill:hover{color:var(--color-text-primary);border-color:var(--color-border-primary)}
+.pill.on{background:var(--color-text-primary);color:var(--color-background-primary);border-color:var(--color-text-primary);font-weight:500}
+/* heat table */
+.tbl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--color-border-tertiary);border-radius:var(--border-radius-md)}
+table.heat{border-collapse:separate;border-spacing:0;width:100%;font-size:13px}
+table.heat th{font-weight:500;color:var(--color-text-secondary);font-size:11px;text-transform:uppercase;letter-spacing:.05em;
+  padding:9px 10px;background:var(--color-background-secondary);white-space:nowrap;text-align:right}
+/* Only the town column is pinned: .tbl-scroll is a horizontal scroller, so
+   sticking the header row vertically would anchor it to that box, not the
+   viewport, and it would scroll away regardless. */
+table.heat th.tn{text-align:left;position:sticky;left:0;z-index:3}
+table.heat td{padding:0;border-top:1px solid var(--color-border-tertiary);text-align:right;white-space:nowrap}
+table.heat td.tn{text-align:left;padding:8px 10px;color:var(--color-text-primary);font-size:12.5px;
+  position:sticky;left:0;background:var(--color-background-primary);z-index:1;border-right:1px solid var(--color-border-tertiary)}
+/* Uniform height so a cell without a month-on-month line (January, or a
+   suppressed one) still fills its row and the colour wash stays a clean band. */
+.cell{padding:7px 10px;line-height:1.25;min-width:92px;min-height:46px;
+  display:flex;flex-direction:column;justify-content:center;align-items:flex-end}
+.cell .p{font-variant-numeric:tabular-nums;font-size:12.5px}
+.cell .m{font-size:10.5px;font-variant-numeric:tabular-nums;opacity:.75}
+.cell .n{font-size:10px;color:var(--color-text-tertiary);letter-spacing:.02em}
+/* a filled (statistically solid) cell carries dark ink on its colour wash */
+.cell.fill .p{color:#1a1a1a;font-weight:500}
+.cell.fill .m{color:#1a1a1a}
+/* thin + empty cells get no wash, so they can never read as solid */
+.cell.thin{background:transparent!important;border:1px dashed var(--color-border-secondary);border-radius:6px;margin:3px}
+.cell.thin .p{color:var(--color-text-secondary);font-weight:400}
+.cell.none{color:var(--color-text-tertiary)}
+/* legend */
+.legend{display:flex;align-items:center;gap:10px;margin-top:11px;font-size:11px;color:var(--color-text-secondary);flex-wrap:wrap}
+.legend .bar{height:8px;width:170px;border-radius:4px;background:linear-gradient(90deg,#4CAF7D,#A8C862,#F2D06B,#F0A05A,#E8705A)}
+.legend .sw{display:inline-block;width:11px;height:11px;border-radius:3px;border:1px dashed var(--color-border-primary);vertical-align:-1px;margin-right:3px}
+.note{font-size:11.5px;color:var(--color-text-tertiary);line-height:1.55;margin-top:10px}
+.note b{color:var(--color-text-secondary);font-weight:500}
+.foot{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--color-border-tertiary);font-size:11.5px;color:var(--color-text-tertiary);line-height:1.6}
+.foot a{color:var(--color-text-info)}
+@media(max-width:640px){
+  .wrap{padding:1.25rem 1rem}
+  .cell{min-width:84px;padding:6px 8px}
+  table.heat td.tn{max-width:104px;overflow:hidden;text-overflow:ellipsis}
+}
+</style>
+</head>
+<body>
+<div class="nav"><div class="nav-inner"><span class="nav-brand">SG HDB Resale <span>&middot; 2012–2025</span></span><a class="nav-link" href="index.html">Overview</a><a class="nav-link" href="page2_find_your_flat.html">Find a Flat</a><a class="nav-link" href="page3_mrt_proximity.html">Analysis by Town</a><a class="nav-link" href="page5_by_district.html">By District</a><a class="nav-link active" href="page6_this_year.html">This Year</a><a class="nav-link" href="page4_hidden_insights.html">Insights</a><a class="nav-link" href="privacy.html">Privacy</a></div></div>
+<div class="wrap">
+<p class="pg-title">HDB median resale prices this year</p>
+<p class="pg-sub" id="pg-sub"></p>
+<p class="headline" id="headline"></p>
+
+<div class="ctl">
+  <div class="ctl-label">View</div>
+  <div class="pills" id="view-pills">
+    <button class="pill on" data-v="A">One month, by flat type</button>
+    <button class="pill" data-v="B">One flat type, across the year</button>
+  </div>
+</div>
+
+<div class="ctl" id="pick-ctl">
+  <div class="ctl-label" id="pick-label">Month</div>
+  <div class="pills" id="pick-pills"></div>
+</div>
+
+<div class="ctl">
+  <div class="ctl-label">Flat age</div>
+  <div class="pills" id="age-pills">
+    <button class="pill on" data-a="all">All ages</button>
+    <button class="pill" data-a="new">Under 10 years</button>
+  </div>
+</div>
+
+<div class="tbl-scroll"><table class="heat"><thead><tr id="hd"></tr></thead><tbody id="bd"></tbody></table></div>
+
+<div class="legend">
+  <span>Cheapest</span><span class="bar"></span><span>Most expensive</span>
+  <span style="margin-left:6px"><span class="sw"></span>fewer than <b id="lg-thin"></b> sales &mdash; median shown, but treat with care</span>
+</div>
+<p class="note" id="note"></p>
+
+<div class="foot">
+  Source: <a href="https://data.gov.sg/collections/189/view">data.gov.sg</a> resale flat prices.
+  Medians are of actual recorded resale transactions, not asking prices or valuations.
+  <span id="foot-extra"></span>
+</div>
+</div>
+
+<script>
+const YD={"meta":{"year":2026,"months":["2026-01","2026-02","2026-03","2026-04","2026-05","2026-06","2026-07"],"towns":["ANG MO KIO","BEDOK","BISHAN","BUKIT BATOK","BUKIT MERAH","BUKIT PANJANG","BUKIT TIMAH","CENTRAL AREA","CHOA CHU KANG","CLEMENTI","GEYLANG","HOUGANG","JURONG EAST","JURONG WEST","KALLANG/WHAMPOA","MARINE PARADE","PASIR RIS","PUNGGOL","QUEENSTOWN","SEMBAWANG","SENGKANG","SERANGOON","TAMPINES","TOA PAYOH","WOODLANDS","YISHUN"],"fts":["3 ROOM","4 ROOM","5 ROOM","EXECUTIVE"],"totals":{"all":13861,"new":2475},"thinFlag":5,"thinHide":3,"newMaxAge":10,"generated":"2026-07-26"},"d":{"all":[[[[435000,31],[607500,26],[929000,8],[1201888,1]],[[434500,44],[574000,56],[830000,15],[1100000,3]],[[465000,7],[810000,15],[970000,7],[1335000,4]],[[418888,23],[630000,52],[855000,28],[969444,6]],[[430000,31],[936944,30],[1085000,11],null],[[500000,11],[570000,33],[680000,14],[822000,9]],[[460000,2],[970000,1],[1188000,1],null],[[566000,7],[802000,11],[1190000,2],null],[[458000,7],[560000,53],[690000,37],[789000,10]],[[435000,22],[790500,20],[921000,6],[1160000,1]],[[395000,34],[711444,26],[905000,11],[850000,1]],[[443000,25],[620444,50],[778500,24],[911500,10]],[[415000,17],[537500,14],[798000,11],[1035000,4]],[[389000,28],[535000,54],[645458,38],[800000,17]],[[448000,25],[950000,33],[967000,10],[960000,1]],[[460000,6],[587500,6],[1050000,2],null],[[630000,5],[635000,29],[755400,20],[926000,18]],[[540000,17],[700000,95],[784000,34],[836000,3]],[[535000,32],[1081444,28],[1038500,2],[1210000,1]],[[525000,17],[590000,39],[675000,29],[760000,7]],[[539900,16],[635000,85],[710000,61],[852944,12]],[[475000,9],[634000,12],[793000,4],[1090000,6]],[[495000,33],[668000,77],[787500,52],[990000,14]],[[365000,39],[960000,43],[920000,6],[950888,1]],[[417500,22],[540000,93],[646944,56],[902500,18]],[[435000,37],[568000,80],[707500,16],[872944,6]]],[[[456500,26],[742500,20],[1100000,11],null],[[425000,39],[715000,31],[805000,18],[974000,2]],[[530000,5],[754000,12],[1000000,5],[1168000,1]],[[408000,29],[645000,44],[792444,18],[849000,8]],[[461000,26],[880000,25],[1081444,16],null],[[476000,7],[545000,33],[720000,17],[850000,7]],[[460000,1],null,[1115000,1],null],[[515000,3],[770000,3],[1157500,2],null],[[470000,7],[545000,35],[630000,21],[836500,10]],[[425444,16],[829500,16],[826000,5],null],[[375000,15],[916000,11],[960900,4],null],[[460000,19],[625000,45],[820000,13],[925000,7]],[[395888,12],[545000,9],[650000,7],[898000,4]],[[395000,27],[530000,37],[620888,33],[812944,10]],[[426000,14],[929000,16],[925000,9],[880000,1]],[[480000,3],[580000,1],[890000,2],null],[[605000,1],[635888,23],[727500,16],[950000,7]],[[562888,11],[680000,53],[806500,30],[873888,1]],[[460000,23],[1015000,19],[1051500,6],[1265000,2]],[[532500,4],[585444,30],[630000,21],[799000,2]],[[555888,7],[626000,58],[729000,34],[848000,5]],[[515000,5],[680000,11],[980000,7],[1228000,1]],[[485000,20],[672500,54],[830000,37],[960000,18]],[[370000,21],[1005000,21],[1210000,9],null],[[418000,19],[568777,63],[648000,29],[946000,12]],[[426500,32],[550000,55],[680000,15],[875000,9]]],[[[440000,29],[635000,37],[1120000,15],[1287500,2]],[[420000,36],[583000,33],[770000,17],[1000000,4]],[[542000,3],[820000,17],[950000,9],[1080000,3]],[[410000,26],[665000,41],[831444,28],[899444,6]],[[463000,29],[944000,32],[1044444,16],null],[[445000,9],[571500,34],[737000,21],[895000,2]],[null,[939000,2],[1118000,3],[1389000,2]],[[510000,9],[990000,6],[1157500,2],null],[[475000,6],[550000,33],[670000,31],[830000,9]],[[456000,16],[664000,16],[1420000,4],[1135000,1]],[[390000,29],[808888,29],[1328000,3],[1098000,1]],[[456000,19],[610000,43],[760000,21],[920000,7]],[[412500,20],[575000,10],[692500,12],[1080000,1]],[[375000,25],[540000,59],[645000,41],[783800,5]],[[468000,25],[868000,23],[915500,6],null],[[438000,3],[705000,4],[1050000,1],null],[[340000,1],[650444,32],[730000,23],[915000,17]],[[541000,17],[660000,67],[809000,36],[796500,2]],[[418000,38],[994444,20],[1330000,7],null],[[520000,5],[620888,33],[653000,18],[760000,7]],[[539444,14],[650500,68],[703500,42],[858000,5]],[[428000,9],[655944,14],[806000,3],[1040000,6]],[[491500,32],[668000,65],[821000,38],[930000,5]],[[380000,34],[1012500,38],[1090000,18],[1225000,1]],[[470500,21],[551500,68],[662500,42],[930000,12]],[[447500,40],[557500,66],[705000,28],[899000,8]]],[[[430000,33],[670000,21],[1150000,17],null],[[415000,37],[561944,44],[740000,15],[1055000,4]],[[538000,5],[813444,20],[932500,10],[1268000,3]],[[428444,34],[665000,53],[787500,26],[919000,4]],[[400000,27],[903000,37],[943000,11],null],[[477500,6],[622944,28],[670000,19],[830000,9]],[[545000,1],[950000,3],[1060000,2],null],[[542000,5],[1200000,7],null,null],[[418000,8],[560000,44],[666000,25],[852500,6]],[[420000,15],[637000,12],[1350000,5],null],[[358788,29],[858000,21],[900000,9],[1090000,1]],[[459000,24],[618888,41],[693000,16],[930000,7]],[[425000,11],[545000,10],[778888,7],[950000,5]],[[416500,26],[530000,51],[645000,38],[805000,10]],[[458888,19],[985388,22],[969000,8],null],[[442500,6],[575000,2],null,null],[[582000,1],[630000,17],[750000,14],[950000,11]],[[530000,17],[674000,62],[742500,24],[848888,1]],[[431444,22],[1017500,22],[1288888,9],null],[[507000,15],[621000,26],[662500,16],[739444,6]],[[547500,16],[640000,58],[710000,37],[860000,9]],[[450000,5],[658000,7],[794000,3],[1125000,2]],[[483000,41],[675000,71],[815000,53],[980000,19]],[[375000,39],[979444,28],[999000,8],null],[[420000,13],[548000,71],[648500,51],[920000,19]],[[438000,27],[560000,63],[695000,15],[888000,5]]],[[[416000,35],[780000,29],[850000,17],null],[[390000,40],[669000,40],[779500,18],[1021500,6]],[[536000,4],[788000,15],[991500,10],[1240000,3]],[[423000,31],[645888,51],[819000,29],[882500,6]],[[507500,30],[950000,39],[1035000,17],null],[[414000,6],[549000,42],[720000,15],[888000,7]],[null,[920000,1],[1150000,1],null],[[570000,6],[1178000,11],[1310000,2],null],[[400500,4],[545000,49],[644000,16],[830000,5]],[[437500,22],[900000,27],[1140000,8],[1030000,2]],[[352500,28],[632000,23],[1049000,4],[1015000,3]],[[450000,23],[628000,55],[724944,18],[986500,14]],[[404000,18],[544444,14],[710000,13],[928000,5]],[[362500,24],[523000,57],[640000,47],[787500,8]],[[468000,31],[825000,25],[1013888,6],null],[[480000,5],[660000,7],[1100000,2],null],[null,[630000,20],[724000,22],[880444,14]],[[560400,10],[690000,76],[825000,37],[787500,2]],[[480000,41],[986500,28],[1150000,9],null],[[510000,7],[600000,19],[650000,13],[765000,5]],[[548888,11],[650000,65],[680000,51],[830000,7]],[[455000,13],[790000,7],[824000,8],[925000,1]],[[490000,27],[677000,87],[836500,46],[955444,14]],[[388000,37],[985000,30],[1043400,12],[960000,1]],[[435000,15],[550000,78],[660000,45],[928888,17]],[[419000,36],[523000,55],[660000,18],[990000,3]]],[[[428000,43],[595000,33],[970000,9],null],[[425000,45],[585000,39],[925000,9],[1015000,4]],[[538000,5],[768444,20],[988000,11],[1320000,3]],[[420000,27],[618000,49],[785500,30],[895000,4]],[[436444,24],[1000000,33],[1046000,22],null],[[430000,9],[568888,25],[705444,18],[818000,3]],[[500000,1],[802500,2],[1045000,4],[1419444,2]],[[568000,3],[1005000,6],[1510000,4],null],[[480000,5],[577000,46],[666500,34],[825000,5]],[[436944,20],[875500,14],[1243000,7],[1100000,1]],[[359000,26],[766444,14],[792000,5],[1188000,1]],[[442888,27],[605444,54],[730000,16],[989000,10]],[[420000,13],[577500,10],[722500,6],[929000,2]],[[412250,22],[527500,44],[618444,36],[778000,9]],[[449000,28],[945000,26],[976250,12],[1000000,5]],[[468000,3],[639000,4],null,null],[[630000,3],[628000,26],[716250,22],[908000,21]],[[549000,20],[670000,67],[800000,45],[850000,4]],[[735000,27],[1092500,26],[1260000,8],null],[[552500,6],[580000,31],[595000,11],[762500,4]],[[541500,12],[625000,81],[696000,54],[858000,13]],[[438000,9],[638000,19],[938000,7],[970000,1]],[[465000,35],[650000,74],[824444,44],[980000,17]],[[368000,35],[1029000,32],[1222500,8],[988000,3]],[[428888,23],[545000,67],[668000,51],[899000,18]],[[428000,36],[546500,74],[695000,24],[1056500,2]]],[[[426000,28],[875000,20],[1135000,8],[1187500,2]],[[404500,40],[615000,41],[725000,22],[1041500,6]],[[480000,5],[720000,13],[970000,9],[1190000,3]],[[408000,31],[625000,57],[792944,34],[830000,6]],[[399000,14],[900000,39],[950000,15],null],[[479000,12],[606000,37],[674444,20],[885000,8]],[null,[938000,1],[1225000,3],null],[[600000,3],[1240000,1],[1495000,2],null],[[391137,3],[550000,48],[652500,28],[852500,8]],[[456500,16],[927000,15],[1059000,4],null],[[375000,29],[705000,17],[1006944,2],null],[[452500,21],[634444,46],[830000,25],[989000,6]],[[395900,18],[530500,10],[705000,8],[900000,1]],[[365000,18],[535000,45],[630000,35],[748000,11]],[[435500,28],[778800,23],[977500,8],[1080000,1]],[[460000,1],[645000,3],[1100000,7],null],[[494500,2],[635500,38],[730000,19],[920000,17]],[[555000,17],[688000,67],[753000,47],[773000,1]],[[560000,37],[1055000,32],[1368000,7],null],[[529694,4],[612000,25],[630000,19],[763000,4]],[[536500,14],[628000,83],[706000,43],[850000,11]],[[490000,5],[678888,17],[891500,10],[1100000,5]],[[511500,32],[672000,77],[766500,56],[950000,15]],[[367500,18],[1020000,33],[1078000,9],[980000,1]],[[381000,14],[555000,66],[645000,60],[914000,16]],[[440444,36],[550000,63],[670000,23],[862500,6]]]],"new":[[[null,[1070000,6],null,null],[[628800,3],[884000,10],null,null],[null,null,null,null],[[540000,7],[678000,29],[866500,24],null],[[698000,5],[967500,4],[1479000,2],null],[null,null,null,null],[null,null,null,null],[null,null,null,null],[[482000,3],[615000,7],[735000,7],null],[null,[1250000,5],[1490000,2],null],[[752500,6],[1040000,3],null,null],[[624000,4],[672888,7],[798444,2],null],[null,null,null,null],[[510000,3],[645000,3],[745444,4],null],[[830000,5],[1082500,12],null,null],[null,null,null,null],[null,null,null,null],[[558000,6],[692500,30],[826500,10],null],[[830000,7],[1130000,7],null,null],[[527444,14],[665000,19],[795000,10],null],[[539000,6],[688888,11],[850000,6],null],[null,null,null,null],[[614000,8],[770000,19],[870000,11],null],[[814000,6],[1100000,15],[1268000,1],null],[[527500,2],[659000,12],[768888,5],null],[[500000,7],[600000,17],null,null]],[[null,[1054444,8],[1157500,2],null],[[625000,1],[875000,5],null,null],[null,null,null,null],[[525000,5],[687500,24],[828000,11],null],[[770000,4],[950000,3],null,null],[null,null,null,null],[null,null,null,null],[null,null,null,null],[[474000,2],[690000,1],[734444,2],null],[null,[1067944,4],[1498000,1],null],[null,null,null,null],[[525000,3],[685000,10],[828000,1],null],[null,null,null,null],[[515000,4],null,null,null],[[670000,1],[1045000,7],null,null],[null,null,null,null],[null,null,null,null],[[562888,5],[686944,22],[876500,8],null],[[759000,8],[1120000,3],null,null],[[532500,2],[650000,15],[815000,3],null],[[559000,3],[690000,5],[780000,7],null],[null,null,null,null],[[586000,1],[766500,16],[927500,12],null],[[801500,2],[1160000,10],[1380000,1],null],[[499000,2],[641000,6],[728000,3],null],[[525000,1],[612888,7],[764444,2],null]],[[[798000,1],[1033000,12],[1210000,6],null],[[646000,4],[850000,5],null,null],[null,null,null,null],[[532000,7],[682500,30],[835000,23],null],[[690000,2],[970000,9],null,null],[null,null,null,null],[null,null,null,null],[null,null,null,null],[[490888,3],[600000,5],[695400,6],null],[[665000,1],[1264000,2],[1460000,3],null],[[703944,2],[954444,2],null,null],[[547500,2],[683000,9],null,null],[null,null,null,null],[null,[655000,5],[728000,5],null],[[650000,3],[978000,9],null,null],[null,null,null,null],[null,null,null,null],[[530000,8],[706500,18],[854000,10],null],[[830000,9],[1115000,2],null,null],[[530000,3],[680000,19],[804000,6],null],[[559250,4],[670000,9],[962000,9],null],[null,null,null,null],[[550000,3],[760000,20],[899000,10],null],[[863000,5],[1097500,18],[1370000,1],null],[[538888,3],[655000,11],[775888,7],null],[[486000,4],[612500,16],[770000,7],null]],[[[747500,2],[1025000,5],[1192500,8],null],[[645000,2],[860000,7],null,null],[null,null,null,null],[[515000,13],[680000,37],[823888,17],null],[[740000,3],[985000,7],[1728000,1],null],[null,null,null,null],[null,null,null,null],[null,null,null,null],[[487000,3],[635888,11],[702500,4],null],[null,[1120000,1],[1350000,3],null],[[797944,2],null,null,null],[[526000,3],[725000,8],[1038888,1],null],[null,null,null,null],[[510000,5],[655000,5],[792000,2],null],[[682500,2],[1006888,13],null,null],[null,null,null,null],[null,null,null,null],[[562000,5],[664833,22],[815500,8],null],[[790000,5],[1048888,9],[1438000,1],null],[[520000,10],[665584,14],[809444,4],null],[[530000,4],[666500,12],[938944,8],null],[null,null,null,null],[[608000,7],[780000,26],[925000,19],null],[[815100,9],[1063000,16],null,null],[[525000,3],[662500,10],[774388,2],null],[[469000,4],[605000,15],[720000,3],null]],[[null,[965000,9],[1190000,3],null],[[623000,3],[974000,10],[1390000,2],null],[null,null,null,null],[[530000,11],[676500,30],[825000,21],null],[[746944,6],[950000,13],null,null],[null,null,null,null],[null,null,null,null],[null,null,null,null],[[505000,1],[589000,14],[700000,3],null],[[757944,2],[1106500,8],[1458000,3],null],[[798500,2],null,null,null],[[570000,1],[708888,15],[1046500,2],null],[[565000,1],null,null,null],[[540500,2],[650000,3],[748000,1],null],[[840000,5],[1200000,3],null,null],[null,null,null,null],[null,null,null,null],[[590000,3],[710000,28],[844000,10],null],[[833000,11],[1039400,8],null,null],[[518000,5],[635000,11],[817500,4],null],[[534000,2],[745000,6],[800000,5],null],[null,null,null,null],[[562500,2],[770000,29],[920000,11],null],[[780000,5],[1070000,15],[1260000,1],null],[[501500,2],[662500,8],[773000,6],null],[[491500,6],[605400,8],[790000,3],null]],[[null,[993888,11],[1171444,4],null],[[630000,4],[1037500,6],[1240000,2],null],[null,null,null,null],[[500000,9],[684500,22],[800000,17],null],[[769000,4],[969000,8],null,null],[null,null,null,null],[null,null,null,null],[null,null,null,null],[[500000,1],[605000,12],[735000,9],null],[[809000,2],[1143444,2],[1390000,2],null],[[761500,2],[1064444,4],null,null],[[578100,2],[695000,11],[1130000,1],null],[null,null,null,null],[[515000,3],[648888,5],null,null],[[704000,5],[1060000,14],null,null],[null,null,null,null],[null,null,null,null],[[555000,4],[680000,19],[885000,13],null],[[795000,9],[1140000,6],[1447500,2],null],[[580000,5],[680000,11],[830000,1],null],[[545000,5],[690000,9],[802888,8],null],[null,null,null,null],[[614844,2],[770000,19],[939000,15],null],[[828000,11],[1060000,20],[1380000,1],null],[[534000,4],[661500,12],[797500,4],null],[[500000,3],[615000,17],[770000,4],null]],[[[720000,3],[1024000,8],[1150000,3],null],[null,[940000,13],[1280000,1],null],[null,null,null,null],[[520000,7],[668000,25],[809000,26],null],[null,[956500,8],null,null],[null,null,null,null],[null,null,null,null],[null,null,null,null],[null,[597500,12],[705000,4],null],[[733944,2],[1105000,4],[1310000,1],null],[[720000,1],[1082500,2],null,null],[[584000,4],[674944,6],[1073888,1],null],[[540000,1],null,null,null],[[499000,2],[616000,2],[755000,3],null],[[780000,3],[1070000,6],[1330000,1],null],[null,null,null,null],[null,null,null,null],[[580000,9],[740000,21],[852500,12],null],[[804000,16],[1111000,11],[1430000,3],null],[[526888,3],[675000,12],[845000,3],null],[[537500,4],[691500,8],[862500,10],null],[null,null,null,null],[[615944,10],[761000,26],[905000,15],null],[[818888,3],[1084000,18],[1350000,1],null],[[521500,4],[641000,8],[770000,5],null],[[477000,3],[600000,13],[775000,5],null]]]}};
+const META=YD.meta, D=YD.d;
+const MONTH_NAMES=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const FT_LABEL={'3 ROOM':'3-Room','4 ROOM':'4-Room','5 ROOM':'5-Room','EXECUTIVE':'Executive'};
+
+let view='A';                            // A = month x flat type, B = flat type x month
+let mIdx=META.months.length-1;           // latest month
+let fIdx=1;                              // 4-Room, the most traded type
+let age='all';
+
+const mLabel=m=>MONTH_NAMES[+m.slice(5,7)-1];
+const titleCase=s=>s.replace(/\w\S*/g,w=>w[0]+w.slice(1).toLowerCase()).replace(/\bMrt\b/,'MRT');
+const money=v=>'$'+v.toLocaleString();
+const pct=v=>(v>=0?'+':'')+v.toFixed(1)+'%';
+
+/* cell = [median,count] | null.  Returns how much trust the cell has earned. */
+function grade(cell){
+  if(!cell)return 'none';
+  if(cell[1]<META.thinHide)return 'hide';   // 1-2 sales: a "median" here would be wrong
+  if(cell[1]<META.thinFlag)return 'thin';   // shown, but never coloured
+  return 'ok';
+}
+function cellAt(a,m,t,f){return D[a][m][t][f];}
+
+/* Colour runs across every solid cell currently on screen, so the wash always
+   answers "expensive relative to what is in front of me". */
+function visibleRange(){
+  let lo=Infinity,hi=-Infinity;
+  const each=(m,f)=>{
+    for(let t=0;t<META.towns.length;t++){
+      const c=cellAt(age,m,t,f);
+      if(grade(c)!=='ok')continue;
+      if(c[0]<lo)lo=c[0];
+      if(c[0]>hi)hi=c[0];
+    }
+  };
+  if(view==='A')META.fts.forEach((_,f)=>each(mIdx,f));
+  else META.months.forEach((_,m)=>each(m,fIdx));
+  return lo===Infinity?null:[lo,hi];
+}
+const STOPS=[[76,175,125],[168,200,98],[242,208,107],[240,160,90],[232,112,90]];
+function heatColor(v,lo,hi){
+  const t=hi===lo?0.5:(v-lo)/(hi-lo);
+  const x=t*(STOPS.length-1), i=Math.min(Math.floor(x),STOPS.length-2), k=x-i;
+  const c=STOPS[i].map((s,j)=>Math.round(s+(STOPS[i+1][j]-s)*k));
+  return `rgb(${c[0]},${c[1]},${c[2]})`;
+}
+
+/* Month-on-month move, only when BOTH months are solid enough to compare.
+   Two thin medians can swing wildly on one unusual unit, so we stay quiet. */
+function mom(m,t,f){
+  if(m===0)return null;                       // no December to compare January against
+  const cur=cellAt(age,m,t,f), prv=cellAt(age,m-1,t,f);
+  if(grade(cur)!=='ok'||grade(prv)!=='ok')return null;
+  return (cur[0]-prv[0])/prv[0]*100;
+}
+
+function cellHTML(m,t,f,range){
+  const c=cellAt(age,m,t,f), g=grade(c);
+  if(g==='none')return `<div class="cell none">&ndash;</div>`;
+  const n=`<div class="n">${c[1]} sale${c[1]===1?'':'s'}</div>`;
+  if(g==='hide')return `<div class="cell thin"><div class="p">&ndash;</div>${n}</div>`;
+  if(g==='thin')return `<div class="cell thin"><div class="p">${money(c[0])}</div>${n}</div>`;
+  const bg=range?heatColor(c[0],range[0],range[1]):'transparent';
+  const d=mom(m,t,f);
+  const mv=d===null?'':`<div class="m">${d>=0?'▲':'▼'} ${pct(d).replace('+','')}</div>`;
+  return `<div class="cell fill" style="background:${bg}"><div class="p">${money(c[0])}</div>${mv}</div>`;
+}
+
+function render(){
+  const range=visibleRange();
+  const cols=view==='A'
+    ? META.fts.map((f,i)=>({label:FT_LABEL[f],f:i,m:mIdx}))
+    : META.months.map((m,i)=>({label:mLabel(m),f:fIdx,m:i}));
+
+  document.getElementById('hd').innerHTML=
+    `<th class="tn">Town</th>`+cols.map(c=>`<th>${c.label}</th>`).join('');
+
+  document.getElementById('bd').innerHTML=META.towns.map((town,t)=>
+    `<tr><td class="tn">${titleCase(town)}</td>`+
+    cols.map(c=>`<td>${cellHTML(c.m,t,c.f,range)}</td>`).join('')+`</tr>`
+  ).join('');
+
+  // pickers
+  const pick=document.getElementById('pick-pills');
+  document.getElementById('pick-label').textContent=view==='A'?'Month':'Flat type';
+  pick.innerHTML=view==='A'
+    ? META.months.map((m,i)=>`<button class="pill${i===mIdx?' on':''}" data-i="${i}">${mLabel(m)}</button>`).join('')
+    : META.fts.map((f,i)=>`<button class="pill${i===fIdx?' on':''}" data-i="${i}">${FT_LABEL[f]}</button>`).join('');
+  pick.querySelectorAll('.pill').forEach(b=>b.onclick=()=>{
+    if(view==='A')mIdx=+b.dataset.i;else fIdx=+b.dataset.i;render();});
+
+  document.getElementById('note').innerHTML=noteHTML();
+}
+
+function noteHTML(){
+  const last=META.months[META.months.length-1];
+  const bits=[];
+  bits.push(`Every figure is a median of completed resale transactions in the month shown. `+
+    `Cells with fewer than <b>${META.thinFlag}</b> sales are left uncoloured and marked with their sale count; `+
+    `below <b>${META.thinHide}</b> the median is withheld entirely, because a "typical price" drawn from one or two `+
+    `sales says more about those particular flats than about the town.`);
+  bits.push(`Colour is scaled across the whole table you are looking at, so in the flat-type view it largely reflects `+
+    `flat size &mdash; a 3-room will read cheap next to a 5-room. Compare towns down a column, not across one.`);
+  if(view==='A'&&mIdx===0)bits.push(`Month-on-month change is blank for ${mLabel(META.months[0])} because this page covers ${META.year} only.`);
+  bits.push(`Month-on-month change is shown only where both months clear the ${META.thinFlag}-sale bar. `+
+    `Even then it tracks which flats happened to sell, not just what prices did: where a town mixes older and `+
+    `newer blocks, the median follows the month's mix. Most changes here sit under 5%, but a few run past 30% `+
+    `on that effect alone.`);
+  bits.push(`<b>${mLabel(last)} ${META.year}</b> is the most recent month on record and may still be filling &mdash; `+
+    `HDB registrations can lag completion by several weeks, so its counts may rise.`);
+  return bits.join(' ');
+}
+
+function headline(){
+  // Widest gap in the latest month, across the four flat types, using solid cells only.
+  const m=META.months.length-1;
+  let best=null;
+  META.fts.forEach((ft,f)=>{
+    let lo=null,hi=null;
+    META.towns.forEach((town,t)=>{
+      const c=cellAt('all',m,t,f);
+      if(grade(c)!=='ok')return;
+      if(!lo||c[0]<lo[0])lo=[c[0],town];
+      if(!hi||c[0]>hi[0])hi=[c[0],town];
+    });
+    if(lo&&hi&&lo[1]!==hi[1]){
+      const ratio=hi[0]/lo[0];
+      if(!best||ratio>best.ratio)best={ratio,ft,lo,hi};
+    }
+  });
+  if(!best)return '';
+  return `In ${mLabel(META.months[m])} ${META.year}, the widest gap was among <b>${FT_LABEL[best.ft].toLowerCase()}</b> flats: `+
+    `a median of <b>${money(best.hi[0])}</b> in ${titleCase(best.hi[1])} against <b>${money(best.lo[0])}</b> in `+
+    `${titleCase(best.lo[1])} &mdash; ${best.ratio.toFixed(1)}&times; the price for the same flat size.`;
+}
+
+function init(){
+  const ms=META.months, first=mLabel(ms[0]), last=mLabel(ms[ms.length-1]);
+  document.getElementById('pg-sub').innerHTML=
+    `${META.year} year to date &middot; ${first}&ndash;${last} &middot; `+
+    `${META.totals.all.toLocaleString()} transactions &middot; ${META.towns.length} towns &middot; Source: data.gov.sg`;
+  document.getElementById('headline').innerHTML=headline();
+  document.getElementById('lg-thin').textContent=META.thinFlag;
+  document.getElementById('foot-extra').innerHTML=
+    `Flat age is measured from the lease commencement year, so &ldquo;under ${META.newMaxAge} years&rdquo; `+
+    `covers flats whose lease began in ${META.year-META.newMaxAge+1} or later `+
+    `(${META.totals.new.toLocaleString()} of ${META.totals.all.toLocaleString()} sales this year). `+
+    `The rest of this site covers 2012&ndash;2025; this page is the one place the current, incomplete year is shown.`;
+
+  document.getElementById('view-pills').querySelectorAll('.pill').forEach(b=>b.onclick=()=>{
+    view=b.dataset.v;
+    document.querySelectorAll('#view-pills .pill').forEach(x=>x.classList.toggle('on',x===b));
+    render();});
+  document.getElementById('age-pills').querySelectorAll('.pill').forEach(b=>b.onclick=()=>{
+    age=b.dataset.a;
+    document.querySelectorAll('#age-pills .pill').forEach(x=>x.classList.toggle('on',x===b));
+    render();});
+  render();
+}
+init();
+</script>
+<script>
+// GoatCounter analytics
+window.goatcounter={no_onload:location.hostname==='localhost'};
+</script>
+<script data-goatcounter="https://sghdbresale.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('sw.js').catch(function () {});
+  });
+}
+</script>
+</body>
+</html>
