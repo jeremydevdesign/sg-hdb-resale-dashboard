@@ -114,7 +114,7 @@ table.dt tbody tr.sel{background:var(--color-background-secondary)}
 </style>
 </head>
 <body>
-<div class="nav"><div class="nav-inner"><span class="nav-brand">SG HDB Resale <span>&middot; 2012–2025</span></span><a class="nav-link" href="index.html">Overview</a><a class="nav-link" href="page2_find_your_flat.html">Find a Flat</a><a class="nav-link" href="page3_mrt_proximity.html">Analysis by Town</a><a class="nav-link active" href="page5_by_district.html">By District</a><a class="nav-link" href="page6_this_year.html">This Year</a><a class="nav-link" href="page4_hidden_insights.html">Insights</a><a class="nav-link" href="privacy.html">Privacy</a></div></div>
+<div class="nav"><div class="nav-inner"><span class="nav-brand">SG HDB Resale</span><a class="nav-link" href="index.html">Overview</a><a class="nav-link" href="page2_find_your_flat.html">Find a Flat</a><a class="nav-link" href="page3_mrt_proximity.html">Analysis by Town</a><a class="nav-link active" href="page5_by_district.html">By District</a><a class="nav-link" href="page6_this_year.html">This Year</a><a class="nav-link" href="page4_hidden_insights.html">Insights</a><a class="nav-link" href="privacy.html">Privacy</a></div></div>
 <div class="wrap">
 <p class="pg-title">HDB resale by postal district</p>
 <p class="pg-sub" id="pg-sub"></p>
@@ -584,5 +584,12 @@ window.matchMedia('(prefers-color-scheme:dark)').addEventListener('change',rende
 window.goatcounter={no_onload:location.hostname==='localhost'};
 </script>
 <script data-goatcounter="https://sghdbresale.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('sw.js').catch(function () {});
+  });
+}
+</script>
 </body>
 </html>
