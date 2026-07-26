@@ -9,6 +9,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="HDB Resale">
 <meta name="mobile-web-app-capable" content="yes">
+<meta name="description" content="Five counterintuitive findings in Singapore's HDB resale data — the million-dollar explosion, the 80-year lease cliff, the storey premium, and more.">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
@@ -229,8 +230,6 @@ function setMilYear(y){milYear=y;buildMilBars();buildMilDetail();}
   Object.entries(series).forEach(([ft,col])=>{
     const pts=YEARS.map((yr,i)=>{const v=D.IDX[ft][yr];return v!=null?`${x(i)},${y(v)}`:null;}).filter(Boolean).join(' ');
     g+=`<polyline points="${pts}" fill="none" stroke="${col}" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>`;
-    const lastV=D.IDX[ft][2025];
-    g+=`<text x="${W-PR+2}" y="${y(lastV)+3.5}" font-size="10" fill="${col}" text-anchor="start"></text>`;
   });
   svg.innerHTML=g;
 })();

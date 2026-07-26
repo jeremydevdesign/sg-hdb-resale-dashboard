@@ -9,6 +9,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="HDB Resale">
 <meta name="mobile-web-app-capable" content="yes">
+<meta name="description" content="A decade of Singapore HDB resale prices — median price by flat type, transaction volume, flat-type mix and a town-by-town comparison, 2012-2025.">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
@@ -110,10 +111,10 @@ svg text{font-family:var(--font-sans)}
   <span class="flbl">Flat type</span>
   <div class="pill-row" id="ft-pills">
     <button class="pill on" data-ft="ALL">All types</button>
-    <button class="pill on" data-ft="3 ROOM">3-room</button>
-    <button class="pill on" data-ft="4 ROOM">4-room</button>
-    <button class="pill on" data-ft="5 ROOM">5-room</button>
-    <button class="pill on" data-ft="EXECUTIVE">Executive</button>
+    <button class="pill" data-ft="3 ROOM">3-room</button>
+    <button class="pill" data-ft="4 ROOM">4-room</button>
+    <button class="pill" data-ft="5 ROOM">5-room</button>
+    <button class="pill" data-ft="EXECUTIVE">Executive</button>
   </div>
 </div>
 
@@ -169,7 +170,7 @@ const isDark=matchMedia('(prefers-color-scheme: dark)').matches;
 const grid=isDark?'rgba(255,255,255,0.08)':'rgba(0,0,0,0.07)';
 const axc=isDark?'rgba(255,255,255,0.5)':'rgba(0,0,0,0.4)';
 
-let yL=2012,yR=2025,activeFts=new Set(['ALL','3 ROOM','4 ROOM','5 ROOM','EXECUTIVE']),sortMode='med';
+let yL=2012,yR=2025,activeFts=new Set(['ALL']),sortMode='med';
 const MINY=2012,MAXY=2025,RG=MAXY-MINY;
 
 function years(){return YEARS_ALL.filter(y=>y>=yL&&y<=yR);}
@@ -203,6 +204,10 @@ function initSlider(){
   }
   [tl,tr].forEach(t=>t.addEventListener('pointerdown',startDrag));
   wrap.addEventListener('pointerdown',e=>{if(e.target===tl||e.target===tr)return;startDrag(e);});
+  [tl,tr].forEach((t,i)=>t.addEventListener('keydown',e=>{
+    const d=e.key==='ArrowLeft'?-1:e.key==='ArrowRight'?1:0;if(!d)return;e.preventDefault();
+    if(i===0)yL=Math.max(MINY,Math.min(yL+d,yR));else yR=Math.min(MAXY,Math.max(yR+d,yL));
+    upd();refresh();}));
   upd();
 }
 
@@ -214,23 +219,38 @@ function buildHeadline(){
 }
 
 // ---- KPIs ----
+// Count of a flat type in one year, summed over towns ("ALL" is stored whole).
+function cntFor(ft,y){
+  if(ft==='ALL')return D.OVERALL[y].cnt;
+  let c=0;Object.values(D.TOWN_FT).forEach(td=>{c+=td[ft]?.[y]?.cnt||0;});return c;
+}
+/* One stored series (all types, or a single type) gives the exact median.
+   Several types have to be recombined, and medians can't be pooled without the
+   raw rows, so they are weighted by their own sale counts and labelled
+   "avg median" rather than passed off as one. */
+function exactMedian(){return afts().length===1;}
 function buildKPIs(){
   const ys=years(),a=afts();
   function medFor(y){
-    const vals=[];a.forEach(ft=>{if(ft==='ALL')vals.push(D.OVERALL[y].med);else if(D.FT_TREND[ft][y])vals.push(D.FT_TREND[ft][y]);});
-    return vals.length?Math.round(vals.reduce((x,z)=>x+z,0)/vals.length):0;
+    let num=0,den=0;
+    a.forEach(ft=>{
+      const m=ft==='ALL'?D.OVERALL[y].med:D.FT_TREND[ft][y];
+      if(!m)return;
+      const w=a.length===1?1:cntFor(ft,y);
+      num+=m*w;den+=w;
+    });
+    return den?Math.round(num/den):0;
   }
   const p0=medFor(ys[0]),p1=medFor(ys[ys.length-1]);
+  const mlbl=exactMedian()?'Median':'Avg median';
   const chg=p0?((p1-p0)/p0*100).toFixed(1):'0';
-  let txns;
-  if(a.length===1&&a[0]==='ALL')txns=ys.reduce((s,y)=>s+D.OVERALL[y].cnt,0);
-  else{const useFt=a.filter(f=>f!=='ALL');txns=ys.reduce((s,y)=>{let c=0;useFt.forEach(ft=>{Object.values(D.TOWN_FT).forEach(td=>{c+=td[ft]?.[y]?.cnt||0;});});return s+c;},0);if(!useFt.length)txns=ys.reduce((s,y)=>s+D.OVERALL[y].cnt,0);}
+  const txns=ys.reduce((s,y)=>s+a.reduce((c,ft)=>c+cntFor(ft,y),0),0);
   const mil=ys.reduce((s,y)=>s+(D.MIL[y]||0),0);
   let topTown='',topCnt=0;
   Object.keys(D.TOWN_FT).forEach(t=>{let c=0;ys.forEach(y=>{a.forEach(ft=>{c+=D.TOWN_FT[t][ft]?.[y]?.cnt||0;});});if(c>topCnt){topCnt=c;topTown=TOWN_LABELS[t];}});
   document.getElementById('kgrid').innerHTML=`
-    <div class="kcard"><p class="klbl">Median ${ys[0]}</p><p class="kval">${fmtK(p0)}</p><p class="ksub">Base year</p></div>
-    <div class="kcard"><p class="klbl">Median ${ys[ys.length-1]}</p><p class="kval">${fmtK(p1)}</p><p class="ksub ${parseFloat(chg)>=0?'up':'dn'}">${parseFloat(chg)>=0?'+':''}${chg}% growth</p></div>
+    <div class="kcard"><p class="klbl">${mlbl} ${ys[0]}</p><p class="kval">${fmtK(p0)}</p><p class="ksub">Base year</p></div>
+    <div class="kcard"><p class="klbl">${mlbl} ${ys[ys.length-1]}</p><p class="kval">${fmtK(p1)}</p><p class="ksub ${parseFloat(chg)>=0?'up':'dn'}">${parseFloat(chg)>=0?'+':''}${chg}% growth</p></div>
     <div class="kcard"><p class="klbl">Transactions</p><p class="kval">${txns>=1000?Math.round(txns/1000)+'K':txns}</p><p class="ksub">${ys[0]}\u2013${ys[ys.length-1]}</p></div>
     <div class="kcard"><p class="klbl">$1M+ sales</p><p class="kval">${mil.toLocaleString()}</p><p class="ksub">In range</p></div>
     <div class="kcard"><p class="klbl">Most active</p><p class="kval" style="font-size:15px;padding-top:3px">${topTown}</p><p class="ksub">Highest volume</p></div>`;
@@ -242,7 +262,9 @@ function buildTrend(){
   const ftl=a.length===1?FT_LABELS[a[0]]:'multiple types';
   document.getElementById('trend-chip').textContent=yL+'\u2013'+yR+' \u00b7 '+ftl;
   const lines=[];
-  if(a.includes('ALL'))lines.push({key:'ALL',color:'#888780',dash:true,data:ys.map(y=>D.OVERALL[y].med)});
+  // "All types" is exclusive, so it never shares the chart with a flat type and
+  // needs no dash to tell it apart from one.
+  if(a.includes('ALL'))lines.push({key:'ALL',color:FT_COLORS.ALL,dash:false,data:ys.map(y=>D.OVERALL[y].med)});
   ['3 ROOM','4 ROOM','5 ROOM','EXECUTIVE'].forEach(ft=>{if(a.includes(ft))lines.push({key:ft,color:FT_COLORS[ft],dash:false,data:ys.map(y=>D.FT_TREND[ft][y]||null)});});
   document.getElementById('trend-leg').innerHTML=lines.map(l=>`<span class="li"><span class="lline" style="${l.dash?'border-top:2px dashed '+l.color+';background:transparent':'background:'+l.color}"></span>${FT_LABELS[l.key]}</span>`).join('');
   const W=700,H=300,PL=48,PR=16,PT=14,PB=28;
@@ -263,9 +285,7 @@ function buildTrend(){
 function buildVol(){
   const ys=years(),a=afts();
   document.getElementById('vol-chip').textContent=yL+'\u2013'+yR;
-  let data;
-  if(a.includes('ALL')&&a.length===1)data=ys.map(y=>D.OVERALL[y].cnt);
-  else{const useFt=a.filter(f=>f!=='ALL');data=ys.map(y=>{let t=0;useFt.forEach(ft=>{Object.values(D.TOWN_FT).forEach(td=>{t+=td[ft]?.[y]?.cnt||0;});});return useFt.length?t:D.OVERALL[y].cnt;});}
+  const data=ys.map(y=>a.reduce((c,ft)=>c+cntFor(ft,y),0));
   const W=340,H=240,PL=36,PR=8,PT=10,PB=26;
   const vmax=Math.max(...data);
   const bw=(W-PL-PR)/ys.length*0.7,gap=(W-PL-PR)/ys.length*0.3;
@@ -297,13 +317,18 @@ function buildTowns(){
   const sl=sortMode==='med'?'by median':sortMode==='chg'?'by growth':'by volume';
   const ftl=a.length===1?FT_LABELS[a[0]]:'multiple types';
   document.getElementById('town-chip').textContent=yL+'\u2013'+yR+' \u00b7 '+ftl+' \u00b7 '+sl;
+  // Sales-weighted blend of the stored medians, so a town's figure follows its
+  // actual transaction mix rather than treating a 12-sale year like a 900-sale one.
   const rows=Object.keys(D.TOWN_FT).map(town=>{
-    const meds=[],cnts=[];
-    ys.forEach(y=>{let ms=0,mc=0,c=0;a.forEach(ft=>{const d=D.TOWN_FT[town][ft]?.[y];if(d){ms+=d.med;mc++;c+=d.cnt;}});if(mc){meds.push(ms/mc);cnts.push(c);}});
-    if(!meds.length)return null;
-    const med=Math.round(meds.reduce((x,z)=>x+z,0)/meds.length);
-    const cnt=cnts.reduce((x,z)=>x+z,0);
-    const chg=meds.length>1?+((meds[meds.length-1]-meds[0])/meds[0]*100).toFixed(1):0;
+    const yearly=[];let num=0,cnt=0;
+    ys.forEach(y=>{
+      let n=0,c=0;
+      a.forEach(ft=>{const d=D.TOWN_FT[town][ft]?.[y];if(d){n+=d.med*d.cnt;c+=d.cnt;}});
+      if(c){yearly.push(n/c);num+=n;cnt+=c;}
+    });
+    if(!yearly.length)return null;
+    const med=Math.round(num/cnt);
+    const chg=yearly.length>1?+((yearly[yearly.length-1]-yearly[0])/yearly[0]*100).toFixed(1):0;
     return{town,label:TOWN_LABELS[town],med,cnt,chg};
   }).filter(Boolean);
   rows.sort((a2,b)=>sortMode==='med'?b.med-a2.med:sortMode==='chg'?b.chg-a2.chg:b.cnt-a2.cnt);
@@ -332,13 +357,36 @@ function buildBubble(){
   towns.forEach(([t,d])=>{const cx=x(d.med25),cy=y(d.growth),r=rad(d.vol);g+=`<circle cx="${cx}" cy="${cy}" r="${r}" fill="rgba(55,138,221,0.32)" stroke="#378ADD" stroke-width="1" class="bub" data-town="${t}"/>`;if(r>11)g+=`<text x="${cx}" y="${cy+3}" text-anchor="middle" font-size="8.5" fill="var(--color-text-primary)" pointer-events="none" opacity="0.75">${TOWN_LABELS[t].length>9?TOWN_LABELS[t].slice(0,8)+'\u2026':TOWN_LABELS[t]}</text>`;});
   const svg=document.getElementById('bubble-svg');svg.innerHTML=g;
   const tt=document.getElementById('bubble-tt');
+  // Mouse only: on touch a tap emits a synthetic mousemove that shows the
+  // tooltip, but no mouseleave ever follows, so it would stick forever.
   svg.querySelectorAll('.bub').forEach(c=>{
-    c.addEventListener('mousemove',e=>{const t=c.dataset.town,d=D.BUBBLE[t];tt.innerHTML=`<strong>${TOWN_LABELS[t]}</strong><br>2025 median: ${fmtK(d.med25)}<br>Growth: +${d.growth}%<br>${d.vol.toLocaleString()} sales`;const sh=svg.parentElement.getBoundingClientRect();tt.style.left=(e.clientX-sh.left+12)+'px';tt.style.top=(e.clientY-sh.top+12)+'px';tt.style.opacity='1';});
-    c.addEventListener('mouseleave',()=>tt.style.opacity='0');
+    c.addEventListener('pointermove',e=>{
+      if(e.pointerType!=='mouse')return;
+      const t=c.dataset.town,d=D.BUBBLE[t];
+      tt.innerHTML=`<strong>${TOWN_LABELS[t]}</strong><br>2025 median: ${fmtK(d.med25)}<br>`+
+        `Growth: ${d.growth>=0?'+':''}${d.growth}%<br>${d.vol.toLocaleString()} sales`;
+      const sh=svg.parentElement.getBoundingClientRect();
+      tt.style.left=Math.max(0,Math.min(e.clientX-sh.left+12,sh.width-170))+'px';
+      tt.style.top=(e.clientY-sh.top+12)+'px';tt.style.opacity='1';});
+    c.addEventListener('pointerleave',()=>tt.style.opacity='0');
+    c.addEventListener('pointercancel',()=>tt.style.opacity='0');
   });
 }
 
-document.getElementById('ft-pills').addEventListener('click',e=>{const b=e.target.closest('.pill');if(!b)return;const ft=b.dataset.ft;if(activeFts.has(ft)){if(activeFts.size>1){activeFts.delete(ft);b.classList.remove('on');}}else{activeFts.add(ft);b.classList.add('on');}refresh();});
+// "All types" is exclusive: it is its own stored series, so mixing it with
+// specific types would mean averaging a median with the medians inside it.
+document.getElementById('ft-pills').addEventListener('click',e=>{
+  const b=e.target.closest('.pill');if(!b)return;
+  const ft=b.dataset.ft;
+  if(ft==='ALL')activeFts=new Set(['ALL']);
+  else{
+    activeFts.delete('ALL');
+    if(activeFts.has(ft))activeFts.delete(ft);else activeFts.add(ft);
+    if(!activeFts.size)activeFts=new Set(['ALL']);
+  }
+  document.querySelectorAll('#ft-pills .pill').forEach(p=>p.classList.toggle('on',activeFts.has(p.dataset.ft)));
+  refresh();
+});
 
 function refresh(){buildKPIs();buildTrend();buildVol();buildMix();buildTowns();}
 buildHeadline();initSlider();refresh();buildBubble();

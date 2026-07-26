@@ -9,6 +9,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="HDB Resale">
 <meta name="mobile-web-app-capable" content="yes">
+<meta name="description" content="How much does living near an MRT station cost? Singapore HDB resale prices across five distance bands, by town and flat type, 2012-2025.">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
@@ -90,7 +91,7 @@ svg text{font-family:var(--font-sans)}
 <div class="nav"><div class="nav-inner"><span class="nav-brand">SG HDB Resale</span><a class="nav-link" href="index.html">Overview</a><a class="nav-link" href="page2_find_your_flat.html">Find a Flat</a><a class="nav-link active" href="page3_mrt_proximity.html">Analysis by Town</a><a class="nav-link" href="page5_by_district.html">By District</a><a class="nav-link" href="page6_this_year.html">This Year</a><a class="nav-link" href="page4_hidden_insights.html">Insights</a><a class="nav-link" href="privacy.html">Privacy</a></div></div>
 <div class="wrap">
 <p class="pg-title">Analysis by town</p>
-<p class="pg-sub">HDB resale prices by MRT proximity &middot; 311,032 transactions &middot; 2012&ndash;2025 &middot; Source: data.gov.sg + OneMap</p>
+<p class="pg-sub">HDB resale prices by distance to the nearest MRT station &middot; 311,032 transactions &middot; 2012&ndash;2025 &middot; Source: data.gov.sg + OneMap</p>
 
 <div class="fbar"><span class="flbl">Town</span><div id="town-pills" style="display:flex;gap:6px;flex-wrap:wrap"></div></div>
 <div class="fbar"><span class="flbl">Year range</span>
@@ -206,6 +207,10 @@ function initSlider(){
   [tl,tr].forEach(t=>t.addEventListener('pointerdown',startDrag));
   // also allow grabbing by clicking the track directly
   wrap.addEventListener('pointerdown',e=>{if(e.target===tl||e.target===tr)return;startDrag(e);});
+  [tl,tr].forEach((t,i)=>t.addEventListener('keydown',e=>{
+    const d=e.key==='ArrowLeft'?-1:e.key==='ArrowRight'?1:0;if(!d)return;e.preventDefault();
+    if(i===0)yL=Math.max(MINY,Math.min(yL+d,yR));else yR=Math.min(MAXY,Math.max(yR+d,yL));
+    upd();refresh();}));
   upd();
 }
 
@@ -278,9 +283,16 @@ function updWarn(){
   if(sb){const ab=BK.filter((_,i)=>counts()[i]>0).map(b=>BLABELS[BK.indexOf(b)]);document.getElementById('warn-text').textContent=TOWN_LABELS[activeTown]+' transactions in this selection are almost entirely in the '+ab[0]+' band \u2014 cross-band comparison has limited meaning here.';}
 }
 function buildFootnote(){
-  const base='The "Over 2km" band can read high in towns like Punggol, Tampines and Pasir Ris \u2014 a composition effect (newer, larger flats far from MRT), not a proximity premium.';
+  const base='<b>Distances are to MRT stations only \u2014 LRT stops are not counted.</b> That matters most in the '+
+    'LRT towns: every Punggol block reads as over 500m from a station, and Sengkang, Bukit Panjang and Choa Chu Kang '+
+    'are pushed outward too, even where an LRT stop is a few minutes\u2019 walk away. Distance is also measured against '+
+    'today\u2019s network, so a 2013 sale near a line that opened in 2020 still counts as close to it.';
+  const comp=' The "Over 2km" band can read high in towns like Punggol, Tampines and Pasir Ris \u2014 a composition '+
+    'effect (newer, larger flats far from MRT), not a proximity premium.';
+  const scope=' This page covers the 311,032 sales whose block could be matched to a station; 392 sales elsewhere on '+
+    'the site could not be geocoded, which is why its totals read 311,424.';
   const blendNote=yL!==yR?' Prices across a multi-year range are transaction-count-weighted blends of yearly medians (exact for a single year).':'';
-  document.getElementById('footnote').textContent=base+blendNote;
+  document.getElementById('footnote').innerHTML=base+comp+scope+blendNote;
 }
 function refresh(){updWarn();buildKPIs();buildTrend();buildBar();buildDonut();buildTable();buildFootnote();}
 function setFT(b){document.querySelectorAll('.pill[data-ft]').forEach(x=>x.classList.remove('on'));b.classList.add('on');activeFT=b.dataset.ft;refresh();}

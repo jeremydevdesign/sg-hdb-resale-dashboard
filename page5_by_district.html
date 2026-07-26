@@ -257,10 +257,13 @@ function rows(){
     let growth=null;
     if(s&&e&&s.count>=THIN_HIDE&&e.count>=THIN_HIDE&&s.price>0)
       growth=(e.price-s.price)/s.price*100;
+    // Every median is shown, however few sales it rests on — the sale count
+    // and the † marker are what tell you how much to trust it. Only the
+    // derived comparisons (growth, trend line) hold back on thin cells.
     out.push({d,name:META.names[d],towns:(META.towns[d]||[]),
       count:a.count,
-      price:a.count>=THIN_HIDE?a.price:null,
-      psf:a.count>=THIN_HIDE&&a.psm!=null?a.psm/SQM_TO_SQFT:null,
+      price:a.price,
+      psf:a.psm!=null?a.psm/SQM_TO_SQFT:null,
       mrt:a.mrt,lease:a.lease,growth,
       thin:a.count<THIN_FLAG});
   }
@@ -556,9 +559,11 @@ function buildFoot(){
     `sales-weighted average of those yearly medians, which is close to but not identical with the median `+
     `of all the pooled transactions; the column heading changes to "avg median" to say so. `+
     `Growth compares the selected year with ${GROWTH_YEARS} years earlier. Prices are not adjusted for inflation.<br><br>`+
-    `<b>Small samples.</b> Districts with fewer than ${THIN_FLAG} sales in the current selection are marked †; `+
-    `below ${THIN_HIDE} sales the price is withheld and only the count is shown. These are real transactions, `+
-    `so they are ranked alongside the rest &mdash; read them next to their sale count.<br><br>`+
+    `<b>Small samples.</b> Districts with fewer than ${THIN_FLAG} sales in the current selection are marked †. `+
+    `Every median is shown however thin it is &mdash; these are real transactions, so they are ranked `+
+    `alongside the rest; read them next to their sale count. Growth and the trend line are the exception: `+
+    `they need at least ${THIN_HIDE} sales at both ends, because a comparison built on one or two sales `+
+    `tracks those particular flats rather than the market.<br><br>`+
     `Data: HDB resale flat prices via data.gov.sg, ${MINY}&ndash;${MAXY} `+
     `(${META.matched.toLocaleString()} transactions). Not affiliated with HDB or any government agency.`;
 }
