@@ -135,7 +135,7 @@ input[type=range]{accent-color:#1D9E75}
   <button class="pill on" data-ft="5 ROOM" onclick="tog(this)">5-room</button>
   <button class="pill on" data-ft="EXECUTIVE" onclick="tog(this)">Executive</button>
 </div>
-<div class="fbar"><span class="flbl">Walk to MRT</span>
+<div class="fbar"><span class="flbl">Dist to MRT</span>
   <button class="pill" data-mrt="W200" onclick="setMrt(this)">&le;200m</button>
   <button class="pill" data-mrt="W500" onclick="setMrt(this)">&le;500m</button>
   <button class="pill" data-mrt="5001k" onclick="setMrt(this)">&le;1km</button>
@@ -270,8 +270,9 @@ function renderRank(){
   const dist=maxMrt==='ANY'?'':` on blocks ${MRT_LABEL[maxMrt]}`;
   bits.push(`Every price counts only ${LC.year} sales${lease}${dist}, so the median moves with your filters \u2014 `+
     `tighten them far enough and a slice can rest on very few transactions.`);
-  bits.push('Distances are to MRT stations only; LRT stops are not counted, which pushes Punggol, Sengkang, '+
-    'Bukit Panjang and Choa Chu Kang further out than they actually walk.');
+  bits.push('Distance is measured straight-line from the block to the nearest station, not along a walking '+
+    'route \u2014 a real walk is normally longer. Distances are to MRT stations only; LRT stops are not counted, '+
+    'which pushes Punggol, Sengkang, Bukit Panjang and Choa Chu Kang further out than they actually are.');
   if(sortMode==='growth')bits.push(`Growth compares ${LC.baseYear} with ${LC.year} within the same distance band, `+
     `and is left blank where either year has fewer than ${LC.growthMin} sales.`);
   document.getElementById('rank-note').textContent=bits.join(' ');
