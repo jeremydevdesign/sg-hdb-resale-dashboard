@@ -17,6 +17,7 @@
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6257747517291345" crossorigin="anonymous"></script>
 <title>Find Your Flat — SG HDB Resale</title>
+<script>(function(){try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
 <style>
 :root{
   --font-sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
@@ -27,13 +28,20 @@
   --color-border-primary:#d4d4d4;--color-border-secondary:#e0e0e0;--color-border-tertiary:#ececec;--color-border-info:#cfe0f2;
   --border-radius-md:10px;--border-radius-lg:14px;
 }
-@media(prefers-color-scheme:dark){:root{
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --color-background-primary:#1c1c1a;--color-background-secondary:#2a2a28;--color-background-info:#1e2a38;
   --color-background-success:#16302a;--color-background-danger:#332019;
   --color-text-primary:#f5f5f3;--color-text-secondary:#a8a8a4;--color-text-tertiary:#6b6b68;
   --color-text-info:#6aa9e0;--color-text-success:#4cc4a0;--color-text-danger:#e08a6a;
   --color-border-primary:#3a3a38;--color-border-secondary:#333331;--color-border-tertiary:#2c2c2a;--color-border-info:#2a3a4a;
 }}
+:root[data-theme="dark"]{
+  --color-background-primary:#1c1c1a;--color-background-secondary:#2a2a28;--color-background-info:#1e2a38;
+  --color-background-success:#16302a;--color-background-danger:#332019;
+  --color-text-primary:#f5f5f3;--color-text-secondary:#a8a8a4;--color-text-tertiary:#6b6b68;
+  --color-text-info:#6aa9e0;--color-text-success:#4cc4a0;--color-text-danger:#e08a6a;
+  --color-border-primary:#3a3a38;--color-border-secondary:#333331;--color-border-tertiary:#2c2c2a;--color-border-info:#2a3a4a;
+}
 *{box-sizing:border-box}
 body{margin:0;background:var(--color-background-primary);color:var(--color-text-primary);font-family:var(--font-sans)}
 .wrap{max-width:1000px;margin:0 auto;padding:2rem 1.5rem}
@@ -123,10 +131,14 @@ input[type=range]{accent-color:#1D9E75}
 .footer-nav a{font-size:13px;color:var(--color-text-secondary);text-decoration:none}
 .footer-nav a:hover{color:var(--color-text-primary)}
 .footer-note{font-size:12px;color:var(--color-text-tertiary)}
+.theme-toggle{margin-left:auto;display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;padding:0;border:1px solid var(--color-border-secondary);background:transparent;border-radius:8px;color:var(--color-text-secondary);cursor:pointer;transition:background .12s,color .12s,border-color .12s}
+.theme-toggle:hover{background:var(--color-background-secondary);color:var(--color-text-primary);border-color:var(--color-border-primary)}
+.theme-toggle svg{width:17px;height:17px;display:block}
+@media(max-width:600px){.theme-toggle{width:30px;height:30px}}
 </style>
 </head>
 <body>
-<div class="nav"><div class="nav-inner"><span class="nav-brand">SG HDB Resale</span><a class="nav-link" href="index.html">Overview</a><a class="nav-link active" href="page2_find_your_flat.html">Find a Flat</a><a class="nav-link" href="page3_mrt_proximity.html">Analysis by Town</a><a class="nav-link" href="page5_by_district.html">By District</a><a class="nav-link" href="page6_this_year.html">This Year</a><a class="nav-link" href="page4_hidden_insights.html">Insights</a></div></div></div>
+<div class="nav"><div class="nav-inner"><span class="nav-brand">SG HDB Resale</span><a class="nav-link" href="index.html">Overview</a><a class="nav-link active" href="page2_find_your_flat.html">Find a Flat</a><a class="nav-link" href="page3_mrt_proximity.html">Analysis by Town</a><a class="nav-link" href="page5_by_district.html">By District</a><a class="nav-link" href="page6_this_year.html">This Year</a><a class="nav-link" href="page4_hidden_insights.html">Insights</a><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme"></button></div></div></div>
 <div class="wrap">
 <p class="pg-title">Find your flat</p>
 <p class="pg-sub">Set your budget and filters to see where you can buy &middot; <span id="data-window">based on recent sales</span> &middot; Source: data.gov.sg + OneMap</p>
@@ -447,5 +459,15 @@ if ('serviceWorker' in navigator) {
 <nav class="footer-nav"><a href="privacy.html">Privacy</a><!-- future: <a href="about.html">About</a><a href="contact.html">Contact</a> --></nav>
 <span class="footer-note">Data: data.gov.sg &amp; OneMap</span>
 </div></footer>
+<script>
+(function(){
+var root=document.documentElement,btn=document.getElementById('theme-toggle');if(!btn)return;
+var MOON="<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z\"/></svg>",SUN="<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"5\"/><line x1=\"12\" y1=\"1\" x2=\"12\" y2=\"3\"/><line x1=\"12\" y1=\"21\" x2=\"12\" y2=\"23\"/><line x1=\"4.22\" y1=\"4.22\" x2=\"5.64\" y2=\"5.64\"/><line x1=\"18.36\" y1=\"18.36\" x2=\"19.78\" y2=\"19.78\"/><line x1=\"1\" y1=\"12\" x2=\"3\" y2=\"12\"/><line x1=\"21\" y1=\"12\" x2=\"23\" y2=\"12\"/><line x1=\"4.22\" y1=\"19.78\" x2=\"5.64\" y2=\"18.36\"/><line x1=\"18.36\" y1=\"5.64\" x2=\"19.78\" y2=\"4.22\"/></svg>";
+function eff(){var t=root.getAttribute('data-theme');return (t==='light'||t==='dark')?t:((window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches)?'dark':'light');}
+function paint(){var d=eff()==='dark';btn.innerHTML=d?SUN:MOON;var l=d?'Switch to light theme':'Switch to dark theme';btn.setAttribute('aria-label',l);btn.setAttribute('title',l);}
+btn.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';root.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}paint();if(typeof window.onThemeChange==='function'){try{window.onThemeChange();}catch(e){}}});
+paint();
+})();
+</script>
 </body>
 </html>

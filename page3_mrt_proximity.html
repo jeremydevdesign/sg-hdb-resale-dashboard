@@ -17,6 +17,7 @@
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6257747517291345" crossorigin="anonymous"></script>
 <title>Analysis by Town — SG HDB Resale</title>
+<script>(function(){try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
 <style>
 :root{
   --font-sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
@@ -26,12 +27,18 @@
   --color-border-primary:#d4d4d4;--color-border-secondary:#e0e0e0;--color-border-tertiary:#ececec;--color-border-warning:#ecd9b8;
   --border-radius-md:10px;--border-radius-lg:14px;
 }
-@media(prefers-color-scheme:dark){:root{
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --color-background-primary:#1c1c1a;--color-background-secondary:#2a2a28;--color-background-info:#1e2a38;--color-background-warning:#2e2415;
   --color-text-primary:#f5f5f3;--color-text-secondary:#a8a8a4;--color-text-tertiary:#6b6b68;
   --color-text-info:#6aa9e0;--color-text-success:#4cc4a0;--color-text-danger:#e08a6a;--color-text-warning:#d6a85a;
   --color-border-primary:#3a3a38;--color-border-secondary:#333331;--color-border-tertiary:#2c2c2a;--color-border-warning:#4a3c20;
 }}
+:root[data-theme="dark"]{
+  --color-background-primary:#1c1c1a;--color-background-secondary:#2a2a28;--color-background-info:#1e2a38;--color-background-warning:#2e2415;
+  --color-text-primary:#f5f5f3;--color-text-secondary:#a8a8a4;--color-text-tertiary:#6b6b68;
+  --color-text-info:#6aa9e0;--color-text-success:#4cc4a0;--color-text-danger:#e08a6a;--color-text-warning:#d6a85a;
+  --color-border-primary:#3a3a38;--color-border-secondary:#333331;--color-border-tertiary:#2c2c2a;--color-border-warning:#4a3c20;
+}
 *{box-sizing:border-box}
 body{margin:0;background:var(--color-background-primary);color:var(--color-text-primary);font-family:var(--font-sans)}
 .nav{position:sticky;top:0;z-index:50;background:var(--color-background-primary);border-bottom:1px solid var(--color-border-secondary);margin-bottom:0;box-shadow:0 1px 0 rgba(0,0,0,0.02)}
@@ -110,10 +117,14 @@ svg text{font-family:var(--font-sans)}
 .footer-nav a{font-size:13px;color:var(--color-text-secondary);text-decoration:none}
 .footer-nav a:hover{color:var(--color-text-primary)}
 .footer-note{font-size:12px;color:var(--color-text-tertiary)}
+.theme-toggle{margin-left:auto;display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;padding:0;border:1px solid var(--color-border-secondary);background:transparent;border-radius:8px;color:var(--color-text-secondary);cursor:pointer;transition:background .12s,color .12s,border-color .12s}
+.theme-toggle:hover{background:var(--color-background-secondary);color:var(--color-text-primary);border-color:var(--color-border-primary)}
+.theme-toggle svg{width:17px;height:17px;display:block}
+@media(max-width:600px){.theme-toggle{width:30px;height:30px}}
 </style>
 </head>
 <body>
-<div class="nav"><div class="nav-inner"><span class="nav-brand">SG HDB Resale</span><a class="nav-link" href="index.html">Overview</a><a class="nav-link" href="page2_find_your_flat.html">Find a Flat</a><a class="nav-link active" href="page3_mrt_proximity.html">Analysis by Town</a><a class="nav-link" href="page5_by_district.html">By District</a><a class="nav-link" href="page6_this_year.html">This Year</a><a class="nav-link" href="page4_hidden_insights.html">Insights</a></div></div>
+<div class="nav"><div class="nav-inner"><span class="nav-brand">SG HDB Resale</span><a class="nav-link" href="index.html">Overview</a><a class="nav-link" href="page2_find_your_flat.html">Find a Flat</a><a class="nav-link active" href="page3_mrt_proximity.html">Analysis by Town</a><a class="nav-link" href="page5_by_district.html">By District</a><a class="nav-link" href="page6_this_year.html">This Year</a><a class="nav-link" href="page4_hidden_insights.html">Insights</a><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme"></button></div></div>
 <div class="wrap">
 <p class="pg-title">Analysis by town</p>
 <p class="pg-sub">HDB resale prices by distance to the nearest MRT station &middot; 311,032 transactions &middot; 2012&ndash;2025 &middot; Source: data.gov.sg + OneMap</p>
@@ -200,9 +211,10 @@ const BCOLORS=['#7F77DD','#1D9E75','#378ADD','#D85A30','#888780'];
 const FTS=['3 ROOM','4 ROOM','5 ROOM','EXECUTIVE'];
 const FT_LABELS={'ALL':'All types','3 ROOM':'3-room','4 ROOM':'4-room','5 ROOM':'5-room','EXECUTIVE':'Executive'};
 const TOWN_LABELS={"ANG MO KIO":"Ang Mo Kio","BEDOK":"Bedok","BISHAN":"Bishan","BUKIT BATOK":"Bukit Batok","BUKIT MERAH":"Bukit Merah","BUKIT PANJANG":"Bukit Panjang","BUKIT TIMAH":"Bukit Timah","CENTRAL AREA":"Central Area","CHOA CHU KANG":"Choa Chu Kang","CLEMENTI":"Clementi","GEYLANG":"Geylang","HOUGANG":"Hougang","JURONG EAST":"Jurong East","JURONG WEST":"Jurong West","KALLANG/WHAMPOA":"Kallang","MARINE PARADE":"Marine Pde","PASIR RIS":"Pasir Ris","PUNGGOL":"Punggol","QUEENSTOWN":"Queenstown","SEMBAWANG":"Sembawang","SENGKANG":"Sengkang","SERANGOON":"Serangoon","TAMPINES":"Tampines","TOA PAYOH":"Toa Payoh","WOODLANDS":"Woodlands","YISHUN":"Yishun"};
-const isDark=matchMedia('(prefers-color-scheme: dark)').matches;
-const grid=isDark?'rgba(255,255,255,0.08)':'rgba(0,0,0,0.07)';
-const axc=isDark?'rgba(255,255,255,0.5)':'rgba(0,0,0,0.4)';
+function themeDark(){var t=document.documentElement.getAttribute('data-theme');return (t==='light'||t==='dark')?t==='dark':matchMedia('(prefers-color-scheme: dark)').matches;}
+let grid,axc;
+function updThemeColors(){var d=themeDark();grid=d?'rgba(255,255,255,0.08)':'rgba(0,0,0,0.07)';axc=d?'rgba(255,255,255,0.5)':'rgba(0,0,0,0.4)';}
+updThemeColors();
 let activeFT='ALL',activeTown='ALL',yL=2012,yR=2025;
 const MINY=2012,MAXY=2025,RG=MAXY-MINY;
 function fmtK(v){return '$'+Math.round(v/1000)+'K';}
@@ -421,7 +433,7 @@ function setTown(t){activeTown=t;document.querySelectorAll('.pill[data-town]').f
 const tp=document.getElementById('town-pills');
 const ap=document.createElement('button');ap.className='pill on';ap.dataset.town='ALL';ap.textContent='All';ap.onclick=()=>setTown('ALL');tp.appendChild(ap);
 Object.entries(TOWN_LABELS).forEach(([k,v])=>{const b=document.createElement('button');b.className='pill';b.dataset.town=k;b.textContent=v;b.onclick=()=>setTown(k);tp.appendChild(b);});
-initSlider();refresh();
+initSlider();refresh();window.onThemeChange=function(){updThemeColors();refresh();};
 </script>
 <script>
 // GoatCounter analytics
@@ -440,5 +452,15 @@ if ('serviceWorker' in navigator) {
 <nav class="footer-nav"><a href="privacy.html">Privacy</a><!-- future: <a href="about.html">About</a><a href="contact.html">Contact</a> --></nav>
 <span class="footer-note">Data: data.gov.sg &amp; OneMap</span>
 </div></footer>
+<script>
+(function(){
+var root=document.documentElement,btn=document.getElementById('theme-toggle');if(!btn)return;
+var MOON="<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z\"/></svg>",SUN="<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"5\"/><line x1=\"12\" y1=\"1\" x2=\"12\" y2=\"3\"/><line x1=\"12\" y1=\"21\" x2=\"12\" y2=\"23\"/><line x1=\"4.22\" y1=\"4.22\" x2=\"5.64\" y2=\"5.64\"/><line x1=\"18.36\" y1=\"18.36\" x2=\"19.78\" y2=\"19.78\"/><line x1=\"1\" y1=\"12\" x2=\"3\" y2=\"12\"/><line x1=\"21\" y1=\"12\" x2=\"23\" y2=\"12\"/><line x1=\"4.22\" y1=\"19.78\" x2=\"5.64\" y2=\"18.36\"/><line x1=\"18.36\" y1=\"5.64\" x2=\"19.78\" y2=\"4.22\"/></svg>";
+function eff(){var t=root.getAttribute('data-theme');return (t==='light'||t==='dark')?t:((window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches)?'dark':'light');}
+function paint(){var d=eff()==='dark';btn.innerHTML=d?SUN:MOON;var l=d?'Switch to light theme':'Switch to dark theme';btn.setAttribute('aria-label',l);btn.setAttribute('title',l);}
+btn.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';root.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}paint();if(typeof window.onThemeChange==='function'){try{window.onThemeChange();}catch(e){}}});
+paint();
+})();
+</script>
 </body>
 </html>
