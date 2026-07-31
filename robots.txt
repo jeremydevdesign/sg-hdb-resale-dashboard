@@ -1,0 +1,5 @@
+# sghdbresale.com — allow all crawlers, including Google Search and AdSense.
+User-agent: *
+Allow: /
+
+Sitemap: https://sghdbresale.com/sitemap.xml
