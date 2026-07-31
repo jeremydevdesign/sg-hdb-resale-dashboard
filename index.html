@@ -63,6 +63,22 @@ body{margin:0;background:var(--color-background-primary);color:var(--color-text-
 .pg-sub{font-size:13px;color:var(--color-text-secondary);margin:0 0 4px}
 .headline{font-size:14px;color:var(--color-text-primary);margin:0 0 1.5rem;padding:11px 15px;background:var(--color-background-info);border-radius:var(--border-radius-md);line-height:1.5}
 .headline strong{font-weight:600}
+.hero{padding:1.25rem 0 .5rem}
+.hero-eyebrow{font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--color-text-info);margin:0 0 12px}
+.hero-title{font-size:32px;line-height:1.2;font-weight:600;letter-spacing:-.01em;margin:0 0 14px;max-width:15em}
+.hero-lede{font-size:16px;line-height:1.6;color:var(--color-text-secondary);margin:0 0 18px;max-width:36em}
+.hero-trust{display:flex;flex-wrap:wrap;gap:6px 20px;padding:12px 0;border-top:1px solid var(--color-border-secondary);border-bottom:1px solid var(--color-border-secondary);margin-bottom:1.75rem}
+.hero-trust span{font-size:13px;color:var(--color-text-secondary);display:inline-flex;align-items:center}
+.hero-trust span::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--color-text-success);display:inline-block;margin-right:8px}
+.hero-start{font-size:13px;font-weight:600;color:var(--color-text-secondary);margin:0 0 12px}
+.hero-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+.hero-card{text-decoration:none;background:var(--color-background-secondary);border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);padding:15px 16px;display:block;transition:border-color .12s,transform .12s}
+.hero-card:hover{border-color:var(--color-text-primary);transform:translateY(-2px)}
+.hero-card svg{width:22px;height:22px;color:var(--color-text-info);display:block}
+.hero-card .hc-t{font-size:15px;font-weight:600;color:var(--color-text-primary);margin:10px 0 4px}
+.hero-card .hc-t::after{content:" \2192";color:var(--color-text-tertiary);font-weight:400}
+.hero-card .hc-d{font-size:13px;line-height:1.5;color:var(--color-text-secondary);margin:0}
+@media(max-width:600px){.hero-title{font-size:25px}}
 .filter-block{padding:12px 16px;background:var(--color-background-secondary);border-radius:var(--border-radius-md);margin-bottom:6px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
 .flbl{font-size:11px;font-weight:500;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:.06em;white-space:nowrap;min-width:74px}
 .range-wrap{flex:1;min-width:220px;position:relative;height:22px;display:flex;align-items:center;touch-action:none}
@@ -151,7 +167,22 @@ svg text{font-family:var(--font-sans)}
 <body>
 <div class="nav"><div class="nav-inner"><span class="nav-brand">SG HDB Resale</span><a class="nav-link active" href="index.html">Overview</a><a class="nav-link" href="page2_find_your_flat.html">Find a Flat</a><a class="nav-link" href="page3_mrt_proximity.html">Analysis by Town</a><a class="nav-link" href="page5_by_district.html">By District</a><a class="nav-link" href="page6_this_year.html">This Year</a><a class="nav-link" href="page4_hidden_insights.html">Insights</a><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme"></button></div></div>
 <div class="wrap">
-<h1 class="pg-title">Singapore HDB resale market</h1>
+<section class="hero">
+<p class="hero-eyebrow">A decade of Singapore's HDB resale market</p>
+<h1 class="hero-title">Buying, selling, or just wondering where prices are headed?</h1>
+<p class="hero-lede">Make sense of the resale market with real, official numbers &mdash; no jargon and no sign-up. See what flats actually sold for, by town, flat type, distance to the MRT and postal district, refreshed every month.</p>
+<div class="hero-trust"><span>Official data.gov.sg records</span><span>300,000+ transactions</span><span>Updated monthly</span></div>
+<p class="hero-start">Where would you like to start?</p>
+<div class="hero-cards">
+<a class="hero-card" href="page2_find_your_flat.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><p class="hc-t">Find a flat you can afford</p><p class="hc-d">Set a budget and see which towns are within reach.</p></a>
+<a class="hero-card" href="page3_mrt_proximity.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><p class="hc-t">See what MRT proximity costs</p><p class="hc-d">Compare prices by distance to the nearest station.</p></a>
+<a class="hero-card" href="page5_by_district.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg><p class="hc-t">Compare districts</p><p class="hc-d">Rank all 28 postal districts by price and growth.</p></a>
+<a class="hero-card" href="page6_this_year.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><p class="hc-t">This month's market</p><p class="hc-d">The latest medians, town by town, year to date.</p></a>
+<a class="hero-card" href="page4_hidden_insights.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg><p class="hc-t">Surprising findings</p><p class="hc-d">Five things buried in the data most buyers miss.</p></a>
+</div>
+</section>
+<hr class="div">
+<h2 class="pg-title" id="overview">Singapore HDB resale market</h2>
 <p class="pg-sub">311,424 transactions &middot; Mar 2012 &ndash; Dec 2025 &middot; Source: data.gov.sg</p>
 <p class="headline" id="headline"></p>
 
@@ -526,7 +557,7 @@ if ('serviceWorker' in navigator) {
 </script>
 <footer class="site-footer"><div class="footer-inner">
 <span class="footer-brand">SG HDB Resale</span>
-<nav class="footer-nav"><a href="privacy.html">Privacy</a><!-- future: <a href="about.html">About</a><a href="contact.html">Contact</a> --></nav>
+<nav class="footer-nav"><a href="about.html">About</a><a href="privacy.html">Privacy</a></nav>
 <span class="footer-note">Data: data.gov.sg &amp; OneMap</span>
 </div></footer>
 <script>
