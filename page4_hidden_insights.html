@@ -38,20 +38,20 @@
 :root{
   --font-sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   --color-background-primary:#fff;--color-background-secondary:#f5f5f4;--color-background-info:#eef4fb;
-  --color-text-primary:#1a1a1a;--color-text-secondary:#6b6b6b;--color-text-tertiary:#a8a8a8;
+  --color-text-primary:#1a1a1a;--color-text-secondary:#6b6b6b;--color-text-tertiary:#6f6f6f;
   --color-text-info:#2c6cb0;--color-text-success:#0f6e56;--color-text-danger:#993c1d;
   --color-border-primary:#d4d4d4;--color-border-secondary:#e0e0e0;--color-border-tertiary:#ececec;
   --border-radius-md:10px;--border-radius-lg:14px;
 }
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --color-background-primary:#1c1c1a;--color-background-secondary:#2a2a28;--color-background-info:#1e2a38;
-  --color-text-primary:#f5f5f3;--color-text-secondary:#a8a8a4;--color-text-tertiary:#6b6b68;
+  --color-text-primary:#f5f5f3;--color-text-secondary:#a8a8a4;--color-text-tertiary:#949490;
   --color-text-info:#6aa9e0;--color-text-success:#4cc4a0;--color-text-danger:#e08a6a;
   --color-border-primary:#3a3a38;--color-border-secondary:#333331;--color-border-tertiary:#2c2c2a;
 }}
 :root[data-theme="dark"]{
   --color-background-primary:#1c1c1a;--color-background-secondary:#2a2a28;--color-background-info:#1e2a38;
-  --color-text-primary:#f5f5f3;--color-text-secondary:#a8a8a4;--color-text-tertiary:#6b6b68;
+  --color-text-primary:#f5f5f3;--color-text-secondary:#a8a8a4;--color-text-tertiary:#949490;
   --color-text-info:#6aa9e0;--color-text-success:#4cc4a0;--color-text-danger:#e08a6a;
   --color-border-primary:#3a3a38;--color-border-secondary:#333331;--color-border-tertiary:#2c2c2a;
 }
@@ -119,12 +119,12 @@ svg text{font-family:var(--font-sans)}
 <body>
 <div class="nav"><div class="nav-inner"><span class="nav-brand">SG HDB Resale</span><a class="nav-link" href="index.html">Overview</a><a class="nav-link" href="page2_find_your_flat.html">Find a Flat</a><a class="nav-link" href="page3_mrt_proximity.html">Analysis by Town</a><a class="nav-link" href="page5_by_district.html">By District</a><a class="nav-link" href="page6_this_year.html">This Year</a><a class="nav-link active" href="page4_hidden_insights.html">Insights</a><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme"></button></div></div></div>
 <div class="wrap">
-<p class="pg-title">Hidden insights</p>
+<h1 class="pg-title">Hidden insights</h1>
 <p class="pg-sub">Five things buried in 311,424 transactions that most buyers never see &middot; Source: data.gov.sg + OneMap</p>
 
 <!-- CARD 1: MILLION DOLLAR -->
 <div class="card">
-  <p class="card-kicker">01 &middot; The million-dollar explosion</p>
+  <h2 class="card-kicker">01 &middot; The million-dollar explosion</h2>
   <p class="card-headline">In 2012, exactly two HDB flats crossed $1M. In 2025, it was 1,593 &mdash; one in every sixteen sales.</p>
   <p class="card-body">The million-dollar flat went from statistical anomaly to a routine Tuesday. The first was a Queenstown executive in July 2012 at exactly $1,000,000; the current record is <strong>$1.66M for a Queenstown 5-room</strong> (June 2025, floors 22&ndash;24). And the million-dollar capital isn't where you'd guess &mdash; it's <strong>Toa Payoh</strong>, whose post-2008 high-rise builds near the city now dominate the leaderboard.</p>
   <div class="bigstat" id="mil-stats"></div>
@@ -135,7 +135,7 @@ svg text{font-family:var(--font-sans)}
 
 <!-- CARD 2: LEASE CLIFF -->
 <div class="card">
-  <p class="card-kicker">02 &middot; The 80-year lease cliff</p>
+  <h2 class="card-kicker">02 &middot; The 80-year lease cliff</h2>
   <p class="card-headline">Lease decay isn't a slope &mdash; it's a cliff at 80 years, then a long flat shelf.</p>
   <p class="card-body">Conventional wisdom says every year of lease lost costs you steadily. The 2025 data says otherwise: 4-room flats with 80+ years left command <strong>~$700K</strong>, but cross below the 80-year line and the median drops to <strong>~$580K</strong> &mdash; then barely moves for the next 30 years of decay. A 75-year flat and a 52-year flat trade within $30K of each other. The market prices the cliff, not the slope &mdash; partly because CPF and loan financing rules tighten for shorter leases, and partly because 80+ means a newer flat in every other way too.</p>
   <div id="cliff-bars"></div>
@@ -144,7 +144,7 @@ svg text{font-family:var(--font-sans)}
 
 <!-- CARD 3: SKY PREMIUM -->
 <div class="card">
-  <p class="card-kicker">03 &middot; The sky premium</p>
+  <h2 class="card-kicker">03 &middot; The sky premium</h2>
   <p class="card-headline">The same 4-room flat costs 89% more on floor 28 than on floor 2.</p>
   <p class="card-body">Height is one of the strongest price drivers in the entire dataset &mdash; bigger than most town-to-town differences. A ground-band 4-room medians <strong>$570K</strong> in 2025; the same flat type above floor 28 medians <strong>$1.08M</strong>. The premium compounds quietly floor by floor, then accelerates sharply past floor 16 &mdash; where unblocked views begin and supply thins out fast (only ~500 sales above floor 22 all year).</p>
   <div id="sky-bars"></div>
@@ -152,7 +152,7 @@ svg text{font-family:var(--font-sans)}
 
 <!-- CARD 4: BOOM FORGOT -->
 <div class="card">
-  <p class="card-kicker">04 &middot; The towns the boom forgot</p>
+  <h2 class="card-kicker">04 &middot; The towns the boom forgot</h2>
   <p class="card-headline">Everyone knows prices surged after COVID. Nobody mentions that Central Area <em>fell</em>.</p>
   <p class="card-body">From 2021 to 2025, the median Singapore town gained ~30%. <strong>Toa Payoh gained 68%</strong>. But the boom was wildly uneven: prime-adjacent Clementi (+11%) and Marine Parade (+10%) barely moved, and <strong>Central Area actually declined 8%</strong> &mdash; its 2021 median was inflated by a wave of premium flats hitting their 5-year mark, a mix that later normalised. The lesson: town-level "averages" can move on composition, not just demand.</p>
   <div id="boom-bars"></div>
@@ -160,7 +160,7 @@ svg text{font-family:var(--font-sans)}
 
 <!-- CARD 5: SMALL FLATS -->
 <div class="card">
-  <p class="card-kicker">05 &middot; Small flats left behind</p>
+  <h2 class="card-kicker">05 &middot; Small flats left behind</h2>
   <p class="card-headline">The boom rewarded space: 3-room flats grew 29% in 13 years while executives grew 46%.</p>
   <p class="card-body">Index every flat type to 100 in 2012 and the gap is unmistakable &mdash; the lines move together until 2020, then fan out. Post-COVID demand chased <strong>space</strong>: families upgrading, working from home, multi-generation living. The humble 3-room &mdash; the most affordable entry point &mdash; appreciated at barely 60% the rate of an executive flat. For buyers, that's a double-edged finding: 3-rooms are the relative bargain of 2025, but history says they also climb slowest.</p>
   <div class="legend">

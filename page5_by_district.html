@@ -38,20 +38,20 @@
 :root{
   --font-sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   --color-background-primary:#fff;--color-background-secondary:#f5f5f4;--color-background-info:#eef4fb;
-  --color-text-primary:#1a1a1a;--color-text-secondary:#6b6b6b;--color-text-tertiary:#a8a8a8;
+  --color-text-primary:#1a1a1a;--color-text-secondary:#6b6b6b;--color-text-tertiary:#6f6f6f;
   --color-text-info:#2c6cb0;--color-text-success:#0f6e56;--color-text-danger:#993c1d;
   --color-border-primary:#d4d4d4;--color-border-secondary:#e0e0e0;--color-border-tertiary:#ececec;
   --border-radius-md:10px;--border-radius-lg:14px;
 }
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --color-background-primary:#1c1c1a;--color-background-secondary:#2a2a28;--color-background-info:#1e2a38;
-  --color-text-primary:#f5f5f3;--color-text-secondary:#a8a8a4;--color-text-tertiary:#6b6b68;
+  --color-text-primary:#f5f5f3;--color-text-secondary:#a8a8a4;--color-text-tertiary:#949490;
   --color-text-info:#6aa9e0;--color-text-success:#4cc4a0;--color-text-danger:#e08a6a;
   --color-border-primary:#3a3a38;--color-border-secondary:#333331;--color-border-tertiary:#2c2c2a;
 }}
 :root[data-theme="dark"]{
   --color-background-primary:#1c1c1a;--color-background-secondary:#2a2a28;--color-background-info:#1e2a38;
-  --color-text-primary:#f5f5f3;--color-text-secondary:#a8a8a4;--color-text-tertiary:#6b6b68;
+  --color-text-primary:#f5f5f3;--color-text-secondary:#a8a8a4;--color-text-tertiary:#949490;
   --color-text-info:#6aa9e0;--color-text-success:#4cc4a0;--color-text-danger:#e08a6a;
   --color-border-primary:#3a3a38;--color-border-secondary:#333331;--color-border-tertiary:#2c2c2a;
 }
@@ -150,7 +150,7 @@ table.dt tbody tr.sel{background:var(--color-background-secondary)}
 <body>
 <div class="nav"><div class="nav-inner"><span class="nav-brand">SG HDB Resale</span><a class="nav-link" href="index.html">Overview</a><a class="nav-link" href="page2_find_your_flat.html">Find a Flat</a><a class="nav-link" href="page3_mrt_proximity.html">Analysis by Town</a><a class="nav-link active" href="page5_by_district.html">By District</a><a class="nav-link" href="page6_this_year.html">This Year</a><a class="nav-link" href="page4_hidden_insights.html">Insights</a><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme"></button></div></div>
 <div class="wrap">
-<p class="pg-title">HDB resale by postal district</p>
+<h1 class="pg-title">HDB resale by postal district</h1>
 <p class="pg-sub" id="pg-sub"></p>
 <p class="headline" id="headline"></p>
 
@@ -179,7 +179,7 @@ table.dt tbody tr.sel{background:var(--color-background-secondary)}
 <hr class="div">
 
 <div class="sec">
-  <p class="seclbl">Districts ranked <span class="chip" id="rank-chip"></span></p>
+  <h2 class="seclbl">Districts ranked <span class="chip" id="rank-chip"></span></h2>
   <div class="stabs" id="metric-tabs">
     <button class="stab on" data-m="price">Median price</button>
     <button class="stab" data-m="psf">Price per sqft</button>
@@ -192,7 +192,7 @@ table.dt tbody tr.sel{background:var(--color-background-secondary)}
 <hr class="div">
 
 <div class="sec">
-  <p class="seclbl">Price trend <span class="chip" id="trend-chip"></span></p>
+  <h2 class="seclbl">Price trend <span class="chip" id="trend-chip"></span></h2>
   <div class="legend" id="trend-leg"></div>
   <div class="chart-shell"><svg id="trend-svg" viewBox="0 0 700 300" style="width:100%;height:auto"></svg><div class="tt" id="trend-tt"></div></div>
   <p class="note">Click any district &mdash; in the ranking above or the table below &mdash; to add or remove its line. Up to four at a time.</p>
@@ -200,7 +200,7 @@ table.dt tbody tr.sel{background:var(--color-background-secondary)}
 <hr class="div">
 
 <div class="sec">
-  <p class="seclbl">All districts <span class="chip" id="tbl-chip"></span></p>
+  <h2 class="seclbl">All districts <span class="chip" id="tbl-chip"></span></h2>
   <div class="tbl-scroll">
     <table class="dt">
       <thead><tr id="dt-head"></tr></thead>

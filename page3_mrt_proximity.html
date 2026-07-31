@@ -38,20 +38,20 @@
 :root{
   --font-sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   --color-background-primary:#fff;--color-background-secondary:#f5f5f4;--color-background-info:#eef4fb;--color-background-warning:#fdf4e7;
-  --color-text-primary:#1a1a1a;--color-text-secondary:#6b6b6b;--color-text-tertiary:#a8a8a8;
+  --color-text-primary:#1a1a1a;--color-text-secondary:#6b6b6b;--color-text-tertiary:#6f6f6f;
   --color-text-info:#2c6cb0;--color-text-success:#0f6e56;--color-text-danger:#993c1d;--color-text-warning:#8a5a1a;
   --color-border-primary:#d4d4d4;--color-border-secondary:#e0e0e0;--color-border-tertiary:#ececec;--color-border-warning:#ecd9b8;
   --border-radius-md:10px;--border-radius-lg:14px;
 }
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --color-background-primary:#1c1c1a;--color-background-secondary:#2a2a28;--color-background-info:#1e2a38;--color-background-warning:#2e2415;
-  --color-text-primary:#f5f5f3;--color-text-secondary:#a8a8a4;--color-text-tertiary:#6b6b68;
+  --color-text-primary:#f5f5f3;--color-text-secondary:#a8a8a4;--color-text-tertiary:#949490;
   --color-text-info:#6aa9e0;--color-text-success:#4cc4a0;--color-text-danger:#e08a6a;--color-text-warning:#d6a85a;
   --color-border-primary:#3a3a38;--color-border-secondary:#333331;--color-border-tertiary:#2c2c2a;--color-border-warning:#4a3c20;
 }}
 :root[data-theme="dark"]{
   --color-background-primary:#1c1c1a;--color-background-secondary:#2a2a28;--color-background-info:#1e2a38;--color-background-warning:#2e2415;
-  --color-text-primary:#f5f5f3;--color-text-secondary:#a8a8a4;--color-text-tertiary:#6b6b68;
+  --color-text-primary:#f5f5f3;--color-text-secondary:#a8a8a4;--color-text-tertiary:#949490;
   --color-text-info:#6aa9e0;--color-text-success:#4cc4a0;--color-text-danger:#e08a6a;--color-text-warning:#d6a85a;
   --color-border-primary:#3a3a38;--color-border-secondary:#333331;--color-border-tertiary:#2c2c2a;--color-border-warning:#4a3c20;
 }
@@ -142,7 +142,7 @@ svg text{font-family:var(--font-sans)}
 <body>
 <div class="nav"><div class="nav-inner"><span class="nav-brand">SG HDB Resale</span><a class="nav-link" href="index.html">Overview</a><a class="nav-link" href="page2_find_your_flat.html">Find a Flat</a><a class="nav-link active" href="page3_mrt_proximity.html">Analysis by Town</a><a class="nav-link" href="page5_by_district.html">By District</a><a class="nav-link" href="page6_this_year.html">This Year</a><a class="nav-link" href="page4_hidden_insights.html">Insights</a><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme"></button></div></div>
 <div class="wrap">
-<p class="pg-title">Analysis by town</p>
+<h1 class="pg-title">Analysis by town</h1>
 <p class="pg-sub">HDB resale prices by distance to the nearest MRT station &middot; 311,032 transactions &middot; 2012&ndash;2025 &middot; Source: data.gov.sg + OneMap</p>
 
 <div class="fbar"><span class="flbl">Town</span><div id="town-pills" style="display:flex;gap:6px;flex-wrap:wrap"></div></div>
@@ -160,12 +160,12 @@ svg text{font-family:var(--font-sans)}
 
 <div class="warn" id="warn"><span style="font-size:14px">&#9432;</span><span class="warn-text" id="warn-text"></span></div>
 
-<p class="seclbl" id="town-detail" style="margin-top:1.25rem;scroll-margin-top:70px">Median price by distance band <span class="chip" id="kpi-chip"></span></p>
+<h2 class="seclbl" id="town-detail" style="margin-top:1.25rem;scroll-margin-top:70px">Median price by distance band <span class="chip" id="kpi-chip"></span></h2>
 <div class="kgrid" id="kgrid"></div>
 <hr class="div">
 
 <div class="sec">
-  <p class="seclbl">Price trend by distance band <span class="chip" id="trend-chip"></span></p>
+  <h2 class="seclbl">Price trend by distance band <span class="chip" id="trend-chip"></span></h2>
   <div class="legend" id="trend-leg"></div>
   <div class="chart-shell"><svg id="trend-svg" viewBox="0 0 700 300" style="width:100%;height:auto"></svg></div>
 </div>
@@ -173,11 +173,11 @@ svg text{font-family:var(--font-sans)}
 
 <div class="two-col">
   <div class="sec">
-    <p class="seclbl">Median by band <span class="chip" id="bar-chip"></span></p>
+    <h2 class="seclbl">Median by band <span class="chip" id="bar-chip"></span></h2>
     <div class="chart-shell"><svg id="bar-svg" viewBox="0 0 340 260" style="width:100%;height:auto"></svg></div>
   </div>
   <div class="sec">
-    <p class="seclbl">Transaction share <span class="chip" id="donut-chip"></span></p>
+    <h2 class="seclbl">Transaction share <span class="chip" id="donut-chip"></span></h2>
     <div class="chart-shell"><svg id="donut-svg" viewBox="0 0 340 220" style="width:100%;height:auto"></svg></div>
     <div class="legend" id="donut-leg" style="margin-top:8px"></div>
   </div>
@@ -185,7 +185,7 @@ svg text{font-family:var(--font-sans)}
 <hr class="div">
 
 <div class="sec">
-  <p class="seclbl">Median by band &times; flat type <span class="chip" id="table-chip"></span></p>
+  <h2 class="seclbl">Median by band &times; flat type <span class="chip" id="table-chip"></span></h2>
   <div class="ibox">
     <div style="display:flex;justify-content:space-between;margin-bottom:8px;padding-bottom:6px;border-bottom:.5px solid var(--color-border-tertiary)">
       <span style="font-size:11px;font-weight:500;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:.05em">Distance band</span>
@@ -197,7 +197,7 @@ svg text{font-family:var(--font-sans)}
 <hr class="div">
 
 <div class="sec" id="compare-sec">
-  <p class="seclbl">Compare towns <span class="chip" id="cmp-chip"></span></p>
+  <h2 class="seclbl">Compare towns <span class="chip" id="cmp-chip"></span></h2>
   <p class="cmp-hint">Every town, side by side, for the selected flat type and years. <b>$psf</b> is size&#8209;normalised so towns with different flat sizes compare fairly; <b>MRT premium</b> is how much more (or less) a square foot costs within 500m of an MRT versus beyond it. Tap a column to sort, a row to jump to that town&rsquo;s breakdown above.</p>
   <div class="ctbl-wrap">
     <table class="ctbl" id="cmp-table">

@@ -39,7 +39,7 @@
   --font-sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   --color-background-primary:#fff;--color-background-secondary:#f5f5f4;--color-background-info:#eef4fb;
   --color-background-success:#e8f5ef;--color-background-danger:#fbeeea;
-  --color-text-primary:#1a1a1a;--color-text-secondary:#6b6b6b;--color-text-tertiary:#a8a8a8;
+  --color-text-primary:#1a1a1a;--color-text-secondary:#6b6b6b;--color-text-tertiary:#6f6f6f;
   --color-text-info:#2c6cb0;--color-text-success:#0f6e56;--color-text-danger:#993c1d;
   --color-border-primary:#d4d4d4;--color-border-secondary:#e0e0e0;--color-border-tertiary:#ececec;--color-border-info:#cfe0f2;
   --border-radius-md:10px;--border-radius-lg:14px;
@@ -47,14 +47,14 @@
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --color-background-primary:#1c1c1a;--color-background-secondary:#2a2a28;--color-background-info:#1e2a38;
   --color-background-success:#16302a;--color-background-danger:#332019;
-  --color-text-primary:#f5f5f3;--color-text-secondary:#a8a8a4;--color-text-tertiary:#6b6b68;
+  --color-text-primary:#f5f5f3;--color-text-secondary:#a8a8a4;--color-text-tertiary:#949490;
   --color-text-info:#6aa9e0;--color-text-success:#4cc4a0;--color-text-danger:#e08a6a;
   --color-border-primary:#3a3a38;--color-border-secondary:#333331;--color-border-tertiary:#2c2c2a;--color-border-info:#2a3a4a;
 }}
 :root[data-theme="dark"]{
   --color-background-primary:#1c1c1a;--color-background-secondary:#2a2a28;--color-background-info:#1e2a38;
   --color-background-success:#16302a;--color-background-danger:#332019;
-  --color-text-primary:#f5f5f3;--color-text-secondary:#a8a8a4;--color-text-tertiary:#6b6b68;
+  --color-text-primary:#f5f5f3;--color-text-secondary:#a8a8a4;--color-text-tertiary:#949490;
   --color-text-info:#6aa9e0;--color-text-success:#4cc4a0;--color-text-danger:#e08a6a;
   --color-border-primary:#3a3a38;--color-border-secondary:#333331;--color-border-tertiary:#2c2c2a;--color-border-info:#2a3a4a;
 }
@@ -156,7 +156,7 @@ input[type=range]{accent-color:#1D9E75}
 <body>
 <div class="nav"><div class="nav-inner"><span class="nav-brand">SG HDB Resale</span><a class="nav-link" href="index.html">Overview</a><a class="nav-link active" href="page2_find_your_flat.html">Find a Flat</a><a class="nav-link" href="page3_mrt_proximity.html">Analysis by Town</a><a class="nav-link" href="page5_by_district.html">By District</a><a class="nav-link" href="page6_this_year.html">This Year</a><a class="nav-link" href="page4_hidden_insights.html">Insights</a><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme"></button></div></div></div>
 <div class="wrap">
-<p class="pg-title">Find your flat</p>
+<h1 class="pg-title">Find your flat</h1>
 <p class="pg-sub">Set your budget and filters to see where you can buy &middot; <span id="data-window">based on recent sales</span> &middot; Source: data.gov.sg + OneMap</p>
 
 <div class="budget-block">
@@ -184,7 +184,7 @@ input[type=range]{accent-color:#1D9E75}
 <hr class="div">
 
 <div class="sec">
-  <p class="seclbl">Where should you look <span class="chip" id="rank-chip">ranked by cheapest</span></p>
+  <h2 class="seclbl">Where should you look <span class="chip" id="rank-chip">ranked by cheapest</span></h2>
   <div class="stabs">
     <button class="stab on" data-sort="cheap" onclick="setSort(this)">Cheapest</button>
     <button class="stab" data-sort="value" onclick="setSort(this)">Best value /sqm</button>
@@ -197,7 +197,7 @@ input[type=range]{accent-color:#1D9E75}
 <hr class="div">
 
 <div class="sec">
-  <p class="seclbl">Affordability map <span class="chip">cheapest matching flat type per town</span></p>
+  <h2 class="seclbl">Affordability map <span class="chip">cheapest matching flat type per town</span></h2>
   <div class="map-shell">
     <div class="map-controls">
       <button class="map-btn" onclick="mapZoom(1.3)" aria-label="Zoom in">+</button>
@@ -217,7 +217,7 @@ input[type=range]{accent-color:#1D9E75}
 <hr class="div">
 
 <div class="sec">
-  <p class="seclbl">Full affordability matrix <span class="chip" id="matrix-chip">at $600K, any lease</span></p>
+  <h2 class="seclbl">Full affordability matrix <span class="chip" id="matrix-chip">at $600K, any lease</span></h2>
   <div class="matrix-wrap"><table class="matrix" id="matrix"></table></div>
 </div>
 </div>
