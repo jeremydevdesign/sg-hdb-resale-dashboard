@@ -2,7 +2,7 @@
   "name": "SG HDB Resale Dashboard",
   "short_name": "HDB Resale",
   "description": "Explore Singapore HDB resale flat prices, trends, MRT proximity and hidden insights — a decade of data plus the current year to date.",
-  "start_url": "./index.html",
+  "start_url": "./overview",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait",

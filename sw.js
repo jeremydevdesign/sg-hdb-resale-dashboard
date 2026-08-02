@@ -1,16 +1,17 @@
 // SG HDB Resale Dashboard — service worker
 // Bump CACHE version whenever you change any cached file so clients update.
-const CACHE = 'hdb-resale-v20';
+const CACHE = 'hdb-resale-v23';
 const ASSETS = [
   './',
   './index.html',
-  './page2_find_your_flat.html',
-  './page3_mrt_proximity.html',
-  './page5_by_district.html',
-  './page6_this_year.html',
-  './page4_hidden_insights.html',
-  './privacy.html',
-  './about.html',
+  './overview',
+  './find-a-flat',
+  './analysis-by-town',
+  './by-district',
+  './this-year',
+  './insights',
+  './about',
+  './privacy',
   './manifest.webmanifest',
   './icons/icon-192.png',
   './icons/icon-512.png',
