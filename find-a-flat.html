@@ -133,7 +133,7 @@ input[type=range]{accent-color:#1D9E75}
 .nav{position:sticky;top:0;z-index:50;background:var(--color-background-primary);border-bottom:1px solid var(--color-border-secondary);margin-bottom:0;box-shadow:0 1px 0 rgba(0,0,0,0.02)}
 .nav-inner{max-width:1000px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;gap:6px;flex-wrap:wrap;min-height:58px}
 .nav-brand{font-size:13px;font-weight:600;color:var(--color-text-primary);margin-right:18px;white-space:nowrap;display:flex;align-items:center;gap:7px}
-.nav-brand::before{content:"";width:7px;height:7px;border-radius:50%;background:#1D9E75;display:inline-block}
+.nav-brand svg{flex-shrink:0}
 .nav-brand span{color:var(--color-text-tertiary);font-weight:400}
 .nav-link{font-size:13px;font-weight:500;padding:8px 15px;border-radius:8px;color:var(--color-text-secondary);text-decoration:none;white-space:nowrap;transition:all .12s;border:1px solid transparent;position:relative}
 .nav-link:hover{background:var(--color-background-secondary);color:var(--color-text-primary)}
@@ -154,7 +154,7 @@ input[type=range]{accent-color:#1D9E75}
 </style>
 </head>
 <body>
-<div class="nav"><div class="nav-inner"><a class="nav-brand" href="/" style="text-decoration:none">SG HDB Resale</a><a class="nav-link" href="/overview">Overview</a><a class="nav-link active" href="/find-a-flat">Find a Flat</a><a class="nav-link" href="/analysis-by-town">Analysis by Town</a><a class="nav-link" href="/by-district">By District</a><a class="nav-link" href="/this-year">This Year</a><a class="nav-link" href="/insights">Insights</a><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme"></button></div></div></div>
+<div class="nav"><div class="nav-inner"><a class="nav-brand" href="/" style="text-decoration:none"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>SG HDB Resale</a><a class="nav-link" href="/overview">Overview</a><a class="nav-link active" href="/find-a-flat">Find a Flat</a><a class="nav-link" href="/analysis-by-town">Analysis by Town</a><a class="nav-link" href="/by-district">By District</a><a class="nav-link" href="/this-year">This Year</a><a class="nav-link" href="/insights">Insights</a><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme"></button></div></div></div>
 <div class="wrap">
 <h1 class="pg-title">Find your flat</h1>
 <p class="pg-sub">Set your budget and filters to see where you can buy &middot; <span id="data-window">based on recent sales</span> &middot; Source: data.gov.sg + OneMap</p>
