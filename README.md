@@ -2,7 +2,7 @@
 
 An interactive dashboard exploring **311,424 HDB resale transactions** across Singapore from March 2012 to December 2025 — built to help both flat buyers and the curious understand a decade of the public housing resale market.
 
-**Live demo → https://jeremydevdesign.github.io/sg-hdb-resale-dashboard/**
+**Live demo → https://sghdbresale.com**
 
 ---
 
