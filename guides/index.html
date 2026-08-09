@@ -93,7 +93,10 @@ h1{font-family:var(--font-serif);font-size:clamp(30px,5vw,42px);line-height:1.12
 .card .kick{font-family:var(--font-sans);font-size:12px;font-weight:640;letter-spacing:.05em;text-transform:uppercase;color:var(--color-text-tertiary)}
 .card h3{font-family:var(--font-serif);margin:0;font-size:19px;line-height:1.25;font-weight:600;color:var(--color-text-primary)}
 .card p{font-family:var(--font-sans);margin:0;font-size:14px;line-height:1.5;color:var(--color-text-secondary)}
-.card .soon{align-self:flex-start;margin-top:2px;font-family:var(--font-sans);font-size:11.5px;font-weight:640;letter-spacing:.03em;color:var(--color-text-info);background:var(--color-background-info);padding:3px 9px;border-radius:20px}
+.card .soon{align-self:flex-start;margin-top:2px;font-family:var(--font-sans);font-size:11.5px;font-weight:640;letter-spacing:.03em;color:var(--color-text-tertiary);background:var(--color-background-secondary);padding:3px 9px;border-radius:20px}
+a.card{text-decoration:none;transition:border-color .12s,transform .12s}
+a.card:hover{border-color:var(--color-text-info);transform:translateY(-2px)}
+.card .go{font-family:var(--font-sans);font-size:13.5px;font-weight:640;color:var(--color-text-info);margin-top:2px}
 
 .tools-note{margin-top:1.75rem;border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-secondary);padding:20px 24px;display:flex;gap:16px 22px;align-items:center;justify-content:space-between;flex-wrap:wrap}
 .tools-note p{margin:0;font-size:14px;line-height:1.55;color:var(--color-text-secondary);max-width:52ch}
@@ -134,14 +137,14 @@ h1{font-family:var(--font-serif);font-size:clamp(30px,5vw,42px);line-height:1.12
 
   <hr class="hr">
 
-  <p class="section-label">More guides, coming soon</p>
+  <p class="section-label">More guides</p>
   <div class="grid">
-    <div class="card">
+    <a class="card" href="/guides/fair-price">
       <span class="kick">Buying</span>
       <h3>How to tell if an asking price is fair</h3>
-      <p>The handful of checks to run before you make an offer — using nothing but the public record.</p>
-      <span class="soon">Planned</span>
-    </div>
+      <p>There's no single fair price — there's a fair range. The five checks to place a flat inside it, using nothing but the public record.</p>
+      <span class="go">Read the guide →</span>
+    </a>
     <div class="card">
       <span class="kick">Value</span>
       <h3>Lease decay, explained without the panic</h3>
