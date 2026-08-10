@@ -61,8 +61,8 @@ body{margin:0;background:var(--color-background-primary);color:var(--color-text-
 .wrap{max-width:1000px;margin:0 auto;padding:1.25rem 1.5rem 2rem}
 
 .nav{position:sticky;top:0;z-index:50;background:var(--color-background-primary);border-bottom:1px solid var(--color-border-secondary);margin-bottom:0;box-shadow:0 1px 0 rgba(0,0,0,0.02)}
-.nav-inner{max-width:1000px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;gap:6px;flex-wrap:wrap;min-height:58px}
-.nav-brand{font-size:13px;font-weight:600;color:var(--color-text-primary);margin-right:18px;white-space:nowrap;display:flex;align-items:center;gap:7px;text-decoration:none}
+.nav-inner{max-width:1000px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;gap:6px;flex-wrap:wrap;min-height:58px;justify-content:space-between}
+.nav-brand{font-size:13px;font-weight:600;color:var(--color-text-primary);white-space:nowrap;display:flex;align-items:center;gap:7px;text-decoration:none}
 .nav-brand svg{flex-shrink:0}
 .nav-link{font-size:13px;font-weight:500;padding:8px 15px;border-radius:8px;color:var(--color-text-secondary);text-decoration:none;white-space:nowrap;transition:all .12s;border:1px solid transparent;position:relative}
 .nav-link:hover{background:var(--color-background-secondary);color:var(--color-text-primary)}
@@ -151,7 +151,7 @@ a.card:hover{border-color:var(--color-text-info);transform:translateY(-2px)}
 .footer-nav a{font-size:13px;color:var(--color-text-secondary);text-decoration:none;display:inline-block;padding:5px 2px}
 .footer-nav a:hover{color:var(--color-text-primary)}
 .footer-note{font-size:12px;color:var(--color-text-tertiary)}
-.theme-toggle{margin-left:auto;display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;padding:0;border:1px solid var(--color-border-secondary);background:transparent;border-radius:8px;color:var(--color-text-secondary);cursor:pointer;transition:background .12s,color .12s,border-color .12s}
+.theme-toggle{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;padding:0;border:1px solid var(--color-border-secondary);background:transparent;border-radius:8px;color:var(--color-text-secondary);cursor:pointer;transition:background .12s,color .12s,border-color .12s}
 .theme-toggle:hover{background:var(--color-background-secondary);color:var(--color-text-primary);border-color:var(--color-border-primary)}
 .theme-toggle svg{width:17px;height:17px;display:block}
 @media(max-width:600px){.theme-toggle{width:30px;height:30px}}
@@ -165,6 +165,18 @@ a.card:hover{border-color:var(--color-text-info);transform:translateY(-2px)}
 <h1 class="hero-title">Buying, selling, or just wondering where prices are headed?</h1>
 <p class="hero-lede">Plain-English guides for anyone buying an HDB resale flat - each takes a question buyers actually ask and answers it with the real transaction record, not opinion. Backed by interactive dashboards built on official data.gov.sg data, refreshed every month. No jargon, no sign-up.</p>
 <div class="hero-trust"><span>Official data.gov.sg records</span><span>300,000+ transactions</span><span>Updated monthly</span></div>
+</section>
+
+<section class="pulse" aria-label="Latest market snapshot">
+<!--PULSE:START-->
+      <div class="pulse-head"><span class="pulse-dot"></span>Market pulse - latest data <strong>July 2026</strong> refreshed monthly from data.gov.sg</div>
+      <div class="pulse-grid">
+        <div class="pstat"><div class="pk">Median resale price</div><div class="pv">$630,000</div><div class="ps">across 2,656 sales in July</div></div>
+        <div class="pstat"><div class="pk">Year-on-year</div><div class="pv">+0.3%</div><div class="ps">median vs July 2025 - essentially flat</div></div>
+        <div class="pstat"><div class="pk">Million-dollar flats</div><div class="pv">1,089</div><div class="ps">so far in 2026 &middot; 1,593 in 2025</div></div>
+        <div class="pstat"><div class="pk">Transactions analysed</div><div class="pv">326,316</div><div class="ps">every resale since 2012</div></div>
+      </div>
+      <!--PULSE:END-->
 </section>
 
 <section aria-label="Guides">
@@ -204,18 +216,6 @@ a.card:hover{border-color:var(--color-text-info);transform:translateY(-2px)}
 </section>
 
 <hr class="div">
-
-<section class="pulse" aria-label="Latest market snapshot">
-<!--PULSE:START-->
-      <div class="pulse-head"><span class="pulse-dot"></span>Market pulse - latest data <strong>July 2026</strong> refreshed monthly from data.gov.sg</div>
-      <div class="pulse-grid">
-        <div class="pstat"><div class="pk">Median resale price</div><div class="pv">$630,000</div><div class="ps">across 2,656 sales in July</div></div>
-        <div class="pstat"><div class="pk">Year-on-year</div><div class="pv">+0.3%</div><div class="ps">median vs July 2025 - essentially flat</div></div>
-        <div class="pstat"><div class="pk">Million-dollar flats</div><div class="pv">1,089</div><div class="ps">so far in 2026 &middot; 1,593 in 2025</div></div>
-        <div class="pstat"><div class="pk">Transactions analysed</div><div class="pv">326,316</div><div class="ps">every resale since 2012</div></div>
-      </div>
-      <!--PULSE:END-->
-</section>
 
 <p class="hero-start">Prefer to explore the numbers yourself?</p>
 <div class="hero-cards">
