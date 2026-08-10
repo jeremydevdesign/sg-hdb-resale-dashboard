@@ -9,30 +9,30 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="HDB Resale">
 <meta name="mobile-web-app-capable" content="yes">
-<meta name="description" content="Five counterintuitive findings in Singapore's HDB resale data — the million-dollar explosion, why location beats lease, the storey premium, and more.">
+<meta name="description" content="Five counterintuitive findings in Singapore's HDB resale data - the million-dollar explosion, why location beats lease, the storey premium, and more.">
 <link rel="canonical" href="https://sghdbresale.com/insights">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SG HDB Resale">
 <meta property="og:locale" content="en_SG">
-<meta property="og:title" content="Hidden Insights — SG HDB Resale">
-<meta property="og:description" content="Five counterintuitive findings in Singapore&#x27;s HDB resale data — the million-dollar explosion, why location beats lease, the storey premium, and more.">
+<meta property="og:title" content="Hidden Insights - SG HDB Resale">
+<meta property="og:description" content="Five counterintuitive findings in Singapore&#x27;s HDB resale data - the million-dollar explosion, why location beats lease, the storey premium, and more.">
 <meta property="og:url" content="https://sghdbresale.com/insights">
 <meta property="og:image" content="https://sghdbresale.com/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="SG HDB Resale — a decade of Singapore HDB resale prices">
+<meta property="og:image:alt" content="SG HDB Resale - a decade of Singapore HDB resale prices">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Hidden Insights — SG HDB Resale">
-<meta name="twitter:description" content="Five counterintuitive findings in Singapore&#x27;s HDB resale data — the million-dollar explosion, why location beats lease, the storey premium, and more.">
+<meta name="twitter:title" content="Hidden Insights - SG HDB Resale">
+<meta name="twitter:description" content="Five counterintuitive findings in Singapore&#x27;s HDB resale data - the million-dollar explosion, why location beats lease, the storey premium, and more.">
 <meta name="twitter:image" content="https://sghdbresale.com/og-image.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"SG HDB Resale","alternateName":"SG HDB Resale Dashboard","url":"https://sghdbresale.com/","description":"A free dashboard of Singapore HDB resale flat prices — median prices by town and flat type, MRT proximity, postal district rankings and this year's market.","inLanguage":"en-SG","publisher":{"@type":"Organization","name":"SG HDB Resale","url":"https://sghdbresale.com/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"SG HDB Resale","alternateName":"SG HDB Resale Dashboard","url":"https://sghdbresale.com/","description":"A free dashboard of Singapore HDB resale flat prices - median prices by town and flat type, MRT proximity, postal district rankings and this year's market.","inLanguage":"en-SG","publisher":{"@type":"Organization","name":"SG HDB Resale","url":"https://sghdbresale.com/"}}</script>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16.png">
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6257747517291345" crossorigin="anonymous"></script>
-<title>Hidden Insights — SG HDB Resale</title>
+<title>Hidden Insights - SG HDB Resale</title>
 <script>(function(){try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
 <style>
 :root{
@@ -101,6 +101,17 @@ svg text{font-family:var(--font-sans)}
 .nav-link{font-size:13px;font-weight:500;padding:8px 15px;border-radius:8px;color:var(--color-text-secondary);text-decoration:none;white-space:nowrap;transition:all .12s;border:1px solid transparent;position:relative}
 .nav-link:hover{background:var(--color-background-secondary);color:var(--color-text-primary)}
 .nav-link.active{background:var(--color-text-primary);color:var(--color-background-primary)}
+/*NAVDROPDOWN*/
+.nav-group{position:relative;display:inline-flex}
+.nav-group-btn{font-family:inherit;cursor:pointer;background:transparent;display:inline-flex;align-items:center;gap:5px}
+.nav-caret{opacity:.65;transition:transform .15s}
+.nav-group[data-open="true"] .nav-caret{transform:rotate(180deg)}
+.nav-menu{display:none;position:absolute;top:calc(100% + 6px);left:0;min-width:196px;background:var(--color-background-primary);border:1px solid var(--color-border-primary);border-radius:var(--border-radius-md);box-shadow:0 8px 28px rgba(0,0,0,.14);padding:6px;z-index:60}
+.nav-group[data-open="true"] .nav-menu{display:block}
+.nav-menu-link{display:block;font-size:13px;font-weight:500;padding:8px 12px;border-radius:6px;color:var(--color-text-secondary);text-decoration:none;white-space:nowrap;border:1px solid transparent}
+.nav-menu-link:hover{background:var(--color-background-secondary);color:var(--color-text-primary)}
+.nav-menu-link.active{color:var(--color-text-primary);font-weight:640;background:var(--color-background-secondary)}
+@media(max-width:600px){.nav-menu{right:0;left:auto}}
 @media(max-width:600px){.nav-brand{width:100%;margin:0 0 6px 0}.nav-inner{padding:10px 1rem}.nav-link{font-size:12px;padding:7px 12px}}
 
 .site-footer{border-top:1px solid var(--color-border-secondary);margin-top:2.5rem}
@@ -117,7 +128,7 @@ svg text{font-family:var(--font-sans)}
 </style>
 </head>
 <body>
-<div class="nav"><div class="nav-inner"><a class="nav-brand" href="/" style="text-decoration:none"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>SG HDB Resale</a><a class="nav-link" href="/overview">Overview</a><a class="nav-link" href="/find-a-flat">Find a Flat</a><a class="nav-link" href="/analysis-by-town">Analysis by Town</a><a class="nav-link" href="/by-district">By District</a><a class="nav-link" href="/this-year">This Year</a><a class="nav-link" href="/guides">Guides</a><a class="nav-link active" href="/insights">Insights</a><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme"></button></div></div></div>
+<div class="nav"><div class="nav-inner"><a class="nav-brand" href="/" style="text-decoration:none"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>SG HDB Resale</a><a class="nav-link" href="/overview">Overview</a><a class="nav-link active" href="/insights">Insights</a><a class="nav-link" href="/guides">Guides</a><div class="nav-group"><button type="button" class="nav-link nav-group-btn" aria-haspopup="true" aria-expanded="false">Dashboard<svg class="nav-caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="nav-menu" role="menu"><a class="nav-menu-link" href="/find-a-flat" role="menuitem">Find a Flat</a><a class="nav-menu-link" href="/analysis-by-town" role="menuitem">Analysis by Town</a><a class="nav-menu-link" href="/by-district" role="menuitem">By District</a><a class="nav-menu-link" href="/this-year" role="menuitem">This Year</a></div></div><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme"></button></div></div></div>
 <div class="wrap">
 <h1 class="pg-title">Hidden insights</h1>
 <p class="pg-sub">Five things buried in 311,424 transactions that most buyers never see &middot; Source: data.gov.sg + OneMap</p>
@@ -125,8 +136,8 @@ svg text{font-family:var(--font-sans)}
 <!-- CARD 1: MILLION DOLLAR -->
 <div class="card">
   <h2 class="card-kicker">01 &middot; The million-dollar explosion</h2>
-  <p class="card-headline">In 2012, exactly two HDB flats crossed $1M. In 2025, it was 1,593 &mdash; one in every sixteen sales.</p>
-  <p class="card-body">The million-dollar flat went from statistical anomaly to a routine Tuesday. The first was a Queenstown executive in July 2012 at exactly $1,000,000; the current record is <strong>$1.66M for a Queenstown 5-room</strong> (June 2025, floors 22&ndash;24). And the million-dollar capital isn't where you'd guess &mdash; it's <strong>Toa Payoh</strong>, whose post-2008 high-rise builds near the city now dominate the leaderboard.</p>
+  <p class="card-headline">In 2012, exactly two HDB flats crossed $1M. In 2025, it was 1,593 - one in every sixteen sales.</p>
+  <p class="card-body">The million-dollar flat went from statistical anomaly to a routine Tuesday. The first was a Queenstown executive in July 2012 at exactly $1,000,000; the current record is <strong>$1.66M for a Queenstown 5-room</strong> (June 2025, floors 22&ndash;24). And the million-dollar capital isn't where you'd guess - it's <strong>Toa Payoh</strong>, whose post-2008 high-rise builds near the city now dominate the leaderboard.</p>
   <div class="bigstat" id="mil-stats"></div>
   <div class="vbars" id="mil-bars"></div>
   <p class="scrub-note">Click a year to explore its breakdown</p>
@@ -136,26 +147,26 @@ svg text{font-family:var(--font-sans)}
 <!-- CARD 2: LEASE CLIFF -->
 <div class="card">
   <h2 class="card-kicker">02 &middot; Lease left isn't the price story</h2>
-  <p class="card-headline">The priciest 4-room flats aren't the ones with the most lease left &mdash; they're the ones nearest an MRT.</p>
-  <p class="card-body">Sort 2025's 4-room sales by remaining lease and one band jumps out: flats with <strong>80&ndash;85 years</strong> left sell for a median <strong>~$830K</strong> &mdash; more than flats with a decade <em>more</em> lease remaining. Lease clearly isn't setting the price. Location is. Remaining lease is really flat age in disguise, and age tracks <em>where</em> HDB was building: those 80&ndash;85y flats mostly went up around 2006&ndash;2010, a wave of prime, near-MRT infill in mature central estates (Toa Payoh, Queenstown, Bukit Merah) that today sit <strong>~340m</strong> from a station. The bands on either side are far-flung Sengkang and Punggol, ~700m&ndash;1.1km out. Look within a single town, where location holds steady, and price only eases down gently with lease &mdash; roughly <strong>$3,600 a year</strong>.</p>
+  <p class="card-headline">The priciest 4-room flats aren't the ones with the most lease left - they're the ones nearest an MRT.</p>
+  <p class="card-body">Sort 2025's 4-room sales by remaining lease and one band jumps out: flats with <strong>80&ndash;85 years</strong> left sell for a median <strong>~$830K</strong> - more than flats with a decade <em>more</em> lease remaining. Lease clearly isn't setting the price. Location is. Remaining lease is really flat age in disguise, and age tracks <em>where</em> HDB was building: those 80&ndash;85y flats mostly went up around 2006&ndash;2010, a wave of prime, near-MRT infill in mature central estates (Toa Payoh, Queenstown, Bukit Merah) that today sit <strong>~340m</strong> from a station. The bands on either side are far-flung Sengkang and Punggol, ~700m&ndash;1.1km out. Look within a single town, where location holds steady, and price only eases down gently with lease - roughly <strong>$3,600 a year</strong>.</p>
   <div id="cliff-bars"></div>
-  <p class="note">Median 2025 resale price of 4-room flats by remaining-lease band. The figure at right is each band's median distance to an MRT, echoed in the bar shade (darker = nearer). The 80&ndash;85y band sits ~2.5&times; more central than its neighbours and about half as far from a station &mdash; the spike is location, not lease.</p>
+  <p class="note">Median 2025 resale price of 4-room flats by remaining-lease band. The figure at right is each band's median distance to an MRT, echoed in the bar shade (darker = nearer). The 80&ndash;85y band sits ~2.5&times; more central than its neighbours and about half as far from a station - the spike is location, not lease.</p>
 </div>
 
 <!-- CARD 3: SKY PREMIUM -->
 <div class="card">
   <h2 class="card-kicker">03 &middot; The sky premium</h2>
-  <p class="card-headline">A floor-28 flat outprices a floor-2 one by 89% &mdash; but that's new central towers vs old walk-ups, not just height.</p>
-  <p class="card-body">Height genuinely lifts price &mdash; a better view, more light, less street noise. But most of that 89% gap (<strong>$570K</strong> on floors 1&ndash;3 up to <strong>$1.08M</strong> above floor 28) isn't the floor itself; it's what's up there. HDB only began building 25- to 40-storey blocks in the last 15 years, almost all in newer, central developments. 4-room flats above floor 28 were built around <strong>2014</strong> and sit <strong>86%</strong> in central towns; down on floors 1&ndash;3 they date to ~<strong>1997</strong> and are just 18% central. You're not comparing one flat at two heights &mdash; you're comparing a new central tower with an old suburban walk-up. A like-for-like storey premium is real, but far gentler.</p>
+  <p class="card-headline">A floor-28 flat outprices a floor-2 one by 89% - but that's new central towers vs old walk-ups, not just height.</p>
+  <p class="card-body">Height genuinely lifts price - a better view, more light, less street noise. But most of that 89% gap (<strong>$570K</strong> on floors 1&ndash;3 up to <strong>$1.08M</strong> above floor 28) isn't the floor itself; it's what's up there. HDB only began building 25- to 40-storey blocks in the last 15 years, almost all in newer, central developments. 4-room flats above floor 28 were built around <strong>2014</strong> and sit <strong>86%</strong> in central towns; down on floors 1&ndash;3 they date to ~<strong>1997</strong> and are just 18% central. You're not comparing one flat at two heights - you're comparing a new central tower with an old suburban walk-up. A like-for-like storey premium is real, but far gentler.</p>
   <div id="sky-bars"></div>
-  <p class="note">Median 2025 resale price of 4-room flats by storey band. The year at right is each band's median build year, echoed in the bar shade (darker = newer). Floors above ~13 are almost all post-2010 towers, so higher floors are mostly newer &mdash; and mostly central &mdash; flats, not just higher ones.</p>
+  <p class="note">Median 2025 resale price of 4-room flats by storey band. The year at right is each band's median build year, echoed in the bar shade (darker = newer). Floors above ~13 are almost all post-2010 towers, so higher floors are mostly newer - and mostly central - flats, not just higher ones.</p>
 </div>
 
 <!-- CARD 4: BOOM FORGOT -->
 <div class="card">
   <h2 class="card-kicker">04 &middot; The towns the boom forgot</h2>
   <p class="card-headline">Everyone knows prices surged after COVID. Nobody mentions that Central Area <em>fell</em>.</p>
-  <p class="card-body">From 2021 to 2025, the median Singapore town gained ~30%. <strong>Toa Payoh gained 68%</strong>. But the boom was wildly uneven: prime-adjacent Clementi (+11%) and Marine Parade (+10%) barely moved, and <strong>Central Area actually declined 8%</strong> &mdash; its 2021 median was inflated by a wave of premium flats hitting their 5-year mark, a mix that later normalised. The lesson: town-level "averages" can move on composition, not just demand.</p>
+  <p class="card-body">From 2021 to 2025, the median Singapore town gained ~30%. <strong>Toa Payoh gained 68%</strong>. But the boom was wildly uneven: prime-adjacent Clementi (+11%) and Marine Parade (+10%) barely moved, and <strong>Central Area actually declined 8%</strong> - its 2021 median was inflated by a wave of premium flats hitting their 5-year mark, a mix that later normalised. The lesson: town-level "averages" can move on composition, not just demand.</p>
   <div id="boom-bars"></div>
 </div>
 
@@ -163,7 +174,7 @@ svg text{font-family:var(--font-sans)}
 <div class="card">
   <h2 class="card-kicker">05 &middot; Small flats left behind</h2>
   <p class="card-headline">The boom rewarded space: 3-room flats grew 29% in 13 years while executives grew 46%.</p>
-  <p class="card-body">Index every flat type to 100 in 2012 and the gap is unmistakable &mdash; the lines move together until 2020, then fan out. Post-COVID demand chased <strong>space</strong>: families upgrading, working from home, multi-generation living. The humble 3-room &mdash; the most affordable entry point &mdash; appreciated at barely 60% the rate of an executive flat. For buyers, that's a double-edged finding: 3-rooms are the relative bargain of 2025, but history says they also climb slowest.</p>
+  <p class="card-body">Index every flat type to 100 in 2012 and the gap is unmistakable - the lines move together until 2020, then fan out. Post-COVID demand chased <strong>space</strong>: families upgrading, working from home, multi-generation living. The humble 3-room - the most affordable entry point - appreciated at barely 60% the rate of an executive flat. For buyers, that's a double-edged finding: 3-rooms are the relative bargain of 2025, but history says they also climb slowest.</p>
   <div class="legend">
     <span class="li"><span class="lline" style="background:#378ADD"></span>3-room</span>
     <span class="li"><span class="lline" style="background:#1D9E75"></span>4-room</span>
@@ -211,7 +222,7 @@ function setMilYear(y){milYear=y;buildMilBars();buildMilDetail();}
   const mv=rows.filter(r=>r.mrt!=null).map(r=>r.mrt);
   const near=Math.min(...mv), far=Math.max(...mv);
   document.getElementById('cliff-bars').innerHTML=rows.map(r=>{
-    // shade by MRT proximity — nearer station = deeper blue (the real driver)
+    // shade by MRT proximity - nearer station = deeper blue (the real driver)
     const t=(r.mrt==null||far===near)?0:(far-r.mrt)/(far-near);
     const col=`rgba(55,138,221,${(0.28+t*0.52).toFixed(2)})`;
     const loc=r.mrt==null?'':`~${r.mrt}m`+(r.n<50?` &middot; n${r.n}`:'');
@@ -226,7 +237,7 @@ function setMilYear(y){milYear=y;buildMilBars();buildMilDetail();}
   const lcs=rows.filter(r=>r.lc!=null).map(r=>r.lc);
   const oldy=Math.min(...lcs), newy=Math.max(...lcs);
   document.getElementById('sky-bars').innerHTML=rows.map(r=>{
-    // shade by build year — newer = deeper blue (why the premium inflates)
+    // shade by build year - newer = deeper blue (why the premium inflates)
     const t=(r.lc==null||newy===oldy)?0:(r.lc-oldy)/(newy-oldy);
     const col=`rgba(55,138,221,${(0.28+t*0.52).toFixed(2)})`;
     const yr=r.lc==null?'':`built ${r.lc}`;
@@ -303,6 +314,9 @@ function paint(){var d=eff()==='dark';btn.innerHTML=d?SUN:MOON;var l=d?'Switch t
 btn.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';root.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}paint();if(typeof window.onThemeChange==='function'){try{window.onThemeChange();}catch(e){}}});
 paint();
 })();
+</script>
+<script>/*NAVJS*/
+(function(){var g=document.querySelector('.nav-group');if(!g)return;var btn=g.querySelector('.nav-group-btn');function set(o){g.setAttribute('data-open',o?'true':'false');btn.setAttribute('aria-expanded',o?'true':'false');}if(window.matchMedia&&window.matchMedia('(hover:hover)').matches){g.addEventListener('mouseenter',function(){set(true);});g.addEventListener('mouseleave',function(){set(false);});}btn.addEventListener('click',function(e){e.preventDefault();set(g.getAttribute('data-open')!=='true');});document.addEventListener('click',function(e){if(!g.contains(e.target))set(false);});document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});})();
 </script>
 </body>
 </html>

@@ -3,28 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About — SG HDB Resale</title>
+<title>About - SG HDB Resale</title>
 <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#1c1c1a" media="(prefers-color-scheme: dark)">
 <link rel="canonical" href="https://sghdbresale.com/about">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SG HDB Resale">
 <meta property="og:locale" content="en_SG">
-<meta property="og:title" content="About — SG HDB Resale">
-<meta property="og:description" content="About SG HDB Resale — a free, independent project turning a decade of Singapore's official HDB resale data into prices you can explore, and how the numbers are sourced and calculated.">
+<meta property="og:title" content="About - SG HDB Resale">
+<meta property="og:description" content="About SG HDB Resale - a free, independent project turning a decade of Singapore's official HDB resale data into prices you can explore, and how the numbers are sourced and calculated.">
 <meta property="og:url" content="https://sghdbresale.com/about">
 <meta property="og:image" content="https://sghdbresale.com/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="SG HDB Resale — a decade of Singapore HDB resale prices">
+<meta property="og:image:alt" content="SG HDB Resale - a decade of Singapore HDB resale prices">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="About — SG HDB Resale">
-<meta name="twitter:description" content="About SG HDB Resale — a free, independent project turning a decade of Singapore's official HDB resale data into prices you can explore, and how the numbers are sourced and calculated.">
+<meta name="twitter:title" content="About - SG HDB Resale">
+<meta name="twitter:description" content="About SG HDB Resale - a free, independent project turning a decade of Singapore's official HDB resale data into prices you can explore, and how the numbers are sourced and calculated.">
 <meta name="twitter:image" content="https://sghdbresale.com/og-image.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"SG HDB Resale","alternateName":"SG HDB Resale Dashboard","url":"https://sghdbresale.com/","description":"A free dashboard of Singapore HDB resale flat prices — median prices by town and flat type, MRT proximity, postal district rankings and this year's market.","inLanguage":"en-SG","publisher":{"@type":"Organization","name":"SG HDB Resale","url":"https://sghdbresale.com/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"SG HDB Resale","alternateName":"SG HDB Resale Dashboard","url":"https://sghdbresale.com/","description":"A free dashboard of Singapore HDB resale flat prices - median prices by town and flat type, MRT proximity, postal district rankings and this year's market.","inLanguage":"en-SG","publisher":{"@type":"Organization","name":"SG HDB Resale","url":"https://sghdbresale.com/"}}</script>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
-<meta name="description" content="About SG HDB Resale — a free, independent project turning a decade of Singapore's official HDB resale data into prices you can explore, and how the numbers are sourced and calculated.">
+<meta name="description" content="About SG HDB Resale - a free, independent project turning a decade of Singapore's official HDB resale data into prices you can explore, and how the numbers are sourced and calculated.">
 <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16.png">
 <script>(function(){try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
@@ -55,6 +55,17 @@ body{margin:0;background:var(--color-background-primary);color:var(--color-text-
 .nav-link{font-size:13px;font-weight:500;padding:8px 15px;border-radius:8px;color:var(--color-text-secondary);text-decoration:none;white-space:nowrap;transition:all .12s;border:1px solid transparent}
 .nav-link:hover{background:var(--color-background-secondary);color:var(--color-text-primary)}
 .nav-link.active{background:var(--color-text-primary);color:var(--color-background-primary)}
+/*NAVDROPDOWN*/
+.nav-group{position:relative;display:inline-flex}
+.nav-group-btn{font-family:inherit;cursor:pointer;background:transparent;display:inline-flex;align-items:center;gap:5px}
+.nav-caret{opacity:.65;transition:transform .15s}
+.nav-group[data-open="true"] .nav-caret{transform:rotate(180deg)}
+.nav-menu{display:none;position:absolute;top:calc(100% + 6px);left:0;min-width:196px;background:var(--color-background-primary);border:1px solid var(--color-border-primary);border-radius:var(--border-radius-md);box-shadow:0 8px 28px rgba(0,0,0,.14);padding:6px;z-index:60}
+.nav-group[data-open="true"] .nav-menu{display:block}
+.nav-menu-link{display:block;font-size:13px;font-weight:500;padding:8px 12px;border-radius:6px;color:var(--color-text-secondary);text-decoration:none;white-space:nowrap;border:1px solid transparent}
+.nav-menu-link:hover{background:var(--color-background-secondary);color:var(--color-text-primary)}
+.nav-menu-link.active{color:var(--color-text-primary);font-weight:640;background:var(--color-background-secondary)}
+@media(max-width:600px){.nav-menu{right:0;left:auto}}
 @media(max-width:600px){.nav-brand{width:100%;margin:0 0 6px 0}.nav-inner{padding:10px 1rem}.nav-link{font-size:12px;padding:7px 12px}}
 .wrap{max-width:760px;margin:0 auto;padding:2rem 1.5rem 4rem}
 h1{font-size:28px;font-weight:600;margin:0 0 10px;letter-spacing:-.01em}
@@ -79,36 +90,36 @@ a{color:var(--color-text-info)}
 </style>
 </head>
 <body>
-<div class="nav"><div class="nav-inner"><a class="nav-brand" href="/" style="text-decoration:none"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>SG HDB Resale</a><a class="nav-link" href="/overview">Overview</a><a class="nav-link" href="/find-a-flat">Find a Flat</a><a class="nav-link" href="/analysis-by-town">Analysis by Town</a><a class="nav-link" href="/by-district">By District</a><a class="nav-link" href="/this-year">This Year</a><a class="nav-link" href="/guides">Guides</a><a class="nav-link" href="/insights">Insights</a><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme"></button></div></div>
+<div class="nav"><div class="nav-inner"><a class="nav-brand" href="/" style="text-decoration:none"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>SG HDB Resale</a><a class="nav-link" href="/overview">Overview</a><a class="nav-link" href="/insights">Insights</a><a class="nav-link" href="/guides">Guides</a><div class="nav-group"><button type="button" class="nav-link nav-group-btn" aria-haspopup="true" aria-expanded="false">Dashboard<svg class="nav-caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="nav-menu" role="menu"><a class="nav-menu-link" href="/find-a-flat" role="menuitem">Find a Flat</a><a class="nav-menu-link" href="/analysis-by-town" role="menuitem">Analysis by Town</a><a class="nav-menu-link" href="/by-district" role="menuitem">By District</a><a class="nav-menu-link" href="/this-year" role="menuitem">This Year</a></div></div><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme"></button></div></div>
 
 <div class="wrap">
   <h1>About SG HDB Resale</h1>
-  <p class="lede">SG HDB Resale is a free, independent project that turns a decade of Singapore's public housing resale data into something you can actually explore &mdash; whether you're buying your first flat, deciding when to sell, or just curious about where the market is going.</p>
+  <p class="lede">SG HDB Resale is a free, independent project that turns a decade of Singapore's public housing resale data into something you can actually explore - whether you're buying your first flat, deciding when to sell, or just curious about where the market is going.</p>
 
-  <p>It started from a simple frustration: the official data is all there, but it's locked away in spreadsheets that are hard to make sense of. This site does the work of cleaning, joining, and summarising it, so you can ask real questions &mdash; <em>what can I afford in this town? how much does living near an MRT cost? which districts are growing fastest?</em> &mdash; and get an honest answer straight from the numbers.</p>
+  <p>It started from a simple frustration: the official data is all there, but it's locked away in spreadsheets that are hard to make sense of. This site does the work of cleaning, joining, and summarising it, so you can ask real questions - <em>what can I afford in this town? how much does living near an MRT cost? which districts are growing fastest?</em> - and get an honest answer straight from the numbers.</p>
 
   <h2>Where the numbers come from</h2>
   <p>Every figure on this site comes from official, public sources:</p>
   <ul>
-    <li><strong>Resale transactions</strong> &mdash; the full record of HDB resale flat sales published on <a href="https://data.gov.sg" target="_blank" rel="noopener">data.gov.sg</a>, covering every registered sale from 2012 onward.</li>
-    <li><strong>Locations and MRT distances</strong> &mdash; flat blocks are geocoded and matched to the nearest MRT station using <a href="https://www.onemap.gov.sg" target="_blank" rel="noopener">OneMap</a>, Singapore's official map service.</li>
+    <li><strong>Resale transactions</strong> - the full record of HDB resale flat sales published on <a href="https://data.gov.sg" target="_blank" rel="noopener">data.gov.sg</a>, covering every registered sale from 2012 onward.</li>
+    <li><strong>Locations and MRT distances</strong> - flat blocks are geocoded and matched to the nearest MRT station using <a href="https://www.onemap.gov.sg" target="_blank" rel="noopener">OneMap</a>, Singapore's official map service.</li>
   </ul>
   <p>The data is refreshed every month, shortly after data.gov.sg publishes the latest sales.</p>
 
   <h2>How to read the numbers</h2>
   <p>A few things worth knowing, so the figures mean what you think they mean:</p>
   <ul>
-    <li><strong>Medians, not averages.</strong> Every price shown is a median &mdash; the middle of the range &mdash; which is far less skewed by a handful of unusually high or low sales than an average would be.</li>
-    <li><strong>Distance to the MRT is straight-line.</strong> When you see "distance to MRT", it's the direct, as-the-crow-flies distance from the block to the nearest station &mdash; not walking distance, which is usually a little longer.</li>
+    <li><strong>Medians, not averages.</strong> Every price shown is a median - the middle of the range - which is far less skewed by a handful of unusually high or low sales than an average would be.</li>
+    <li><strong>Distance to the MRT is straight-line.</strong> When you see "distance to MRT", it's the direct, as-the-crow-flies distance from the block to the nearest station - not walking distance, which is usually a little longer.</li>
     <li><strong>This year is year-to-date.</strong> The current year only includes sales registered so far, so it's a partial picture that fills in as the year goes on.</li>
     <li><strong>Small samples are shown, not hidden.</strong> Where only a few flats sold, the sale count is shown next to the median so you can judge how much weight to give it.</li>
   </ul>
 
   <h2>What this site is not</h2>
-  <p>This is an independent, non-commercial project. It is <strong>not affiliated with the Housing &amp; Development Board (HDB)</strong> or any Singapore government agency. The figures are for general information and interest only &mdash; they are not financial, legal, or property advice, and you shouldn't rely on them alone for a buying or selling decision.</p>
+  <p>This is an independent, non-commercial project. It is <strong>not affiliated with the Housing &amp; Development Board (HDB)</strong> or any Singapore government agency. The figures are for general information and interest only - they are not financial, legal, or property advice, and you shouldn't rely on them alone for a buying or selling decision.</p>
 
   <h2>Get in touch</h2>
-  <p>Found something that looks off, or have an idea to make the site more useful? I'd love to hear it &mdash; <a href="mailto:firenowsg@gmail.com">firenowsg@gmail.com</a>.</p>
+  <p>Found something that looks off, or have an idea to make the site more useful? I'd love to hear it - <a href="mailto:firenowsg@gmail.com">firenowsg@gmail.com</a>.</p>
   <p class="muted">For how your data is handled, see the <a href="/privacy">Privacy Policy</a>.</p>
 </div>
 <script>
@@ -136,6 +147,9 @@ function paint(){var d=eff()==='dark';btn.innerHTML=d?SUN:MOON;var l=d?'Switch t
 btn.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';root.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}paint();if(typeof window.onThemeChange==='function'){try{window.onThemeChange();}catch(e){}}});
 paint();
 })();
+</script>
+<script>/*NAVJS*/
+(function(){var g=document.querySelector('.nav-group');if(!g)return;var btn=g.querySelector('.nav-group-btn');function set(o){g.setAttribute('data-open',o?'true':'false');btn.setAttribute('aria-expanded',o?'true':'false');}if(window.matchMedia&&window.matchMedia('(hover:hover)').matches){g.addEventListener('mouseenter',function(){set(true);});g.addEventListener('mouseleave',function(){set(false);});}btn.addEventListener('click',function(e){e.preventDefault();set(g.getAttribute('data-open')!=='true');});document.addEventListener('click',function(e){if(!g.contains(e.target))set(false);});document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});})();
 </script>
 </body>
 </html>

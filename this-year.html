@@ -9,30 +9,30 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="HDB Resale">
 <meta name="mobile-web-app-capable" content="yes">
-<meta name="description" content="Singapore HDB median resale prices month by month this year, by town and flat type — a live year-to-date view of the resale market.">
+<meta name="description" content="Singapore HDB median resale prices month by month this year, by town and flat type - a live year-to-date view of the resale market.">
 <link rel="canonical" href="https://sghdbresale.com/this-year">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SG HDB Resale">
 <meta property="og:locale" content="en_SG">
-<meta property="og:title" content="This Year — SG HDB Resale">
-<meta property="og:description" content="Singapore HDB median resale prices month by month this year, by town and flat type — a live year-to-date view of the resale market.">
+<meta property="og:title" content="This Year - SG HDB Resale">
+<meta property="og:description" content="Singapore HDB median resale prices month by month this year, by town and flat type - a live year-to-date view of the resale market.">
 <meta property="og:url" content="https://sghdbresale.com/this-year">
 <meta property="og:image" content="https://sghdbresale.com/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="SG HDB Resale — a decade of Singapore HDB resale prices">
+<meta property="og:image:alt" content="SG HDB Resale - a decade of Singapore HDB resale prices">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="This Year — SG HDB Resale">
-<meta name="twitter:description" content="Singapore HDB median resale prices month by month this year, by town and flat type — a live year-to-date view of the resale market.">
+<meta name="twitter:title" content="This Year - SG HDB Resale">
+<meta name="twitter:description" content="Singapore HDB median resale prices month by month this year, by town and flat type - a live year-to-date view of the resale market.">
 <meta name="twitter:image" content="https://sghdbresale.com/og-image.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"SG HDB Resale","alternateName":"SG HDB Resale Dashboard","url":"https://sghdbresale.com/","description":"A free dashboard of Singapore HDB resale flat prices — median prices by town and flat type, MRT proximity, postal district rankings and this year's market.","inLanguage":"en-SG","publisher":{"@type":"Organization","name":"SG HDB Resale","url":"https://sghdbresale.com/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"SG HDB Resale","alternateName":"SG HDB Resale Dashboard","url":"https://sghdbresale.com/","description":"A free dashboard of Singapore HDB resale flat prices - median prices by town and flat type, MRT proximity, postal district rankings and this year's market.","inLanguage":"en-SG","publisher":{"@type":"Organization","name":"SG HDB Resale","url":"https://sghdbresale.com/"}}</script>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16.png">
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6257747517291345" crossorigin="anonymous"></script>
-<title>This Year — SG HDB Resale</title>
+<title>This Year - SG HDB Resale</title>
 <script>(function(){try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
 <style>
 :root{
@@ -61,7 +61,7 @@ body{margin:0;background:var(--color-background-primary);color:var(--color-text-
 .pg-title{font-size:22px;font-weight:500;margin:0 0 3px}
 .pg-sub{font-size:13px;color:var(--color-text-secondary);margin:0 0 4px}
 .headline{font-size:14px;color:var(--color-text-primary);margin:0 0 1.5rem;padding:11px 15px;background:var(--color-background-info);border-radius:var(--border-radius-md);line-height:1.5}
-/* nav — kept identical to page5_template.html so the bar doesn't shift between pages */
+/* nav - kept identical to page5_template.html so the bar doesn't shift between pages */
 .nav{position:sticky;top:0;z-index:50;background:var(--color-background-primary);border-bottom:1px solid var(--color-border-secondary);margin-bottom:0;box-shadow:0 1px 0 rgba(0,0,0,0.02)}
 .nav-inner{max-width:1000px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;gap:6px;flex-wrap:wrap;min-height:58px}
 .nav-brand{font-size:13px;font-weight:600;color:var(--color-text-primary);margin-right:18px;white-space:nowrap;display:flex;align-items:center;gap:7px}
@@ -70,6 +70,17 @@ body{margin:0;background:var(--color-background-primary);color:var(--color-text-
 .nav-link{font-size:13px;font-weight:500;padding:8px 15px;border-radius:8px;color:var(--color-text-secondary);text-decoration:none;white-space:nowrap;transition:all .12s;border:1px solid transparent;position:relative}
 .nav-link:hover{background:var(--color-background-secondary);color:var(--color-text-primary)}
 .nav-link.active{background:var(--color-text-primary);color:var(--color-background-primary)}
+/*NAVDROPDOWN*/
+.nav-group{position:relative;display:inline-flex}
+.nav-group-btn{font-family:inherit;cursor:pointer;background:transparent;display:inline-flex;align-items:center;gap:5px}
+.nav-caret{opacity:.65;transition:transform .15s}
+.nav-group[data-open="true"] .nav-caret{transform:rotate(180deg)}
+.nav-menu{display:none;position:absolute;top:calc(100% + 6px);left:0;min-width:196px;background:var(--color-background-primary);border:1px solid var(--color-border-primary);border-radius:var(--border-radius-md);box-shadow:0 8px 28px rgba(0,0,0,.14);padding:6px;z-index:60}
+.nav-group[data-open="true"] .nav-menu{display:block}
+.nav-menu-link{display:block;font-size:13px;font-weight:500;padding:8px 12px;border-radius:6px;color:var(--color-text-secondary);text-decoration:none;white-space:nowrap;border:1px solid transparent}
+.nav-menu-link:hover{background:var(--color-background-secondary);color:var(--color-text-primary)}
+.nav-menu-link.active{color:var(--color-text-primary);font-weight:640;background:var(--color-background-secondary)}
+@media(max-width:600px){.nav-menu{right:0;left:auto}}
 @media(max-width:600px){.nav-brand{width:100%;margin:0 0 6px 0}.nav-inner{padding:10px 1rem}.nav-link{font-size:12px;padding:7px 12px}}
 /* controls */
 .ctl{background:var(--color-background-secondary);border-radius:var(--border-radius-lg);padding:13px 15px;margin-bottom:14px}
@@ -163,7 +174,7 @@ table.heat td.tn{text-align:left;padding:8px 10px;color:var(--color-text-primary
 </style>
 </head>
 <body>
-<div class="nav"><div class="nav-inner"><a class="nav-brand" href="/" style="text-decoration:none"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>SG HDB Resale</a><a class="nav-link" href="/overview">Overview</a><a class="nav-link" href="/find-a-flat">Find a Flat</a><a class="nav-link" href="/analysis-by-town">Analysis by Town</a><a class="nav-link" href="/by-district">By District</a><a class="nav-link active" href="/this-year">This Year</a><a class="nav-link" href="/guides">Guides</a><a class="nav-link" href="/insights">Insights</a><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme"></button></div></div>
+<div class="nav"><div class="nav-inner"><a class="nav-brand" href="/" style="text-decoration:none"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>SG HDB Resale</a><a class="nav-link" href="/overview">Overview</a><a class="nav-link" href="/insights">Insights</a><a class="nav-link" href="/guides">Guides</a><div class="nav-group"><button type="button" class="nav-link nav-group-btn active" aria-haspopup="true" aria-expanded="false">Dashboard<svg class="nav-caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="nav-menu" role="menu"><a class="nav-menu-link" href="/find-a-flat" role="menuitem">Find a Flat</a><a class="nav-menu-link" href="/analysis-by-town" role="menuitem">Analysis by Town</a><a class="nav-menu-link" href="/by-district" role="menuitem">By District</a><a class="nav-menu-link active" href="/this-year" role="menuitem">This Year</a></div></div><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme"></button></div></div>
 <div class="wrap">
 <h1 class="pg-title">HDB median resale prices this year</h1>
 <p class="pg-sub" id="pg-sub"></p>
@@ -208,7 +219,7 @@ table.heat td.tn{text-align:left;padding:8px 10px;color:var(--color-text-primary
 
 <div class="legend">
   <span>Cheapest</span><span class="bar"></span><span>Most expensive</span>
-  <span style="margin-left:6px"><span class="sw"></span>fewer than <b id="lg-thin"></b> sales &mdash; median shown, but treat with care</span>
+  <span style="margin-left:6px"><span class="sw"></span>fewer than <b id="lg-thin"></b> sales - median shown, but treat with care</span>
 </div>
 <p class="note" id="note"></p>
 
@@ -405,7 +416,7 @@ function noteHTML(){
     `Read those lightly: a median drawn from one or two sales says more about those particular flats than `+
     `about the town.`);
   bits.push(`Colour is scaled across the whole table you are looking at, so in the flat-type view it largely reflects `+
-    `flat size &mdash; a 3-room will read cheap next to a 5-room. Compare towns down a column, not across one.`);
+    `flat size - a 3-room will read cheap next to a 5-room. Compare towns down a column, not across one.`);
   if(pooled)bits.push(`Month-on-month change is hidden while months are pooled: a cell spanning several months `+
     `has no single previous month to compare against. Select one month to bring it back.`);
   else if(selMonths()[0]===0&&selMonths().length===1)bits.push(`Month-on-month change is blank for ${mLabel(META.months[0])} because this page covers ${META.year} only.`);
@@ -413,11 +424,11 @@ function noteHTML(){
     `Even then it tracks which flats happened to sell, not just what prices did: where a town mixes older and `+
     `newer blocks, the median follows the month's mix. Most changes here sit under 5%, but a few run past 30% `+
     `on that effect alone.`);
-  bits.push(`<b>${mLabel(last)} ${META.year}</b> is the most recent month on record and may still be filling &mdash; `+
+  bits.push(`<b>${mLabel(last)} ${META.year}</b> is the most recent month on record and may still be filling - `+
     `HDB registrations can lag completion by several weeks, so its counts may rise.`);
   if(distIdx<META.distStops.length-1||ageIdx<META.ageStops.length-1)
     bits.push(`The distance and age filters narrow a grid already cut ${META.months.length} ways by month, so `+
-      `tightening them empties cells quickly &mdash; the count above the table tracks how much of it still holds `+
+      `tightening them empties cells quickly - the count above the table tracks how much of it still holds `+
       `enough sales to colour. Pooling several months is the way to get the sample back up.`);
   return bits.join(' ');
 }
@@ -452,7 +463,7 @@ function headline(){
     :`${ms.map(i=>mLabel(META.months[i])).join(', ')} ${META.year}`;
   return `In ${when}${scope}, the widest gap was among <b>${FT_LABEL[best.ft].toLowerCase()}</b> flats: `+
     `a median of <b>${money(best.hi[0])}</b> in ${titleCase(best.hi[1])} against <b>${money(best.lo[0])}</b> in `+
-    `${titleCase(best.lo[1])} &mdash; ${best.ratio.toFixed(1)}&times; the price for the same flat size.`;
+    `${titleCase(best.lo[1])} - ${best.ratio.toFixed(1)}&times; the price for the same flat size.`;
 }
 
 /* Coverage of the table actually on screen. Without it, the tight end of the
@@ -465,8 +476,8 @@ function coverageHTML(stats){
   let s=`<b>${stats.sales.toLocaleString()}</b> sales shown &middot; `+
         `<b>${stats.solid}</b> of ${stats.total} cells have ${META.thinFlag} or more `+
         `(${pctSolid.toFixed(0)}%)`;
-  if(!filtered)s+=' &mdash; no distance or age filter applied';
-  else if(pctSolid<10)s+=` &mdash; too few sales at this setting for the grid to say much; `+
+  if(!filtered)s+=' - no distance or age filter applied';
+  else if(pctSolid<10)s+=` - too few sales at this setting for the grid to say much; `+
         `widen the distance or age filter, or pool more months`;
   el.innerHTML=s;
 }
@@ -524,7 +535,7 @@ function init(){
     `Flat age is measured from the lease commencement year, so &ldquo;${META.ageLabels[0]}&rdquo; covers flats `+
     `whose lease began in ${META.year-META.ageStops[0]} or later. `+
     `<b>Distance to MRT is straight-line</b>, measured from the block to the nearest station, not a walking `+
-    `route &mdash; a real walk is normally longer. It uses the same station bands as Find a Flat. LRT stops are `+
+    `route - a real walk is normally longer. It uses the same station bands as Find a Flat. LRT stops are `+
     `not counted, so towns served mainly by LRT read as further from rail than they are. `+
     `The rest of this site covers 2012&ndash;2025; this page is the one place the current, incomplete year is shown.`;
 
@@ -569,6 +580,9 @@ function paint(){var d=eff()==='dark';btn.innerHTML=d?SUN:MOON;var l=d?'Switch t
 btn.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';root.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}paint();if(typeof window.onThemeChange==='function'){try{window.onThemeChange();}catch(e){}}});
 paint();
 })();
+</script>
+<script>/*NAVJS*/
+(function(){var g=document.querySelector('.nav-group');if(!g)return;var btn=g.querySelector('.nav-group-btn');function set(o){g.setAttribute('data-open',o?'true':'false');btn.setAttribute('aria-expanded',o?'true':'false');}if(window.matchMedia&&window.matchMedia('(hover:hover)').matches){g.addEventListener('mouseenter',function(){set(true);});g.addEventListener('mouseleave',function(){set(false);});}btn.addEventListener('click',function(e){e.preventDefault();set(g.getAttribute('data-open')!=='true');});document.addEventListener('click',function(e){if(!g.contains(e.target))set(false);});document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});})();
 </script>
 </body>
 </html>

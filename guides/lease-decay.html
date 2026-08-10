@@ -9,13 +9,13 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="HDB Resale">
 <meta name="mobile-web-app-capable" content="yes">
-<meta name="description" content="Does HDB lease decay wipe out your flat's value? Real 2025 data says it's a gentle ~1%-a-year drift for most flats — and the real bite comes around 60 years left, for a financing reason, not the flat.">
+<meta name="description" content="Does HDB lease decay wipe out your flat's value? Real 2025 data says it's a gentle ~1%-a-year drift for most flats - and the real bite comes around 60 years left, for a financing reason, not the flat.">
 <link rel="canonical" href="https://sghdbresale.com/guides/lease-decay">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="SG HDB Resale">
 <meta property="og:locale" content="en_SG">
 <meta property="og:title" content="Lease decay, explained without the panic">
-<meta property="og:description" content="For most HDB flats lease decay is a slow ~1%-a-year drift. The real bite comes around 60 years left — and it's about financing, not the flat.">
+<meta property="og:description" content="For most HDB flats lease decay is a slow ~1%-a-year drift. The real bite comes around 60 years left - and it's about financing, not the flat.">
 <meta property="og:url" content="https://sghdbresale.com/guides/lease-decay">
 <meta property="og:image" content="https://sghdbresale.com/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -31,7 +31,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16.png">
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6257747517291345" crossorigin="anonymous"></script>
-<title>Lease decay, explained without the panic — SG HDB Resale</title>
+<title>Lease decay, explained without the panic - SG HDB Resale</title>
 <script>(function(){try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
 <style>
 :root{
@@ -66,6 +66,17 @@ body{margin:0;background:var(--color-background-primary);color:var(--color-text-
 .nav-link{font-size:13px;font-weight:500;padding:8px 15px;border-radius:8px;color:var(--color-text-secondary);text-decoration:none;white-space:nowrap;transition:all .12s;border:1px solid transparent}
 .nav-link:hover{background:var(--color-background-secondary);color:var(--color-text-primary)}
 .nav-link.active{background:var(--color-text-primary);color:var(--color-background-primary)}
+/*NAVDROPDOWN*/
+.nav-group{position:relative;display:inline-flex}
+.nav-group-btn{font-family:inherit;cursor:pointer;background:transparent;display:inline-flex;align-items:center;gap:5px}
+.nav-caret{opacity:.65;transition:transform .15s}
+.nav-group[data-open="true"] .nav-caret{transform:rotate(180deg)}
+.nav-menu{display:none;position:absolute;top:calc(100% + 6px);left:0;min-width:196px;background:var(--color-background-primary);border:1px solid var(--color-border-primary);border-radius:var(--border-radius-md);box-shadow:0 8px 28px rgba(0,0,0,.14);padding:6px;z-index:60}
+.nav-group[data-open="true"] .nav-menu{display:block}
+.nav-menu-link{display:block;font-size:13px;font-weight:500;padding:8px 12px;border-radius:6px;color:var(--color-text-secondary);text-decoration:none;white-space:nowrap;border:1px solid transparent}
+.nav-menu-link:hover{background:var(--color-background-secondary);color:var(--color-text-primary)}
+.nav-menu-link.active{color:var(--color-text-primary);font-weight:640;background:var(--color-background-secondary)}
+@media(max-width:600px){.nav-menu{right:0;left:auto}}
 @media(max-width:600px){.nav-brand{width:100%;margin:0 0 6px 0}.nav-inner{padding:10px 1rem}.nav-link{font-size:12px;padding:7px 12px}}
 .theme-toggle{margin-left:auto;display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;padding:0;border:1px solid var(--color-border-secondary);background:transparent;border-radius:8px;color:var(--color-text-secondary);cursor:pointer;transition:background .12s,color .12s,border-color .12s}
 .theme-toggle:hover{background:var(--color-background-secondary);color:var(--color-text-primary);border-color:var(--color-border-primary)}
@@ -145,14 +156,14 @@ figcaption{font-family:var(--font-sans);font-size:12.5px;color:var(--color-text-
 </style>
 </head>
 <body>
-<div class="nav"><div class="nav-inner"><a class="nav-brand" href="/"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>SG HDB Resale</a><a class="nav-link" href="/overview">Overview</a><a class="nav-link" href="/find-a-flat">Find a Flat</a><a class="nav-link" href="/analysis-by-town">Analysis by Town</a><a class="nav-link" href="/by-district">By District</a><a class="nav-link" href="/this-year">This Year</a><a class="nav-link active" href="/guides">Guides</a><a class="nav-link" href="/insights">Insights</a><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme"></button></div></div>
+<div class="nav"><div class="nav-inner"><a class="nav-brand" href="/"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>SG HDB Resale</a><a class="nav-link" href="/overview">Overview</a><a class="nav-link" href="/insights">Insights</a><a class="nav-link active" href="/guides">Guides</a><div class="nav-group"><button type="button" class="nav-link nav-group-btn" aria-haspopup="true" aria-expanded="false">Dashboard<svg class="nav-caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="nav-menu" role="menu"><a class="nav-menu-link" href="/find-a-flat" role="menuitem">Find a Flat</a><a class="nav-menu-link" href="/analysis-by-town" role="menuitem">Analysis by Town</a><a class="nav-menu-link" href="/by-district" role="menuitem">By District</a><a class="nav-menu-link" href="/this-year" role="menuitem">This Year</a></div></div><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme"></button></div></div>
 
 <article class="article">
   <div class="crumbs"><a href="/guides">Guides</a> &nbsp;/&nbsp; Lease decay</div>
   <div class="kicker">Guide · Value</div>
   <h1>Lease decay, explained without the panic</h1>
   <p class="standfirst">Every HDB flat is a 99-year clock, and the fear is that an older one melts away to nothing.
-    The record tells a calmer story: a slow drift for most of that clock, and a real bite only near the end —
+    The record tells a calmer story: a slow drift for most of that clock, and a real bite only near the end -
     for a reason that has little to do with the flat.</p>
   <div class="byline">
     <span class="who">SG HDB Resale</span><span>·</span>
@@ -169,31 +180,31 @@ figcaption{font-family:var(--font-sans);font-size:12.5px;color:var(--color-text-
 
   <p>If lease decay were the dominant force, older flats would be visibly cheaper. They often aren’t. As
     <a href="/guides/mrt-price-premium">the MRT guide showed</a>, four-room flats with 80–85 years left outsold
-    flats with a full decade more lease — because the shorter-lease ones sat in prime, central, near-MRT
+    flats with a full decade more lease - because the shorter-lease ones sat in prime, central, near-MRT
     locations. Age and location are tangled together, and in the raw numbers location wins. So the market flatly
     contradicts the panic: buyers are routinely paying <em>more</em> for less lease.</p>
 
-  <p>To actually see decay, you have to hold location still — compare older against newer flats <em>within the
+  <p>To actually see decay, you have to hold location still - compare older against newer flats <em>within the
     same town</em>, and let the lease be the only thing that really changes.</p>
 
   <h2>Do that, and decay is gentle</h2>
 
   <p>Within a single town, price eases down by roughly <strong>1% of the flat’s value for each year of lease</strong>
-    — very roughly $3,000 to $6,000 a year on a mid-priced flat. That’s the whole gradient, and even some of it is
+    - very roughly $3,000 to $6,000 a year on a mid-priced flat. That’s the whole gradient, and even some of it is
     really newer flats having better layouts and locations, not the lease clock alone. A flat with 90 years left
     and one with 80 are almost indistinguishable on lease grounds. For the broad middle of the range, the steady
     “melting ice cube” simply isn’t there.</p>
 
   <div class="keyfig">
-    <div class="cell"><div class="n blue tnum">~1%<span style="font-size:16px">/yr</span></div><div class="l">how fast price eases with lease, within a town — a slow drift</div></div>
+    <div class="cell"><div class="n blue tnum">~1%<span style="font-size:16px">/yr</span></div><div class="l">how fast price eases with lease, within a town - a slow drift</div></div>
     <div class="cell"><div class="n red tnum">~60 yrs</div><div class="l">where the gentle drift turns into a real decline</div></div>
     <div class="cell"><div class="n tnum">3&times;</div><div class="l">how much steeper the fall gets below that point</div></div>
   </div>
 
-  <h2>The cliff is real — but it’s at ~60 years, not zero</h2>
+  <h2>The cliff is real - but it’s at ~60 years, not zero</h2>
 
   <p>Netting out location so we’re measuring the lease itself, the decline is mild while a flat still has plenty
-    of runway — then it steepens sharply as the lease gets short:</p>
+    of runway - then it steepens sharply as the lease gets short:</p>
 
   <figure>
     <div class="chart">
@@ -215,7 +226,7 @@ figcaption{font-family:var(--font-sans);font-size:12.5px;color:var(--color-text-
       three times as much.</figcaption>
   </figure>
 
-  <p>And the reason isn’t the flat — it’s money. Around the 60-year mark, a flat’s remaining lease stops being
+  <p>And the reason isn’t the flat - it’s money. Around the 60-year mark, a flat’s remaining lease stops being
     long enough to cover a young buyer to age 95. Past that line, CPF savings can only be used on a
     <strong>pro-rated</strong> basis and housing loans shrink; shorter still, and CPF and financing largely
     disappear. Fewer buyers can fund the purchase, the pool tilts toward older, cash-richer ones, and the price
@@ -226,12 +237,12 @@ figcaption{font-family:var(--font-sans);font-size:12.5px;color:var(--color-text-
   <div class="takeaways">
     <h3>How to hold lease in your head</h3>
     <ul>
-      <li><strong>For most resale flats — 70-plus years left — decay is a slow drag, not a countdown.</strong>
+      <li><strong>For most resale flats - 70-plus years left - decay is a slow drag, not a countdown.</strong>
         Floor, location and condition will move the price far more than the lease clock.</li>
       <li><strong>Watch the ~60-year line.</strong> Below it, reselling gets harder: your eventual buyers hit the
         same CPF and loan limits, so you’re selling to a smaller, more cash-heavy crowd.</li>
       <li><strong>Ask the financing question first.</strong> Does the remaining lease cover the youngest buyer to
-        age 95? That one line decides whether full CPF and loans are on the table — for you now, and for whoever
+        age 95? That one line decides whether full CPF and loans are on the table - for you now, and for whoever
         buys from you later.</li>
       <li><strong>Match the lease to your plan.</strong> Buying a great location to live in, with 65-plus years
         and the sums working? Reasonable. Counting on an easy resale or passing it on? Short leases are where the
@@ -241,22 +252,22 @@ figcaption{font-family:var(--font-sans);font-size:12.5px;color:var(--color-text-
 
   <div class="callout">
     <p>Lease decay isn’t a melting ice cube. It’s a gentle drift that turns into a financing cliff around 60 years
-      left — so the number that should worry you isn’t the age of the flat, it’s whether the lease still covers a loan.</p>
+      left - so the number that should worry you isn’t the age of the flat, it’s whether the lease still covers a loan.</p>
   </div>
 
   <div class="cta">
     <div class="t">
       <h3>See how lease changes the picture</h3>
-      <p>Find a Flat lets you filter by minimum remaining lease and watch how prices — and the towns within
-        reach — shift as you move the lease bar.</p>
+      <p>Find a Flat lets you filter by minimum remaining lease and watch how prices - and the towns within
+        reach - shift as you move the lease bar.</p>
     </div>
     <a class="btn" href="/find-a-flat">Open Find a Flat →</a>
   </div>
 
   <p class="method"><b>How we measured this.</b> Figures come from four-room HDB resale transactions in 2025
     (source: data.gov.sg). The “~1% a year” gradient is the median within-town slope across the towns with enough
-    sales and a wide enough spread of lease years. The steep-vs-gentle comparison is a town-centered slope — each
-    sale minus its town’s median price, so location is netted out — split at roughly 60 years remaining. CPF and
+    sales and a wide enough spread of lease years. The steep-vs-gentle comparison is a town-centered slope - each
+    sale minus its town’s median price, so location is netted out - split at roughly 60 years remaining. CPF and
     loan mechanics follow CPF Board and HDB rules, where financing hinges on the lease covering the youngest buyer
     to age 95. Medians describe past sales, not valuations or forecasts.</p>
 
@@ -285,6 +296,9 @@ function paint(){var d=eff()==='dark';btn.innerHTML=d?SUN:MOON;var l=d?'Switch t
 btn.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';root.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}paint();});
 paint();
 })();
+</script>
+<script>/*NAVJS*/
+(function(){var g=document.querySelector('.nav-group');if(!g)return;var btn=g.querySelector('.nav-group-btn');function set(o){g.setAttribute('data-open',o?'true':'false');btn.setAttribute('aria-expanded',o?'true':'false');}if(window.matchMedia&&window.matchMedia('(hover:hover)').matches){g.addEventListener('mouseenter',function(){set(true);});g.addEventListener('mouseleave',function(){set(false);});}btn.addEventListener('click',function(e){e.preventDefault();set(g.getAttribute('data-open')!=='true');});document.addEventListener('click',function(e){if(!g.contains(e.target))set(false);});document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});})();
 </script>
 </body>
 </html>

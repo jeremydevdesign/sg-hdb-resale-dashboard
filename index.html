@@ -9,34 +9,35 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="HDB Resale">
 <meta name="mobile-web-app-capable" content="yes">
-<meta name="description" content="See what Singapore HDB flats actually sold for — median resale prices by town, flat type, distance to the MRT and postal district. Free, official data.gov.sg records, refreshed every month. No jargon, no sign-up.">
+<meta name="description" content="See what Singapore HDB flats actually sold for - median resale prices by town, flat type, distance to the MRT and postal district. Free, official data.gov.sg records, refreshed every month. No jargon, no sign-up.">
 <link rel="canonical" href="https://sghdbresale.com/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SG HDB Resale">
 <meta property="og:locale" content="en_SG">
-<meta property="og:title" content="SG HDB Resale — a decade of Singapore HDB resale prices">
-<meta property="og:description" content="See what Singapore HDB flats actually sold for — median resale prices by town, flat type, MRT proximity and postal district. Free, official data, refreshed monthly.">
+<meta property="og:title" content="SG HDB Resale - a decade of Singapore HDB resale prices">
+<meta property="og:description" content="See what Singapore HDB flats actually sold for - median resale prices by town, flat type, MRT proximity and postal district. Free, official data, refreshed monthly.">
 <meta property="og:url" content="https://sghdbresale.com/">
 <meta property="og:image" content="https://sghdbresale.com/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="SG HDB Resale — a decade of Singapore HDB resale prices">
+<meta property="og:image:alt" content="SG HDB Resale - a decade of Singapore HDB resale prices">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="SG HDB Resale — a decade of Singapore HDB resale prices">
-<meta name="twitter:description" content="See what Singapore HDB flats actually sold for — median resale prices by town, flat type, MRT proximity and postal district. Free, official data, refreshed monthly.">
+<meta name="twitter:title" content="SG HDB Resale - a decade of Singapore HDB resale prices">
+<meta name="twitter:description" content="See what Singapore HDB flats actually sold for - median resale prices by town, flat type, MRT proximity and postal district. Free, official data, refreshed monthly.">
 <meta name="twitter:image" content="https://sghdbresale.com/og-image.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"SG HDB Resale","alternateName":"SG HDB Resale Dashboard","url":"https://sghdbresale.com/","description":"A free dashboard of Singapore HDB resale flat prices — median prices by town and flat type, MRT proximity, postal district rankings and this year's market.","inLanguage":"en-SG","publisher":{"@type":"Organization","name":"SG HDB Resale","url":"https://sghdbresale.com/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"SG HDB Resale","alternateName":"SG HDB Resale Dashboard","url":"https://sghdbresale.com/","description":"A free dashboard of Singapore HDB resale flat prices - median prices by town and flat type, MRT proximity, postal district rankings and this year's market.","inLanguage":"en-SG","publisher":{"@type":"Organization","name":"SG HDB Resale","url":"https://sghdbresale.com/"}}</script>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16.png">
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6257747517291345" crossorigin="anonymous"></script>
-<title>SG HDB Resale — a decade of Singapore HDB resale prices</title>
+<title>SG HDB Resale - a decade of Singapore HDB resale prices</title>
 <script>(function(){try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
 <style>
 :root{
   --font-sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --font-serif:"Iowan Old Style","Palatino Linotype",Palatino,"Georgia",serif;
   --color-background-primary:#fff;--color-background-secondary:#f5f5f4;--color-background-info:#eef4fb;
   --color-text-primary:#1a1a1a;--color-text-secondary:#6b6b6b;--color-text-tertiary:#6f6f6f;
   --color-text-info:#2c6cb0;--color-text-success:#0f6e56;--color-text-danger:#993c1d;
@@ -66,6 +67,17 @@ body{margin:0;background:var(--color-background-primary);color:var(--color-text-
 .nav-link{font-size:13px;font-weight:500;padding:8px 15px;border-radius:8px;color:var(--color-text-secondary);text-decoration:none;white-space:nowrap;transition:all .12s;border:1px solid transparent;position:relative}
 .nav-link:hover{background:var(--color-background-secondary);color:var(--color-text-primary)}
 .nav-link.active{background:var(--color-text-primary);color:var(--color-background-primary)}
+/*NAVDROPDOWN*/
+.nav-group{position:relative;display:inline-flex}
+.nav-group-btn{font-family:inherit;cursor:pointer;background:transparent;display:inline-flex;align-items:center;gap:5px}
+.nav-caret{opacity:.65;transition:transform .15s}
+.nav-group[data-open="true"] .nav-caret{transform:rotate(180deg)}
+.nav-menu{display:none;position:absolute;top:calc(100% + 6px);left:0;min-width:196px;background:var(--color-background-primary);border:1px solid var(--color-border-primary);border-radius:var(--border-radius-md);box-shadow:0 8px 28px rgba(0,0,0,.14);padding:6px;z-index:60}
+.nav-group[data-open="true"] .nav-menu{display:block}
+.nav-menu-link{display:block;font-size:13px;font-weight:500;padding:8px 12px;border-radius:6px;color:var(--color-text-secondary);text-decoration:none;white-space:nowrap;border:1px solid transparent}
+.nav-menu-link:hover{background:var(--color-background-secondary);color:var(--color-text-primary)}
+.nav-menu-link.active{color:var(--color-text-primary);font-weight:640;background:var(--color-background-secondary)}
+@media(max-width:600px){.nav-menu{right:0;left:auto}}
 @media(max-width:600px){.nav-brand{width:100%;margin:0 0 6px 0}.nav-inner{padding:10px 1rem}.nav-link{font-size:12px;padding:7px 12px}}
 
 .hero{padding:.25rem 0 .5rem}
@@ -90,12 +102,24 @@ body{margin:0;background:var(--color-background-primary);color:var(--color-text-
 @media(max-width:640px){.pulse-grid{grid-template-columns:repeat(2,1fr)}.pstat:nth-child(2){border-right:none}.pstat:nth-child(1),.pstat:nth-child(2){border-bottom:1px solid var(--color-border-secondary)}}
 @media(max-width:380px){.pulse-grid{grid-template-columns:1fr}.pstat{border-right:none;border-bottom:1px solid var(--color-border-secondary)}.pstat:last-child{border-bottom:none}}
 
-.guides-band{display:flex;gap:16px 26px;align-items:center;justify-content:space-between;flex-wrap:wrap;background:var(--color-background-info);border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);padding:20px 24px;margin:0 0 1.75rem;text-decoration:none;transition:border-color .12s}
-.guides-band:hover{border-color:var(--color-text-info)}
-.gb-tag{font-size:11.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--color-text-info)}
-.gb-title{font-size:18px;font-weight:600;color:var(--color-text-primary);margin:6px 0 4px;letter-spacing:-.01em}
-.gb-desc{font-size:14px;line-height:1.5;color:var(--color-text-secondary);margin:0;max-width:56ch}
-.gb-go{font-size:14px;font-weight:600;color:var(--color-text-info);white-space:nowrap}
+.section-label{font-size:12px;font-weight:640;letter-spacing:.06em;text-transform:uppercase;color:var(--color-text-tertiary);margin:0 0 16px}
+.feature{display:block;text-decoration:none;border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-secondary);padding:28px 30px;transition:border-color .12s,transform .12s}
+.feature:hover{border-color:var(--color-text-primary);transform:translateY(-2px)}
+.feature .tag{font-size:12px;font-weight:640;letter-spacing:.05em;text-transform:uppercase;color:var(--color-text-info)}
+.feature h2{font-family:var(--font-serif);font-size:clamp(22px,3.2vw,29px);line-height:1.15;font-weight:600;margin:12px 0 0;color:var(--color-text-primary);text-wrap:balance}
+.feature p{font-family:var(--font-serif);font-size:16.5px;line-height:1.55;color:var(--color-text-secondary);margin:12px 0 0;max-width:56ch}
+.feature .meta{font-family:var(--font-sans);font-size:13px;color:var(--color-text-tertiary);margin:16px 0 0;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.feature .go{font-family:var(--font-sans);color:var(--color-text-info);font-weight:640}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:16px}
+@media(max-width:640px){.grid{grid-template-columns:1fr}}
+.card{border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-primary);padding:22px 24px;display:flex;flex-direction:column;gap:9px}
+.card .kick{font-family:var(--font-sans);font-size:12px;font-weight:640;letter-spacing:.05em;text-transform:uppercase;color:var(--color-text-tertiary)}
+.card h3{font-family:var(--font-serif);margin:0;font-size:19px;line-height:1.25;font-weight:600;color:var(--color-text-primary)}
+.card p{font-family:var(--font-sans);margin:0;font-size:14px;line-height:1.5;color:var(--color-text-secondary)}
+.card .soon{align-self:flex-start;margin-top:2px;font-family:var(--font-sans);font-size:11.5px;font-weight:640;letter-spacing:.03em;color:var(--color-text-tertiary);background:var(--color-background-secondary);padding:3px 9px;border-radius:20px}
+a.card{text-decoration:none;transition:border-color .12s,transform .12s}
+a.card:hover{border-color:var(--color-text-info);transform:translateY(-2px)}
+.card .go{font-family:var(--font-sans);font-size:13.5px;font-weight:640;color:var(--color-text-info);margin-top:2px}
 
 .hero-start{font-size:13px;font-weight:600;color:var(--color-text-secondary);margin:0 0 12px}
 .hero-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
@@ -134,29 +158,66 @@ body{margin:0;background:var(--color-background-primary);color:var(--color-text-
 </style>
 </head>
 <body>
-<div class="nav"><div class="nav-inner"><a class="nav-brand" href="/"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>SG HDB Resale</a><a class="nav-link" href="/overview">Overview</a><a class="nav-link" href="/find-a-flat">Find a Flat</a><a class="nav-link" href="/analysis-by-town">Analysis by Town</a><a class="nav-link" href="/by-district">By District</a><a class="nav-link" href="/this-year">This Year</a><a class="nav-link" href="/guides">Guides</a><a class="nav-link" href="/insights">Insights</a><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme"></button></div></div>
+<div class="nav"><div class="nav-inner"><a class="nav-brand" href="/"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>SG HDB Resale</a><a class="nav-link" href="/overview">Overview</a><a class="nav-link" href="/insights">Insights</a><a class="nav-link" href="/guides">Guides</a><div class="nav-group"><button type="button" class="nav-link nav-group-btn" aria-haspopup="true" aria-expanded="false">Dashboard<svg class="nav-caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="nav-menu" role="menu"><a class="nav-menu-link" href="/find-a-flat" role="menuitem">Find a Flat</a><a class="nav-menu-link" href="/analysis-by-town" role="menuitem">Analysis by Town</a><a class="nav-menu-link" href="/by-district" role="menuitem">By District</a><a class="nav-menu-link" href="/this-year" role="menuitem">This Year</a></div></div><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme"></button></div></div>
 <div class="wrap">
 <section class="hero">
 <p class="hero-eyebrow">A decade of Singapore's HDB resale market</p>
 <h1 class="hero-title">Buying, selling, or just wondering where prices are headed?</h1>
-<p class="hero-lede">Make sense of the resale market with real, official numbers &mdash; no jargon and no sign-up. See what flats actually sold for, by town, flat type, distance to the MRT and postal district, refreshed every month.</p>
+<p class="hero-lede">Plain-English guides for anyone buying an HDB resale flat - each takes a question buyers actually ask and answers it with the real transaction record, not opinion. Backed by interactive dashboards built on official data.gov.sg data, refreshed every month. No jargon, no sign-up.</p>
 <div class="hero-trust"><span>Official data.gov.sg records</span><span>300,000+ transactions</span><span>Updated monthly</span></div>
+</section>
+
+<section aria-label="Guides">
+<p class="section-label">Start here &middot; Guides</p>
+<a class="feature" href="/guides/mrt-price-premium">
+<span class="tag">Featured &middot; Buying</span>
+<h2>Is it worth paying more to live near an MRT?</h2>
+<p>Buyers assume the near-station premium is huge and universal. Split 10,837 four-room sales by distance and it turns out to be smaller than the folklore - and in some towns, it runs the other way entirely.</p>
+<span class="meta"><span>5 min read</span><span>&middot;</span><span class="go">Read the guide &rarr;</span></span>
+</a>
+<div class="grid">
+<a class="card" href="/guides/fair-price">
+<span class="kick">Buying</span>
+<h3>How to tell if an asking price is fair</h3>
+<p>There's no single fair price - there's a fair range. The five checks to place a flat inside it, using nothing but the public record.</p>
+<span class="go">Read the guide &rarr;</span>
+</a>
+<a class="card" href="/guides/lease-decay">
+<span class="kick">Value</span>
+<h3>Lease decay, explained without the panic</h3>
+<p>A slow ~1%-a-year drift for most flats - and why the real bite comes around 60 years left, for a financing reason.</p>
+<span class="go">Read the guide &rarr;</span>
+</a>
+<div class="card">
+<span class="kick">Location</span>
+<h3>Mature vs non-mature estates: what you pay for</h3>
+<p>The price gap between estate types, and whether it's location or flat age doing the work.</p>
+<span class="soon">Planned</span>
+</div>
+<div class="card">
+<span class="kick">Timing</span>
+<h3>Is now a good time to buy?</h3>
+<p>What a decade of prices says about market timing - and why it matters less than you'd think.</p>
+<span class="soon">Planned</span>
+</div>
+</div>
+</section>
+
+<hr class="div">
+
 <section class="pulse" aria-label="Latest market snapshot">
 <!--PULSE:START-->
-      <div class="pulse-head"><span class="pulse-dot"></span>Market pulse &mdash; latest data <strong>July 2026</strong>, refreshed monthly from data.gov.sg</div>
+      <div class="pulse-head"><span class="pulse-dot"></span>Market pulse - latest data <strong>July 2026</strong> refreshed monthly from data.gov.sg</div>
       <div class="pulse-grid">
         <div class="pstat"><div class="pk">Median resale price</div><div class="pv">$630,000</div><div class="ps">across 2,656 sales in July</div></div>
-        <div class="pstat"><div class="pk">Year-on-year</div><div class="pv">+0.3%</div><div class="ps">median vs July 2025 — essentially flat</div></div>
+        <div class="pstat"><div class="pk">Year-on-year</div><div class="pv">+0.3%</div><div class="ps">median vs July 2025 - essentially flat</div></div>
         <div class="pstat"><div class="pk">Million-dollar flats</div><div class="pv">1,089</div><div class="ps">so far in 2026 &middot; 1,593 in 2025</div></div>
         <div class="pstat"><div class="pk">Transactions analysed</div><div class="pv">326,316</div><div class="ps">every resale since 2012</div></div>
       </div>
       <!--PULSE:END-->
 </section>
-<a class="guides-band" href="/guides/mrt-price-premium">
-<div><div class="gb-tag">New &middot; Guides</div><div class="gb-title">Is it worth paying more to live near an MRT?</div><p class="gb-desc">The near-station premium is real &mdash; but smaller and far more local than the folklore. What the 2025 data actually shows.</p></div>
-<span class="gb-go">Read the guide &rarr;</span>
-</a>
-<p class="hero-start">Where would you like to start?</p>
+
+<p class="hero-start">Prefer to explore the numbers yourself?</p>
 <div class="hero-cards">
 <a class="hero-card" href="/find-a-flat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><p class="hc-t">Find a flat you can afford</p><p class="hc-d">Set a budget and see which towns are within reach.</p></a>
 <a class="hero-card" href="/analysis-by-town"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><p class="hc-t">See what MRT proximity costs</p><p class="hc-d">How price changes by distance to the MRT, town by town.</p></a>
@@ -164,16 +225,15 @@ body{margin:0;background:var(--color-background-primary);color:var(--color-text-
 <a class="hero-card" href="/this-year"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><p class="hc-t">This month's market</p><p class="hc-d">The latest medians, town by town, year to date.</p></a>
 <a class="hero-card" href="/insights"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg><p class="hc-t">Surprising findings</p><p class="hc-d">Five things buried in the data most buyers miss.</p></a>
 </div>
-</section>
 <hr class="div">
 <section class="cta">
 <div class="cta-copy">
 <h2>Prefer the big picture first?</h2>
-<p>The Overview dashboard charts a decade of the whole market at once &mdash; median price by flat type, transaction volume, and a town-by-town comparison you can filter by year and flat type.</p>
+<p>The Overview dashboard charts a decade of the whole market at once - median price by flat type, transaction volume, and a town-by-town comparison you can filter by year and flat type.</p>
 </div>
 <a class="cta-btn" href="/overview">Open the Overview &rarr;</a>
 </section>
-<p class="note">Every figure comes from the official <a href="https://data.gov.sg/collections/189/view" rel="noopener">data.gov.sg</a> resale-price records, geocoded against OneMap for MRT distance and postal district. Nothing is modelled or estimated &mdash; these are actual recorded transactions. <a href="/about">How this site works &rarr;</a></p>
+<p class="note">Every figure comes from the official <a href="https://data.gov.sg/collections/189/view" rel="noopener">data.gov.sg</a> resale-price records, geocoded against OneMap for MRT distance and postal district. Nothing is modelled or estimated - these are actual recorded transactions. <a href="/about">How this site works &rarr;</a></p>
 </div>
 <footer class="site-footer"><div class="footer-inner">
 <span class="footer-brand">SG HDB Resale</span>
@@ -201,6 +261,9 @@ function paint(){var d=eff()==='dark';btn.innerHTML=d?SUN:MOON;var l=d?'Switch t
 btn.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';root.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}paint();});
 paint();
 })();
+</script>
+<script>/*NAVJS*/
+(function(){var g=document.querySelector('.nav-group');if(!g)return;var btn=g.querySelector('.nav-group-btn');function set(o){g.setAttribute('data-open',o?'true':'false');btn.setAttribute('aria-expanded',o?'true':'false');}if(window.matchMedia&&window.matchMedia('(hover:hover)').matches){g.addEventListener('mouseenter',function(){set(true);});g.addEventListener('mouseleave',function(){set(false);});}btn.addEventListener('click',function(e){e.preventDefault();set(g.getAttribute('data-open')!=='true');});document.addEventListener('click',function(e){if(!g.contains(e.target))set(false);});document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});})();
 </script>
 </body>
 </html>
