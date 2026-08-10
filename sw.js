@@ -1,6 +1,6 @@
-// SG HDB Resale Dashboard — service worker
+// SG HDB Resale Dashboard - service worker
 // Bump CACHE version whenever you change any cached file so clients update.
-const CACHE = 'hdb-resale-v31';
+const CACHE = 'hdb-resale-v32';
 const ASSETS = [
   './',
   './index.html',
@@ -16,6 +16,7 @@ const ASSETS = [
   './guides/mature-vs-non-mature',
   './guides/is-now-a-good-time',
   './insights',
+  './search',
   './about',
   './privacy',
   './manifest.webmanifest',
@@ -50,6 +51,14 @@ self.addEventListener('fetch', (e) => {
         return res;
       }).catch(() => caches.match(req).then((r) => r || caches.match('./index.html')))
     );
+    return;
+  }
+  // The Search page's dataset is large; cache it at runtime on first visit, then serve from cache.
+  if (url.pathname.endsWith('/search-data.json')) {
+    e.respondWith(caches.open(CACHE).then((c) => c.match(req).then((hit) => hit || fetch(req).then((res) => {
+      if (res.ok) c.put(req, res.clone());
+      return res;
+    }))));
     return;
   }
   e.respondWith(caches.match(req).then((r) => r || fetch(req)));

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1c1c1a" media="(prefers-color-scheme: dark)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="HDB Resale">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="description" content="Search individual HDB resale transactions since 2024 - by town, street, block and flat type. Real recorded prices with floor, lease, area, per-square-foot and straight-line distance to the nearest MRT. Official data.gov.sg records.">
+<link rel="canonical" href="https://sghdbresale.com/search">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SG HDB Resale">
+<meta property="og:locale" content="en_SG">
+<meta property="og:title" content="Search HDB resale transactions - SG HDB Resale">
+<meta property="og:description" content="Search individual HDB resale transactions since 2024 by town, street, block and flat type - real prices, lease, area, psf and distance to the MRT.">
+<meta property="og:url" content="https://sghdbresale.com/search">
+<meta property="og:image" content="https://sghdbresale.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Search HDB resale transactions">
+<meta name="twitter:description" content="Search individual HDB resale transactions since 2024 - price, lease, area, psf and distance to the MRT.">
+<meta name="twitter:image" content="https://sghdbresale.com/og-image.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16.png">
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6257747517291345" crossorigin="anonymous"></script>
+<title>Search HDB resale transactions - SG HDB Resale</title>
+<script>(function(){try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<style>
+:root{
+  --font-sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --color-background-primary:#fff;--color-background-secondary:#f5f5f4;--color-background-info:#eef4fb;
+  --color-text-primary:#1a1a1a;--color-text-secondary:#6b6b6b;--color-text-tertiary:#6f6f6f;
+  --color-text-info:#2c6cb0;--color-text-success:#0f6e56;--color-text-danger:#993c1d;
+  --color-border-primary:#d4d4d4;--color-border-secondary:#e0e0e0;--color-border-tertiary:#ececec;
+  --border-radius-md:10px;--border-radius-lg:14px;
+}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --color-background-primary:#1c1c1a;--color-background-secondary:#2a2a28;--color-background-info:#1e2a38;
+  --color-text-primary:#f5f5f3;--color-text-secondary:#a8a8a4;--color-text-tertiary:#949490;
+  --color-text-info:#6aa9e0;--color-text-success:#4cc4a0;--color-text-danger:#e08a6a;
+  --color-border-primary:#3a3a38;--color-border-secondary:#333331;--color-border-tertiary:#2c2c2a;
+}}
+:root[data-theme="dark"]{
+  --color-background-primary:#1c1c1a;--color-background-secondary:#2a2a28;--color-background-info:#1e2a38;
+  --color-text-primary:#f5f5f3;--color-text-secondary:#a8a8a4;--color-text-tertiary:#949490;
+  --color-text-info:#6aa9e0;--color-text-success:#4cc4a0;--color-text-danger:#e08a6a;
+  --color-border-primary:#3a3a38;--color-border-secondary:#333331;--color-border-tertiary:#2c2c2a;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--color-background-primary);color:var(--color-text-primary);font-family:var(--font-sans)}
+.tnum{font-variant-numeric:tabular-nums}
+
+.nav{position:sticky;top:0;z-index:50;background:var(--color-background-primary);border-bottom:1px solid var(--color-border-secondary);box-shadow:0 1px 0 rgba(0,0,0,0.02)}
+.nav-inner{max-width:1140px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;gap:6px;flex-wrap:wrap;min-height:58px;justify-content:space-between}
+.nav-brand{font-size:13px;font-weight:600;color:var(--color-text-primary);white-space:nowrap;display:flex;align-items:center;gap:7px;text-decoration:none}
+.nav-brand svg{flex-shrink:0}
+.nav-link{font-size:13px;font-weight:500;padding:8px 15px;border-radius:8px;color:var(--color-text-secondary);text-decoration:none;white-space:nowrap;transition:all .12s;border:1px solid transparent}
+.nav-link:hover{background:var(--color-background-secondary);color:var(--color-text-primary)}
+.nav-link.active{background:var(--color-text-primary);color:var(--color-background-primary)}
+/*NAVDROPDOWN*/
+.nav-group{position:relative;display:inline-flex}
+.nav-group-btn{font-family:inherit;cursor:pointer;background:transparent;display:inline-flex;align-items:center;gap:5px}
+.nav-caret{opacity:.65;transition:transform .15s}
+.nav-group[data-open="true"] .nav-caret{transform:rotate(180deg)}
+.nav-menu{display:none;position:absolute;top:calc(100% + 6px);left:0;min-width:196px;background:var(--color-background-primary);border:1px solid var(--color-border-primary);border-radius:var(--border-radius-md);box-shadow:0 8px 28px rgba(0,0,0,.14);padding:6px;z-index:60}
+.nav-group[data-open="true"] .nav-menu{display:block}
+.nav-menu-link{display:block;font-size:13px;font-weight:500;padding:8px 12px;border-radius:6px;color:var(--color-text-secondary);text-decoration:none;white-space:nowrap;border:1px solid transparent}
+.nav-menu-link:hover{background:var(--color-background-secondary);color:var(--color-text-primary)}
+.nav-menu-link.active{color:var(--color-text-primary);font-weight:640;background:var(--color-background-secondary)}
+@media(max-width:600px){.nav-menu{right:0;left:auto}}
+@media(max-width:600px){.nav-brand{width:100%;margin:0 0 6px 0}.nav-inner{padding:10px 1rem}.nav-link{font-size:12px;padding:7px 12px}}
+.theme-toggle{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;padding:0;border:1px solid var(--color-border-secondary);background:transparent;border-radius:8px;color:var(--color-text-secondary);cursor:pointer;transition:background .12s,color .12s,border-color .12s}
+.theme-toggle:hover{background:var(--color-background-secondary);color:var(--color-text-primary);border-color:var(--color-border-primary)}
+.theme-toggle svg{width:17px;height:17px;display:block}
+
+.page{max-width:1140px;margin:0 auto;padding:1.5rem 1.5rem 2.5rem}
+.head h1{font-size:clamp(24px,4vw,32px);font-weight:700;letter-spacing:-0.02em;margin:0}
+.head p{font-size:15px;line-height:1.6;color:var(--color-text-secondary);margin:12px 0 0;max-width:70ch}
+.head p a{color:var(--color-text-info);text-decoration:none}
+.head p a:hover{text-decoration:underline}
+
+.filters{display:flex;gap:14px;flex-wrap:wrap;align-items:flex-end;margin:22px 0 0}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-size:12px;font-weight:600;color:var(--color-text-tertiary)}
+.field select,.field input{font-family:inherit;font-size:14px;color:var(--color-text-primary);background:var(--color-background-primary);border:1px solid var(--color-border-primary);border-radius:9px;padding:9px 12px;min-width:190px;height:40px}
+.field.grow{flex:1;min-width:200px}
+.field.grow input{width:100%}
+.field select:focus,.field input:focus{outline:none;border-color:var(--color-text-info)}
+.btn-reset{font-family:inherit;font-size:13px;font-weight:600;color:var(--color-text-secondary);background:transparent;border:1px solid var(--color-border-primary);border-radius:9px;padding:9px 14px;height:40px;cursor:pointer}
+.btn-reset:hover{background:var(--color-background-secondary);color:var(--color-text-primary)}
+
+.meta{margin:18px 0 10px;font-size:13px;color:var(--color-text-secondary)}
+.meta b{color:var(--color-text-primary);font-weight:700}
+
+.tablewrap{border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);overflow-x:auto}
+table.tx{width:100%;border-collapse:collapse;min-width:940px;font-size:13.5px}
+table.tx th{position:sticky;top:0;background:var(--color-background-secondary);text-align:left;font-size:11.5px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:var(--color-text-secondary);padding:12px 14px;white-space:nowrap;border-bottom:1px solid var(--color-border-secondary)}
+table.tx th.sortable{cursor:pointer;user-select:none}
+table.tx th.sortable:hover{color:var(--color-text-primary)}
+table.tx th .ar{opacity:0;margin-left:4px;font-size:10px}
+table.tx th.sorted .ar{opacity:1;color:var(--color-text-info)}
+table.tx th.num,table.tx td.num{text-align:right}
+table.tx td{padding:11px 14px;border-bottom:1px solid var(--color-border-tertiary);vertical-align:top;white-space:nowrap}
+table.tx tr:last-child td{border-bottom:none}
+table.tx tbody tr:hover{background:var(--color-background-secondary)}
+td .main{color:var(--color-text-primary);font-weight:500}
+td .sub{color:var(--color-text-tertiary);font-size:12px;margin-top:2px}
+td.price .main{font-weight:700}
+.empty{padding:40px 20px;text-align:center;color:var(--color-text-secondary);font-size:14px}
+.loading{padding:50px 20px;text-align:center;color:var(--color-text-tertiary);font-size:14px}
+
+.pager{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:20px;flex-wrap:wrap}
+.pager button{font-family:inherit;font-size:13px;font-weight:600;color:var(--color-text-primary);background:var(--color-background-primary);border:1px solid var(--color-border-primary);border-radius:9px;padding:9px 16px;cursor:pointer}
+.pager button:hover:not(:disabled){background:var(--color-background-secondary)}
+.pager button:disabled{opacity:.4;cursor:default}
+.pager .pinfo{font-size:13px;color:var(--color-text-secondary);font-variant-numeric:tabular-nums}
+
+.note{margin:26px 0 0;font-size:12.5px;line-height:1.6;color:var(--color-text-tertiary)}
+.note a{color:var(--color-text-info);text-decoration:none}
+
+.site-footer{border-top:1px solid var(--color-border-secondary);margin-top:2.5rem}
+.footer-inner{max-width:1140px;margin:0 auto;padding:1.25rem 1.5rem;display:flex;flex-wrap:wrap;align-items:center;gap:6px 16px;justify-content:space-between}
+.footer-brand{font-size:13px;font-weight:600;color:var(--color-text-secondary)}
+.footer-nav{display:flex;gap:16px;flex-wrap:wrap}
+.footer-nav a{font-size:13px;color:var(--color-text-secondary);text-decoration:none;display:inline-block;padding:5px 2px}
+.footer-nav a:hover{color:var(--color-text-primary)}
+.footer-note{font-size:12px;color:var(--color-text-tertiary)}
+</style>
+</head>
+<body>
+<div class="nav"><div class="nav-inner"><a class="nav-brand" href="/"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>SG HDB Resale</a><a class="nav-link" href="/overview">Overview</a><a class="nav-link" href="/insights">Insights</a><a class="nav-link" href="/#guides">Guides</a><a class="nav-link active" href="/search">Search</a><div class="nav-group"><button type="button" class="nav-link nav-group-btn" aria-haspopup="true" aria-expanded="false">Dashboard<svg class="nav-caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="nav-menu" role="menu"><a class="nav-menu-link" href="/find-a-flat" role="menuitem">Find a Flat</a><a class="nav-menu-link" href="/analysis-by-town" role="menuitem">Analysis by Town</a><a class="nav-menu-link" href="/by-district" role="menuitem">By District</a><a class="nav-menu-link" href="/this-year" role="menuitem">This Year</a></div></div><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme"></button></div></div>
+
+<div class="page">
+  <div class="head">
+    <h1>Search HDB resale transactions</h1>
+    <p id="intro">Every individual resale recorded since January 2024, straight from the official
+      data.gov.sg register - filter by town, street and flat type, or search a block, then sort any column.
+      Distance to the MRT is straight-line to the nearest station. <a href="/find-a-flat">Prefer medians by budget?
+      Try Find a Flat.</a></p>
+  </div>
+
+  <div class="filters">
+    <div class="field"><label for="fTown">Estate / town</label>
+      <select id="fTown"><option value="">All estates/towns</option></select></div>
+    <div class="field"><label for="fStreet">Street</label>
+      <select id="fStreet"><option value="">All streets</option></select></div>
+    <div class="field"><label for="fType">Flat type</label>
+      <select id="fType"><option value="">All flat types</option></select></div>
+    <div class="field grow"><label for="fSearch">Search block or name</label>
+      <input id="fSearch" type="search" placeholder="e.g. 296, Compassvale, Tampines" autocomplete="off"></div>
+    <button class="btn-reset" id="fReset" type="button">Reset</button>
+  </div>
+
+  <div class="meta" id="meta">Loading transactions&hellip;</div>
+
+  <div class="tablewrap">
+    <table class="tx">
+      <thead><tr>
+        <th class="sortable" data-k="date">Date<span class="ar"></span></th>
+        <th class="sortable" data-k="town">Estate / town<span class="ar"></span></th>
+        <th>Block</th>
+        <th>Location</th>
+        <th>Room</th>
+        <th>Floor</th>
+        <th>Lease start</th>
+        <th class="sortable num" data-k="lease">Lease left<span class="ar"></span></th>
+        <th class="sortable num" data-k="area">Area<span class="ar"></span></th>
+        <th class="sortable num" data-k="mrt">Nearest MRT<span class="ar"></span></th>
+        <th class="sortable num price" data-k="price">Price (psf)<span class="ar"></span></th>
+      </tr></thead>
+      <tbody id="tbody"><tr><td colspan="11" class="loading">Loading transactions&hellip;</td></tr></tbody>
+    </table>
+  </div>
+
+  <div class="pager" id="pager" hidden>
+    <button id="prev" type="button">&larr; Prev</button>
+    <span class="pinfo" id="pinfo"></span>
+    <button id="next" type="button">Next &rarr;</button>
+  </div>
+
+  <p class="note">Source: <a href="https://data.gov.sg/collections/189/view" rel="noopener">data.gov.sg</a> resale
+    records, geocoded against OneMap for straight-line MRT distance. These are actual recorded transactions, not
+    valuations or estimates. <a href="/about">How this site works &rarr;</a></p>
+</div>
+
+<footer class="site-footer"><div class="footer-inner">
+  <span class="footer-brand">SG HDB Resale</span>
+  <nav class="footer-nav"><a href="/#guides">Guides</a><a href="/about">About</a><a href="/privacy">Privacy</a></nav>
+  <span class="footer-note">Data: data.gov.sg &amp; OneMap</span>
+</div></footer>
+
+<script>window.goatcounter={no_onload:location.hostname==='localhost'};</script>
+<script data-goatcounter="https://sghdbresale.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () { navigator.serviceWorker.register('/sw.js').catch(function () {}); });
+}
+</script>
+<script>
+(function(){
+var root=document.documentElement,btn=document.getElementById('theme-toggle');if(!btn)return;
+var MOON="<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z\"/></svg>",SUN="<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"5\"/><line x1=\"12\" y1=\"1\" x2=\"12\" y2=\"3\"/><line x1=\"12\" y1=\"21\" x2=\"12\" y2=\"23\"/><line x1=\"4.22\" y1=\"4.22\" x2=\"5.64\" y2=\"5.64\"/><line x1=\"1\" y1=\"12\" x2=\"3\" y2=\"12\"/><line x1=\"21\" y1=\"12\" x2=\"23\" y2=\"12\"/><line x1=\"4.22\" y1=\"19.78\" x2=\"5.64\" y2=\"18.36\"/><line x1=\"18.36\" y1=\"5.64\" x2=\"19.78\" y2=\"4.22\"/></svg>";
+function eff(){var t=root.getAttribute('data-theme');return (t==='light'||t==='dark')?t:((window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches)?'dark':'light');}
+function paint(){var d=eff()==='dark';btn.innerHTML=d?SUN:MOON;var l=d?'Switch to light theme':'Switch to dark theme';btn.setAttribute('aria-label',l);btn.setAttribute('title',l);}
+btn.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';root.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}paint();});
+paint();
+})();
+</script>
+<script>/*NAVJS*/
+(function(){var g=document.querySelector('.nav-group');if(!g)return;var btn=g.querySelector('.nav-group-btn');function set(o){g.setAttribute('data-open',o?'true':'false');btn.setAttribute('aria-expanded',o?'true':'false');}if(window.matchMedia&&window.matchMedia('(hover:hover)').matches){g.addEventListener('mouseenter',function(){set(true);});g.addEventListener('mouseleave',function(){set(false);});}btn.addEventListener('click',function(e){e.preventDefault();set(g.getAttribute('data-open')!=='true');});document.addEventListener('click',function(e){if(!g.contains(e.target))set(false);});document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});})();
+</script>
+<script>
+/* ---- Search table ---- */
+(function(){
+  var PAGE=50, SQFT=10.7639;
+  var FTNAME={1:'1-Room',2:'2-Room',3:'3-Room',4:'4-Room',5:'5-Room',6:'Executive',7:'Multi-Gen'};
+  var MONTHS={'01':'Jan','02':'Feb','03':'Mar','04':'Apr','05':'May','06':'Jun','07':'Jul','08':'Aug','09':'Sep','10':'Oct','11':'Nov','12':'Dec'};
+  var D=null, townsLC=[], streetsLC=[], mrtsTitle=[], townsTitle=[], streetsTitle=[];
+  var filtered=[], page=0, sortKey='date', sortDir=-1;
+  var townStreets={};
+
+  var $=function(id){return document.getElementById(id);};
+  var tbody=$('tbody'), metaEl=$('meta'), pager=$('pager'), pinfo=$('pinfo');
+  var fTown=$('fTown'), fStreet=$('fStreet'), fType=$('fType'), fSearch=$('fSearch');
+
+  function title(s){return s.toLowerCase().replace(/(^|[\s\/\-])\w/g,function(c){return c.toUpperCase();});}
+  function esc(s){return String(s).replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});}
+  function nfmt(n){return n.toLocaleString('en-SG');}
+  function markSort(){var a=document.querySelectorAll('th.sortable');for(var j=0;j<a.length;j++){a[j].classList.remove('sorted');a[j].querySelector('.ar').textContent='';}var c=document.querySelector('th[data-k="'+sortKey+'"]');if(c){c.classList.add('sorted');c.querySelector('.ar').textContent=sortDir<0?'▼':'▲';}}
+
+  fetch('/search-data.json').then(function(r){return r.json();}).then(function(d){
+    D=d;
+    townsTitle=d.towns.map(title); townsLC=d.towns.map(function(s){return s.toLowerCase();});
+    streetsTitle=d.streets.map(title); streetsLC=d.streets.map(function(s){return s.toLowerCase();});
+    mrtsTitle=d.mrts.map(title);
+    // town -> set of street indices present
+    for(var i=0;i<d.rows.length;i++){var t=d.rows[i][1],s=d.rows[i][2];(townStreets[t]||(townStreets[t]=Object.create(null)))[s]=1;}
+    buildTownOptions(); buildTypeOptions(); buildStreetOptions('');
+    var mo=d.meta.updated.slice(5), yr=d.meta.updated.slice(0,4);
+    $('intro').insertAdjacentHTML('beforeend',' <span style="color:var(--color-text-tertiary)">Data through '+MONTHS[mo]+' '+yr+'.</span>');
+    markSort(); apply();
+  }).catch(function(){
+    metaEl.textContent='Could not load transaction data. Please refresh.';
+    tbody.innerHTML='<tr><td colspan="11" class="empty">Could not load transaction data.</td></tr>';
+  });
+
+  function buildTownOptions(){
+    var order=D.towns.map(function(_,i){return i;}).sort(function(a,b){return townsTitle[a]<townsTitle[b]?-1:1;});
+    var h='';for(var k=0;k<order.length;k++){h+='<option value="'+order[k]+'">'+esc(townsTitle[order[k]])+'</option>';}
+    fTown.insertAdjacentHTML('beforeend',h);
+  }
+  function buildTypeOptions(){
+    var codes=[1,2,3,4,5,6,7],h='';for(var i=0;i<codes.length;i++){h+='<option value="'+codes[i]+'">'+FTNAME[codes[i]]+'</option>';}
+    fType.insertAdjacentHTML('beforeend',h);
+  }
+  function buildStreetOptions(townVal){
+    var idxs;
+    if(townVal===''){idxs=D.streets.map(function(_,i){return i;});}
+    else{idxs=Object.keys(townStreets[townVal]||{}).map(Number);}
+    idxs.sort(function(a,b){return streetsTitle[a]<streetsTitle[b]?-1:1;});
+    var h='<option value="">All streets</option>';
+    for(var k=0;k<idxs.length;k++){h+='<option value="'+idxs[k]+'">'+esc(streetsTitle[idxs[k]])+'</option>';}
+    fStreet.innerHTML=h;
+  }
+
+  var SORT={
+    date:function(r){return r[0];},
+    town:function(r){return townsLC[r[1]];},
+    lease:function(r){return r[9];},
+    area:function(r){return r[7];},
+    mrt:function(r){return r[12];},
+    price:function(r){return r[10];}
+  };
+
+  function apply(){
+    var tv=fTown.value, sv=fStreet.value, yv=fType.value, q=fSearch.value.trim().toLowerCase();
+    var ti=tv===''?-1:+tv, si=sv===''?-1:+sv, ty=yv===''?-1:+yv;
+    var rows=D.rows, out=[];
+    for(var i=0;i<rows.length;i++){
+      var r=rows[i];
+      if(ti>=0&&r[1]!==ti)continue;
+      if(si>=0&&r[2]!==si)continue;
+      if(ty>=0&&r[4]!==ty)continue;
+      if(q&&townsLC[r[1]].indexOf(q)<0&&streetsLC[r[2]].indexOf(q)<0&&r[3].toLowerCase().indexOf(q)<0)continue;
+      out.push(r);
+    }
+    var f=SORT[sortKey];
+    out.sort(function(a,b){var x=f(a),y=f(b);return (x<y?-1:x>y?1:0)*sortDir;});
+    filtered=out; page=0; render();
+  }
+
+  function render(){
+    var n=filtered.length, pages=Math.max(1,Math.ceil(n/PAGE));
+    if(page>=pages)page=pages-1;
+    metaEl.innerHTML='Showing <b>'+nfmt(Math.min(n,(page)*PAGE+ (n?1:0)))+'-'+nfmt(Math.min(n,(page+1)*PAGE))+'</b> of <b>'+nfmt(n)+'</b> transactions';
+    if(!n){tbody.innerHTML='<tr><td colspan="11" class="empty">No transactions match those filters.</td></tr>';pager.hidden=true;return;}
+    var start=page*PAGE, end=Math.min(n,start+PAGE), h='';
+    for(var i=start;i<end;i++){
+      var r=filtered[i];
+      var yy=r[0].slice(0,2), mm=r[0].slice(2,4);
+      var sqm=r[7], sqft=Math.round(sqm*SQFT);
+      var psf=Math.round(r[10]/sqft);
+      var yrs=Math.floor(r[9]/12);
+      h+='<tr>'+
+        '<td>'+MONTHS[mm]+' 20'+yy+'</td>'+
+        '<td class="main">'+esc(townsTitle[r[1]])+'</td>'+
+        '<td>'+esc(r[3])+'</td>'+
+        '<td>'+esc(streetsTitle[r[2]])+'</td>'+
+        '<td><div class="main">'+FTNAME[r[4]]+'</div><div class="sub">'+esc(D.models[r[5]])+'</div></td>'+
+        '<td>'+esc(r[6])+'</td>'+
+        '<td>'+r[8]+'</td>'+
+        '<td class="num">'+yrs+' yrs</td>'+
+        '<td class="num"><div class="main">'+nfmt(sqft)+' sqft</div><div class="sub">'+sqm+' sqm</div></td>'+
+        '<td class="num"><div class="main">'+esc(mrtsTitle[r[11]])+'</div><div class="sub">'+nfmt(r[12])+' m</div></td>'+
+        '<td class="num price"><div class="main">S$ '+nfmt(r[10])+'</div><div class="sub">S$ '+nfmt(psf)+' psf</div></td>'+
+      '</tr>';
+    }
+    tbody.innerHTML=h;
+    pager.hidden=false;
+    pinfo.textContent='Page '+(page+1)+' of '+nfmt(pages);
+    $('prev').disabled=page<=0; $('next').disabled=page>=pages-1;
+    document.querySelector('.tablewrap').scrollTop=0;
+  }
+
+  // sort header clicks
+  var ths=document.querySelectorAll('th.sortable');
+  for(var i=0;i<ths.length;i++){(function(th){
+    th.addEventListener('click',function(){
+      var k=th.getAttribute('data-k');
+      if(sortKey===k){sortDir=-sortDir;}else{sortKey=k;sortDir=(k==='date'||k==='price'||k==='area'||k==='lease')?-1:1;}
+      markSort();
+      apply();
+    });
+  })(ths[i]);}
+
+  // filters
+  fTown.addEventListener('change',function(){buildStreetOptions(fTown.value);apply();});
+  fStreet.addEventListener('change',apply);
+  fType.addEventListener('change',apply);
+  var deb;fSearch.addEventListener('input',function(){clearTimeout(deb);deb=setTimeout(apply,160);});
+  $('fReset').addEventListener('click',function(){fTown.value='';fType.value='';fSearch.value='';buildStreetOptions('');sortKey='date';sortDir=-1;markSort();apply();});
+  $('prev').addEventListener('click',function(){if(page>0){page--;render();window.scrollTo({top:0,behavior:'smooth'});}});
+  $('next').addEventListener('click',function(){page++;render();window.scrollTo({top:0,behavior:'smooth'});});
+})();
+</script>
+</body>
+</html>
