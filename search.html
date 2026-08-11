@@ -153,6 +153,8 @@ td.price .main{font-weight:700}
       <select id="fStreet"><option value="">All streets</option></select></div>
     <div class="field"><label for="fType">Flat type</label>
       <select id="fType"><option value="">All flat types</option></select></div>
+    <div class="field"><label for="fMrt">Nearest MRT</label>
+      <select id="fMrt"><option value="">Any distance</option><option value="200">&le; 200 m</option><option value="500">&le; 500 m</option><option value="1000">&le; 1 km</option></select></div>
     <div class="field grow"><label for="fSearch">Search block or name</label>
       <input id="fSearch" type="search" placeholder="e.g. 296, Compassvale, Tampines" autocomplete="off"></div>
     <button class="btn-reset" id="fReset" type="button">Reset</button>
@@ -171,8 +173,8 @@ td.price .main{font-weight:700}
         <th>Floor</th>
         <th>Lease start</th>
         <th class="sortable num" data-k="lease">Lease left<span class="ar"></span></th>
-        <th class="sortable num" data-k="area">Area<span class="ar"></span></th>
         <th class="sortable num" data-k="mrt">Nearest MRT<span class="ar"></span></th>
+        <th class="sortable num" data-k="area">Area<span class="ar"></span></th>
         <th class="sortable num price" data-k="price">Price (psf)<span class="ar"></span></th>
       </tr></thead>
       <tbody id="tbody"><tr><td colspan="11" class="loading">Loading transactions&hellip;</td></tr></tbody>
@@ -228,7 +230,7 @@ paint();
 
   var $=function(id){return document.getElementById(id);};
   var tbody=$('tbody'), metaEl=$('meta'), pager=$('pager'), pinfo=$('pinfo');
-  var fTown=$('fTown'), fStreet=$('fStreet'), fType=$('fType'), fSearch=$('fSearch');
+  var fTown=$('fTown'), fStreet=$('fStreet'), fType=$('fType'), fMrt=$('fMrt'), fSearch=$('fSearch');
 
   function title(s){return s.toLowerCase().replace(/(^|[\s\/\-])\w/g,function(c){return c.toUpperCase();});}
   function esc(s){return String(s).replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});}
@@ -280,14 +282,15 @@ paint();
   };
 
   function apply(){
-    var tv=fTown.value, sv=fStreet.value, yv=fType.value, q=fSearch.value.trim().toLowerCase();
-    var ti=tv===''?-1:+tv, si=sv===''?-1:+sv, ty=yv===''?-1:+yv;
+    var tv=fTown.value, sv=fStreet.value, yv=fType.value, mv=fMrt.value, q=fSearch.value.trim().toLowerCase();
+    var ti=tv===''?-1:+tv, si=sv===''?-1:+sv, ty=yv===''?-1:+yv, md=mv===''?-1:+mv;
     var rows=D.rows, out=[];
     for(var i=0;i<rows.length;i++){
       var r=rows[i];
       if(ti>=0&&r[1]!==ti)continue;
       if(si>=0&&r[2]!==si)continue;
       if(ty>=0&&r[4]!==ty)continue;
+      if(md>=0&&r[12]>md)continue;
       if(q&&townsLC[r[1]].indexOf(q)<0&&streetsLC[r[2]].indexOf(q)<0&&r[3].toLowerCase().indexOf(q)<0)continue;
       out.push(r);
     }
@@ -317,8 +320,8 @@ paint();
         '<td>'+esc(r[6])+'</td>'+
         '<td>'+r[8]+'</td>'+
         '<td class="num">'+yrs+' yrs</td>'+
-        '<td class="num"><div class="main">'+nfmt(sqft)+' sqft</div><div class="sub">'+sqm+' sqm</div></td>'+
         '<td class="num"><div class="main">'+esc(mrtsTitle[r[11]])+'</div><div class="sub">'+nfmt(r[12])+' m</div></td>'+
+        '<td class="num"><div class="main">'+nfmt(sqft)+' sqft</div><div class="sub">'+sqm+' sqm</div></td>'+
         '<td class="num price"><div class="main">S$ '+nfmt(r[10])+'</div><div class="sub">S$ '+nfmt(psf)+' psf</div></td>'+
       '</tr>';
     }
@@ -344,8 +347,9 @@ paint();
   fTown.addEventListener('change',function(){buildStreetOptions(fTown.value);apply();});
   fStreet.addEventListener('change',apply);
   fType.addEventListener('change',apply);
+  fMrt.addEventListener('change',apply);
   var deb;fSearch.addEventListener('input',function(){clearTimeout(deb);deb=setTimeout(apply,160);});
-  $('fReset').addEventListener('click',function(){fTown.value='';fType.value='';fSearch.value='';buildStreetOptions('');sortKey='date';sortDir=-1;markSort();apply();});
+  $('fReset').addEventListener('click',function(){fTown.value='';fType.value='';fMrt.value='';fSearch.value='';buildStreetOptions('');sortKey='date';sortDir=-1;markSort();apply();});
   $('prev').addEventListener('click',function(){if(page>0){page--;render();window.scrollTo({top:0,behavior:'smooth'});}});
   $('next').addEventListener('click',function(){page++;render();window.scrollTo({top:0,behavior:'smooth'});});
 })();
