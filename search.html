@@ -235,7 +235,7 @@ paint();
   function nfmt(n){return n.toLocaleString('en-SG');}
   function markSort(){var a=document.querySelectorAll('th.sortable');for(var j=0;j<a.length;j++){a[j].classList.remove('sorted');a[j].querySelector('.ar').textContent='';}var c=document.querySelector('th[data-k="'+sortKey+'"]');if(c){c.classList.add('sorted');c.querySelector('.ar').textContent=sortDir<0?'▼':'▲';}}
 
-  fetch('/search-data.json').then(function(r){return r.json();}).then(function(d){
+  fetch('/assets/tx9f2c.json').then(function(r){return r.json();}).then(function(d){
     D=d;
     townsTitle=d.towns.map(title); townsLC=d.towns.map(function(s){return s.toLowerCase();});
     streetsTitle=d.streets.map(title); streetsLC=d.streets.map(function(s){return s.toLowerCase();});
