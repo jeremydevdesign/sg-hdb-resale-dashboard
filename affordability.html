@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1c1c1a" media="(prefers-color-scheme: dark)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="HDB Resale">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="description" content="Free HDB affordability calculator for Singapore buyers: work out the maximum resale flat price you can support from your income, savings and CPF under the real MSR, TDSR and LTV rules - then see which towns fit your budget. The public formula, not advice.">
+<link rel="canonical" href="https://sghdbresale.com/affordability">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SG HDB Resale">
+<meta property="og:locale" content="en_SG">
+<meta property="og:title" content="HDB Affordability Calculator">
+<meta property="og:description" content="Free HDB affordability calculator for Singapore buyers: work out the maximum resale flat price you can support from your income, savings and CPF under the real MSR, TDSR and LTV rules - then see which towns fit your budget. The public formula, not advice.">
+<meta property="og:url" content="https://sghdbresale.com/affordability">
+<meta property="og:image" content="https://sghdbresale.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="HDB Affordability Calculator">
+<meta name="twitter:description" content="Free HDB affordability calculator for Singapore buyers: work out the maximum resale flat price you can support from your income, savings and CPF under the real MSR, TDSR and LTV rules - then see which towns fit your budget. The public formula, not advice.">
+<meta name="twitter:image" content="https://sghdbresale.com/og-image.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"HDB Affordability Calculator","url":"https://sghdbresale.com/affordability","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"SGD"},"description":"Free HDB affordability calculator for Singapore buyers: work out the maximum resale flat price you can support from your income, savings and CPF under the real MSR, TDSR and LTV rules - then see which towns fit your budget. The public formula, not advice.","inLanguage":"en-SG","isPartOf":{"@type":"WebSite","name":"SG HDB Resale","url":"https://sghdbresale.com/"}}</script>
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16.png">
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6257747517291345" crossorigin="anonymous"></script>
+<title>HDB Affordability Calculator - How much flat can you afford? - SG HDB Resale</title>
+<script>(function(){try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<style>
+:root{
+  --font-sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --font-serif:"Iowan Old Style","Palatino Linotype",Palatino,"Georgia",serif;
+  --color-background-primary:#fff;--color-background-secondary:#f5f5f4;--color-background-info:#eef4fb;
+  --color-text-primary:#1a1a1a;--color-text-secondary:#6b6b6b;--color-text-tertiary:#6f6f6f;
+  --color-text-info:#2c6cb0;--color-text-success:#0f6e56;--color-text-danger:#993c1d;
+  --color-border-primary:#d4d4d4;--color-border-secondary:#e0e0e0;--color-border-tertiary:#ececec;
+  --border-radius-md:10px;--border-radius-lg:14px;
+}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --color-background-primary:#1c1c1a;--color-background-secondary:#2a2a28;--color-background-info:#1e2a38;
+  --color-text-primary:#f5f5f3;--color-text-secondary:#a8a8a4;--color-text-tertiary:#949490;
+  --color-text-info:#6aa9e0;--color-text-success:#4cc4a0;--color-text-danger:#e08a6a;
+  --color-border-primary:#3a3a38;--color-border-secondary:#333331;--color-border-tertiary:#2c2c2a;
+}}
+:root[data-theme="dark"]{
+  --color-background-primary:#1c1c1a;--color-background-secondary:#2a2a28;--color-background-info:#1e2a38;
+  --color-text-primary:#f5f5f3;--color-text-secondary:#a8a8a4;--color-text-tertiary:#949490;
+  --color-text-info:#6aa9e0;--color-text-success:#4cc4a0;--color-text-danger:#e08a6a;
+  --color-border-primary:#3a3a38;--color-border-secondary:#333331;--color-border-tertiary:#2c2c2a;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--color-background-primary);color:var(--color-text-primary);font-family:var(--font-sans)}
+.tnum{font-variant-numeric:tabular-nums}
+
+.nav{position:sticky;top:0;z-index:50;background:var(--color-background-primary);border-bottom:1px solid var(--color-border-secondary);box-shadow:0 1px 0 rgba(0,0,0,0.02)}
+.nav-inner{max-width:1000px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;gap:6px;flex-wrap:wrap;min-height:58px;justify-content:space-between}
+.nav-brand{font-size:13px;font-weight:600;color:var(--color-text-primary);white-space:nowrap;display:flex;align-items:center;gap:7px;text-decoration:none}
+.nav-brand svg{flex-shrink:0}
+.nav-link{font-size:13px;font-weight:500;padding:8px 15px;border-radius:8px;color:var(--color-text-secondary);text-decoration:none;white-space:nowrap;transition:all .12s;border:1px solid transparent}
+.nav-link:hover{background:var(--color-background-secondary);color:var(--color-text-primary)}
+.nav-link.active{background:var(--color-text-primary);color:var(--color-background-primary)}
+/*NAVDROPDOWN*/
+.nav-group{position:relative;display:inline-flex}
+.nav-group-btn{font-family:inherit;cursor:pointer;background:transparent;display:inline-flex;align-items:center;gap:5px}
+.nav-caret{opacity:.65;transition:transform .15s}
+.nav-group[data-open="true"] .nav-caret{transform:rotate(180deg)}
+.nav-menu{display:none;position:absolute;top:calc(100% + 6px);left:0;min-width:196px;background:var(--color-background-primary);border:1px solid var(--color-border-primary);border-radius:var(--border-radius-md);box-shadow:0 8px 28px rgba(0,0,0,.14);padding:6px;z-index:60}.nav-group[data-open="true"] .nav-menu::before{content:"";position:absolute;left:0;right:0;top:-6px;height:6px}
+.nav-group[data-open="true"] .nav-menu{display:block}
+.nav-menu-link{display:block;font-size:13px;font-weight:500;padding:8px 12px;border-radius:6px;color:var(--color-text-secondary);text-decoration:none;white-space:nowrap;border:1px solid transparent}
+.nav-menu-link:hover{background:var(--color-background-secondary);color:var(--color-text-primary)}
+.nav-menu-link.active{color:var(--color-text-primary);font-weight:640;background:var(--color-background-secondary)}
+@media(max-width:600px){.nav-menu{left:0;right:auto}}
+@media(max-width:600px){.nav-brand{width:100%;margin:0 0 6px 0}.nav-inner{padding:10px 1rem}.nav-link{font-size:12px;padding:7px 12px}}
+.theme-toggle{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;padding:0;border:1px solid var(--color-border-secondary);background:transparent;border-radius:8px;color:var(--color-text-secondary);cursor:pointer;transition:background .12s,color .12s,border-color .12s}
+.theme-toggle:hover{background:var(--color-background-secondary);color:var(--color-text-primary);border-color:var(--color-border-primary)}
+.theme-toggle svg{width:17px;height:17px;display:block}
+
+a{color:var(--color-text-info)}
+
+.article{max-width:720px;margin:0 auto;padding:0 1.5rem}
+.kicker{margin-top:2.5rem;font-size:12.5px;font-weight:640;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-text-info)}
+.crumbs{margin-top:1.5rem;font-size:13px;color:var(--color-text-tertiary)}
+.crumbs a{color:var(--color-text-secondary);text-decoration:none}
+.crumbs a:hover{text-decoration:underline}
+h1{font-family:var(--font-serif);font-size:clamp(31px,5vw,44px);line-height:1.1;letter-spacing:-0.01em;font-weight:600;margin:14px 0 0;text-wrap:balance}
+.standfirst{font-family:var(--font-serif);font-size:clamp(18px,2.4vw,21px);line-height:1.5;color:var(--color-text-secondary);margin:18px 0 0}
+.article p{font-family:var(--font-serif);font-size:18.5px;line-height:1.68;margin:22px 0 0}
+.article h2{font-size:23px;letter-spacing:-0.015em;font-weight:700;margin:44px 0 0;line-height:1.22;text-wrap:balance}
+.article strong{font-weight:700;color:var(--color-text-primary)}
+.article em{font-style:italic}
+
+.keyfig{margin:28px 0 0;border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-secondary);padding:20px 22px;display:flex;gap:24px;flex-wrap:wrap}
+.keyfig .cell{flex:1;min-width:150px}
+.keyfig .n{font-family:var(--font-sans);font-size:29px;font-weight:720;letter-spacing:-0.02em;line-height:1}
+.keyfig .n.blue{color:var(--color-text-info)}
+.keyfig .n.up{color:var(--color-text-success)}
+.keyfig .n.down{color:var(--color-text-danger)}
+.keyfig .l{font-family:var(--font-sans);font-size:12.5px;color:var(--color-text-secondary);margin-top:9px;line-height:1.4}
+
+figure{margin:32px 0 0}
+.chart{border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-primary);padding:22px 22px 18px;overflow-x:auto}
+.chart .ct{font-family:var(--font-sans);font-size:14px;font-weight:660;letter-spacing:-0.01em;color:var(--color-text-primary)}
+.chart .cs{font-family:var(--font-sans);font-size:12.5px;color:var(--color-text-tertiary);margin-top:4px}
+figcaption{font-family:var(--font-sans);font-size:12.5px;color:var(--color-text-tertiary);margin-top:11px;line-height:1.5}
+
+.linechart{width:100%;height:auto;margin-top:16px;min-width:420px}
+.linechart .axl{font-family:var(--font-sans);font-size:11px;fill:var(--color-text-tertiary)}
+.linechart .vll{font-family:var(--font-sans);font-size:12px;font-weight:680;fill:var(--color-text-info)}
+
+table{border-collapse:collapse;width:100%;font-family:var(--font-sans);font-size:13.5px;margin-top:16px;min-width:380px}
+th,td{padding:9px 12px;text-align:right;border-bottom:1px solid var(--color-border-secondary);font-variant-numeric:tabular-nums}
+th:first-child,td:first-child{text-align:left}
+thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:var(--color-text-tertiary);font-weight:640;border-bottom:1px solid var(--color-border-primary)}
+.up{color:var(--color-text-success)}
+.down{color:var(--color-text-danger)}
+
+.cta{margin:42px 0 0;border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-secondary);padding:24px 26px;display:flex;gap:20px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.cta .t h3{margin:0;font-family:var(--font-sans);font-size:18px;font-weight:700;letter-spacing:-0.01em}
+.cta .t p{margin:8px 0 0;font-family:var(--font-sans);font-size:14.5px;color:var(--color-text-secondary);max-width:46ch}
+.cta .btn{font-family:var(--font-sans);font-weight:640;font-size:14.5px;color:var(--color-background-primary);background:var(--color-text-primary);padding:12px 20px;border-radius:10px;white-space:nowrap;text-decoration:none;transition:opacity .12s}
+.cta .btn:hover{opacity:.85}
+
+.faq{margin-top:8px}
+.faq .qa{border-top:1px solid var(--color-border-secondary);padding:6px 0 0}
+.faq .qa h3{font-family:var(--font-sans);font-size:16px;font-weight:680;margin:18px 0 0;letter-spacing:-0.01em}
+.faq .qa p{margin:8px 0 0;font-size:17px;line-height:1.6}
+
+.related{margin:40px 0 0;border-top:1px solid var(--color-border-secondary);padding:8px 0 0}
+.related h3{font-family:var(--font-sans);font-size:13px;text-transform:uppercase;letter-spacing:0.06em;color:var(--color-text-tertiary);margin:18px 0 0}
+.related p{font-family:var(--font-sans);font-size:14.5px;margin:8px 0 0;line-height:1.7}
+.related a{color:var(--color-text-info);text-decoration:none;font-weight:600}
+.related a:hover{text-decoration:underline}
+
+.method{margin:38px 0 0;font-family:var(--font-sans);font-size:12.5px;line-height:1.6;color:var(--color-text-tertiary);border-top:1px solid var(--color-border-secondary);padding:18px 0 0}
+.method b{color:var(--color-text-secondary)}
+.morelink{margin:26px 0 0;font-family:var(--font-sans);font-size:14px}
+.morelink a{color:var(--color-text-info);text-decoration:none;font-weight:600}
+.morelink a:hover{text-decoration:underline}
+
+.site-footer{border-top:1px solid var(--color-border-secondary);margin-top:3rem}
+.footer-inner{max-width:1000px;margin:0 auto;padding:1.25rem 1.5rem;display:flex;flex-wrap:wrap;align-items:center;gap:6px 16px;justify-content:space-between}
+.footer-brand{font-size:13px;font-weight:600;color:var(--color-text-secondary)}
+.footer-nav{display:flex;gap:16px;flex-wrap:wrap}
+.footer-nav a{font-size:13px;color:var(--color-text-secondary);text-decoration:none;display:inline-block;padding:5px 2px}
+.footer-nav a:hover{color:var(--color-text-primary)}
+.footer-note{font-size:12px;color:var(--color-text-tertiary)}
+</style>
+<style>
+.calc{max-width:760px}
+.calcgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px 20px;margin-top:20px}
+@media(max-width:560px){.calcgrid{grid-template-columns:1fr}}
+.field{display:flex;flex-direction:column;gap:6px}
+.field.span{grid-column:1 / -1}
+.field label{font-family:var(--font-sans);font-size:13px;font-weight:600;color:var(--color-text-secondary)}
+.field .hint{font-family:var(--font-sans);font-size:12px;color:var(--color-text-tertiary);font-weight:400}
+.field input[type=number]{font-family:var(--font-sans);font-size:16px;padding:10px 12px;border:1px solid var(--color-border-primary);border-radius:var(--border-radius-md);background:var(--color-background-primary);color:var(--color-text-primary);width:100%}
+.field input:focus{outline:2px solid var(--color-text-info);outline-offset:-1px}
+.seg{display:inline-flex;border:1px solid var(--color-border-primary);border-radius:var(--border-radius-md);overflow:hidden;font-family:var(--font-sans)}
+.seg button{font-family:inherit;font-size:14px;font-weight:600;padding:9px 16px;border:0;background:var(--color-background-primary);color:var(--color-text-secondary);cursor:pointer}
+.seg button.on{background:var(--color-text-primary);color:var(--color-background-primary)}
+.result{margin-top:26px;border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-secondary);padding:24px 26px}
+.result .big{font-family:var(--font-sans);font-size:13px;font-weight:600;color:var(--color-text-secondary);margin:0}
+.result .price{font-family:var(--font-sans);font-size:40px;font-weight:760;letter-spacing:-0.02em;color:var(--color-text-info);margin:6px 0 2px;line-height:1}
+.result .binding{font-family:var(--font-sans);font-size:13px;color:var(--color-text-tertiary)}
+.breakdown{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
+@media(max-width:560px){.breakdown{grid-template-columns:1fr 1fr}}
+.breakdown .bk{background:var(--color-background-primary);border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-md);padding:14px 16px}
+.breakdown .bkv{font-family:var(--font-sans);font-size:20px;font-weight:700;letter-spacing:-0.01em}
+.breakdown .bkl{font-family:var(--font-sans);font-size:12px;color:var(--color-text-secondary);margin-top:5px;line-height:1.4}
+.warn{font-family:var(--font-sans);font-size:13px;line-height:1.55;color:var(--color-text-danger);margin-top:16px}
+.townmatch{margin-top:16px}
+.townmatch .tm-lead{font-family:var(--font-sans);font-size:14px;color:var(--color-text-secondary);line-height:1.6}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+.chip-town{font-family:var(--font-sans);font-size:12.5px;font-weight:600;padding:6px 11px;border-radius:20px;text-decoration:none;border:1px solid var(--color-border-primary);color:var(--color-text-secondary);background:var(--color-background-primary)}
+.chip-town:hover{border-color:var(--color-text-primary);color:var(--color-text-primary)}
+.chip-town b{color:var(--color-text-info);font-weight:700}
+.assump{margin:34px 0 0;font-family:var(--font-sans);font-size:12.5px;line-height:1.65;color:var(--color-text-tertiary);border-top:1px solid var(--color-border-secondary);padding:18px 0 0}
+.assump b{color:var(--color-text-secondary)}
+.assump code{font-family:ui-monospace,Menlo,monospace;font-size:11.5px;background:var(--color-background-secondary);padding:1px 5px;border-radius:4px}
+</style>
+</head>
+<body>
+<div class="nav"><div class="nav-inner"><a class="nav-brand" href="/"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>SG HDB Resale</a><a class="nav-link" href="/overview">Overview</a><a class="nav-link" href="/towns/">Towns</a><a class="nav-link" href="/insights">Insights</a><a class="nav-link" href="/#guides">Guides</a><a class="nav-link" href="/search">Search</a><a class="nav-link active" href="/affordability">Calculators</a><div class="nav-group"><button type="button" class="nav-link nav-group-btn" aria-haspopup="true" aria-expanded="false">Dashboard<svg class="nav-caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="nav-menu" role="menu"><a class="nav-menu-link" href="/find-a-flat" role="menuitem">Find a Flat</a><a class="nav-menu-link" href="/analysis-by-town" role="menuitem">Analysis by Town</a><a class="nav-menu-link" href="/by-district" role="menuitem">By District</a><a class="nav-menu-link" href="/this-year" role="menuitem">This Year</a><a class="nav-menu-link" href="/this-month" role="menuitem">This Month</a></div></div><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme"></button></div></div>
+
+<article class="article calc">
+  <div class="kicker">Calculator &middot; Buying</div>
+  <h1>How much HDB flat can you afford?</h1>
+  <p class="standfirst">Enter your numbers and this works out the maximum resale price you can support under
+    Singapore's actual loan rules - then shows which towns fit. It is the public formula applied to your
+    inputs, not financial advice.</p>
+
+  <div class="seg" role="tablist" aria-label="Loan type" style="margin-top:24px">
+    <button type="button" id="seg-hdb" class="on" onclick="setLoan('hdb')">HDB loan</button>
+    <button type="button" id="seg-bank" onclick="setLoan('bank')">Bank loan</button>
+  </div>
+
+  <div class="calcgrid">
+    <div class="field">
+      <label for="income">Gross monthly household income <span class="hint">before CPF, all borrowers</span></label>
+      <input type="number" id="income" inputmode="numeric" min="0" step="100" value="7000">
+    </div>
+    <div class="field">
+      <label for="debts">Other monthly debt repayments <span class="hint">car, personal loans, cards</span></label>
+      <input type="number" id="debts" inputmode="numeric" min="0" step="50" value="0">
+    </div>
+    <div class="field">
+      <label for="cash">Cash savings for this flat</label>
+      <input type="number" id="cash" inputmode="numeric" min="0" step="1000" value="80000">
+    </div>
+    <div class="field">
+      <label for="cpf">CPF OA savings</label>
+      <input type="number" id="cpf" inputmode="numeric" min="0" step="1000" value="60000">
+    </div>
+    <div class="field">
+      <label for="tenure">Loan tenure <span class="hint">years</span></label>
+      <input type="number" id="tenure" inputmode="numeric" min="5" max="30" step="1" value="25">
+    </div>
+    <div class="field">
+      <label for="age">Age of youngest borrower <span class="hint">caps the tenure</span></label>
+      <input type="number" id="age" inputmode="numeric" min="21" max="64" step="1" value="35">
+    </div>
+    <div class="field span" id="rate-field" style="display:none">
+      <label for="rate">Assumed bank interest rate <span class="hint">%, for the illustrative instalment</span></label>
+      <input type="number" id="rate" inputmode="decimal" min="0.5" max="6" step="0.1" value="3.5">
+    </div>
+  </div>
+
+  <div class="result" id="result" aria-live="polite">
+    <p class="big">Estimated maximum flat price</p>
+    <p class="price" id="maxprice">$0</p>
+    <p class="binding" id="binding"></p>
+    <div class="breakdown">
+      <div class="bk"><div class="bkv" id="bk-loan">$0</div><div class="bkl">maximum loan</div></div>
+      <div class="bk"><div class="bkv" id="bk-down">$0</div><div class="bkl">downpayment (cash + CPF)</div></div>
+      <div class="bk"><div class="bkv" id="bk-monthly">$0</div><div class="bkl" id="bk-monthly-l">monthly instalment</div></div>
+    </div>
+    <p class="warn" id="warn" style="display:none"></p>
+    <div class="townmatch" id="townmatch"></div>
+  </div>
+
+  <div class="cta" style="margin-top:34px">
+    <div class="t">
+      <h3>Now see what those towns actually sell for</h3>
+      <p>Your budget above is matched to each town's current 4-room median. Open a town for its full
+        breakdown, or set the same budget in Find a Flat to browse real recent sales.</p>
+    </div>
+    <a class="btn" href="/find-a-flat">Open Find a Flat →</a>
+  </div>
+
+  <p class="assump"><b>How this is calculated.</b> The tool applies Singapore's public housing-finance rules
+    as of 2026 - verify current figures with HDB and your bank, as rules and rates change.
+    <b>HDB loan:</b> interest <code>2.6%</code>, up to <code>75%</code> loan-to-value, capped by the Mortgage
+    Servicing Ratio (repayment &le; <code>30%</code> of gross income), tenure up to 25 years.
+    <b>Bank loan:</b> qualified at the <code>4%</code> stress rate against both the MSR (<code>30%</code>) and
+    the Total Debt Servicing Ratio (all debts &le; <code>55%</code> of income), up to <code>75%</code>
+    loan-to-value with a minimum <code>5%</code> cash downpayment, tenure up to 30 years. Tenure is also
+    capped so the loan ends by age 65. The maximum price is the lower of what your income supports and what
+    your cash + CPF can cover as downpayment. The illustrative monthly instalment uses 2.6% (HDB) or your
+    assumed rate (bank). Town budget-match uses each town's median 4-room resale price over the latest 12
+    months (through August 2026); a median means about half of recent 4-room sales were below it. Figures are
+    estimates, not an offer of credit or financial advice. Data: data.gov.sg. Rules last reviewed 2026-08-14.</p>
+
+  <p class="morelink"><a href="/towns/">Browse prices by town →</a> &nbsp;&middot;&nbsp;
+    <a href="/guides/fair-price">Is a price fair? →</a></p>
+</article>
+
+<script>
+var TOWNS = {"Ang Mo Kio":{"med":620000,"slug":"ang-mo-kio"},"Bedok":{"med":595944,"slug":"bedok"},"Bishan":{"med":788000,"slug":"bishan"},"Bukit Batok":{"med":639500,"slug":"bukit-batok"},"Bukit Merah":{"med":930000,"slug":"bukit-merah"},"Bukit Panjang":{"med":570000,"slug":"bukit-panjang"},"Bukit Timah":{"med":922500,"slug":"bukit-timah"},"Central Area":{"med":1160000,"slug":"central-area"},"Choa Chu Kang":{"med":558000,"slug":"choa-chu-kang"},"Clementi":{"med":849888,"slug":"clementi"},"Geylang":{"med":704000,"slug":"geylang"},"Hougang":{"med":620000,"slug":"hougang"},"Jurong East":{"med":546500,"slug":"jurong-east"},"Jurong West":{"med":535000,"slug":"jurong-west"},"Kallang/Whampoa":{"med":905000,"slug":"kallang-whampoa"},"Marine Parade":{"med":666666,"slug":"marine-parade"},"Pasir Ris":{"med":636888,"slug":"pasir-ris"},"Punggol":{"med":682000,"slug":"punggol"},"Queenstown":{"med":1020000,"slug":"queenstown"},"Sembawang":{"med":600000,"slug":"sembawang"},"Sengkang":{"med":640000,"slug":"sengkang"},"Serangoon":{"med":660000,"slug":"serangoon"},"Tampines":{"med":662000,"slug":"tampines"},"Toa Payoh":{"med":1000000,"slug":"toa-payoh"},"Woodlands":{"med":552000,"slug":"woodlands"},"Yishun":{"med":555000,"slug":"yishun"}};
+var NAT4 = 630000;
+
+// --- Singapore housing-finance constants (as of 2026; see the note on the page) ---
+var HDB_RATE = 2.6, BANK_STRESS = 4.0;
+var LTV = 0.75, MSR = 0.30, TDSR = 0.55, MIN_CASH_BANK = 0.05;
+var TEN_HDB_MAX = 25, TEN_BANK_MAX = 30, END_AGE = 65;
+var loanType = 'hdb';
+
+function setLoan(t){
+  loanType = t;
+  document.getElementById('seg-hdb').classList.toggle('on', t==='hdb');
+  document.getElementById('seg-bank').classList.toggle('on', t==='bank');
+  document.getElementById('rate-field').style.display = (t==='bank') ? 'flex' : 'none';
+  calc();
+}
+
+function num(id){ var v = parseFloat(document.getElementById(id).value); return isFinite(v)&&v>0 ? v : 0; }
+function money(x){ return '$' + Math.round(x).toLocaleString('en-SG'); }
+
+// present value of a monthly annuity: max loan a given monthly payment supports
+function pvAnnuity(monthly, annualPct, months){
+  var i = annualPct/100/12;
+  if(i===0) return monthly*months;
+  return monthly * (1 - Math.pow(1+i, -months)) / i;
+}
+// monthly payment to amortise a loan
+function payment(loan, annualPct, months){
+  var i = annualPct/100/12;
+  if(i===0) return loan/months;
+  return loan * i / (1 - Math.pow(1+i, -months));
+}
+
+function calc(){
+  var income = num('income'), debts = num('debts'), cash = num('cash'), cpf = num('cpf');
+  var tenure = num('tenure'), age = num('age');
+  var isHdb = loanType==='hdb';
+
+  // tenure caps: product max, and must end by age 65
+  var maxTen = isHdb ? TEN_HDB_MAX : TEN_BANK_MAX;
+  if(age>0) maxTen = Math.min(maxTen, Math.max(5, END_AGE - age));
+  var ten = Math.min(tenure||maxTen, maxTen);
+  var months = ten*12;
+
+  // qualifying monthly repayment ceiling
+  var qualRate = isHdb ? HDB_RATE : BANK_STRESS;
+  var msrRoom = MSR*income;
+  var ceil = msrRoom;
+  if(!isHdb) ceil = Math.min(msrRoom, TDSR*income - debts);   // TDSR applies to bank loans
+  ceil = Math.max(0, ceil);
+
+  var maxLoanIncome = pvAnnuity(ceil, qualRate, months);
+  var priceIncome = maxLoanIncome / LTV;                 // income + LTV cap
+  var priceDown = (cash + cpf) / (1 - LTV);              // downpayment cap (25% of price)
+  var maxPrice = Math.max(0, Math.min(priceIncome, priceDown));
+
+  var loan = maxPrice * LTV;
+  var down = maxPrice - loan;
+  var monthly = payment(loan, isHdb ? HDB_RATE : num('rate')||HDB_RATE, months);
+
+  document.getElementById('maxprice').textContent = money(maxPrice);
+  document.getElementById('bk-loan').textContent = money(loan);
+  document.getElementById('bk-down').textContent = money(down);
+  document.getElementById('bk-monthly').textContent = money(monthly);
+  document.getElementById('bk-monthly-l').textContent = 'monthly instalment (' + ten + 'y' + (isHdb?', 2.6%':', '+(num('rate')||3.5)+'%') + ')';
+
+  // which constraint binds
+  var bind = document.getElementById('binding');
+  if(maxPrice<=0){ bind.textContent = 'Enter your income and savings to see a figure.'; }
+  else if(priceDown < priceIncome){
+    bind.textContent = 'Limited by your downpayment - more cash or CPF would raise this before your income does.';
+  } else {
+    bind.textContent = 'Limited by your income under the ' + (isHdb?'MSR':'MSR/TDSR') + ' rules - a longer tenure or higher income raises this.';
+  }
+
+  // minimum cash check (bank loans need >=5% of price in cash)
+  var warn = document.getElementById('warn');
+  if(!isHdb && maxPrice>0){
+    var minCash = MIN_CASH_BANK*maxPrice;
+    if(cash < minCash){
+      warn.style.display='block';
+      warn.textContent = 'Heads up: a bank loan needs at least ' + money(minCash) + ' of this in cash (5% of price). Your cash entry is below that, so the real ceiling is lower.';
+    } else warn.style.display='none';
+  } else warn.style.display='none';
+
+  // town budget match
+  var tm = document.getElementById('townmatch');
+  if(maxPrice<=0){ tm.innerHTML=''; return; }
+  var fit=[], over=[];
+  Object.keys(TOWNS).forEach(function(name){
+    var t=TOWNS[name];
+    (t.med<=maxPrice?fit:over).push({name:name, med:t.med, slug:t.slug});
+  });
+  fit.sort(function(a,b){return b.med-a.med;});
+  var lead;
+  if(fit.length===0) lead = 'A typical 4-room is above this budget in every town right now (the cheapest median is ' + money(Math.min.apply(null, Object.keys(TOWNS).map(function(n){return TOWNS[n].med;}))) + '). A 3-room, or a longer tenure, may bring more into reach.';
+  else if(fit.length===Object.keys(TOWNS).length) lead = 'A typical 4-room fits your budget in every town.';
+  else lead = 'A typical 4-room fits your budget in <b>' + fit.length + '</b> of ' + Object.keys(TOWNS).length + ' towns (median at or below ' + money(maxPrice) + '):';
+  var chips = fit.slice(0,30).map(function(t){
+    return '<a class="chip-town" href="/towns/'+t.slug+'">'+t.name+' <b>'+money(t.med)+'</b></a>';
+  }).join('');
+  tm.innerHTML = '<p class="tm-lead">'+lead+'</p>' + (chips?'<div class="chips">'+chips+'</div>':'');
+}
+
+['income','debts','cash','cpf','tenure','age','rate'].forEach(function(id){
+  document.getElementById(id).addEventListener('input', calc);
+});
+calc();
+</script>
+
+<footer class="site-footer"><div class="footer-inner">
+  <span class="footer-brand">SG HDB Resale</span>
+  <nav class="footer-nav"><a href="/towns/">Towns</a><a href="/#guides">Guides</a><a href="/about">About</a><a href="/contact">Contact</a><a href="/terms">Terms</a><a href="/privacy">Privacy</a></nav>
+  <span class="footer-note">Data: data.gov.sg &amp; OneMap</span>
+</div></footer>
+<script>window.goatcounter={no_onload:location.hostname==='localhost'};</script>
+<script data-goatcounter="https://sghdbresale.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () { navigator.serviceWorker.register('/sw.js').catch(function () {}); });
+}
+</script>
+<script>
+(function(){
+var root=document.documentElement,btn=document.getElementById('theme-toggle');if(!btn)return;
+var MOON="<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z\"/></svg>",SUN="<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"5\"/><line x1=\"12\" y1=\"1\" x2=\"12\" y2=\"3\"/><line x1=\"12\" y1=\"21\" x2=\"12\" y2=\"23\"/><line x1=\"4.22\" y1=\"4.22\" x2=\"5.64\" y2=\"5.64\"/><line x1=\"18.36\" y1=\"18.36\" x2=\"19.78\" y2=\"19.78\"/><line x1=\"1\" y1=\"12\" x2=\"3\" y2=\"12\"/><line x1=\"21\" y1=\"12\" x2=\"23\" y2=\"12\"/><line x1=\"4.22\" y1=\"19.78\" x2=\"5.64\" y2=\"18.36\"/><line x1=\"18.36\" y1=\"5.64\" x2=\"19.78\" y2=\"4.22\"/></svg>";
+function eff(){var t=root.getAttribute('data-theme');return (t==='light'||t==='dark')?t:((window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches)?'dark':'light');}
+function paint(){var d=eff()==='dark';btn.innerHTML=d?SUN:MOON;var l=d?'Switch to light theme':'Switch to dark theme';btn.setAttribute('aria-label',l);btn.setAttribute('title',l);}
+btn.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';root.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}paint();});
+paint();
+})();
+</script>
+<script>/*NAVJS*/
+(function(){var g=document.querySelector('.nav-group');if(!g)return;var btn=g.querySelector('.nav-group-btn');function set(o){g.setAttribute('data-open',o?'true':'false');btn.setAttribute('aria-expanded',o?'true':'false');}if(window.matchMedia&&window.matchMedia('(hover:hover)').matches){g.addEventListener('mouseenter',function(){set(true);});g.addEventListener('mouseleave',function(){set(false);});}btn.addEventListener('click',function(e){e.preventDefault();set(g.getAttribute('data-open')!=='true');});document.addEventListener('click',function(e){if(!g.contains(e.target))set(false);});document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});})();
+</script>
+</body>
+</html>
