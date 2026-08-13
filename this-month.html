@@ -9,29 +9,29 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="HDB Resale">
 <meta name="mobile-web-app-capable" content="yes">
-<meta name="description" content="HDB resale flat prices for every Singapore town - median price, flat types and the near-MRT premium, town by town, from the public transaction record. Free and independent.">
-<link rel="canonical" href="https://sghdbresale.com/towns/">
+<meta name="description" content="What moved in Singapore&#x27;s HDB resale market in July 2026: median resale price $630,000 (+0.8% on the month, +0.3% on the year), the towns that rose and fell most, and the million-dollar count. Updated monthly from data.gov.sg.">
+<link rel="canonical" href="https://sghdbresale.com/this-month">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SG HDB Resale">
 <meta property="og:locale" content="en_SG">
-<meta property="og:title" content="HDB Resale Prices by Town">
-<meta property="og:description" content="HDB resale flat prices for every Singapore town - median price, flat types and the near-MRT premium, town by town, from the public transaction record. Free and independent.">
-<meta property="og:url" content="https://sghdbresale.com/towns/">
+<meta property="og:title" content="HDB Resale Market Update - July 2026">
+<meta property="og:description" content="What moved in Singapore&#x27;s HDB resale market in July 2026: median resale price $630,000 (+0.8% on the month, +0.3% on the year), the towns that rose and fell most, and the million-dollar count. Updated monthly from data.gov.sg.">
+<meta property="og:url" content="https://sghdbresale.com/this-month">
 <meta property="og:image" content="https://sghdbresale.com/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="HDB Resale Prices by Town">
-<meta name="twitter:description" content="HDB resale flat prices for every Singapore town - median price, flat types and the near-MRT premium, town by town, from the public transaction record. Free and independent.">
+<meta name="twitter:title" content="HDB Resale Market Update - July 2026">
+<meta name="twitter:description" content="What moved in Singapore&#x27;s HDB resale market in July 2026: median resale price $630,000 (+0.8% on the month, +0.3% on the year), the towns that rose and fell most, and the million-dollar count. Updated monthly from data.gov.sg.">
 <meta name="twitter:image" content="https://sghdbresale.com/og-image.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"HDB Resale Prices by Town","url":"https://sghdbresale.com/towns/","description":"HDB resale flat prices for every Singapore town - median price, flat types and the near-MRT premium, town by town, from the public transaction record. Free and independent.","inLanguage":"en-SG","isPartOf":{"@type":"WebSite","name":"SG HDB Resale","url":"https://sghdbresale.com/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"HDB Resale Market Update - July 2026","url":"https://sghdbresale.com/this-month","description":"What moved in Singapore's HDB resale market in July 2026: median resale price $630,000 (+0.8% on the month, +0.3% on the year), the towns that rose and fell most, and the million-dollar count. Updated monthly from data.gov.sg.","inLanguage":"en-SG","datePublished":"2026-08-13","isPartOf":{"@type":"WebSite","name":"SG HDB Resale","url":"https://sghdbresale.com/"}}</script>
 <link rel="manifest" href="/manifest.webmanifest">
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16.png">
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6257747517291345" crossorigin="anonymous"></script>
-<title>HDB Resale Prices by Town - SG HDB Resale</title>
+<title>HDB Resale Market Update: July 2026 - SG HDB Resale</title>
 <script>(function(){try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
 <style>
 :root{
@@ -153,73 +153,112 @@ thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:v
 .footer-note{font-size:12px;color:var(--color-text-tertiary)}
 </style>
 <style>
-.towntable tr{cursor:pointer}
-.towntable td a{color:var(--color-text-info);text-decoration:none;font-weight:600}
-.up{color:var(--color-text-success)}.down{color:var(--color-text-danger)}
-.keyfig .n.up{color:var(--color-text-success)}.keyfig .n.down{color:var(--color-text-danger)}
+.digest{max-width:760px}
+.movers{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:16px}
+@media(max-width:600px){.movers{grid-template-columns:1fr}}
+.movers .mcol h3{font-family:var(--font-sans);font-size:13px;text-transform:uppercase;letter-spacing:.05em;margin:0 0 6px;color:var(--color-text-tertiary)}
+.movers table{margin-top:0;min-width:0}
+.deltapill{font-weight:680}
+.deltapill.up{color:var(--color-text-success)}
+.deltapill.down{color:var(--color-text-danger)}
+.tag-note{font-family:var(--font-sans);font-size:12.5px;color:var(--color-text-tertiary);margin-top:10px;line-height:1.5}
+.updates{margin:40px 0 0;border:1px dashed var(--color-border-primary);border-radius:var(--border-radius-lg);padding:16px 20px;font-family:var(--font-sans);font-size:14px;color:var(--color-text-secondary);line-height:1.55}
+.updates b{color:var(--color-text-primary)}
 </style>
 </head>
 <body>
-<div class="nav"><div class="nav-inner"><a class="nav-brand" href="/"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>SG HDB Resale</a><a class="nav-link" href="/overview">Overview</a><a class="nav-link active" href="/towns/">Towns</a><a class="nav-link" href="/insights">Insights</a><a class="nav-link" href="/#guides">Guides</a><a class="nav-link" href="/search">Search</a><div class="nav-group"><button type="button" class="nav-link nav-group-btn" aria-haspopup="true" aria-expanded="false">Dashboard<svg class="nav-caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="nav-menu" role="menu"><a class="nav-menu-link" href="/find-a-flat" role="menuitem">Find a Flat</a><a class="nav-menu-link" href="/analysis-by-town" role="menuitem">Analysis by Town</a><a class="nav-menu-link" href="/by-district" role="menuitem">By District</a><a class="nav-menu-link" href="/this-year" role="menuitem">This Year</a><a class="nav-menu-link" href="/this-month" role="menuitem">This Month</a></div></div><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme"></button></div></div>
+<div class="nav"><div class="nav-inner"><a class="nav-brand" href="/"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>SG HDB Resale</a><a class="nav-link" href="/overview">Overview</a><a class="nav-link" href="/towns/">Towns</a><a class="nav-link" href="/insights">Insights</a><a class="nav-link" href="/#guides">Guides</a><a class="nav-link" href="/search">Search</a><div class="nav-group"><button type="button" class="nav-link nav-group-btn" aria-haspopup="true" aria-expanded="false">Dashboard<svg class="nav-caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="nav-menu" role="menu"><a class="nav-menu-link" href="/find-a-flat" role="menuitem">Find a Flat</a><a class="nav-menu-link" href="/analysis-by-town" role="menuitem">Analysis by Town</a><a class="nav-menu-link" href="/by-district" role="menuitem">By District</a><a class="nav-menu-link" href="/this-year" role="menuitem">This Year</a><a class="nav-menu-link active" href="/this-month" role="menuitem">This Month</a></div></div><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme"></button></div></div>
 
-<article class="article" style="max-width:820px">
-  <div class="kicker">Town prices</div>
-  <h1>HDB Resale Prices by Town</h1>
-  <p class="standfirst">Median resale prices for every HDB town in Singapore, from the public transaction
-    record. Tap a town for its full breakdown by flat type, price trend and near-MRT premium.</p>
+<article class="article digest">
+  <div class="kicker">Market update &middot; refreshed monthly</div>
+  <h1>The HDB resale market this month</h1>
+  <p class="standfirst">What actually moved in July 2026 - the median resale price, how it shifted on the
+    month and the year, the towns that rose and fell most, and the million-dollar count. Straight from the
+    public record.</p>
 
+  <div class="keyfig"><div class="cell"><div class="n blue tnum">$630,000</div><div class="l">median resale price, July 2026<br>2,654 sales</div></div><div class="cell"><div class="n tnum up">+0.8%</div><div class="l">month on month (vs June 2026)</div></div><div class="cell"><div class="n tnum up">+0.3%</div><div class="l">year on year (vs July 2025)</div></div><div class="cell"><div class="n tnum">187</div><div class="l">million-dollar resales in July</div></div></div>
+  <p class="tag-note">August 2026 is still filling in (589 sales logged so far), so this digest reports the last complete month, July 2026. It updates when the month closes.</p>
+
+  <div class="callout"><p>In July 2026 the median HDB resale flat sold for <strong>$630,000</strong>, up on June 2026 (+0.8%) and essentially flat on a year ago (+0.3%). <strong>187</strong> flats crossed the million-dollar mark, and 2,654 resales were recorded in all.</p></div>
+
+  <h2>Prices by flat type</h2>
   <figure>
     <div class="chart">
-      <div class="ct">Every town, ranked by 4-room resale price</div>
-      <div class="cs">4-room used for a like-for-like ranking · Sep 2025 – Aug 2026</div>
-      <table class="towntable">
-        <thead><tr><th>Town</th><th>Estate</th><th>4-room median</th><th>Median (all)</th><th>YoY</th><th>Sales</th></tr></thead>
+      <div class="ct">Median resale price by flat type</div>
+      <div class="cs">Latest quarter (May–July 2026) vs the same quarter a year earlier</div>
+      <table>
+        <thead><tr><th>Flat type</th><th>Median</th><th>Year on year</th><th>Sales</th></tr></thead>
         <tbody>
-<tr onclick="location.href='/towns/central-area'"><td><a href="/towns/central-area">Central Area</a></td><td>Mature</td><td>$1,160,000</td><td>$770,000</td><td class="tnum up">+20.7%</td><td class="tnum">161</td></tr>
-<tr onclick="location.href='/towns/queenstown'"><td><a href="/towns/queenstown">Queenstown</a></td><td>Mature</td><td>$1,020,000</td><td>$839,944</td><td class="tnum up">+7.7%</td><td class="tnum">668</td></tr>
-<tr onclick="location.href='/towns/toa-payoh'"><td><a href="/towns/toa-payoh">Toa Payoh</a></td><td>Mature</td><td>$1,000,000</td><td>$794,444</td><td class="tnum up">+4.7%</td><td class="tnum">926</td></tr>
-<tr onclick="location.href='/towns/bukit-merah'"><td><a href="/towns/bukit-merah">Bukit Merah</a></td><td>Mature</td><td>$930,000</td><td>$790,000</td><td class="tnum up">+2.6%</td><td class="tnum">845</td></tr>
-<tr onclick="location.href='/towns/bukit-timah'"><td><a href="/towns/bukit-timah">Bukit Timah</a></td><td>Mature</td><td>$922,500</td><td>$990,000</td><td class="tnum up">+3.5%</td><td class="tnum">53</td></tr>
-<tr onclick="location.href='/towns/kallang-whampoa'"><td><a href="/towns/kallang-whampoa">Kallang/Whampoa</a></td><td>Mature</td><td>$905,000</td><td>$720,000</td><td class="tnum up">+2.7%</td><td class="tnum">670</td></tr>
-<tr onclick="location.href='/towns/clementi'"><td><a href="/towns/clementi">Clementi</a></td><td>Mature</td><td>$849,888</td><td>$620,000</td><td class="tnum up">+10.7%</td><td class="tnum">484</td></tr>
-<tr onclick="location.href='/towns/bishan'"><td><a href="/towns/bishan">Bishan</a></td><td>Mature</td><td>$788,000</td><td>$839,444</td><td class="tnum down">-0.7%</td><td class="tnum">358</td></tr>
-<tr onclick="location.href='/towns/geylang'"><td><a href="/towns/geylang">Geylang</a></td><td>Mature</td><td>$704,000</td><td>$580,000</td><td class="tnum down">-1.7%</td><td class="tnum">637</td></tr>
-<tr onclick="location.href='/towns/punggol'"><td><a href="/towns/punggol">Punggol</a></td><td>Non-mature</td><td>$682,000</td><td>$672,444</td><td class="tnum up">+1.1%</td><td class="tnum">1,496</td></tr>
-<tr onclick="location.href='/towns/marine-parade'"><td><a href="/towns/marine-parade">Marine Parade</a></td><td>Mature</td><td>$666,666</td><td>$600,000</td><td class="tnum up">+15.4%</td><td class="tnum">129</td></tr>
-<tr onclick="location.href='/towns/tampines'"><td><a href="/towns/tampines">Tampines</a></td><td>Mature</td><td>$662,000</td><td>$710,000</td><td class="tnum up">+0.7%</td><td class="tnum">1,805</td></tr>
-<tr onclick="location.href='/towns/serangoon'"><td><a href="/towns/serangoon">Serangoon</a></td><td>Mature</td><td>$660,000</td><td>$660,000</td><td class="tnum down">-2.7%</td><td class="tnum">340</td></tr>
-<tr onclick="location.href='/towns/sengkang'"><td><a href="/towns/sengkang">Sengkang</a></td><td>Non-mature</td><td>$640,000</td><td>$660,000</td><td class="tnum up">+0.3%</td><td class="tnum">1,605</td></tr>
-<tr onclick="location.href='/towns/bukit-batok'"><td><a href="/towns/bukit-batok">Bukit Batok</a></td><td>Non-mature</td><td>$639,500</td><td>$618,000</td><td class="tnum up">+4.7%</td><td class="tnum">1,284</td></tr>
-<tr onclick="location.href='/towns/pasir-ris'"><td><a href="/towns/pasir-ris">Pasir Ris</a></td><td>Mature</td><td>$636,888</td><td>$720,000</td><td class="tnum up">+1.6%</td><td class="tnum">680</td></tr>
-<tr onclick="location.href='/towns/ang-mo-kio'"><td><a href="/towns/ang-mo-kio">Ang Mo Kio</a></td><td>Mature</td><td>$620,000</td><td>$520,000</td><td class="tnum up">+6.6%</td><td class="tnum">835</td></tr>
-<tr onclick="location.href='/towns/hougang'"><td><a href="/towns/hougang">Hougang</a></td><td>Non-mature</td><td>$620,000</td><td>$628,888</td><td class="tnum up">+1.8%</td><td class="tnum">1,143</td></tr>
-<tr onclick="location.href='/towns/sembawang'"><td><a href="/towns/sembawang">Sembawang</a></td><td>Non-mature</td><td>$600,000</td><td>$600,000</td><td class="tnum down">-2.6%</td><td class="tnum">828</td></tr>
-<tr onclick="location.href='/towns/bedok'"><td><a href="/towns/bedok">Bedok</a></td><td>Mature</td><td>$595,944</td><td>$550,000</td><td class="tnum up">+0.7%</td><td class="tnum">1,132</td></tr>
-<tr onclick="location.href='/towns/bukit-panjang'"><td><a href="/towns/bukit-panjang">Bukit Panjang</a></td><td>Non-mature</td><td>$570,000</td><td>$608,000</td><td class="tnum up">+0.2%</td><td class="tnum">719</td></tr>
-<tr onclick="location.href='/towns/choa-chu-kang'"><td><a href="/towns/choa-chu-kang">Choa Chu Kang</a></td><td>Non-mature</td><td>$558,000</td><td>$595,000</td><td class="tnum up">+1.2%</td><td class="tnum">926</td></tr>
-<tr onclick="location.href='/towns/yishun'"><td><a href="/towns/yishun">Yishun</a></td><td>Non-mature</td><td>$555,000</td><td>$538,000</td><td class="tnum down">-1.3%</td><td class="tnum">1,462</td></tr>
-<tr onclick="location.href='/towns/woodlands'"><td><a href="/towns/woodlands">Woodlands</a></td><td>Non-mature</td><td>$552,000</td><td>$590,000</td><td class="tnum down">-0.8%</td><td class="tnum">1,692</td></tr>
-<tr onclick="location.href='/towns/jurong-east'"><td><a href="/towns/jurong-east">Jurong East</a></td><td>Non-mature</td><td>$546,500</td><td>$520,000</td><td class="tnum up">+0.0%</td><td class="tnum">430</td></tr>
-<tr onclick="location.href='/towns/jurong-west'"><td><a href="/towns/jurong-west">Jurong West</a></td><td>Non-mature</td><td>$535,000</td><td>$565,000</td><td class="tnum up">+0.9%</td><td class="tnum">1,363</td></tr>
+<tr><td>3-room</td><td>$438,000</td><td class="deltapill down">-3.3%</td><td class="tnum">1,586</td></tr>
+<tr><td>4-room</td><td>$628,000</td><td class="deltapill down">-0.3%</td><td class="tnum">3,023</td></tr>
+<tr><td>5-room</td><td>$735,500</td><td class="deltapill down">-0.3%</td><td class="tnum">1,656</td></tr>
+<tr><td>Executive</td><td>$915,000</td><td class="deltapill up">+1.1%</td><td class="tnum">412</td></tr>
         </tbody>
       </table>
     </div>
-    <figcaption>Median of HDB resale transactions recorded over the Sep 2025 – Aug 2026. YoY compares against the
-      12 months before. Data through Aug 2026.</figcaption>
+    <figcaption>A single month is thin once split by type, so the year-on-year change is measured over the
+      most recent quarter against the same three months a year earlier.</figcaption>
   </figure>
+
+  <h2>Where prices moved most</h2>
+  <p>The towns with the biggest change in their 4-room median, comparing the latest quarter (May–July 2026) with
+    the same quarter a year earlier. 4-room flats are the most-traded type, so they give the steadiest read;
+    23 towns had enough sales on both sides to rank.</p>
+  <div class="movers">
+    <div class="mcol">
+      <h3>Risen most</h3>
+      <table>
+        <thead><tr><th>Town</th><th>YoY</th><th>Median</th></tr></thead>
+        <tbody>
+<tr onclick="location.href='/towns/clementi'" style="cursor:pointer"><td><a href="/towns/clementi">Clementi</a></td><td class="deltapill up">+7.6%</td><td>$925,000</td></tr>
+<tr onclick="location.href='/towns/ang-mo-kio'" style="cursor:pointer"><td><a href="/towns/ang-mo-kio">Ang Mo Kio</a></td><td class="deltapill up">+6.8%</td><td>$625,000</td></tr>
+<tr onclick="location.href='/towns/queenstown'" style="cursor:pointer"><td><a href="/towns/queenstown">Queenstown</a></td><td class="deltapill up">+6.5%</td><td>$1,051,944</td></tr>
+<tr onclick="location.href='/towns/bedok'" style="cursor:pointer"><td><a href="/towns/bedok">Bedok</a></td><td class="deltapill up">+1.7%</td><td>$600,000</td></tr>
+<tr onclick="location.href='/towns/serangoon'" style="cursor:pointer"><td><a href="/towns/serangoon">Serangoon</a></td><td class="deltapill up">+1.5%</td><td>$671,900</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mcol">
+      <h3>Fallen most</h3>
+      <table>
+        <thead><tr><th>Town</th><th>YoY</th><th>Median</th></tr></thead>
+        <tbody>
+<tr onclick="location.href='/towns/geylang'" style="cursor:pointer"><td><a href="/towns/geylang">Geylang</a></td><td class="deltapill down">-15.0%</td><td>$680,000</td></tr>
+<tr onclick="location.href='/towns/sembawang'" style="cursor:pointer"><td><a href="/towns/sembawang">Sembawang</a></td><td class="deltapill down">-5.9%</td><td>$588,000</td></tr>
+<tr onclick="location.href='/towns/yishun'" style="cursor:pointer"><td><a href="/towns/yishun">Yishun</a></td><td class="deltapill down">-5.3%</td><td>$540,000</td></tr>
+<tr onclick="location.href='/towns/kallang-whampoa'" style="cursor:pointer"><td><a href="/towns/kallang-whampoa">Kallang/Whampoa</a></td><td class="deltapill down">-3.8%</td><td>$850,000</td></tr>
+<tr onclick="location.href='/towns/bukit-panjang'" style="cursor:pointer"><td><a href="/towns/bukit-panjang">Bukit Panjang</a></td><td class="deltapill down">-3.7%</td><td>$566,500</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p class="tag-note">Tap a town for its full price breakdown. Movements over a single year can reflect which
+    flats happened to sell (floor, lease, exact location) as much as the market itself.</p>
+
+  <h2>Million-dollar watch</h2>
+  <p>So far in 2026, <strong>1,089</strong> resales have crossed a million dollars - more than the 930 over the same months of 2025. The priciest resale of July 2026 was a 5-room in Bishan at <strong>$1,580,000</strong>.</p>
 
   <div class="cta">
     <div class="t">
-      <h3>New here? Start with the guides</h3>
-      <p>Written, data-backed answers to the questions buyers actually ask - is this price fair, how much does
-        the MRT cost, and does lease decay matter.</p>
+      <h3>See the full year, not just the month</h3>
+      <p>This Year tracks the running monthly medians by town and flat type across the whole of 2026;
+        the town pages give each estate's full breakdown.</p>
     </div>
-    <a class="btn" href="/#guides">Read the guides →</a>
+    <a class="btn" href="/this-year">Open This Year →</a>
+  </div>
+
+  <div class="updates">
+    <b>This page updates every month.</b> When the new data.gov.sg records land, the figures here refresh
+    automatically - no sign-up, no email. Bookmark it and check back after month-end.
   </div>
 
   <p class="method"><b>How we measured this.</b> Figures are medians of actual HDB resale transactions
-    (source: data.gov.sg). Headline medians cover the 12 months to Aug 2026. These describe past sales, not valuations
-    or forecasts. Data through Aug 2026.</p>
+    (source: data.gov.sg). The headline covers the latest complete month (July 2026, 2,654 sales);
+    flat-type and town movers use the latest quarter (May–July 2026) against the same quarter a year earlier,
+    with towns needing at least 30 4-room sales on each side to rank. These describe past sales,
+    not valuations or forecasts. 326,900 transactions analysed. Last refreshed 2026-08-13.</p>
+
+  <p class="morelink"><a href="/towns/">Browse prices by town →</a></p>
 </article>
 
 <footer class="site-footer"><div class="footer-inner">
