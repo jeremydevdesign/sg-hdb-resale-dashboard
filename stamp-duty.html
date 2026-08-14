@@ -9,29 +9,29 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="HDB Resale">
 <meta name="mobile-web-app-capable" content="yes">
-<meta name="description" content="Free HDB buyer calculators for Singapore resale flats: work out how much flat you can afford under the loan rules, and which CPF housing grants you may qualify for. The public formulas, not advice.">
-<link rel="canonical" href="https://sghdbresale.com/calculators">
+<meta name="description" content="Free Singapore stamp duty calculator for HDB and residential property: work out Buyer's Stamp Duty (BSD) on the price plus any Additional Buyer's Stamp Duty (ABSD) by buyer profile, with the published IRAS rates. The public formula, not tax advice.">
+<link rel="canonical" href="https://sghdbresale.com/stamp-duty">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SG HDB Resale">
 <meta property="og:locale" content="en_SG">
-<meta property="og:title" content="HDB Calculators">
-<meta property="og:description" content="Free HDB buyer calculators for Singapore resale flats: work out how much flat you can afford under the loan rules, and which CPF housing grants you may qualify for. The public formulas, not advice.">
-<meta property="og:url" content="https://sghdbresale.com/calculators">
+<meta property="og:title" content="Stamp Duty Calculator (BSD &amp; ABSD)">
+<meta property="og:description" content="Free Singapore stamp duty calculator for HDB and residential property: work out Buyer's Stamp Duty (BSD) on the price plus any Additional Buyer's Stamp Duty (ABSD) by buyer profile, with the published IRAS rates. The public formula, not tax advice.">
+<meta property="og:url" content="https://sghdbresale.com/stamp-duty">
 <meta property="og:image" content="https://sghdbresale.com/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="HDB Calculators">
-<meta name="twitter:description" content="Free HDB buyer calculators for Singapore resale flats: work out how much flat you can afford under the loan rules, and which CPF housing grants you may qualify for. The public formulas, not advice.">
+<meta name="twitter:title" content="Stamp Duty Calculator (BSD &amp; ABSD)">
+<meta name="twitter:description" content="Free Singapore stamp duty calculator for HDB and residential property: work out Buyer's Stamp Duty (BSD) on the price plus any Additional Buyer's Stamp Duty (ABSD) by buyer profile, with the published IRAS rates. The public formula, not tax advice.">
 <meta name="twitter:image" content="https://sghdbresale.com/og-image.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"HDB Calculators","url":"https://sghdbresale.com/calculators","description":"Free HDB buyer calculators for Singapore resale flats: work out how much flat you can afford under the loan rules, and which CPF housing grants you may qualify for. The public formulas, not advice.","inLanguage":"en-SG","isPartOf":{"@type":"WebSite","name":"SG HDB Resale","url":"https://sghdbresale.com/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Stamp Duty Calculator (BSD & ABSD)","url":"https://sghdbresale.com/stamp-duty","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"SGD"},"description":"Free Singapore stamp duty calculator for HDB and residential property: work out Buyer's Stamp Duty (BSD) on the price plus any Additional Buyer's Stamp Duty (ABSD) by buyer profile, with the published IRAS rates. The public formula, not tax advice.","inLanguage":"en-SG","isPartOf":{"@type":"WebSite","name":"SG HDB Resale","url":"https://sghdbresale.com/"}}</script>
 <link rel="manifest" href="/manifest.webmanifest">
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16.png">
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6257747517291345" crossorigin="anonymous"></script>
-<title>HDB Calculators - Affordability &amp; Grants - SG HDB Resale</title>
+<title>Stamp Duty Calculator (BSD &amp; ABSD) - Singapore - SG HDB Resale</title>
 <script>(function(){try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
 <style>
 :root{
@@ -153,58 +153,166 @@ thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:v
 .footer-note{font-size:12px;color:var(--color-text-tertiary)}
 </style>
 <style>
-.calc{max-width:820px}
-.calc-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:26px}
-@media(max-width:600px){.calc-cards{grid-template-columns:1fr}}
-.calc-card{text-decoration:none;background:var(--color-background-secondary);border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);padding:24px 26px;display:block;transition:border-color .12s,transform .12s}
-.calc-card:hover{border-color:var(--color-text-primary);transform:translateY(-2px)}
-.calc-card.soon{opacity:.6;pointer-events:none}
-.calc-card svg{width:26px;height:26px;color:var(--color-text-info);display:block}
-.calc-card .cc-t{font-family:var(--font-sans);font-size:18px;font-weight:680;color:var(--color-text-primary);margin:14px 0 6px}
-.calc-card .cc-t::after{content:" \2192";color:var(--color-text-tertiary);font-weight:400}
-.calc-card.soon .cc-t::after{content:""}
-.calc-card .cc-d{font-family:var(--font-sans);font-size:14px;line-height:1.55;color:var(--color-text-secondary);margin:0}
-.calc-card .cc-tag{display:inline-block;font-family:var(--font-sans);font-size:11px;font-weight:640;letter-spacing:.04em;text-transform:uppercase;color:var(--color-text-tertiary);margin-top:10px}
+.calc{max-width:760px}
+.calcgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px 20px;margin-top:20px}
+@media(max-width:560px){.calcgrid{grid-template-columns:1fr}}
+.field{display:flex;flex-direction:column;gap:6px}
+.field.span{grid-column:1 / -1}
+.field label{font-family:var(--font-sans);font-size:13px;font-weight:600;color:var(--color-text-secondary)}
+.field .hint{font-family:var(--font-sans);font-size:12px;color:var(--color-text-tertiary);font-weight:400}
+.field select,.field input[type=number]{font-family:var(--font-sans);font-size:16px;padding:10px 12px;border:1px solid var(--color-border-primary);border-radius:var(--border-radius-md);background:var(--color-background-primary);color:var(--color-text-primary);width:100%}
+.field select:focus,.field input:focus{outline:2px solid var(--color-text-info);outline-offset:-1px}
+.result{margin-top:26px;border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-secondary);padding:24px 26px}
+.result .big{font-family:var(--font-sans);font-size:13px;font-weight:600;color:var(--color-text-secondary);margin:0}
+.result .price{font-family:var(--font-sans);font-size:40px;font-weight:760;letter-spacing:-0.02em;color:var(--color-text-info);margin:6px 0 2px;line-height:1}
+.result .binding{font-family:var(--font-sans);font-size:13px;color:var(--color-text-tertiary)}
+.breakdown{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px}
+@media(max-width:560px){.breakdown{grid-template-columns:1fr}}
+.breakdown .bk{background:var(--color-background-primary);border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-md);padding:14px 16px}
+.breakdown .bkv{font-family:var(--font-sans);font-size:22px;font-weight:720;letter-spacing:-0.01em}
+.breakdown .bkl{font-family:var(--font-sans);font-size:12px;color:var(--color-text-secondary);margin-top:5px;line-height:1.4}
+.bsdtable{margin-top:18px}
+.bsdtable .tt{font-family:var(--font-sans);font-size:12.5px;font-weight:640;text-transform:uppercase;letter-spacing:.04em;color:var(--color-text-tertiary);margin-bottom:6px}
+.hdbnote{font-family:var(--font-sans);font-size:13px;line-height:1.55;color:var(--color-text-secondary);margin-top:16px;background:var(--color-background-info);border-radius:var(--border-radius-md);padding:12px 15px}
+.assump{margin:34px 0 0;font-family:var(--font-sans);font-size:12.5px;line-height:1.65;color:var(--color-text-tertiary);border-top:1px solid var(--color-border-secondary);padding:18px 0 0}
+.assump b{color:var(--color-text-secondary)}
+.assump code{font-family:ui-monospace,Menlo,monospace;font-size:11.5px;background:var(--color-background-secondary);padding:1px 5px;border-radius:4px}
 </style>
 </head>
 <body>
 <div class="nav"><div class="nav-inner"><a class="nav-brand" href="/"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>SG HDB Resale</a><a class="nav-link" href="/overview">Overview</a><a class="nav-link" href="/towns/">Towns</a><a class="nav-link" href="/insights">Insights</a><a class="nav-link" href="/#guides">Guides</a><a class="nav-link" href="/search">Search</a><a class="nav-link active" href="/calculators">Calculators</a><div class="nav-group"><button type="button" class="nav-link nav-group-btn" aria-haspopup="true" aria-expanded="false">Dashboard<svg class="nav-caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="nav-menu" role="menu"><a class="nav-menu-link" href="/find-a-flat" role="menuitem">Find a Flat</a><a class="nav-menu-link" href="/analysis-by-town" role="menuitem">Analysis by Town</a><a class="nav-menu-link" href="/by-district" role="menuitem">By District</a><a class="nav-menu-link" href="/this-year" role="menuitem">This Year</a><a class="nav-menu-link" href="/this-month" role="menuitem">This Month</a></div></div><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme"></button></div></div>
 
 <article class="article calc">
-  <div class="kicker">Calculators</div>
-  <h1>HDB buyer calculators</h1>
-  <p class="standfirst">Free tools for anyone buying an HDB resale flat, each applying the published public
-    rules to your numbers - not advice. More are on the way.</p>
+  <div class="kicker">Calculator &middot; Buying</div>
+  <h1>Stamp duty on a home purchase</h1>
+  <p class="standfirst">Work out the Buyer's Stamp Duty (BSD) on the price, plus any Additional Buyer's Stamp
+    Duty (ABSD), using the published IRAS rates. It is the public formula applied to your inputs, not tax
+    advice.</p>
 
-  <div class="calc-cards">
-    <a class="calc-card" href="/affordability"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-      <div class="cc-t">Affordability calculator</div>
-      <p class="cc-d">The maximum flat price your income and savings support under the MSR, TDSR and LTV
-        rules - HDB or bank loan - matched to the towns that fit.</p>
-      <span class="cc-tag">Buying</span></a>
-    <a class="calc-card" href="/grants"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-      <div class="cc-t">Grant eligibility checker</div>
-      <p class="cc-d">Which CPF housing grants a first-timer may qualify for on a resale flat - the Family or
-        Singles Grant, EHG and the Proximity Grant - with the published amounts.</p>
-      <span class="cc-tag">Buying</span></a>
-    <a class="calc-card" href="/stamp-duty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/></svg>
-      <div class="cc-t">Stamp duty (BSD/ABSD)</div>
-      <p class="cc-d">Buyer's Stamp Duty on the price, plus any Additional Buyer's Stamp Duty by buyer
-        profile, at the published IRAS rates.</p>
-      <span class="cc-tag">Buying</span></a>
-  </div>
-
-  <div class="cta" style="margin-top:38px">
-    <div class="t">
-      <h3>Start from what flats actually cost</h3>
-      <p>Every calculator is more useful with a real price in hand. Browse current medians town by town, or
-        read the guides on judging a fair price.</p>
+  <div class="calcgrid">
+    <div class="field span">
+      <label for="price">Purchase price <span class="hint">or market value, whichever is higher</span></label>
+      <input type="number" id="price" inputmode="numeric" min="0" step="1000" value="600000">
     </div>
-    <a class="btn" href="/towns/">Prices by town →</a>
+    <div class="field">
+      <label for="profile">Buyer profile</label>
+      <select id="profile">
+        <option value="sc">Singapore Citizen</option>
+        <option value="pr">Permanent Resident</option>
+        <option value="fr">Foreigner</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="count">This will be your</label>
+      <select id="count">
+        <option value="1">1st residential property</option>
+        <option value="2">2nd residential property</option>
+        <option value="3">3rd or subsequent property</option>
+      </select>
+    </div>
   </div>
 
-  <p class="morelink"><a href="/#guides">Read the buyer guides →</a></p>
+  <div class="result" id="result" aria-live="polite">
+    <p class="big">Total stamp duty payable</p>
+    <p class="price" id="total">$0</p>
+    <p class="binding" id="rate-line"></p>
+    <div class="breakdown">
+      <div class="bk"><div class="bkv" id="bsd">$0</div><div class="bkl">Buyer's Stamp Duty (BSD)</div></div>
+      <div class="bk"><div class="bkv" id="absd">$0</div><div class="bkl" id="absd-l">Additional Buyer's Stamp Duty (ABSD)</div></div>
+    </div>
+    <div class="bsdtable">
+      <div class="tt">How the BSD is built up</div>
+      <table><tbody id="bsd-rows"></tbody></table>
+    </div>
+    <div class="hdbnote" id="hdbnote"></div>
+  </div>
+
+  <div class="cta" style="margin-top:34px">
+    <div class="t">
+      <h3>Budget the duty alongside the price</h3>
+      <p>Stamp duty is paid on top of the price, mostly from CPF or cash. See what flats actually sell for,
+        then check what you can afford once the duty is in.</p>
+    </div>
+    <a class="btn" href="/affordability">Affordability calculator →</a>
+  </div>
+
+  <p class="assump"><b>How this is calculated.</b> Rates are the published IRAS figures as of 2026 - verify
+    current rates at iras.gov.sg, as they change. <b>Buyer's Stamp Duty</b> (residential, from 15 Feb 2023) is
+    tiered on the higher of price or market value: <code>1%</code> on the first $180,000, <code>2%</code> on the
+    next $180,000, <code>3%</code> on the next $640,000, <code>4%</code> on the next $500,000, <code>5%</code>
+    on the next $1,500,000, and <code>6%</code> above $3,000,000. <b>Additional Buyer's Stamp Duty</b> (on or
+    after 27 Apr 2023) is a flat percentage of the price by profile: Citizens <code>0%</code> / <code>20%</code>
+    / <code>30%</code> for the 1st / 2nd / 3rd+ property; PRs <code>5%</code> / <code>30%</code> /
+    <code>35%</code>; foreigners <code>60%</code> on any. For a joint purchase, the highest applicable ABSD rate
+    applies to the whole price. Figures are estimates, not tax advice or an assessment by IRAS. Rules last
+    reviewed 2026-08-14.</p>
+
+  <p class="morelink"><a href="/calculators">← All calculators</a> &nbsp;&middot;&nbsp;
+    <a href="/grants">Which grants can you get? →</a></p>
 </article>
+
+<script>
+// IRAS rates as of 2026 (see the note on the page). Update on review.
+var BSD_TIERS = [[180000,0.01],[180000,0.02],[640000,0.03],[500000,0.04],[1500000,0.05],[Infinity,0.06]];
+var ABSD = {sc:[0,0,0.20,0.30], pr:[0,0.05,0.30,0.35], fr:[0,0.60,0.60,0.60]};
+var PROFILE_LABEL = {sc:'Singapore Citizen', pr:'Permanent Resident', fr:'Foreigner'};
+
+function money(x){ return '$' + Math.round(x).toLocaleString('en-SG'); }
+function num(id){ var v=parseFloat(document.getElementById(id).value); return isFinite(v)&&v>0?v:0; }
+
+function bsdBreakdown(price){
+  var rows=[], left=price, total=0, lo=0;
+  for(var i=0;i<BSD_TIERS.length;i++){
+    var width=BSD_TIERS[i][0], rate=BSD_TIERS[i][1];
+    if(left<=0) break;
+    var slice=Math.min(left, width);
+    var duty=slice*rate;
+    total+=duty; left-=slice;
+    var hi = isFinite(width) ? lo+width : Infinity;
+    var band = isFinite(hi) ? money(lo) : 'Above '+money(lo);
+    rows.push({band:(i===0?'First ':'Next ')+(isFinite(width)?money(width):'balance'), rate:rate, slice:slice, duty:duty});
+    lo=hi;
+    if(!isFinite(width)) break;
+  }
+  return {total:total, rows:rows};
+}
+
+function calc(){
+  var price=num('price');
+  var profile=document.getElementById('profile').value;
+  var count=parseInt(document.getElementById('count').value,10);
+
+  var b=bsdBreakdown(price);
+  var absdRate=ABSD[profile][count];
+  var absd=price*absdRate;
+  var total=b.total+absd;
+
+  document.getElementById('total').textContent=money(total);
+  document.getElementById('bsd').textContent=money(b.total);
+  document.getElementById('absd').textContent=money(absd);
+  document.getElementById('absd-l').textContent='Additional Buyer\u2019s Stamp Duty ('+(absdRate*100)+'%)';
+  document.getElementById('rate-line').textContent=PROFILE_LABEL[profile]+', '+(count===1?'1st':count===2?'2nd':'3rd or later')+' property'+(absdRate>0?' - ABSD applies at '+(absdRate*100)+'%.':' - no ABSD.');
+
+  var rows='';
+  b.rows.forEach(function(r){
+    rows+='<tr><td>'+r.band+' &times; '+(r.rate*100)+'%</td><td>'+money(r.slice)+'</td><td>'+money(r.duty)+'</td></tr>';
+  });
+  document.getElementById('bsd-rows').innerHTML=rows;
+
+  var note=document.getElementById('hdbnote');
+  if(profile==='sc' && count===1){
+    note.innerHTML='Buying an HDB resale flat as a first-timer Citizen household, this is usually all you pay - ABSD is 0% on your first property. You may also qualify for <a href="/grants">CPF housing grants</a>.';
+  } else {
+    note.innerHTML='Note: to buy an HDB resale flat you generally must not own other property, so ABSD above usually applies to private-property or decoupling cases rather than a standard HDB purchase.';
+  }
+}
+
+['price','profile','count'].forEach(function(id){
+  document.getElementById(id).addEventListener('input', calc);
+  document.getElementById(id).addEventListener('change', calc);
+});
+calc();
+</script>
 
 <footer class="site-footer"><div class="footer-inner">
   <span class="footer-brand">SG HDB Resale</span>
