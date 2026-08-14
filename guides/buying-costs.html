@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1c1c1a" media="(prefers-color-scheme: dark)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="HDB Resale">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="description" content="What an HDB resale flat actually costs to buy, beyond the price on the listing: the downpayment, stamp duty, option fee, valuation and legal fees, and the grants that come back. Worked on a real example, and split by what comes from cash, CPF and your loan.">
+<link rel="canonical" href="https://sghdbresale.com/guides/buying-costs">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="SG HDB Resale">
+<meta property="og:locale" content="en_SG">
+<meta property="og:title" content="What a resale flat really costs to buy">
+<meta property="og:description" content="The price on the listing is not the cost. The downpayment, stamp duty, fees and grants that decide what you actually pay - and what has to be cash.">
+<meta property="og:url" content="https://sghdbresale.com/guides/buying-costs">
+<meta property="og:image" content="https://sghdbresale.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What a resale flat really costs to buy">
+<meta name="twitter:description" content="Beyond the price: downpayment, stamp duty, fees and grants - and what has to be paid in cash.">
+<meta name="twitter:image" content="https://sghdbresale.com/og-image.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"What a resale flat really costs to buy","description":"What an HDB resale flat actually costs to buy, beyond the price: the downpayment, stamp duty, option fee, valuation and legal fees, and the grants that come back - split by what comes from cash, CPF and your loan.","inLanguage":"en-SG","isAccessibleForFree":true,"image":"https://sghdbresale.com/og-image.png","author":{"@type":"Organization","name":"SG HDB Resale","url":"https://sghdbresale.com/"},"publisher":{"@type":"Organization","name":"SG HDB Resale","url":"https://sghdbresale.com/"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://sghdbresale.com/guides/buying-costs"}}</script>
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16.png">
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6257747517291345" crossorigin="anonymous"></script>
+<title>What a resale flat really costs to buy - SG HDB Resale</title>
+<script>(function(){try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<style>
+:root{
+  --font-sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --font-serif:"Iowan Old Style","Palatino Linotype",Palatino,"Georgia",serif;
+  --color-background-primary:#fff;--color-background-secondary:#f5f5f4;--color-background-info:#eef4fb;
+  --color-text-primary:#1a1a1a;--color-text-secondary:#6b6b6b;--color-text-tertiary:#6f6f6f;
+  --color-text-info:#2c6cb0;--color-text-success:#0f6e56;--color-text-danger:#993c1d;
+  --color-border-primary:#d4d4d4;--color-border-secondary:#e0e0e0;--color-border-tertiary:#ececec;
+  --border-radius-md:10px;--border-radius-lg:14px;
+}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --color-background-primary:#1c1c1a;--color-background-secondary:#2a2a28;--color-background-info:#1e2a38;
+  --color-text-primary:#f5f5f3;--color-text-secondary:#a8a8a4;--color-text-tertiary:#949490;
+  --color-text-info:#6aa9e0;--color-text-success:#4cc4a0;--color-text-danger:#e08a6a;
+  --color-border-primary:#3a3a38;--color-border-secondary:#333331;--color-border-tertiary:#2c2c2a;
+}}
+:root[data-theme="dark"]{
+  --color-background-primary:#1c1c1a;--color-background-secondary:#2a2a28;--color-background-info:#1e2a38;
+  --color-text-primary:#f5f5f3;--color-text-secondary:#a8a8a4;--color-text-tertiary:#949490;
+  --color-text-info:#6aa9e0;--color-text-success:#4cc4a0;--color-text-danger:#e08a6a;
+  --color-border-primary:#3a3a38;--color-border-secondary:#333331;--color-border-tertiary:#2c2c2a;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--color-background-primary);color:var(--color-text-primary);font-family:var(--font-sans)}
+.tnum{font-variant-numeric:tabular-nums}
+
+.nav{position:sticky;top:0;z-index:50;background:var(--color-background-primary);border-bottom:1px solid var(--color-border-secondary);box-shadow:0 1px 0 rgba(0,0,0,0.02)}
+.nav-inner{max-width:1000px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;gap:6px;flex-wrap:wrap;min-height:58px;justify-content:space-between}
+.nav-brand{font-size:13px;font-weight:600;color:var(--color-text-primary);white-space:nowrap;display:flex;align-items:center;gap:7px;text-decoration:none}
+.nav-brand svg{flex-shrink:0}
+.nav-link{font-size:13px;font-weight:500;padding:8px 15px;border-radius:8px;color:var(--color-text-secondary);text-decoration:none;white-space:nowrap;transition:all .12s;border:1px solid transparent}
+.nav-link:hover{background:var(--color-background-secondary);color:var(--color-text-primary)}
+.nav-link.active{background:var(--color-text-primary);color:var(--color-background-primary)}
+/*NAVDROPDOWN*/
+.nav-group{position:relative;display:inline-flex}
+.nav-group-btn{font-family:inherit;cursor:pointer;background:transparent;display:inline-flex;align-items:center;gap:5px}
+.nav-caret{opacity:.65;transition:transform .15s}
+.nav-group[data-open="true"] .nav-caret{transform:rotate(180deg)}
+.nav-menu{display:none;position:absolute;top:calc(100% + 6px);left:0;min-width:196px;background:var(--color-background-primary);border:1px solid var(--color-border-primary);border-radius:var(--border-radius-md);box-shadow:0 8px 28px rgba(0,0,0,.14);padding:6px;z-index:60}.nav-group[data-open="true"] .nav-menu::before{content:"";position:absolute;left:0;right:0;top:-6px;height:6px}
+.nav-group[data-open="true"] .nav-menu{display:block}
+.nav-menu-link{display:block;font-size:13px;font-weight:500;padding:8px 12px;border-radius:6px;color:var(--color-text-secondary);text-decoration:none;white-space:nowrap;border:1px solid transparent}
+.nav-menu-link:hover{background:var(--color-background-secondary);color:var(--color-text-primary)}
+.nav-menu-link.active{color:var(--color-text-primary);font-weight:640;background:var(--color-background-secondary)}
+@media(max-width:600px){.nav-menu{left:0;right:auto}}
+@media(max-width:600px){.nav-brand{width:100%;margin:0 0 6px 0}.nav-inner{padding:10px 1rem}.nav-link{font-size:12px;padding:7px 12px}}
+.theme-toggle{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;padding:0;border:1px solid var(--color-border-secondary);background:transparent;border-radius:8px;color:var(--color-text-secondary);cursor:pointer;transition:background .12s,color .12s,border-color .12s}
+.theme-toggle:hover{background:var(--color-background-secondary);color:var(--color-text-primary);border-color:var(--color-border-primary)}
+.theme-toggle svg{width:17px;height:17px;display:block}
+
+a{color:var(--color-text-info)}
+
+.article{max-width:720px;margin:0 auto;padding:0 1.5rem}
+.kicker{margin-top:2.5rem;font-size:12.5px;font-weight:640;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-text-info)}
+.crumbs{margin-top:1.5rem;font-size:13px;color:var(--color-text-tertiary)}
+.crumbs a{color:var(--color-text-secondary);text-decoration:none}
+.crumbs a:hover{text-decoration:underline}
+h1{font-family:var(--font-serif);font-size:clamp(31px,5vw,44px);line-height:1.1;letter-spacing:-0.01em;font-weight:600;margin:14px 0 0;text-wrap:balance}
+.standfirst{font-family:var(--font-serif);font-size:clamp(18px,2.4vw,21px);line-height:1.5;color:var(--color-text-secondary);margin:18px 0 0}
+.byline{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:22px 0 0;padding:15px 0;border-top:1px solid var(--color-border-secondary);border-bottom:1px solid var(--color-border-secondary);font-size:13px;color:var(--color-text-tertiary)}
+.byline .who{color:var(--color-text-secondary);font-weight:600}
+.byline .pill{background:var(--color-background-info);color:var(--color-text-info);padding:3px 10px;border-radius:20px;font-weight:600;font-size:12px}
+.article p{font-family:var(--font-serif);font-size:18.5px;line-height:1.68;margin:22px 0 0}
+.article h2{font-size:23px;letter-spacing:-0.015em;font-weight:700;margin:44px 0 0;line-height:1.22;text-wrap:balance}
+.article strong{font-weight:700;color:var(--color-text-primary)}
+.article em{font-style:italic}
+
+.keyfig{margin:28px 0 0;border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-secondary);padding:20px 22px;display:flex;gap:24px;flex-wrap:wrap}
+.keyfig .cell{flex:1;min-width:150px}
+.keyfig .n{font-family:var(--font-sans);font-size:29px;font-weight:720;letter-spacing:-0.02em;line-height:1}
+.keyfig .n.blue{color:var(--color-text-info)}
+.keyfig .n.green{color:var(--color-text-success)}
+.keyfig .l{font-family:var(--font-sans);font-size:12.5px;color:var(--color-text-secondary);margin-top:9px;line-height:1.4}
+
+figure{margin:32px 0 0}
+.chart{border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-primary);padding:22px 22px 18px;overflow-x:auto}
+.chart .ct{font-family:var(--font-sans);font-size:14px;font-weight:660;letter-spacing:-0.01em;color:var(--color-text-primary)}
+.chart .cs{font-family:var(--font-sans);font-size:12.5px;color:var(--color-text-tertiary);margin-top:4px}
+figcaption{font-family:var(--font-sans);font-size:12.5px;color:var(--color-text-tertiary);margin-top:11px;line-height:1.5}
+
+table{border-collapse:collapse;width:100%;font-family:var(--font-sans);font-size:13.5px;margin-top:16px;min-width:380px}
+th,td{padding:9px 12px;text-align:right;border-bottom:1px solid var(--color-border-secondary);font-variant-numeric:tabular-nums}
+th:first-child,td:first-child{text-align:left}
+thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:var(--color-text-tertiary);font-weight:640;border-bottom:1px solid var(--color-border-primary)}
+tr.spot td{background:var(--color-background-info);font-weight:660;color:var(--color-text-primary)}
+tr.spot td:first-child{border-left:3px solid var(--color-text-info)}
+/* cost table: left-align the "paid from" column, indent sub-rows */
+.costtbl th:last-child,.costtbl td:last-child{text-align:left;color:var(--color-text-secondary);font-variant-numeric:normal}
+.costtbl tr.sub td:first-child{padding-left:28px;color:var(--color-text-secondary);font-weight:400}
+.costtbl tr.sub2 td:first-child{padding-left:44px;color:var(--color-text-tertiary);font-weight:400;font-size:12.5px}
+.costtbl tr.sub2 td{color:var(--color-text-tertiary);font-size:12.5px}
+.costtbl tr.tot td{border-top:1px solid var(--color-border-primary);border-bottom:none;font-weight:700;color:var(--color-text-primary)}
+.tag-cash{color:var(--color-text-danger);font-weight:640}
+.tag-cpf{color:var(--color-text-info);font-weight:640}
+.tag-loan{color:var(--color-text-secondary);font-weight:640}
+
+.callout{margin:32px 0 0;border-left:3px solid var(--color-text-info);background:var(--color-background-info);border-radius:0 var(--border-radius-lg) var(--border-radius-lg) 0;padding:18px 22px}
+.callout p{margin:0;font-family:var(--font-serif);font-size:18px;line-height:1.6;color:var(--color-text-primary)}
+
+.checks{margin-top:20px;border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);padding:6px 24px 18px}
+.checks h3{font-family:var(--font-sans);font-size:13px;text-transform:uppercase;letter-spacing:0.06em;color:var(--color-text-tertiary);margin:18px 0 0}
+.checks ol{margin:14px 0 0;padding:0;list-style:none;counter-reset:c;display:flex;flex-direction:column;gap:14px}
+.checks li{font-family:var(--font-serif);font-size:17.5px;line-height:1.5;padding-left:40px;position:relative;counter-increment:c}
+.checks li::before{content:counter(c);position:absolute;left:0;top:2px;width:26px;height:26px;border-radius:50%;background:var(--color-background-info);color:var(--color-text-info);font-family:var(--font-sans);font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center}
+
+.cta{margin:42px 0 0;border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-secondary);padding:24px 26px;display:flex;gap:20px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.cta .t h3{margin:0;font-family:var(--font-sans);font-size:18px;font-weight:700;letter-spacing:-0.01em}
+.cta .t p{margin:8px 0 0;font-family:var(--font-sans);font-size:14.5px;color:var(--color-text-secondary);max-width:46ch}
+.cta .btn{font-family:var(--font-sans);font-weight:640;font-size:14.5px;color:var(--color-background-primary);background:var(--color-text-primary);padding:12px 20px;border-radius:10px;white-space:nowrap;text-decoration:none;transition:opacity .12s}
+.cta .btn:hover{opacity:.85}
+
+.method{margin:38px 0 0;font-family:var(--font-sans);font-size:12.5px;line-height:1.6;color:var(--color-text-tertiary);border-top:1px solid var(--color-border-secondary);padding:18px 0 0}
+.method b{color:var(--color-text-secondary)}
+.morelink{margin:26px 0 0;font-family:var(--font-sans);font-size:14px}
+.morelink a{color:var(--color-text-info);text-decoration:none;font-weight:600}
+.morelink a:hover{text-decoration:underline}
+
+.site-footer{border-top:1px solid var(--color-border-secondary);margin-top:3rem}
+.footer-inner{max-width:1000px;margin:0 auto;padding:1.25rem 1.5rem;display:flex;flex-wrap:wrap;align-items:center;gap:6px 16px;justify-content:space-between}
+.footer-brand{font-size:13px;font-weight:600;color:var(--color-text-secondary)}
+.footer-nav{display:flex;gap:16px;flex-wrap:wrap}
+.footer-nav a{font-size:13px;color:var(--color-text-secondary);text-decoration:none;display:inline-block;padding:5px 2px}
+.footer-nav a:hover{color:var(--color-text-primary)}
+.footer-note{font-size:12px;color:var(--color-text-tertiary)}
+</style>
+</head>
+<body>
+<div class="nav"><div class="nav-inner"><a class="nav-brand" href="/"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>SG HDB Resale</a><a class="nav-link" href="/overview">Overview</a><a class="nav-link" href="/towns/">Towns</a><a class="nav-link" href="/insights">Insights</a><a class="nav-link active" href="/#guides">Guides</a><a class="nav-link" href="/search">Search</a><a class="nav-link" href="/calculators">Calculators</a><div class="nav-group"><button type="button" class="nav-link nav-group-btn" aria-haspopup="true" aria-expanded="false">Dashboard<svg class="nav-caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="nav-menu" role="menu"><a class="nav-menu-link" href="/find-a-flat" role="menuitem">Find a Flat</a><a class="nav-menu-link" href="/analysis-by-town" role="menuitem">Analysis by Town</a><a class="nav-menu-link" href="/by-district" role="menuitem">By District</a><a class="nav-menu-link" href="/this-year" role="menuitem">This Year</a><a class="nav-menu-link" href="/this-month" role="menuitem">This Month</a></div></div><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme"></button></div></div>
+
+<article class="article">
+  <div class="crumbs"><a href="/#guides">Guides</a> &nbsp;/&nbsp; Cost of buying</div>
+  <div class="kicker">Guide &middot; Buying</div>
+  <h1>What a resale flat really costs to buy</h1>
+  <p class="standfirst">The number on the listing is the loudest cost, not the only one. Four others move real
+    money on completion day - and only some of them are allowed to come out of your CPF.</p>
+  <div class="byline">
+    <span class="who">SG HDB Resale</span><span>&middot;</span>
+    <span>Worked example: a $600,000 four-room flat, first-timer Citizen couple</span>
+    <span class="pill">6 min read</span>
+  </div>
+
+  <p>You have agreed on $600,000 for a four-room flat. So you need $600,000, give or take? Not quite. Some of that
+    price is a loan you repay over decades, not cash you produce now. Meanwhile several costs that never appear on
+    the listing - stamp duty, the option cheque, fees - do have to be found upfront. And a different question sits
+    underneath all of it: which of these can come from your CPF, and which must be cold, hard cash?</p>
+
+  <p>Sort the price into its real pieces and the picture gets clearer, and usually less frightening. Here is the
+    same $600,000 flat, broken into what you actually hand over and where each part comes from.</p>
+
+  <figure>
+    <div class="chart">
+      <div class="ct">The one price, split into what it really is</div>
+      <div class="cs">Illustrative costs on a $600,000 resale flat &middot; first-timer Citizen couple &middot; HDB loan</div>
+      <table class="costtbl">
+        <thead><tr><th>Cost</th><th>Amount</th><th>Paid from</th></tr></thead>
+        <tbody>
+          <tr><td>Purchase price</td><td>$600,000</td><td>&nbsp;</td></tr>
+          <tr class="sub"><td>Downpayment (25%)</td><td>$150,000</td><td><span class="tag-cpf">CPF</span> / cash</td></tr>
+          <tr class="sub2"><td>incl. option fee + deposit, paid first</td><td>up to $5,000</td><td><span class="tag-cash">Cash</span></td></tr>
+          <tr class="sub"><td>Housing loan (75%)</td><td>$450,000</td><td><span class="tag-loan">Loan</span>, repaid monthly</td></tr>
+          <tr><td>Buyer's Stamp Duty</td><td>$12,600</td><td><span class="tag-cpf">CPF</span> (cash first)</td></tr>
+          <tr><td>Valuation (Request for Value)</td><td>$120</td><td><span class="tag-cash">Cash</span></td></tr>
+          <tr><td>Conveyancing (HDB solicitor)</td><td>~$1,000&ndash;$1,500</td><td><span class="tag-cpf">CPF</span></td></tr>
+          <tr class="tot"><td>Upfront, excluding the loan</td><td>~$163,700</td><td>mostly <span class="tag-cpf">CPF</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <figcaption>Agent commission (if you use a buyer's agent) and any cash-over-valuation sit on top of this, both
+      in cash. Grants come back the other way - see below. Figures are illustrative and rounded.</figcaption>
+  </figure>
+
+  <p>The loan aside, you are looking at roughly <strong>$164,000</strong> to bring a $600,000 flat to completion -
+    and for a first-timer household, grants can give a large slice of that back. But the more useful split isn't
+    price versus fees. It is <strong>cash versus CPF</strong>, because that is what actually catches people short.</p>
+
+  <h2>The cash nobody budgets for</h2>
+
+  <p>Most of the big money - the bulk of the downpayment, the stamp duty, the legal fee - can be drawn from your
+    CPF Ordinary Account. That is a relief, but it hides a trap: a handful of costs <em>cannot</em> touch CPF and
+    have to be actual cash in your bank.</p>
+
+  <p>When you take the <strong>Option to Purchase</strong>, you pay the seller an <strong>option fee</strong> of up
+    to $1,000; when you exercise it, you top that up to a deposit that, by HDB's rules, can total up to
+    <strong>$5,000</strong> - all in cash. The <strong>Request for Value</strong>, HDB's valuation step, costs a
+    fixed <strong>$120</strong>, also cash. If you engage a buyer's agent, their commission - commonly around
+    <strong>1% plus GST</strong> of the price, so roughly $6,500 on this flat - is cash too. None of these is
+    enormous on its own, but together they are five figures that CPF will not cover.</p>
+
+  <div class="callout">
+    <p>The one that surprises people most is cash-over-valuation. If the agreed price sits above HDB's valuation,
+      the gap can be paid with neither CPF nor loan. Every dollar of it is cash - so a flat priced well over its
+      valuation can quietly demand tens of thousands more in the bank than the sticker suggests.</p>
+  </div>
+
+  <p>This is why the price you offer and the flat's valuation matter so much together. Your loan and your CPF are
+    both sized off the <em>lower</em> of price or valuation; anything above it is on you, in cash. Reading where a
+    fair price sits is a skill in itself - we cover it in
+    <a href="/guides/fair-price">how to tell if an asking price is fair</a>.</p>
+
+  <h2>The downpayment: a quarter of the price, and where it hides</h2>
+
+  <p>You can borrow up to <strong>75%</strong> of the price (or valuation, if lower), which leaves a
+    <strong>25% downpayment</strong> - $150,000 on our flat. The good news for most HDB buyers: on an
+    <strong>HDB loan</strong> at 2.6%, that entire 25% may come from CPF, so it need not be cash at all. On a
+    <strong>bank loan</strong> the split is stricter - at least 5% of the price must be cash (about $30,000 here),
+    with the rest from CPF or cash.</p>
+
+  <p>So the honest cash floor depends on your loan. With an HDB loan and enough CPF, a first-timer couple can reach
+    completion on this flat with only the deposit, the $120 valuation, an agent fee if any, and any
+    cash-over-valuation actually leaving their bank account. With a bank loan, add that 5%. What your income and
+    savings can actually support - the real ceiling - is what the
+    <a href="/affordability">affordability calculator</a> works out under the MSR, TDSR and LTV rules.</p>
+
+  <h2>Stamp duty: the tax that lands on top</h2>
+
+  <p>Buyer's Stamp Duty is charged on the higher of price or valuation, on a tiered scale. On $600,000 it comes to
+    <strong>$12,600</strong>, built up like this:</p>
+
+  <figure>
+    <div class="chart">
+      <div class="ct">How the $12,600 is built up</div>
+      <div class="cs">Buyer's Stamp Duty on a $600,000 flat &middot; residential rates</div>
+      <table>
+        <thead><tr><th>Band</th><th>Rate</th><th>Duty</th></tr></thead>
+        <tbody>
+          <tr><td>First $180,000</td><td>1%</td><td>$1,800</td></tr>
+          <tr><td>Next $180,000</td><td>2%</td><td>$3,600</td></tr>
+          <tr class="spot"><td>Next $240,000</td><td>3%</td><td>$7,200</td></tr>
+          <tr><td>Total on $600,000</td><td>&nbsp;</td><td>$12,600</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <figcaption>You can reimburse the duty from CPF, but it is usually paid in cash first and refunded to CPF
+      shortly after - so budget the timing. It is due within 14 days of exercising the option.</figcaption>
+  </figure>
+
+  <p>For a standard HDB purchase that is the whole stamp-duty story: <strong>Additional Buyer's Stamp Duty is 0%</strong>
+    for a Citizen buying their first property, and you generally cannot own another property and buy an HDB flat
+    anyway. If ABSD ever does apply to your situation, the
+    <a href="/stamp-duty">stamp duty calculator</a> works out both parts.</p>
+
+  <h2>Grants: real money, but it flows into CPF</h2>
+
+  <p>Costs run one way; for a first-timer household, grants run the other. They are the reason the net cost of a
+    first flat is often far below the gross. A first-timer Citizen couple buying a four-room resale flat, within
+    the income ceiling, can receive the <strong>CPF Housing Grant</strong> of up to $80,000, plus an income-tiered
+    <strong>Enhanced CPF Housing Grant</strong> of up to $120,000, plus a <strong>Proximity Housing Grant</strong>
+    of $20,000 to $30,000 if they buy near or with family.</p>
+
+  <div class="keyfig">
+    <div class="cell"><div class="n blue tnum">$150,000</div><div class="l">the 25% downpayment on a $600k flat</div></div>
+    <div class="cell"><div class="n green tnum">up to $80,000+</div><div class="l">in grants a first-timer couple may receive, credited to CPF</div></div>
+    <div class="cell"><div class="n tnum">$0</div><div class="l">of those grants you can take as cash - they must go to the flat</div></div>
+  </div>
+
+  <p>The catch in the good news: grants are paid <strong>into your CPF</strong>, not your pocket. They can cover a
+    big share of that downpayment, which is exactly what makes a first flat reachable - but they do nothing for the
+    cash costs above. Which grants you qualify for, and how much, comes down to who is buying, the flat size and
+    your income; the <a href="/grants">grant eligibility checker</a> runs the published rules, and your exact
+    Enhanced Grant is confirmed in your HFE letter.</p>
+
+  <div class="checks">
+    <h3>The full cost checklist, by where the money comes from</h3>
+    <ol>
+      <li><strong>Cash you truly need.</strong> Option fee and deposit (up to $5,000), the $120 valuation, agent
+        commission if any, plus - for a bank loan - 5% of the price. And every dollar of any cash-over-valuation.</li>
+      <li><strong>CPF (or cash) covers the rest of the downpayment.</strong> Up to the full 25% on an HDB loan;
+        on a bank loan, whatever is left after the 5% cash floor.</li>
+      <li><strong>Stamp duty and legal fees.</strong> Reimbursable from CPF, but budget to pay the stamp duty in
+        cash first. On $600,000 that is $12,600 in duty and roughly $1,000 to $1,500 in HDB conveyancing.</li>
+      <li><strong>The loan is not upfront cost.</strong> Up to 75% of the price is borrowed and repaid monthly -
+        size the instalment to your income, not to today's bank balance.</li>
+      <li><strong>Count grants back in, but into CPF.</strong> For a first-timer household they can offset most of
+        the downpayment - just not the cash costs, and never as cash in hand.</li>
+    </ol>
+  </div>
+
+  <div class="callout">
+    <p>The price tells you what to borrow. The cash-versus-CPF split tells you whether you can actually complete.
+      Get that split right before you sign, and completion day holds no surprises.</p>
+  </div>
+
+  <div class="cta">
+    <div class="t">
+      <h3>Put your own numbers through it</h3>
+      <p>See what flats really sell for by town and flat type, then run your income, savings and CPF through the
+        affordability calculator to find the price you can actually support.</p>
+    </div>
+    <a class="btn" href="/affordability">Affordability calculator &rarr;</a>
+  </div>
+
+  <p class="method"><b>How we sourced this.</b> Buyer's Stamp Duty is the published IRAS residential scale (1% on
+    the first $180,000, 2% on the next $180,000, 3% above, up to higher tiers); Additional Buyer's Stamp Duty is 0%
+    for a Citizen's first property. The loan rules - 75% loan-to-value, a 5% minimum cash downpayment on a bank
+    loan, the 2.6% HDB concessionary rate - are the current MAS and HDB figures used across our
+    <a href="/calculators">calculators</a>. The option fee (up to $1,000), the $5,000 option-plus-deposit cap, the
+    21-day option period and the $120 Request for Value fee are HDB's published figures (hdb.gov.sg); HDB
+    conveyancing fees follow a published schedule and the range shown is indicative. Grant amounts are the
+    published HDB figures for first-timer resale buyers. These are estimates to help you budget, not tax, legal or
+    financial advice, and rules and rates change - always confirm against iras.gov.sg and hdb.gov.sg, and your own
+    HFE letter. Last reviewed August 2026.</p>
+
+  <p class="morelink"><a href="/#guides">&larr; All guides</a></p>
+</article>
+
+<footer class="site-footer"><div class="footer-inner">
+  <span class="footer-brand">SG HDB Resale</span>
+  <nav class="footer-nav"><a href="/#guides">Guides</a><a href="/about">About</a><a href="/contact">Contact</a><a href="/terms">Terms</a><a href="/privacy">Privacy</a></nav>
+  <span class="footer-note">Data: data.gov.sg &amp; OneMap</span>
+</div></footer>
+
+<script>window.goatcounter={no_onload:location.hostname==='localhost'};</script>
+<script data-goatcounter="https://sghdbresale.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () { navigator.serviceWorker.register('/sw.js').catch(function () {}); });
+}
+</script>
+<script>
+(function(){
+var root=document.documentElement,btn=document.getElementById('theme-toggle');if(!btn)return;
+var MOON="<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z\"/></svg>",SUN="<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"5\"/><line x1=\"12\" y1=\"1\" x2=\"12\" y2=\"3\"/><line x1=\"12\" y1=\"21\" x2=\"12\" y2=\"23\"/><line x1=\"4.22\" y1=\"4.22\" x2=\"5.64\" y2=\"5.64\"/><line x1=\"18.36\" y1=\"18.36\" x2=\"19.78\" y2=\"19.78\"/><line x1=\"1\" y1=\"12\" x2=\"3\" y2=\"12\"/><line x1=\"21\" y1=\"12\" x2=\"23\" y2=\"12\"/><line x1=\"4.22\" y1=\"19.78\" x2=\"5.64\" y2=\"18.36\"/><line x1=\"18.36\" y1=\"5.64\" x2=\"19.78\" y2=\"4.22\"/></svg>";
+function eff(){var t=root.getAttribute('data-theme');return (t==='light'||t==='dark')?t:((window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches)?'dark':'light');}
+function paint(){var d=eff()==='dark';btn.innerHTML=d?SUN:MOON;var l=d?'Switch to light theme':'Switch to dark theme';btn.setAttribute('aria-label',l);btn.setAttribute('title',l);}
+btn.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';root.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}paint();});
+paint();
+})();
+</script>
+<script>/*NAVJS*/
+(function(){var g=document.querySelector('.nav-group');if(!g)return;var btn=g.querySelector('.nav-group-btn');function set(o){g.setAttribute('data-open',o?'true':'false');btn.setAttribute('aria-expanded',o?'true':'false');}if(window.matchMedia&&window.matchMedia('(hover:hover)').matches){g.addEventListener('mouseenter',function(){set(true);});g.addEventListener('mouseleave',function(){set(false);});}btn.addEventListener('click',function(e){e.preventDefault();set(g.getAttribute('data-open')!=='true');});document.addEventListener('click',function(e){if(!g.contains(e.target))set(false);});document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});})();
+</script>
+</body>
+</html>
