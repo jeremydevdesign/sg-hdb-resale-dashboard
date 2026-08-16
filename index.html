@@ -9,13 +9,13 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="HDB Resale">
 <meta name="mobile-web-app-capable" content="yes">
-<meta name="description" content="See what Singapore HDB flats actually sold for - median resale prices by town, flat type, distance to the MRT and postal district. Free, official data.gov.sg records, refreshed every month. No jargon, no sign-up.">
+<meta name="description" content="See what Singapore HDB flats actually sold for - median resale prices by town, flat type, distance to the MRT and postal district. Free, official data.gov.sg records, refreshed weekly.">
 <link rel="canonical" href="https://sghdbresale.com/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SG HDB Resale">
 <meta property="og:locale" content="en_SG">
 <meta property="og:title" content="SG HDB Resale - a decade of Singapore HDB resale prices">
-<meta property="og:description" content="See what Singapore HDB flats actually sold for - median resale prices by town, flat type, MRT proximity and postal district. Free, official data, refreshed monthly.">
+<meta property="og:description" content="See what Singapore HDB flats actually sold for - median resale prices by town, flat type, MRT proximity and postal district. Free, official data, refreshed weekly.">
 <meta property="og:url" content="https://sghdbresale.com/">
 <meta property="og:image" content="https://sghdbresale.com/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -23,7 +23,7 @@
 <meta property="og:image:alt" content="SG HDB Resale - a decade of Singapore HDB resale prices">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="SG HDB Resale - a decade of Singapore HDB resale prices">
-<meta name="twitter:description" content="See what Singapore HDB flats actually sold for - median resale prices by town, flat type, MRT proximity and postal district. Free, official data, refreshed monthly.">
+<meta name="twitter:description" content="See what Singapore HDB flats actually sold for - median resale prices by town, flat type, MRT proximity and postal district. Free, official data, refreshed weekly.">
 <meta name="twitter:image" content="https://sghdbresale.com/og-image.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"SG HDB Resale","alternateName":"SG HDB Resale Dashboard","url":"https://sghdbresale.com/","description":"A free dashboard of Singapore HDB resale flat prices - median prices by town and flat type, MRT proximity, postal district rankings and this year's market.","inLanguage":"en-SG","publisher":{"@type":"Organization","name":"SG HDB Resale","url":"https://sghdbresale.com/"}}</script>
 <link rel="manifest" href="manifest.webmanifest">
@@ -105,7 +105,20 @@ body{margin:0;background:var(--color-background-primary);color:var(--color-text-
 @media(max-width:380px){.pulse-grid{grid-template-columns:1fr}.pstat{border-right:none;border-bottom:1px solid var(--color-border-secondary)}.pstat:last-child{border-bottom:none}}
 
 .section-label{font-size:12px;font-weight:640;letter-spacing:.06em;text-transform:uppercase;color:var(--color-text-tertiary);margin:0 0 16px}
-#guides{scroll-margin-top:72px}
+#roadmap{scroll-margin-top:72px}
+.roadmap-intro{font-size:15px;line-height:1.6;color:var(--color-text-secondary);margin:0 0 18px;max-width:60ch}
+.roadmap{display:flex;flex-direction:column;gap:14px;margin-top:16px}
+.rstep{position:relative;border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-secondary);padding:22px 24px 22px 66px}
+.rnum{position:absolute;left:22px;top:22px;width:30px;height:30px;border-radius:50%;background:var(--color-text-primary);color:var(--color-background-primary);font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center;font-variant-numeric:tabular-nums}
+.rstep h3{font-family:var(--font-serif);margin:0;font-size:20px;line-height:1.2;font-weight:600;color:var(--color-text-primary)}
+.rstep p{font-family:var(--font-serif);margin:8px 0 0;font-size:15.5px;line-height:1.5;color:var(--color-text-secondary);max-width:60ch}
+.rrow{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px 8px;align-items:center}
+.rlabel{font-family:var(--font-sans);font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--color-text-tertiary);margin-right:2px}
+.rlink{font-family:var(--font-sans);font-size:13px;font-weight:600;text-decoration:none;padding:6px 12px;border-radius:8px;border:1px solid var(--color-border-primary);color:var(--color-text-primary);background:var(--color-background-primary);transition:border-color .12s,color .12s}
+.rlink:hover{border-color:var(--color-text-info);color:var(--color-text-info)}
+.rlink.read{background:transparent;border-style:dashed;color:var(--color-text-secondary)}
+.rlink.read:hover{color:var(--color-text-info);border-color:var(--color-text-info)}
+@media(max-width:600px){.rstep{padding:20px 18px}.rnum{position:static;margin-bottom:12px}}
 .feature{display:block;text-decoration:none;border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-secondary);padding:28px 30px;transition:border-color .12s,transform .12s}
 .feature:hover{border-color:var(--color-text-primary);transform:translateY(-2px)}
 .feature .tag{font-size:12px;font-weight:640;letter-spacing:.05em;text-transform:uppercase;color:var(--color-text-info)}
@@ -161,18 +174,18 @@ a.card:hover{border-color:var(--color-text-info);transform:translateY(-2px)}
 </style>
 </head>
 <body>
-<div class="nav"><div class="nav-inner"><a class="nav-brand" href="/"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>SG HDB Resale</a><a class="nav-link" href="/overview">Overview</a><a class="nav-link" href="/towns/">Towns</a><a class="nav-link" href="/insights">Insights</a><a class="nav-link" href="/#guides">Guides</a><a class="nav-link" href="/search">Search</a><a class="nav-link" href="/calculators">Calculators</a><div class="nav-group"><button type="button" class="nav-link nav-group-btn" aria-haspopup="true" aria-expanded="false">Dashboard<svg class="nav-caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="nav-menu" role="menu"><a class="nav-menu-link" href="/find-a-flat" role="menuitem">Find a Flat</a><a class="nav-menu-link" href="/analysis-by-town" role="menuitem">Analysis by Town</a><a class="nav-menu-link" href="/by-district" role="menuitem">By District</a><a class="nav-menu-link" href="/this-year" role="menuitem">This Year</a><a class="nav-menu-link" href="/this-month" role="menuitem">This Month</a></div></div><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme"></button></div></div>
+<div class="nav"><div class="nav-inner"><a class="nav-brand" href="/"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>SG HDB Resale</a><a class="nav-link" href="/overview">Overview</a><a class="nav-link" href="/towns/">Towns</a><a class="nav-link" href="/insights">Insights</a><a class="nav-link" href="/guides/">Guides</a><a class="nav-link" href="/search">Search</a><a class="nav-link" href="/calculators">Calculators</a><div class="nav-group"><button type="button" class="nav-link nav-group-btn" aria-haspopup="true" aria-expanded="false">Dashboard<svg class="nav-caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="nav-menu" role="menu"><a class="nav-menu-link" href="/find-a-flat" role="menuitem">Find a Flat</a><a class="nav-menu-link" href="/analysis-by-town" role="menuitem">Analysis by Town</a><a class="nav-menu-link" href="/by-district" role="menuitem">By District</a><a class="nav-menu-link" href="/this-year" role="menuitem">This Year</a><a class="nav-menu-link" href="/this-month" role="menuitem">This Month</a></div></div><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme"></button></div></div>
 <div class="wrap">
 <section class="hero">
 <p class="hero-eyebrow">A decade of Singapore's HDB resale market</p>
 <h1 class="hero-title">Buying, selling, or just wondering where prices are headed?</h1>
-<p class="hero-lede">Plain-English guides for anyone buying an HDB resale flat - each takes a question buyers actually ask and answers it with the real transaction record, not opinion. Backed by interactive dashboards built on official data.gov.sg data, refreshed every month. No jargon, no sign-up.</p>
-<div class="hero-trust"><span>Official data.gov.sg records</span><span>300,000+ transactions</span><span>Updated monthly</span></div>
+<p class="hero-lede">Real HDB resale transactions - every sale in Singapore since 2012, not opinions or estimates. Explore the market yourself through interactive dashboards, or follow the buyer's roadmap below step by step. Every figure comes from official data.gov.sg records, refreshed weekly.</p>
+<div class="hero-trust"><span>Official data.gov.sg records</span><span>300,000+ transactions</span><span>Refreshed weekly</span></div>
 </section>
 
 <section class="pulse" aria-label="Latest market snapshot">
 <!--PULSE:START-->
-      <div class="pulse-head"><span class="pulse-dot"></span>Market pulse - <strong>August 2026</strong> so far - refreshed monthly from data.gov.sg</div>
+      <div class="pulse-head"><span class="pulse-dot"></span>Market pulse - <strong>August 2026</strong> so far - refreshed weekly from data.gov.sg</div>
       <div class="pulse-grid">
         <div class="pstat"><div class="pk">Median resale price</div><div class="pv">$640,000</div><div class="ps">589 sales so far in August</div></div>
         <div class="pstat"><div class="pk">Year-on-year</div><div class="pv">+2.9%</div><div class="ps">vs August 2025 - provisional so far</div></div>
@@ -183,70 +196,66 @@ a.card:hover{border-color:var(--color-text-info);transform:translateY(-2px)}
       <a class="pulse-cta" href="/this-month">See what moved this month &rarr;</a>
 </section>
 
-<section id="guides" aria-label="Guides">
-<p class="section-label">Start here &middot; Guides</p>
-<a class="feature" href="/guides/mrt-price-premium">
-<span class="tag">Featured &middot; Buying</span>
-<h2>Is it worth paying more to live near an MRT?</h2>
-<p>Buyers assume the near-station premium is huge and universal. Split 10,837 four-room sales by distance and it turns out to be smaller than the folklore - and in some towns, it runs the other way entirely.</p>
-<span class="meta"><span>5 min read</span><span>&middot;</span><span class="go">Read the guide &rarr;</span></span>
-</a>
-<div class="grid">
-<a class="card" href="/guides/fair-price">
-<span class="kick">Buying</span>
-<h3>How to tell if an asking price is fair</h3>
-<p>There's no single fair price - there's a fair range. The five checks to place a flat inside it, using nothing but the public record.</p>
-<span class="go">Read the guide &rarr;</span>
-</a>
-<a class="card" href="/guides/buying-costs">
-<span class="kick">Buying</span>
-<h3>What a resale flat really costs to buy</h3>
-<p>Beyond the price: the downpayment, stamp duty, option fee and grants - and which costs must be cash, not CPF. Worked on a real example.</p>
-<span class="go">Read the guide &rarr;</span>
-</a>
-<a class="card" href="/guides/cash-over-valuation">
-<span class="kick">Buying</span>
-<h3>Cash over valuation, explained</h3>
-<p>When the price beats the valuation, the gap is cash - not CPF, not your loan. Why COV happens, how the sums work, and how big it gets.</p>
-<span class="go">Read the guide &rarr;</span>
-</a>
-<a class="card" href="/guides/buying-timeline">
-<span class="kick">Buying</span>
-<h3>Buying a resale flat, step by step</h3>
-<p>From the HFE eligibility letter to the keys: every gate in order, what each step costs, and how long the journey really takes.</p>
-<span class="go">Read the guide &rarr;</span>
-</a>
-<a class="card" href="/guides/hdb-vs-bank-loan">
-<span class="kick">Financing</span>
-<h3>HDB loan or bank loan?</h3>
-<p>A fixed 2.6% with no cash down, or a market rate that needs 5% cash and can move. How to choose - and why the switch only goes one way.</p>
-<span class="go">Read the guide &rarr;</span>
-</a>
-<a class="card" href="/guides/mop-and-eligibility">
-<span class="kick">Buying</span>
-<h3>Who can buy, and when can you sell?</h3>
-<p>The eligibility gates that let you buy a resale flat, and the 5-year Minimum Occupation Period that starts the day you get the keys.</p>
-<span class="go">Read the guide &rarr;</span>
-</a>
-<a class="card" href="/guides/lease-decay">
-<span class="kick">Value</span>
-<h3>Lease decay, explained without the panic</h3>
-<p>A slow ~1%-a-year drift for most flats - and why the real bite comes around 60 years left, for a financing reason.</p>
-<span class="go">Read the guide &rarr;</span>
-</a>
-<a class="card" href="/guides/mature-vs-non-mature">
-<span class="kick">Location</span>
-<h3>Mature vs non-mature estates: what you pay for</h3>
-<p>The price gap between estate types, and whether it's location or flat age doing the work.</p>
-<span class="go">Read the guide &rarr;</span>
-</a>
-<a class="card" href="/guides/is-now-a-good-time">
-<span class="kick">Timing</span>
-<h3>Is now a good time to buy?</h3>
-<p>What a decade of prices says about market timing - and why it matters less than you'd think.</p>
-<span class="go">Read the guide &rarr;</span>
-</a>
+<section id="roadmap" aria-label="Buyer's roadmap">
+<p class="section-label">Start here &middot; Buyer's roadmap</p>
+<p class="roadmap-intro">New to buying a resale flat? Work through it in order - each step points to the dashboards and guides for that stage.</p>
+<div class="roadmap">
+
+<div class="rstep">
+<div class="rnum">1</div>
+<h3>See where prices have been</h3>
+<p>Before anything else, get a feel for the whole market. A decade of medians shows how far prices have climbed, and how steady the climb has (or hasn't) been.</p>
+<div class="rrow"><span class="rlabel">Explore</span><a class="rlink" href="/overview">Overview</a></div>
+<div class="rrow"><span class="rlabel">Read</span><a class="rlink read" href="/guides/is-now-a-good-time">Is now a good time to buy?</a></div>
 </div>
+
+<div class="rstep">
+<div class="rnum">2</div>
+<h3>Zoom in on right now</h3>
+<p>The decade sets context; the last few months set expectations. See the latest medians and what actually moved in the newest data.</p>
+<div class="rrow"><span class="rlabel">Explore</span><a class="rlink" href="/this-month">This Month</a><a class="rlink" href="/this-year">This Year</a></div>
+</div>
+
+<div class="rstep">
+<div class="rnum">3</div>
+<h3>Narrow down to towns</h3>
+<p>Price is mostly about place. Compare all 26 towns, then dig into the ones you like - flat types, the near-MRT premium, mature vs non-mature.</p>
+<div class="rrow"><span class="rlabel">Explore</span><a class="rlink" href="/towns/">Towns</a><a class="rlink" href="/analysis-by-town">Analysis by Town</a><a class="rlink" href="/by-district">By District</a></div>
+<div class="rrow"><span class="rlabel">Read</span><a class="rlink read" href="/guides/mature-vs-non-mature">Mature vs non-mature estates</a><a class="rlink read" href="/guides/mrt-price-premium">Is the near-MRT premium worth it?</a></div>
+</div>
+
+<div class="rstep">
+<div class="rnum">4</div>
+<h3>Check what you can afford</h3>
+<p>With a shortlist in hand, turn it into a budget. Work out a realistic price ceiling, then see which towns and flat types actually fit.</p>
+<div class="rrow"><span class="rlabel">Explore</span><a class="rlink" href="/affordability">Affordability calculator</a><a class="rlink" href="/find-a-flat">Find a Flat</a></div>
+<div class="rrow"><span class="rlabel">Read</span><a class="rlink read" href="/guides/hdb-vs-bank-loan">HDB loan or bank loan?</a></div>
+</div>
+
+<div class="rstep">
+<div class="rnum">5</div>
+<h3>Count the real costs</h3>
+<p>The price tag isn't the whole bill. Downpayment, stamp duty, option fee, grants, COV - and which parts must be cash, not CPF.</p>
+<div class="rrow"><span class="rlabel">Explore</span><a class="rlink" href="/stamp-duty">Stamp duty calculator</a><a class="rlink" href="/grants">Grant checker</a></div>
+<div class="rrow"><span class="rlabel">Read</span><a class="rlink read" href="/guides/buying-costs">What a resale flat really costs</a><a class="rlink read" href="/guides/cash-over-valuation">Cash over valuation, explained</a></div>
+</div>
+
+<div class="rstep">
+<div class="rnum">6</div>
+<h3>Know what you're buying into</h3>
+<p>Two flats at the same price aren't equal. Lease age quietly shapes value and financing; eligibility and the 5-year MOP shape your options.</p>
+<div class="rrow"><span class="rlabel">Read</span><a class="rlink read" href="/guides/lease-decay">Lease decay, explained</a><a class="rlink read" href="/guides/mop-and-eligibility">Who can buy, and when can you sell?</a></div>
+</div>
+
+<div class="rstep">
+<div class="rnum">7</div>
+<h3>Make the offer, step by step</h3>
+<p>You've found the flat. Here's every gate from the HFE letter to the keys - in order, with costs and timing - plus how to place an asking price inside a fair range.</p>
+<div class="rrow"><span class="rlabel">Read</span><a class="rlink read" href="/guides/buying-timeline">Buying a resale flat, step by step</a><a class="rlink read" href="/guides/fair-price">How to tell if an asking price is fair</a></div>
+</div>
+
+</div>
+<p class="roadmap-intro" style="margin:18px 0 0"><a class="rlink read" href="/guides/" style="display:inline-block">Browse all guides &rarr;</a></p>
 </section>
 
 <hr class="div">
