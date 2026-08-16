@@ -140,7 +140,7 @@ tr.spot td:first-child{border-left:3px solid var(--color-text-info)}
 .cta .btn{font-family:var(--font-sans);font-weight:640;font-size:14.5px;color:var(--color-background-primary);background:var(--color-text-primary);padding:12px 20px;border-radius:10px;white-space:nowrap;text-decoration:none;transition:opacity .12s}
 .cta .btn:hover{opacity:.85}
 
-.method{margin:38px 0 0;font-family:var(--font-sans);font-size:12.5px;line-height:1.6;color:var(--color-text-tertiary);border-top:1px solid var(--color-border-secondary);padding:18px 0 0}
+.method{margin:40px 0 0;font-family:var(--font-sans);border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-secondary);padding:20px 22px}.method-head{display:flex;align-items:center;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--color-text-secondary);margin:0 0 12px}.method-head svg{width:15px;height:15px;flex-shrink:0;color:var(--color-text-info)}.method p{font-size:13px;line-height:1.6;color:var(--color-text-tertiary);margin:0 0 10px}.method p:last-child{margin:0}.method a{color:var(--color-text-info);text-decoration:none}.method a:hover{text-decoration:underline}.method .rev{font-style:italic}
 .method b{color:var(--color-text-secondary)}
 .morelink{margin:26px 0 0;font-family:var(--font-sans);font-size:14px}
 .morelink a{color:var(--color-text-info);text-decoration:none;font-weight:600}
@@ -270,15 +270,13 @@ tr.spot td:first-child{border-left:3px solid var(--color-text-info)}
     <a class="btn" href="/this-year">Open This Year &rarr;</a>
   </div>
 
-  <p class="method"><b>How we sourced this.</b> The financing mechanics are the current HDB and MAS rules used
-    across our <a href="/calculators">calculators</a>: a housing loan of up to 75% loan-to-value and CPF usage
-    both sized on the lower of price or valuation, so any amount above valuation is payable in cash; Buyer's Stamp
-    Duty is charged on the higher of price or valuation. The requirement to obtain the Option to Purchase before
-    requesting a valuation, and HDB ceasing to publish COV data, both date from the 2014 process change
-    (hdb.gov.sg). Historical COV levels - the 2011 median near $38,000, the fall to around four in five sales at or
-    below valuation by 2016, and the post-2020 resurgence - are drawn from HDB figures and market reporting; exact
-    figures vary by quarter and source, and no official median is published today. This is general information to
-    help you budget, not financial advice. Last reviewed August 2026.</p>
+    <aside class="method">
+    <div class="method-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg><span>How we sourced this</span></div>
+    <p>The financing mechanics are the current HDB and MAS rules used across our <a href="/calculators">calculators</a>: a housing loan of up to 75% loan-to-value and CPF usage both sized on the lower of price or valuation, so any amount above valuation is payable in cash; Buyer's Stamp Duty is charged on the higher of price or valuation.</p>
+    <p>The requirement to obtain the Option to Purchase before requesting a valuation, and HDB ceasing to publish COV data, both date from the 2014 process change (hdb.gov.sg).</p>
+    <p>Historical COV levels - the 2011 median near $38,000, the fall to around four in five sales at or below valuation by 2016, and the post-2020 resurgence - are drawn from HDB figures and market reporting; exact figures vary by quarter and source, and no official median is published today. This is general information to help you budget, not financial advice.</p>
+    <p class="rev">Last reviewed August 2026.</p>
+  </aside>
 
   <p class="morelink"><a href="/guides/">&larr; All guides</a></p>
 </article>

@@ -139,7 +139,7 @@ thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:v
 .cta .btn{font-family:var(--font-sans);font-weight:640;font-size:14.5px;color:var(--color-background-primary);background:var(--color-text-primary);padding:12px 20px;border-radius:10px;white-space:nowrap;text-decoration:none;transition:opacity .12s}
 .cta .btn:hover{opacity:.85}
 
-.method{margin:38px 0 0;font-family:var(--font-sans);font-size:12.5px;line-height:1.6;color:var(--color-text-tertiary);border-top:1px solid var(--color-border-secondary);padding:18px 0 0}
+.method{margin:40px 0 0;font-family:var(--font-sans);border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-secondary);padding:20px 22px}.method-head{display:flex;align-items:center;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--color-text-secondary);margin:0 0 12px}.method-head svg{width:15px;height:15px;flex-shrink:0;color:var(--color-text-info)}.method p{font-size:13px;line-height:1.6;color:var(--color-text-tertiary);margin:0 0 10px}.method p:last-child{margin:0}.method a{color:var(--color-text-info);text-decoration:none}.method a:hover{text-decoration:underline}.method .rev{font-style:italic}
 .method b{color:var(--color-text-secondary)}
 .morelink{margin:26px 0 0;font-family:var(--font-sans);font-size:14px}
 .morelink a{color:var(--color-text-info);text-decoration:none;font-weight:600}
@@ -261,15 +261,13 @@ thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:v
     <a class="btn" href="/affordability">Affordability calculator &rarr;</a>
   </div>
 
-  <p class="method"><b>How we sourced this.</b> The HDB concessionary rate of 2.6% (pegged at 0.1% above the CPF
-    Ordinary Account rate) and the 75% loan-to-value limit for HDB loans, in force since 20 August 2024, are HDB and
-    MAS figures (hdb.gov.sg); bank loans are also capped at 75% loan-to-value with a minimum 5% cash downpayment.
-    The HDB loan income ceiling ($14,000 for families), the Citizen and property-ownership conditions, the lifetime
-    limit of two concessionary loans, the up-to-25-year HDB tenure versus up-to-30-year bank tenure, and the rule
-    that you may refinance from an HDB loan to a bank loan but not the reverse, are HDB's published eligibility
-    rules. Bank interest rates move and are not shown here; our calculators qualify a bank loan at a 4% stress rate.
-    Rules and rates change - confirm current figures at hdb.gov.sg and with lenders. This is general information,
-    not financial advice. Last reviewed August 2026.</p>
+    <aside class="method">
+    <div class="method-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg><span>How we sourced this</span></div>
+    <p>The HDB concessionary rate of 2.6% (pegged at 0.1% above the CPF Ordinary Account rate) and the 75% loan-to-value limit for HDB loans, in force since 20 August 2024, are HDB and MAS figures (hdb.gov.sg); bank loans are also capped at 75% loan-to-value with a minimum 5% cash downpayment.</p>
+    <p>The HDB loan income ceiling ($14,000 for families), the Citizen and property-ownership conditions, the lifetime limit of two concessionary loans, the up-to-25-year HDB tenure versus up-to-30-year bank tenure, and the rule that you may refinance from an HDB loan to a bank loan but not the reverse, are HDB's published eligibility rules.</p>
+    <p>Bank interest rates move and are not shown here; our calculators qualify a bank loan at a 4% stress rate. Rules and rates change - confirm current figures at hdb.gov.sg and with lenders. This is general information, not financial advice.</p>
+    <p class="rev">Last reviewed August 2026.</p>
+  </aside>
 
   <p class="morelink"><a href="/guides/">&larr; All guides</a></p>
 </article>

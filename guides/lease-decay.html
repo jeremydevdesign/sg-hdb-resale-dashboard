@@ -140,7 +140,7 @@ figcaption{font-family:var(--font-sans);font-size:12.5px;color:var(--color-text-
 .cta .btn{font-family:var(--font-sans);font-weight:640;font-size:14.5px;color:var(--color-background-primary);background:var(--color-text-primary);padding:12px 20px;border-radius:10px;white-space:nowrap;text-decoration:none;transition:opacity .12s}
 .cta .btn:hover{opacity:.85}
 
-.method{margin:38px 0 0;font-family:var(--font-sans);font-size:12.5px;line-height:1.6;color:var(--color-text-tertiary);border-top:1px solid var(--color-border-secondary);padding:18px 0 0}
+.method{margin:40px 0 0;font-family:var(--font-sans);border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-secondary);padding:20px 22px}.method-head{display:flex;align-items:center;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--color-text-secondary);margin:0 0 12px}.method-head svg{width:15px;height:15px;flex-shrink:0;color:var(--color-text-info)}.method p{font-size:13px;line-height:1.6;color:var(--color-text-tertiary);margin:0 0 10px}.method p:last-child{margin:0}.method a{color:var(--color-text-info);text-decoration:none}.method a:hover{text-decoration:underline}.method .rev{font-style:italic}
 .method b{color:var(--color-text-secondary)}
 .morelink{margin:26px 0 0;font-family:var(--font-sans);font-size:14px}
 .morelink a{color:var(--color-text-info);text-decoration:none;font-weight:600}
@@ -264,12 +264,12 @@ figcaption{font-family:var(--font-sans);font-size:12.5px;color:var(--color-text-
     <a class="btn" href="/find-a-flat">Open Find a Flat →</a>
   </div>
 
-  <p class="method"><b>How we measured this.</b> Figures come from four-room HDB resale transactions in 2025
-    (source: data.gov.sg). The “~1% a year” gradient is the median within-town slope across the towns with enough
-    sales and a wide enough spread of lease years. The steep-vs-gentle comparison is a town-centered slope - each
-    sale minus its town’s median price, so location is netted out - split at roughly 60 years remaining. CPF and
-    loan mechanics follow CPF Board and HDB rules, where financing hinges on the lease covering the youngest buyer
-    to age 95. Medians describe past sales, not valuations or forecasts.</p>
+    <aside class="method">
+    <div class="method-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg><span>How we measured this</span></div>
+    <p>Figures come from four-room HDB resale transactions in 2025 (source: data.gov.sg). The "~1% a year" gradient is the median within-town slope across the towns with enough sales and a wide enough spread of lease years.</p>
+    <p>The steep-vs-gentle comparison is a town-centered slope - each sale minus its town’s median price, so location is netted out - split at roughly 60 years remaining. CPF and loan mechanics follow CPF Board and HDB rules, where financing hinges on the lease covering the youngest buyer to age 95.</p>
+    <p>Medians describe past sales, not valuations or forecasts.</p>
+  </aside>
 
   <p class="morelink"><a href="/guides/">← All guides</a></p>
 </article>

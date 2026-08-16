@@ -136,7 +136,7 @@ figcaption{font-family:var(--font-sans);font-size:12.5px;color:var(--color-text-
 .cta .btn{font-family:var(--font-sans);font-weight:640;font-size:14.5px;color:var(--color-background-primary);background:var(--color-text-primary);padding:12px 20px;border-radius:10px;white-space:nowrap;text-decoration:none;transition:opacity .12s}
 .cta .btn:hover{opacity:.85}
 
-.method{margin:38px 0 0;font-family:var(--font-sans);font-size:12.5px;line-height:1.6;color:var(--color-text-tertiary);border-top:1px solid var(--color-border-secondary);padding:18px 0 0}
+.method{margin:40px 0 0;font-family:var(--font-sans);border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-secondary);padding:20px 22px}.method-head{display:flex;align-items:center;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--color-text-secondary);margin:0 0 12px}.method-head svg{width:15px;height:15px;flex-shrink:0;color:var(--color-text-info)}.method p{font-size:13px;line-height:1.6;color:var(--color-text-tertiary);margin:0 0 10px}.method p:last-child{margin:0}.method a{color:var(--color-text-info);text-decoration:none}.method a:hover{text-decoration:underline}.method .rev{font-style:italic}
 .method b{color:var(--color-text-secondary)}
 .morelink{margin:26px 0 0;font-family:var(--font-sans);font-size:14px}
 .morelink a{color:var(--color-text-info);text-decoration:none;font-weight:600}
@@ -281,10 +281,12 @@ figcaption{font-family:var(--font-sans);font-size:12.5px;color:var(--color-text-
     <a class="btn" href="/overview">Open the Overview →</a>
   </div>
 
-  <p class="method"><b>How we measured this.</b> Figures come from all HDB resale transactions from 2013 to 2025
-    (source: data.gov.sg). Prices are annual medians across every flat type; the "higher a year later" figure
-    compares each month's median with the same month a year on, across the past decade (higher in 107 of 161
-    month-pairs). Medians describe past sales - this guide is a read of history, not a valuation or a forecast.</p>
+    <aside class="method">
+    <div class="method-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg><span>How we measured this</span></div>
+    <p>Figures come from all HDB resale transactions from 2013 to 2025 (source: data.gov.sg). Prices are annual medians across every flat type.</p>
+    <p>The "higher a year later" figure compares each month's median with the same month a year on, across the past decade (higher in 107 of 161 month-pairs).</p>
+    <p>Medians describe past sales - this guide is a read of history, not a valuation or a forecast.</p>
+  </aside>
 
   <p class="morelink"><a href="/guides/">← All guides</a></p>
 </article>
