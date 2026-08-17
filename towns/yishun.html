@@ -77,8 +77,26 @@ body{margin:0;background:var(--color-background-primary);color:var(--color-text-
 .nav-menu-link{display:block;font-size:13px;font-weight:500;padding:8px 12px;border-radius:6px;color:var(--color-text-secondary);text-decoration:none;white-space:nowrap;border:1px solid transparent}
 .nav-menu-link:hover{background:var(--color-background-secondary);color:var(--color-text-primary)}
 .nav-menu-link.active{color:var(--color-text-primary);font-weight:640;background:var(--color-background-secondary)}
-@media(max-width:600px){.nav-menu{left:0;right:auto}}
-@media(max-width:600px){.nav-brand{width:100%;margin:0 0 6px 0}.nav-inner{padding:10px 1rem}.nav-link{font-size:12px;padding:7px 12px}}
+.nav-toggle{display:none;align-items:center;justify-content:center;width:34px;height:34px;padding:0;border:1px solid var(--color-border-secondary);background:transparent;border-radius:8px;color:var(--color-text-secondary);cursor:pointer;transition:background .12s,color .12s,border-color .12s}
+.nav-toggle:hover{background:var(--color-background-secondary);color:var(--color-text-primary);border-color:var(--color-border-primary)}
+.nav-toggle svg{display:block}
+.nav-links{display:contents}
+@media(max-width:900px){
+.nav-inner{flex-wrap:nowrap;min-height:54px;padding:8px 1rem;gap:8px}
+.nav-brand{margin-right:auto}
+.nav-toggle{display:inline-flex}
+.nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:2px;background:var(--color-background-primary);border-bottom:1px solid var(--color-border-secondary);box-shadow:0 10px 28px rgba(0,0,0,.14);padding:8px 1rem 12px;max-height:calc(100vh - 54px);overflow-y:auto}
+.nav[data-menu-open="true"] .nav-links{display:flex}
+.nav-links .nav-link{width:100%;box-sizing:border-box;text-align:left;font-size:14px;padding:11px 12px}
+.nav-links .nav-link.active{background:var(--color-text-primary);color:var(--color-background-primary)}
+.nav-group{display:block;width:100%;position:static}
+.nav-links .nav-group-btn{width:100%;justify-content:flex-start;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--color-text-tertiary);padding:14px 12px 4px;cursor:default}
+.nav-links .nav-group-btn.active{background:transparent;color:var(--color-text-tertiary)}
+.nav-caret{display:none}
+.nav-menu{display:block;position:static;border:none;box-shadow:none;padding:0;min-width:0;background:transparent}
+.nav-group[data-open="true"] .nav-menu::before{display:none}
+.nav-menu-link{padding:10px 12px 10px 22px;font-size:14px}
+}
 .theme-toggle{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;padding:0;border:1px solid var(--color-border-secondary);background:transparent;border-radius:8px;color:var(--color-text-secondary);cursor:pointer;transition:background .12s,color .12s,border-color .12s}
 .theme-toggle:hover{background:var(--color-background-secondary);color:var(--color-text-primary);border-color:var(--color-border-primary)}
 .theme-toggle svg{width:17px;height:17px;display:block}
@@ -162,7 +180,7 @@ thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:v
 </style>
 </head>
 <body>
-<div class="nav"><div class="nav-inner"><a class="nav-brand" href="/"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>SG HDB Resale</a><a class="nav-link" href="/overview">Overview</a><a class="nav-link active" href="/towns/">Towns</a><a class="nav-link" href="/insights">Insights</a><a class="nav-link" href="/guides/">Guides</a><a class="nav-link" href="/search">Search</a><a class="nav-link" href="/calculators">Calculators</a><div class="nav-group"><button type="button" class="nav-link nav-group-btn" aria-haspopup="true" aria-expanded="false">Dashboard<svg class="nav-caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="nav-menu" role="menu"><a class="nav-menu-link" href="/find-a-flat" role="menuitem">Find a Flat</a><a class="nav-menu-link" href="/analysis-by-town" role="menuitem">Analysis by Town</a><a class="nav-menu-link" href="/by-district" role="menuitem">By District</a><a class="nav-menu-link" href="/this-year" role="menuitem">This Year</a></div></div><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme"></button></div></div>
+<div class="nav"><div class="nav-inner"><a class="nav-brand" href="/"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>SG HDB Resale</a><button class="nav-toggle" id="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button><div class="nav-links" id="nav-links"><a class="nav-link" href="/overview">Overview</a><a class="nav-link active" href="/towns/">Towns</a><a class="nav-link" href="/insights">Insights</a><a class="nav-link" href="/guides/">Guides</a><a class="nav-link" href="/search">Search</a><a class="nav-link" href="/calculators">Calculators</a><div class="nav-group"><button type="button" class="nav-link nav-group-btn" aria-haspopup="true" aria-expanded="false">Dashboard<svg class="nav-caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="nav-menu" role="menu"><a class="nav-menu-link" href="/find-a-flat" role="menuitem">Find a Flat</a><a class="nav-menu-link" href="/analysis-by-town" role="menuitem">Analysis by Town</a><a class="nav-menu-link" href="/by-district" role="menuitem">By District</a><a class="nav-menu-link" href="/this-year" role="menuitem">This Year</a></div></div></div><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme"></button></div></div>
 
 <article class="article">
   <div class="crumbs"><a href="/towns/">Towns</a> &nbsp;/&nbsp; Yishun</div>
@@ -273,7 +291,7 @@ paint();
 })();
 </script>
 <script>/*NAVJS*/
-(function(){var g=document.querySelector('.nav-group');if(!g)return;var btn=g.querySelector('.nav-group-btn');function set(o){g.setAttribute('data-open',o?'true':'false');btn.setAttribute('aria-expanded',o?'true':'false');}if(window.matchMedia&&window.matchMedia('(hover:hover)').matches){g.addEventListener('mouseenter',function(){set(true);});g.addEventListener('mouseleave',function(){set(false);});}btn.addEventListener('click',function(e){e.preventDefault();set(g.getAttribute('data-open')!=='true');});document.addEventListener('click',function(e){if(!g.contains(e.target))set(false);});document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});})();
+(function(){var g=document.querySelector('.nav-group');if(!g)return;var btn=g.querySelector('.nav-group-btn');function set(o){g.setAttribute('data-open',o?'true':'false');btn.setAttribute('aria-expanded',o?'true':'false');}if(window.matchMedia&&window.matchMedia('(hover:hover)').matches){g.addEventListener('mouseenter',function(){set(true);});g.addEventListener('mouseleave',function(){set(false);});}btn.addEventListener('click',function(e){e.preventDefault();set(g.getAttribute('data-open')!=='true');});document.addEventListener('click',function(e){if(!g.contains(e.target))set(false);});document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});})();(function(){var n=document.querySelector('.nav');if(!n)return;var t=document.getElementById('nav-toggle');if(!t)return;function set(o){n.setAttribute('data-menu-open',o?'true':'false');t.setAttribute('aria-expanded',o?'true':'false');}t.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();set(n.getAttribute('data-menu-open')!=='true');});document.addEventListener('click',function(e){if(!n.contains(e.target))set(false);});document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});n.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener('click',function(){set(false);});});})();
 </script>
 </body>
 </html>
