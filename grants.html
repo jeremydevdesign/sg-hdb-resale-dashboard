@@ -138,8 +138,15 @@ thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:v
 .related a{color:var(--color-text-info);text-decoration:none;font-weight:600}
 .related a:hover{text-decoration:underline}
 
-.method{margin:38px 0 0;font-family:var(--font-sans);font-size:12.5px;line-height:1.6;color:var(--color-text-tertiary);border-top:1px solid var(--color-border-secondary);padding:18px 0 0}
+.method{margin:40px 0 0;font-family:var(--font-sans);border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-secondary);padding:20px 22px}
+.method-head{display:flex;align-items:center;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--color-text-secondary);margin:0 0 12px}
+.method-head svg{width:15px;height:15px;flex-shrink:0;color:var(--color-text-info)}
+.method p{font-size:13px;line-height:1.6;color:var(--color-text-tertiary);margin:0 0 10px}
+.method p:last-child{margin:0}
 .method b{color:var(--color-text-secondary)}
+.method a{color:var(--color-text-info);text-decoration:none}
+.method a:hover{text-decoration:underline}
+.method .rev{font-style:italic}
 .morelink{margin:26px 0 0;font-family:var(--font-sans);font-size:14px}
 .morelink a{color:var(--color-text-info);text-decoration:none;font-weight:600}
 .morelink a:hover{text-decoration:underline}
@@ -178,8 +185,15 @@ thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:v
 .grow.no .gamt{color:var(--color-text-tertiary)}
 .grow .gtop{display:flex;justify-content:space-between;gap:12px;align-items:baseline}
 .grow .gwhy{font-family:var(--font-sans);font-size:12.5px;color:var(--color-text-secondary);margin-top:4px;line-height:1.5}
-.assump{margin:34px 0 0;font-family:var(--font-sans);font-size:12.5px;line-height:1.65;color:var(--color-text-tertiary);border-top:1px solid var(--color-border-secondary);padding:18px 0 0}
+.assump{margin:40px 0 0;font-family:var(--font-sans);border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-secondary);padding:20px 22px}
+.assump-head{display:flex;align-items:center;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--color-text-secondary);margin:0 0 12px}
+.assump-head svg{width:15px;height:15px;flex-shrink:0;color:var(--color-text-info)}
+.assump p{font-size:13px;line-height:1.6;color:var(--color-text-tertiary);margin:0 0 10px}
+.assump p:last-child{margin:0}
 .assump b{color:var(--color-text-secondary)}
+.assump a{color:var(--color-text-info);text-decoration:none}
+.assump a:hover{text-decoration:underline}
+.assump .rev{font-style:italic}
 .assump code{font-family:ui-monospace,Menlo,monospace;font-size:11.5px;background:var(--color-background-secondary);padding:1px 5px;border-radius:4px}
 .srcnote{font-family:var(--font-sans);font-size:12.5px;color:var(--color-text-tertiary);margin-top:8px}
 </style>
@@ -246,20 +260,16 @@ thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:v
     <a class="btn" href="/affordability">Affordability calculator →</a>
   </div>
 
-  <p class="assump"><b>How this works.</b> It assumes a <b>first-timer</b> household buying a resale flat and
-    applies the published grant rules as of 2026 - second-timer, mixed first/second-timer, and non-citizen
-    cases differ, and every amount is confirmed only in your HFE letter. <b>CPF Housing Grant (Family):</b>
-    2- to 4-room <code>$80,000</code> (both Citizens) or <code>$70,000</code> (Citizen + PR); 5-room or larger
-    <code>$50,000</code> / <code>$40,000</code>; household income ceiling <code>$14,000</code>.
-    <b>Singles Grant</b> (Citizen, aged 35+, buying alone): 2- to 4-room <code>$40,000</code>, 5-room
-    <code>$25,000</code>; income ceiling <code>$7,000</code>. <b>Enhanced CPF Housing Grant (EHG):</b> up to
-    <code>$120,000</code> (families) or <code>$60,000</code> (singles), tiered by income up to a ceiling of
-    <code>$9,000</code> / <code>$4,500</code> - HDB does not publish the per-income amounts, so this tool shows
-    eligibility and the maximum only; your exact EHG is in your HFE letter, and it is pro-rated if the flat's
-    lease will not cover the youngest buyer to age 95. <b>Proximity Housing Grant:</b> living with family
-    <code>$30,000</code> (singles <code>$15,000</code>), or within 4km <code>$20,000</code>
-    (singles <code>$10,000</code>); no income ceiling. Figures are indicative, not an offer of a grant or
-    financial advice. Source: hdb.gov.sg. Rules last reviewed 2026-08-14.</p>
+  <aside class="assump">
+    <div class="assump-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg><span>How this works</span></div>
+    <p>It assumes a <b>first-timer</b> household buying a resale flat and applies the published grant rules as of 2026 - second-timer, mixed first/second-timer, and non-citizen cases differ, and every amount is confirmed only in your HFE letter.</p>
+    <p><b>CPF Housing Grant (Family):</b> 2- to 4-room <code>$80,000</code> (both Citizens) or <code>$70,000</code> (Citizen + PR); 5-room or larger <code>$50,000</code> / <code>$40,000</code>; household income ceiling <code>$14,000</code>.</p>
+    <p><b>Singles Grant</b> (Citizen, aged 35+, buying alone): 2- to 4-room <code>$40,000</code>, 5-room <code>$25,000</code>; income ceiling <code>$7,000</code>.</p>
+    <p><b>Enhanced CPF Housing Grant (EHG):</b> up to <code>$120,000</code> (families) or <code>$60,000</code> (singles), tiered by income up to a ceiling of <code>$9,000</code> / <code>$4,500</code> - HDB does not publish the per-income amounts, so this tool shows eligibility and the maximum only; your exact EHG is in your HFE letter, and it is pro-rated if the flat's lease will not cover the youngest buyer to age 95.</p>
+    <p><b>Proximity Housing Grant:</b> living with family <code>$30,000</code> (singles <code>$15,000</code>), or within 4km <code>$20,000</code> (singles <code>$10,000</code>); no income ceiling.</p>
+    <p>Figures are indicative, not an offer of a grant or financial advice. Source: hdb.gov.sg.</p>
+    <p class="rev">Rules last reviewed 2026-08-14.</p>
+  </aside>
 
   <p class="morelink"><a href="/calculators">← All calculators</a> &nbsp;&middot;&nbsp;
     <a href="/guides/fair-price">Is a price fair? →</a></p>

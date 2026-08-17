@@ -139,8 +139,15 @@ thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:v
 .related a{color:var(--color-text-info);text-decoration:none;font-weight:600}
 .related a:hover{text-decoration:underline}
 
-.method{margin:38px 0 0;font-family:var(--font-sans);font-size:12.5px;line-height:1.6;color:var(--color-text-tertiary);border-top:1px solid var(--color-border-secondary);padding:18px 0 0}
+.method{margin:40px 0 0;font-family:var(--font-sans);border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-secondary);padding:20px 22px}
+.method-head{display:flex;align-items:center;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--color-text-secondary);margin:0 0 12px}
+.method-head svg{width:15px;height:15px;flex-shrink:0;color:var(--color-text-info)}
+.method p{font-size:13px;line-height:1.6;color:var(--color-text-tertiary);margin:0 0 10px}
+.method p:last-child{margin:0}
 .method b{color:var(--color-text-secondary)}
+.method a{color:var(--color-text-info);text-decoration:none}
+.method a:hover{text-decoration:underline}
+.method .rev{font-style:italic}
 .morelink{margin:26px 0 0;font-family:var(--font-sans);font-size:14px}
 .morelink a{color:var(--color-text-info);text-decoration:none;font-weight:600}
 .morelink a:hover{text-decoration:underline}
@@ -233,10 +240,12 @@ thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:v
        <a href="/guides/mature-vs-non-mature">Mature vs non-mature estates</a></p>
   </div>
 
-  <p class="method"><b>How we measured this.</b> Figures are medians of actual HDB resale transactions recorded
-    in Yishun (source: data.gov.sg; MRT distances via OneMap, straight-line). Headline figures cover the
-    12 months to Aug 2026 (1,462 sales); the near-MRT premium uses 4-room sales over the last 24 months for
-    sample size. These describe past sales, not valuations or forecasts. Data through Aug 2026.</p>
+  <aside class="method">
+    <div class="method-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg><span>How we measured this</span></div>
+    <p>Figures are medians of actual HDB resale transactions recorded in Yishun (source: data.gov.sg; MRT distances via OneMap, straight-line).</p>
+    <p>Headline figures cover the 12 months to Aug 2026 (1,462 sales); the near-MRT premium uses 4-room sales over the last 24 months for sample size.</p>
+    <p>These describe past sales, not valuations or forecasts. Data through Aug 2026.</p>
+  </aside>
 
   <p class="morelink"><a href="/towns/">← All towns</a></p>
 </article>

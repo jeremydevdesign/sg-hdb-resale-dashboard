@@ -138,8 +138,15 @@ thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:v
 .related a{color:var(--color-text-info);text-decoration:none;font-weight:600}
 .related a:hover{text-decoration:underline}
 
-.method{margin:38px 0 0;font-family:var(--font-sans);font-size:12.5px;line-height:1.6;color:var(--color-text-tertiary);border-top:1px solid var(--color-border-secondary);padding:18px 0 0}
+.method{margin:40px 0 0;font-family:var(--font-sans);border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-secondary);padding:20px 22px}
+.method-head{display:flex;align-items:center;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--color-text-secondary);margin:0 0 12px}
+.method-head svg{width:15px;height:15px;flex-shrink:0;color:var(--color-text-info)}
+.method p{font-size:13px;line-height:1.6;color:var(--color-text-tertiary);margin:0 0 10px}
+.method p:last-child{margin:0}
 .method b{color:var(--color-text-secondary)}
+.method a{color:var(--color-text-info);text-decoration:none}
+.method a:hover{text-decoration:underline}
+.method .rev{font-style:italic}
 .morelink{margin:26px 0 0;font-family:var(--font-sans);font-size:14px}
 .morelink a{color:var(--color-text-info);text-decoration:none;font-weight:600}
 .morelink a:hover{text-decoration:underline}
@@ -174,8 +181,15 @@ thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:v
 .bsdtable{margin-top:18px}
 .bsdtable .tt{font-family:var(--font-sans);font-size:12.5px;font-weight:640;text-transform:uppercase;letter-spacing:.04em;color:var(--color-text-tertiary);margin-bottom:6px}
 .hdbnote{font-family:var(--font-sans);font-size:13px;line-height:1.55;color:var(--color-text-secondary);margin-top:16px;background:var(--color-background-info);border-radius:var(--border-radius-md);padding:12px 15px}
-.assump{margin:34px 0 0;font-family:var(--font-sans);font-size:12.5px;line-height:1.65;color:var(--color-text-tertiary);border-top:1px solid var(--color-border-secondary);padding:18px 0 0}
+.assump{margin:40px 0 0;font-family:var(--font-sans);border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-secondary);padding:20px 22px}
+.assump-head{display:flex;align-items:center;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--color-text-secondary);margin:0 0 12px}
+.assump-head svg{width:15px;height:15px;flex-shrink:0;color:var(--color-text-info)}
+.assump p{font-size:13px;line-height:1.6;color:var(--color-text-tertiary);margin:0 0 10px}
+.assump p:last-child{margin:0}
 .assump b{color:var(--color-text-secondary)}
+.assump a{color:var(--color-text-info);text-decoration:none}
+.assump a:hover{text-decoration:underline}
+.assump .rev{font-style:italic}
 .assump code{font-family:ui-monospace,Menlo,monospace;font-size:11.5px;background:var(--color-background-secondary);padding:1px 5px;border-radius:4px}
 </style>
 </head>
@@ -236,16 +250,14 @@ thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:v
     <a class="btn" href="/affordability">Affordability calculator →</a>
   </div>
 
-  <p class="assump"><b>How this is calculated.</b> Rates are the published IRAS figures as of 2026 - verify
-    current rates at iras.gov.sg, as they change. <b>Buyer's Stamp Duty</b> (residential, from 15 Feb 2023) is
-    tiered on the higher of price or market value: <code>1%</code> on the first $180,000, <code>2%</code> on the
-    next $180,000, <code>3%</code> on the next $640,000, <code>4%</code> on the next $500,000, <code>5%</code>
-    on the next $1,500,000, and <code>6%</code> above $3,000,000. <b>Additional Buyer's Stamp Duty</b> (on or
-    after 27 Apr 2023) is a flat percentage of the price by profile: Citizens <code>0%</code> / <code>20%</code>
-    / <code>30%</code> for the 1st / 2nd / 3rd+ property; PRs <code>5%</code> / <code>30%</code> /
-    <code>35%</code>; foreigners <code>60%</code> on any. For a joint purchase, the highest applicable ABSD rate
-    applies to the whole price. Figures are estimates, not tax advice or an assessment by IRAS. Rules last
-    reviewed 2026-08-14.</p>
+  <aside class="assump">
+    <div class="assump-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg><span>How this is calculated</span></div>
+    <p>Rates are the published IRAS figures as of 2026 - verify current rates at iras.gov.sg, as they change.</p>
+    <p><b>Buyer's Stamp Duty</b> (residential, from 15 Feb 2023) is tiered on the higher of price or market value: <code>1%</code> on the first $180,000, <code>2%</code> on the next $180,000, <code>3%</code> on the next $640,000, <code>4%</code> on the next $500,000, <code>5%</code> on the next $1,500,000, and <code>6%</code> above $3,000,000.</p>
+    <p><b>Additional Buyer's Stamp Duty</b> (on or after 27 Apr 2023) is a flat percentage of the price by profile: Citizens <code>0%</code> / <code>20%</code> / <code>30%</code> for the 1st / 2nd / 3rd+ property; PRs <code>5%</code> / <code>30%</code> / <code>35%</code>; foreigners <code>60%</code> on any. For a joint purchase, the highest applicable ABSD rate applies to the whole price.</p>
+    <p>Figures are estimates, not tax advice or an assessment by IRAS.</p>
+    <p class="rev">Rules last reviewed 2026-08-14.</p>
+  </aside>
 
   <p class="morelink"><a href="/calculators">← All calculators</a> &nbsp;&middot;&nbsp;
     <a href="/grants">Which grants can you get? →</a></p>
