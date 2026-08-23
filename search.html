@@ -118,7 +118,7 @@ body{margin:0;background:var(--color-background-primary);color:var(--color-text-
 .meta b{color:var(--color-text-primary);font-weight:700}
 
 .tablewrap{border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);overflow-x:auto}
-table.tx{width:100%;border-collapse:collapse;min-width:940px;font-size:13.5px}
+table.tx{width:100%;border-collapse:collapse;min-width:1040px;font-size:13.5px}
 table.tx th{position:sticky;top:0;background:var(--color-background-secondary);text-align:left;font-size:11.5px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:var(--color-text-secondary);padding:12px 14px;white-space:nowrap;border-bottom:1px solid var(--color-border-secondary)}
 table.tx th.sortable{cursor:pointer;user-select:none}
 table.tx th.sortable:hover{color:var(--color-text-primary)}
@@ -150,6 +150,19 @@ td.price .main{font-weight:700}
 .footer-nav a{font-size:13px;color:var(--color-text-secondary);text-decoration:none;display:inline-block;padding:5px 2px}
 .footer-nav a:hover{color:var(--color-text-primary)}
 .footer-note{font-size:12px;color:var(--color-text-tertiary)}
+
+/* lease-adjusted psf */
+.adjbtn{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;margin-left:5px;padding:0;border:none;border-radius:50%;background:transparent;color:var(--color-text-info);cursor:pointer;vertical-align:middle;font-family:inherit}
+.adjbtn svg{width:14px;height:14px;display:block}
+.adjbox{display:none;margin:18px 0 0;border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-secondary);padding:18px 20px}
+.adjbox.open{display:block}
+.adjbox h2{display:flex;align-items:center;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--color-text-secondary);margin:0 0 12px}
+.adjbox h2 svg{width:15px;height:15px;flex-shrink:0;color:var(--color-text-info)}
+.adjbox p{font-size:13px;line-height:1.6;color:var(--color-text-tertiary);margin:0 0 10px}
+.adjbox p:last-child{margin:0}
+.adjbox b{color:var(--color-text-secondary)}
+td.adj .main{font-variant-numeric:tabular-nums}
+td.adj .sub{color:var(--color-text-tertiary);font-variant-numeric:tabular-nums}
 </style>
 </head>
 <body>
@@ -180,6 +193,13 @@ td.price .main{font-weight:700}
 
   <div class="meta" id="meta">Loading transactions&hellip;</div>
 
+  <div class="adjbox" id="adjBox">
+    <h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>About lease-adjusted psf</h2>
+    <p><b>What it is.</b> Every flat is scaled up to a common <b>~97-year ("near-fresh") lease</b> basis, so its price stops being dragged down just by a shorter lease. The scaling uses a lease-decay curve we estimated from ~322,000 resale transactions (2012-2026), holding town, flat type, sale period and floor constant. It answers one question: <b>is this psf low because of the lease, or because of something else?</b></p>
+    <p><b>How to read it.</b> Only compare it <b>within the same town and flat type</b>. If two such flats have a similar lease-adjusted psf, the price gap between them was mostly the lease. If one stays lower even after adjusting, something else is cheaper about it - floor, exact location, or model. The <span style="font-variant-numeric:tabular-nums">&times;</span> figure shows how much the lease pulled the raw psf down.</p>
+    <p><b>What it is not.</b> It bundles lease with a flat's <b>age and condition</b> (they move together and cannot be separated from price data), it is an <b>average market pattern, not a valuation</b> of any single flat, and below <b>~55 years</b> of lease it is a rough estimate (few comparable sales, mostly central estates) and marked with an asterisk (<b>*</b>). It is not financial advice.</p>
+  </div>
+
   <div class="tablewrap">
     <table class="tx">
       <thead><tr>
@@ -194,8 +214,9 @@ td.price .main{font-weight:700}
         <th class="sortable num" data-k="mrt">Nearest MRT<span class="ar"></span></th>
         <th class="sortable num" data-k="area">Area<span class="ar"></span></th>
         <th class="sortable num price" data-k="price">Price (psf)<span class="ar"></span></th>
+        <th class="sortable num adj" data-k="adjpsf">Lease-adj. psf<button class="adjbtn" id="adjInfo" type="button" aria-label="About lease-adjusted psf" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></button><span class="ar"></span></th>
       </tr></thead>
-      <tbody id="tbody"><tr><td colspan="11" class="loading">Loading transactions&hellip;</td></tr></tbody>
+      <tbody id="tbody"><tr><td colspan="12" class="loading">Loading transactions&hellip;</td></tr></tbody>
     </table>
   </div>
 
@@ -207,7 +228,8 @@ td.price .main{font-weight:700}
 
   <p class="note">Source: <a href="https://data.gov.sg/collections/189/view" rel="noopener">data.gov.sg</a> resale
     records, geocoded against OneMap for straight-line MRT distance. These are actual recorded transactions, not
-    valuations or estimates. <a href="/about">How this site works &rarr;</a></p>
+    valuations or estimates. <a href="/about">How this site works &rarr;</a><br>
+    <span style="color:var(--color-text-tertiary)">Lease-adj. psf scales each price to a ~97-year lease basis so shorter leases are comparable; <b>*</b> marks flats under 55 years left, where the estimate is rough. Tap the <span aria-hidden="true">&#9432;</span> in that column for details.</span></p>
 </div>
 
 <footer class="site-footer"><div class="footer-inner">
@@ -268,7 +290,7 @@ paint();
     markSort(); apply();
   }).catch(function(){
     metaEl.textContent='Could not load transaction data. Please refresh.';
-    tbody.innerHTML='<tr><td colspan="11" class="empty">Could not load transaction data.</td></tr>';
+    tbody.innerHTML='<tr><td colspan="12" class="empty">Could not load transaction data.</td></tr>';
   });
 
   function buildTownOptions(){
@@ -290,13 +312,28 @@ paint();
     fStreet.innerHTML=h;
   }
 
+  // Empirical HDB lease-decay curve. Knots are [remaining-lease years, value factor]
+  // relative to a ~97-year "near-fresh" lease (=1.00), estimated from ~322k resale
+  // transactions (2012-2026) via log(psf) on remaining-lease bins with town, flat-type,
+  // sale-quarter and storey held fixed. Piecewise-linear, clamped at both ends.
+  var LKN=[[47.5,.622],[57.5,.696],[62.5,.750],[67.5,.775],[72.5,.793],[77.5,.804],[82.5,.836],[87.5,.907],[92.5,.979],[97.5,1]];
+  function leaseFactor(y){
+    if(y<=LKN[0][0])return LKN[0][1];
+    if(y>=97.5)return 1;
+    for(var i=1;i<LKN.length;i++){if(y<=LKN[i][0]){var a=LKN[i-1],b=LKN[i];return a[1]+(b[1]-a[1])*(y-a[0])/(b[0]-a[0]);}}
+    return 1;
+  }
+  function psfOf(r){return r[10]/Math.round(r[7]*SQFT);}
+  function adjOf(r){return psfOf(r)/leaseFactor(r[9]/12);}
+
   var SORT={
     date:function(r){return r[0];},
     town:function(r){return townsLC[r[1]];},
     lease:function(r){return r[9];},
     area:function(r){return r[7];},
     mrt:function(r){return r[12];},
-    price:function(r){return r[10];}
+    price:function(r){return r[10];},
+    adjpsf:function(r){return adjOf(r);}
   };
 
   function apply(){
@@ -321,7 +358,7 @@ paint();
     var n=filtered.length, pages=Math.max(1,Math.ceil(n/PAGE));
     if(page>=pages)page=pages-1;
     metaEl.innerHTML='Showing <b>'+nfmt(Math.min(n,(page)*PAGE+ (n?1:0)))+'-'+nfmt(Math.min(n,(page+1)*PAGE))+'</b> of <b>'+nfmt(n)+'</b> transactions';
-    if(!n){tbody.innerHTML='<tr><td colspan="11" class="empty">No transactions match those filters.</td></tr>';pager.hidden=true;return;}
+    if(!n){tbody.innerHTML='<tr><td colspan="12" class="empty">No transactions match those filters.</td></tr>';pager.hidden=true;return;}
     var start=page*PAGE, end=Math.min(n,start+PAGE), h='';
     for(var i=start;i<end;i++){
       var r=filtered[i];
@@ -329,6 +366,7 @@ paint();
       var sqm=r[7], sqft=Math.round(sqm*SQFT);
       var psf=Math.round(r[10]/sqft);
       var yrs=Math.floor(r[9]/12);
+      var lyrs=r[9]/12, factor=leaseFactor(lyrs), adj=Math.round(psf/factor), soft=lyrs<55;
       h+='<tr>'+
         '<td>'+MONTHS[mm]+' 20'+yy+'</td>'+
         '<td class="main">'+esc(townsTitle[r[1]])+'</td>'+
@@ -341,6 +379,7 @@ paint();
         '<td class="num"><div class="main">'+esc(mrtsTitle[r[11]])+'</div><div class="sub">'+nfmt(r[12])+' m</div></td>'+
         '<td class="num"><div class="main">'+nfmt(sqft)+' sqft</div><div class="sub">'+sqm+' sqm</div></td>'+
         '<td class="num price"><div class="main">S$ '+nfmt(r[10])+'</div><div class="sub">S$ '+nfmt(psf)+' psf</div></td>'+
+        '<td class="num adj"><div class="main">S$ '+nfmt(adj)+'</div><div class="sub">&times;'+(1/factor).toFixed(2)+(soft?'*':'')+'</div></td>'+
       '</tr>';
     }
     tbody.innerHTML=h;
@@ -355,7 +394,7 @@ paint();
   for(var i=0;i<ths.length;i++){(function(th){
     th.addEventListener('click',function(){
       var k=th.getAttribute('data-k');
-      if(sortKey===k){sortDir=-sortDir;}else{sortKey=k;sortDir=(k==='date'||k==='price'||k==='area'||k==='lease')?-1:1;}
+      if(sortKey===k){sortDir=-sortDir;}else{sortKey=k;sortDir=(k==='date'||k==='price'||k==='area'||k==='lease'||k==='adjpsf')?-1:1;}
       markSort();
       apply();
     });
@@ -370,6 +409,10 @@ paint();
   $('fReset').addEventListener('click',function(){fTown.value='';fType.value='';fMrt.value='';fSearch.value='';buildStreetOptions('');sortKey='date';sortDir=-1;markSort();apply();});
   $('prev').addEventListener('click',function(){if(page>0){page--;render();window.scrollTo({top:0,behavior:'smooth'});}});
   $('next').addEventListener('click',function(){page++;render();window.scrollTo({top:0,behavior:'smooth'});});
+
+  // lease-adjusted psf explainer toggle (stop click bubbling to the sort header)
+  var adjInfo=$('adjInfo'), adjBox=$('adjBox');
+  if(adjInfo&&adjBox){adjInfo.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();var open=adjBox.classList.toggle('open');adjInfo.setAttribute('aria-expanded',open?'true':'false');if(open)adjBox.scrollIntoView({behavior:'smooth',block:'nearest'});});}
 })();
 </script>
 </body>
