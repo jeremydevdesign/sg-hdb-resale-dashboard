@@ -1,6 +1,6 @@
 // SG HDB Resale Dashboard - service worker
 // Bump CACHE version whenever you change any cached file so clients update.
-const CACHE = 'hdb-resale-v57';
+const CACHE = 'hdb-resale-v58';
 const ASSETS = [
   './',
   './index.html',
@@ -10,6 +10,7 @@ const ASSETS = [
   './by-district',
   './this-year',
   './this-month',
+  './million-dollar-flats',
   './guides/',
   './guides/mrt-price-premium',
   './guides/fair-price',
@@ -27,6 +28,7 @@ const ASSETS = [
   './map',
   './calculators',
   './affordability',
+  './loan-calculator',
   './grants',
   './stamp-duty',
   './about',
