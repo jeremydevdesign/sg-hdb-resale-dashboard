@@ -185,7 +185,7 @@ thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:v
 </style>
 </head>
 <body>
-<div class="nav"><div class="nav-inner"><a class="nav-brand" href="/"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>SG HDB Resale</a><button class="nav-toggle" id="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button><div class="nav-links" id="nav-links"><a class="nav-link" href="/overview">Overview</a><a class="nav-link active" href="/towns/">Towns</a><a class="nav-link" href="/map">Map</a><a class="nav-link" href="/insights">Insights</a><a class="nav-link" href="/guides/">Guides</a><a class="nav-link" href="/search">Search</a><a class="nav-link" href="/calculators">Calculators</a><div class="nav-group"><button type="button" class="nav-link nav-group-btn" aria-haspopup="true" aria-expanded="false">Dashboard<svg class="nav-caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="nav-menu" role="menu"><a class="nav-menu-link" href="/find-a-flat" role="menuitem">Find a Flat</a><a class="nav-menu-link" href="/analysis-by-town" role="menuitem">Analysis by Town</a><a class="nav-menu-link" href="/by-district" role="menuitem">By District</a><a class="nav-menu-link" href="/this-year" role="menuitem">This Year</a></div></div></div><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme"></button></div></div>
+<div class="nav"><div class="nav-inner"><a class="nav-brand" href="/"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>SG HDB Resale</a><button class="nav-toggle" id="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button><div class="nav-links" id="nav-links"><a class="nav-link active" href="/towns/">Towns</a><a class="nav-link" href="/map">Map</a><a class="nav-link" href="/search">Search</a><div class="nav-group"><button type="button" class="nav-link nav-group-btn" aria-haspopup="true" aria-expanded="false">Trends<svg class="nav-caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="nav-menu" role="menu"><a class="nav-menu-link" href="/overview" role="menuitem">Overview</a><a class="nav-menu-link" href="/this-year" role="menuitem">This Year</a><a class="nav-menu-link" href="/this-month" role="menuitem">This Month</a><a class="nav-menu-link" href="/million-dollar-flats" role="menuitem">Million-Dollar Flats</a><a class="nav-menu-link" href="/insights" role="menuitem">Insights</a></div></div><a class="nav-link" href="/calculators">Calculators</a><a class="nav-link" href="/guides/">Guides</a></div><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme"></button></div></div>
 
 <article class="article" style="max-width:820px">
   <div class="kicker">Town prices</div>
@@ -196,41 +196,82 @@ thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:v
   <figure>
     <div class="chart">
       <div class="ct">Every town, ranked by 4-room resale price</div>
-      <div class="cs">4-room used for a like-for-like ranking · Sep 2025 – Aug 2026</div>
+      <div class="cs">4-room used for a like-for-like ranking · Oct 2025 – Sep 2026</div>
       <table class="towntable">
         <thead><tr><th>Town</th><th>Estate</th><th>4-room median</th><th>Median (all)</th><th>YoY</th><th>Sales</th></tr></thead>
         <tbody>
-<tr onclick="location.href='/towns/queenstown'"><td><a href="/towns/queenstown">Queenstown</a></td><td>Mature</td><td>$1,021,500</td><td>$839,444</td><td class="tnum up">+7.6%</td><td class="tnum">722</td></tr>
-<tr onclick="location.href='/towns/central-area'"><td><a href="/towns/central-area">Central Area</a></td><td>Mature</td><td>$1,000,000</td><td>$750,000</td><td class="tnum up">+17.6%</td><td class="tnum">175</td></tr>
-<tr onclick="location.href='/towns/toa-payoh'"><td><a href="/towns/toa-payoh">Toa Payoh</a></td><td>Mature</td><td>$1,000,000</td><td>$794,444</td><td class="tnum up">+4.7%</td><td class="tnum">1,000</td></tr>
-<tr onclick="location.href='/towns/bukit-merah'"><td><a href="/towns/bukit-merah">Bukit Merah</a></td><td>Mature</td><td>$932,500</td><td>$790,000</td><td class="tnum up">+2.6%</td><td class="tnum">892</td></tr>
-<tr onclick="location.href='/towns/bukit-timah'"><td><a href="/towns/bukit-timah">Bukit Timah</a></td><td>Mature</td><td>$931,500</td><td>$974,000</td><td class="tnum up">+1.8%</td><td class="tnum">56</td></tr>
-<tr onclick="location.href='/towns/kallang-whampoa'"><td><a href="/towns/kallang-whampoa">Kallang/Whampoa</a></td><td>Mature</td><td>$905,000</td><td>$725,000</td><td class="tnum up">+3.4%</td><td class="tnum">725</td></tr>
-<tr onclick="location.href='/towns/clementi'"><td><a href="/towns/clementi">Clementi</a></td><td>Mature</td><td>$849,888</td><td>$620,000</td><td class="tnum up">+10.7%</td><td class="tnum">517</td></tr>
-<tr onclick="location.href='/towns/bishan'"><td><a href="/towns/bishan">Bishan</a></td><td>Mature</td><td>$788,000</td><td>$840,000</td><td class="tnum down">-0.6%</td><td class="tnum">391</td></tr>
-<tr onclick="location.href='/towns/geylang'"><td><a href="/towns/geylang">Geylang</a></td><td>Mature</td><td>$717,500</td><td>$588,000</td><td class="tnum down">-0.3%</td><td class="tnum">678</td></tr>
-<tr onclick="location.href='/towns/punggol'"><td><a href="/towns/punggol">Punggol</a></td><td>Non-mature</td><td>$682,000</td><td>$672,888</td><td class="tnum up">+1.2%</td><td class="tnum">1,633</td></tr>
-<tr onclick="location.href='/towns/marine-parade'"><td><a href="/towns/marine-parade">Marine Parade</a></td><td>Mature</td><td>$663,333</td><td>$580,000</td><td class="tnum up">+11.5%</td><td class="tnum">139</td></tr>
-<tr onclick="location.href='/towns/tampines'"><td><a href="/towns/tampines">Tampines</a></td><td>Mature</td><td>$663,000</td><td>$710,000</td><td class="tnum up">+0.7%</td><td class="tnum">1,972</td></tr>
-<tr onclick="location.href='/towns/serangoon'"><td><a href="/towns/serangoon">Serangoon</a></td><td>Mature</td><td>$660,000</td><td>$660,000</td><td class="tnum down">-2.7%</td><td class="tnum">370</td></tr>
-<tr onclick="location.href='/towns/sengkang'"><td><a href="/towns/sengkang">Sengkang</a></td><td>Non-mature</td><td>$640,000</td><td>$658,000</td><td class="tnum up">+0.0%</td><td class="tnum">1,719</td></tr>
-<tr onclick="location.href='/towns/pasir-ris'"><td><a href="/towns/pasir-ris">Pasir Ris</a></td><td>Mature</td><td>$637,444</td><td>$720,000</td><td class="tnum up">+1.6%</td><td class="tnum">741</td></tr>
-<tr onclick="location.href='/towns/bukit-batok'"><td><a href="/towns/bukit-batok">Bukit Batok</a></td><td>Non-mature</td><td>$630,000</td><td>$610,000</td><td class="tnum up">+3.4%</td><td class="tnum">1,378</td></tr>
-<tr onclick="location.href='/towns/hougang'"><td><a href="/towns/hougang">Hougang</a></td><td>Non-mature</td><td>$618,888</td><td>$628,000</td><td class="tnum up">+1.6%</td><td class="tnum">1,237</td></tr>
-<tr onclick="location.href='/towns/ang-mo-kio'"><td><a href="/towns/ang-mo-kio">Ang Mo Kio</a></td><td>Mature</td><td>$615,000</td><td>$518,444</td><td class="tnum up">+6.2%</td><td class="tnum">880</td></tr>
-<tr onclick="location.href='/towns/bedok'"><td><a href="/towns/bedok">Bedok</a></td><td>Mature</td><td>$600,000</td><td>$550,000</td><td class="tnum up">+0.7%</td><td class="tnum">1,246</td></tr>
-<tr onclick="location.href='/towns/sembawang'"><td><a href="/towns/sembawang">Sembawang</a></td><td>Non-mature</td><td>$600,000</td><td>$600,000</td><td class="tnum down">-2.6%</td><td class="tnum">878</td></tr>
-<tr onclick="location.href='/towns/bukit-panjang'"><td><a href="/towns/bukit-panjang">Bukit Panjang</a></td><td>Non-mature</td><td>$571,000</td><td>$610,000</td><td class="tnum up">+0.5%</td><td class="tnum">780</td></tr>
-<tr onclick="location.href='/towns/choa-chu-kang'"><td><a href="/towns/choa-chu-kang">Choa Chu Kang</a></td><td>Non-mature</td><td>$555,000</td><td>$590,000</td><td class="tnum up">+0.3%</td><td class="tnum">1,000</td></tr>
-<tr onclick="location.href='/towns/yishun'"><td><a href="/towns/yishun">Yishun</a></td><td>Non-mature</td><td>$555,000</td><td>$540,000</td><td class="tnum down">-0.9%</td><td class="tnum">1,574</td></tr>
-<tr onclick="location.href='/towns/woodlands'"><td><a href="/towns/woodlands">Woodlands</a></td><td>Non-mature</td><td>$550,000</td><td>$590,000</td><td class="tnum down">-0.8%</td><td class="tnum">1,825</td></tr>
-<tr onclick="location.href='/towns/jurong-east'"><td><a href="/towns/jurong-east">Jurong East</a></td><td>Non-mature</td><td>$546,500</td><td>$521,944</td><td class="tnum up">+0.4%</td><td class="tnum">462</td></tr>
-<tr onclick="location.href='/towns/jurong-west'"><td><a href="/towns/jurong-west">Jurong West</a></td><td>Non-mature</td><td>$535,000</td><td>$565,000</td><td class="tnum up">+0.9%</td><td class="tnum">1,468</td></tr>
+<tr onclick="location.href='/towns/queenstown'"><td><a href="/towns/queenstown">Queenstown</a></td><td>Mature</td><td>$1,025,500</td><td>$845,000</td><td class="tnum up">+8.3%</td><td class="tnum">687</td></tr>
+<tr onclick="location.href='/towns/central-area'"><td><a href="/towns/central-area">Central Area</a></td><td>Mature</td><td>$1,020,000</td><td>$705,000</td><td class="tnum up">+5.4%</td><td class="tnum">161</td></tr>
+<tr onclick="location.href='/towns/toa-payoh'"><td><a href="/towns/toa-payoh">Toa Payoh</a></td><td>Mature</td><td>$1,000,000</td><td>$785,888</td><td class="tnum up">+0.6%</td><td class="tnum">919</td></tr>
+<tr onclick="location.href='/towns/bukit-timah'"><td><a href="/towns/bukit-timah">Bukit Timah</a></td><td>Mature</td><td>$938,000</td><td>$995,000</td><td class="tnum up">+5.7%</td><td class="tnum">52</td></tr>
+<tr onclick="location.href='/towns/bukit-merah'"><td><a href="/towns/bukit-merah">Bukit Merah</a></td><td>Mature</td><td>$934,000</td><td>$790,000</td><td class="tnum up">+1.9%</td><td class="tnum">843</td></tr>
+<tr onclick="location.href='/towns/kallang-whampoa'"><td><a href="/towns/kallang-whampoa">Kallang/Whampoa</a></td><td>Mature</td><td>$906,500</td><td>$720,000</td><td class="tnum up">+0.3%</td><td class="tnum">682</td></tr>
+<tr onclick="location.href='/towns/clementi'"><td><a href="/towns/clementi">Clementi</a></td><td>Mature</td><td>$821,500</td><td>$629,944</td><td class="tnum up">+13.4%</td><td class="tnum">464</td></tr>
+<tr onclick="location.href='/towns/bishan'"><td><a href="/towns/bishan">Bishan</a></td><td>Mature</td><td>$788,000</td><td>$842,944</td><td class="tnum down">-0.2%</td><td class="tnum">366</td></tr>
+<tr onclick="location.href='/towns/geylang'"><td><a href="/towns/geylang">Geylang</a></td><td>Mature</td><td>$746,444</td><td>$588,000</td><td class="tnum up">+0.3%</td><td class="tnum">618</td></tr>
+<tr onclick="location.href='/towns/punggol'"><td><a href="/towns/punggol">Punggol</a></td><td>Non-mature</td><td>$680,000</td><td>$670,400</td><td class="tnum up">+0.4%</td><td class="tnum">1,516</td></tr>
+<tr onclick="location.href='/towns/tampines'"><td><a href="/towns/tampines">Tampines</a></td><td>Mature</td><td>$662,000</td><td>$712,388</td><td class="tnum up">+0.3%</td><td class="tnum">1,856</td></tr>
+<tr onclick="location.href='/towns/serangoon'"><td><a href="/towns/serangoon">Serangoon</a></td><td>Mature</td><td>$659,000</td><td>$660,000</td><td class="tnum down">-2.8%</td><td class="tnum">349</td></tr>
+<tr onclick="location.href='/towns/marine-parade'"><td><a href="/towns/marine-parade">Marine Parade</a></td><td>Mature</td><td>$642,500</td><td>$580,000</td><td class="tnum up">+9.8%</td><td class="tnum">124</td></tr>
+<tr onclick="location.href='/towns/sengkang'"><td><a href="/towns/sengkang">Sengkang</a></td><td>Non-mature</td><td>$640,000</td><td>$658,000</td><td class="tnum down">-0.1%</td><td class="tnum">1,613</td></tr>
+<tr onclick="location.href='/towns/pasir-ris'"><td><a href="/towns/pasir-ris">Pasir Ris</a></td><td>Mature</td><td>$636,888</td><td>$720,000</td><td class="tnum up">+1.4%</td><td class="tnum">709</td></tr>
+<tr onclick="location.href='/towns/bukit-batok'"><td><a href="/towns/bukit-batok">Bukit Batok</a></td><td>Non-mature</td><td>$630,000</td><td>$610,000</td><td class="tnum up">+1.8%</td><td class="tnum">1,284</td></tr>
+<tr onclick="location.href='/towns/hougang'"><td><a href="/towns/hougang">Hougang</a></td><td>Non-mature</td><td>$617,000</td><td>$625,000</td><td class="tnum up">+1.1%</td><td class="tnum">1,137</td></tr>
+<tr onclick="location.href='/towns/ang-mo-kio'"><td><a href="/towns/ang-mo-kio">Ang Mo Kio</a></td><td>Mature</td><td>$615,000</td><td>$513,000</td><td class="tnum up">+4.4%</td><td class="tnum">805</td></tr>
+<tr onclick="location.href='/towns/bedok'"><td><a href="/towns/bedok">Bedok</a></td><td>Mature</td><td>$600,000</td><td>$552,000</td><td class="tnum up">+0.4%</td><td class="tnum">1,199</td></tr>
+<tr onclick="location.href='/towns/sembawang'"><td><a href="/towns/sembawang">Sembawang</a></td><td>Non-mature</td><td>$600,000</td><td>$599,500</td><td class="tnum down">-3.3%</td><td class="tnum">810</td></tr>
+<tr onclick="location.href='/towns/bukit-panjang'"><td><a href="/towns/bukit-panjang">Bukit Panjang</a></td><td>Non-mature</td><td>$570,000</td><td>$610,000</td><td class="tnum up">+0.1%</td><td class="tnum">727</td></tr>
+<tr onclick="location.href='/towns/choa-chu-kang'"><td><a href="/towns/choa-chu-kang">Choa Chu Kang</a></td><td>Non-mature</td><td>$553,500</td><td>$590,000</td><td class="tnum up">+0.3%</td><td class="tnum">936</td></tr>
+<tr onclick="location.href='/towns/yishun'"><td><a href="/towns/yishun">Yishun</a></td><td>Non-mature</td><td>$553,000</td><td>$538,000</td><td class="tnum down">-1.7%</td><td class="tnum">1,475</td></tr>
+<tr onclick="location.href='/towns/woodlands'"><td><a href="/towns/woodlands">Woodlands</a></td><td>Non-mature</td><td>$550,000</td><td>$588,000</td><td class="tnum down">-1.7%</td><td class="tnum">1,714</td></tr>
+<tr onclick="location.href='/towns/jurong-east'"><td><a href="/towns/jurong-east">Jurong East</a></td><td>Non-mature</td><td>$548,888</td><td>$525,000</td><td class="tnum up">+1.0%</td><td class="tnum">433</td></tr>
+<tr onclick="location.href='/towns/jurong-west'"><td><a href="/towns/jurong-west">Jurong West</a></td><td>Non-mature</td><td>$535,000</td><td>$560,000</td><td class="tnum down">-1.0%</td><td class="tnum">1,362</td></tr>
         </tbody>
       </table>
     </div>
-    <figcaption>Median of HDB resale transactions recorded over the Sep 2025 – Aug 2026. YoY compares against the
-      12 months before. Data through Aug 2026.</figcaption>
+    <figcaption>Median of HDB resale transactions recorded over the Oct 2025 – Sep 2026. YoY compares against the
+      12 months before. Data through Sep 2026.</figcaption>
+  </figure>
+
+  <figure id="compare">
+    <div class="chart">
+      <div class="ct">Compare towns by price per square foot</div>
+      <div class="cs">4-room $psf is size-normalised, so towns with different flat sizes compare fairly &middot; Oct 2025 – Sep 2026</div>
+      <table class="towntable">
+        <thead><tr><th>Town</th><th>4-room $psf</th><th>Lease-adj. $psf</th><th>Near-MRT premium</th></tr></thead>
+        <tbody>
+<tr onclick="location.href='/towns/central-area'"><td><a href="/towns/central-area">Central Area</a></td><td class="tnum">$1,110</td><td class="tnum">$1,364</td><td class="tnum ">&ndash;</td></tr>
+<tr onclick="location.href='/towns/queenstown'"><td><a href="/towns/queenstown">Queenstown</a></td><td class="tnum">$1,066</td><td class="tnum">$1,178</td><td class="tnum down">-3.0%</td></tr>
+<tr onclick="location.href='/towns/toa-payoh'"><td><a href="/towns/toa-payoh">Toa Payoh</a></td><td class="tnum">$1,026</td><td class="tnum">$1,084</td><td class="tnum up">+33.6%</td></tr>
+<tr onclick="location.href='/towns/bukit-merah'"><td><a href="/towns/bukit-merah">Bukit Merah</a></td><td class="tnum">$934</td><td class="tnum">$1,066</td><td class="tnum up">+13.1%</td></tr>
+<tr onclick="location.href='/towns/kallang-whampoa'"><td><a href="/towns/kallang-whampoa">Kallang/Whampoa</a></td><td class="tnum">$913</td><td class="tnum">$1,034</td><td class="tnum up">+40.7%</td></tr>
+<tr onclick="location.href='/towns/clementi'"><td><a href="/towns/clementi">Clementi</a></td><td class="tnum">$850</td><td class="tnum">$1,015</td><td class="tnum up">+51.2%</td></tr>
+<tr onclick="location.href='/towns/bukit-timah'"><td><a href="/towns/bukit-timah">Bukit Timah</a></td><td class="tnum">$838</td><td class="tnum">$1,141</td><td class="tnum ">&ndash;</td></tr>
+<tr onclick="location.href='/towns/bishan'"><td><a href="/towns/bishan">Bishan</a></td><td class="tnum">$728</td><td class="tnum">$978</td><td class="tnum down">-6.2%</td></tr>
+<tr onclick="location.href='/towns/marine-parade'"><td><a href="/towns/marine-parade">Marine Parade</a></td><td class="tnum">$714</td><td class="tnum">$1,134</td><td class="tnum ">&ndash;</td></tr>
+<tr onclick="location.href='/towns/punggol'"><td><a href="/towns/punggol">Punggol</a></td><td class="tnum">$684</td><td class="tnum">$748</td><td class="tnum ">&ndash;</td></tr>
+<tr onclick="location.href='/towns/geylang'"><td><a href="/towns/geylang">Geylang</a></td><td class="tnum">$672</td><td class="tnum">$967</td><td class="tnum up">+42.4%</td></tr>
+<tr onclick="location.href='/towns/serangoon'"><td><a href="/towns/serangoon">Serangoon</a></td><td class="tnum">$644</td><td class="tnum">$913</td><td class="tnum up">+13.3%</td></tr>
+<tr onclick="location.href='/towns/sengkang'"><td><a href="/towns/sengkang">Sengkang</a></td><td class="tnum">$639</td><td class="tnum">$730</td><td class="tnum up">+18.2%</td></tr>
+<tr onclick="location.href='/towns/bukit-batok'"><td><a href="/towns/bukit-batok">Bukit Batok</a></td><td class="tnum">$618</td><td class="tnum">$702</td><td class="tnum down">-14.6%</td></tr>
+<tr onclick="location.href='/towns/tampines'"><td><a href="/towns/tampines">Tampines</a></td><td class="tnum">$615</td><td class="tnum">$790</td><td class="tnum down">-7.8%</td></tr>
+<tr onclick="location.href='/towns/ang-mo-kio'"><td><a href="/towns/ang-mo-kio">Ang Mo Kio</a></td><td class="tnum">$602</td><td class="tnum">$903</td><td class="tnum up">+12.9%</td></tr>
+<tr onclick="location.href='/towns/bedok'"><td><a href="/towns/bedok">Bedok</a></td><td class="tnum">$602</td><td class="tnum">$849</td><td class="tnum up">+11.9%</td></tr>
+<tr onclick="location.href='/towns/sembawang'"><td><a href="/towns/sembawang">Sembawang</a></td><td class="tnum">$599</td><td class="tnum">$675</td><td class="tnum up">+5.7%</td></tr>
+<tr onclick="location.href='/towns/hougang'"><td><a href="/towns/hougang">Hougang</a></td><td class="tnum">$594</td><td class="tnum">$749</td><td class="tnum up">+2.4%</td></tr>
+<tr onclick="location.href='/towns/pasir-ris'"><td><a href="/towns/pasir-ris">Pasir Ris</a></td><td class="tnum">$560</td><td class="tnum">$729</td><td class="tnum down">-4.4%</td></tr>
+<tr onclick="location.href='/towns/bukit-panjang'"><td><a href="/towns/bukit-panjang">Bukit Panjang</a></td><td class="tnum">$557</td><td class="tnum">$680</td><td class="tnum up">+18.1%</td></tr>
+<tr onclick="location.href='/towns/yishun'"><td><a href="/towns/yishun">Yishun</a></td><td class="tnum">$549</td><td class="tnum">$672</td><td class="tnum down">-3.5%</td></tr>
+<tr onclick="location.href='/towns/jurong-east'"><td><a href="/towns/jurong-east">Jurong East</a></td><td class="tnum">$537</td><td class="tnum">$717</td><td class="tnum down">-3.4%</td></tr>
+<tr onclick="location.href='/towns/woodlands'"><td><a href="/towns/woodlands">Woodlands</a></td><td class="tnum">$524</td><td class="tnum">$664</td><td class="tnum up">+4.9%</td></tr>
+<tr onclick="location.href='/towns/jurong-west'"><td><a href="/towns/jurong-west">Jurong West</a></td><td class="tnum">$513</td><td class="tnum">$658</td><td class="tnum up">+6.6%</td></tr>
+<tr onclick="location.href='/towns/choa-chu-kang'"><td><a href="/towns/choa-chu-kang">Choa Chu Kang</a></td><td class="tnum">$509</td><td class="tnum">$637</td><td class="tnum up">+3.6%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <figcaption>$psf normalises for flat size; lease-adjusted $psf restates each sale to a common remaining lease.
+      Near-MRT premium is the 4-room median within 500m of an MRT versus beyond it, over the last 24 months. Towns with
+      too few recent sales to be reliable show &ndash;.</figcaption>
   </figure>
 
   <div class="cta">
@@ -244,8 +285,8 @@ thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:v
 
   <aside class="method">
     <div class="method-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg><span>How we measured this</span></div>
-    <p>Figures are medians of actual HDB resale transactions (source: data.gov.sg). Headline medians cover the 12 months to Aug 2026.</p>
-    <p>These describe past sales, not valuations or forecasts. Data through Aug 2026.</p>
+    <p>Figures are medians of actual HDB resale transactions (source: data.gov.sg). Headline medians cover the 12 months to Sep 2026.</p>
+    <p>These describe past sales, not valuations or forecasts. Data through Sep 2026.</p>
   </aside>
 </article>
 
