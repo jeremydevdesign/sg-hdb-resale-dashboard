@@ -58,6 +58,23 @@
 *{box-sizing:border-box}
 body{margin:0;background:var(--color-background-primary);color:var(--color-text-primary);font-family:var(--font-sans)}
 .wrap{max-width:1000px;margin:0 auto;padding:2rem 1.5rem}
+.hubhead{margin:0 0 18px;font-family:var(--font-sans)}
+.hubhead .crumbs,.hubhead .hub-purpose,.hubhead .hub-how>summary,.hubhead .hub-how-body,.hubhead .hub-how-body p{font-family:var(--font-sans)}
+.crumbs{font-size:12px;color:var(--color-text-tertiary);margin:0 0 11px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.crumbs a{color:var(--color-text-secondary);text-decoration:none}
+.crumbs a:hover{color:var(--color-text-info);text-decoration:underline}
+.crumbs .sep{opacity:.45}
+.crumbs .here{color:var(--color-text-primary);font-weight:500}
+.hub-purpose{font-size:14.5px;line-height:1.5;color:var(--color-text-secondary);margin:0 0 12px;max-width:66ch}
+.hub-how{background:var(--color-background-info);border:1px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);padding:0 14px;margin:0}
+.hub-how>summary{list-style:none;cursor:pointer;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--color-text-info);padding:11px 0;display:flex;align-items:center;gap:8px}
+.hub-how>summary::-webkit-details-marker{display:none}
+.hub-how>summary::after{content:"";width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(-45deg);transition:transform .15s}
+.hub-how[open]>summary::after{transform:rotate(45deg)}
+.hub-how-body{padding:0 0 13px;font-size:13.5px;line-height:1.55;color:var(--color-text-secondary);max-width:66ch}
+.hub-how-body p{margin:0 0 8px}
+.hub-how-body p:last-child{margin-bottom:0}
+.hub-how-body a{color:var(--color-text-info)}
 .pg-title{font-size:22px;font-weight:500;margin:0 0 3px}
 .pg-sub{font-size:13px;color:var(--color-text-secondary);margin:0 0 4px}
 .headline{font-size:14px;color:var(--color-text-primary);margin:0 0 1.5rem;padding:11px 15px;background:var(--color-background-info);border-radius:var(--border-radius-md);line-height:1.5}
@@ -179,6 +196,17 @@ table.dt tbody tr.sel{background:var(--color-background-secondary)}
 <body>
 <div class="nav"><div class="nav-inner"><a class="nav-brand" href="/"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>SG HDB Resale</a><button class="nav-toggle" id="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button><div class="nav-links" id="nav-links"><a class="nav-link" href="/towns/">Towns</a><a class="nav-link" href="/search">Search</a><a class="nav-link" href="/map">Map</a><a class="nav-link" href="/calculators">Calculators</a><a class="nav-link" href="/guides/">Guides</a><div class="nav-group"><button type="button" class="nav-link nav-group-btn active" aria-haspopup="true" aria-expanded="false">More<svg class="nav-caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="nav-menu" role="menu"><a class="nav-menu-link" href="/overview" role="menuitem">Overview</a><a class="nav-menu-link" href="/this-year" role="menuitem">This Year</a><a class="nav-menu-link" href="/this-month" role="menuitem">This Month</a><a class="nav-menu-link" href="/million-dollar-flats" role="menuitem">Million-Dollar Flats</a><a class="nav-menu-link" href="/insights" role="menuitem">Insights</a><a class="nav-menu-link active" href="/by-district" role="menuitem">By District</a><a class="nav-menu-link" href="/analysis-by-town" role="menuitem">Analysis by Town</a></div></div></div><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme"></button></div></div>
 <div class="wrap">
+<div class="hubhead">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span class="sep">&rsaquo;</span><a href="/#roadmap">Buyer's roadmap</a><span class="sep">&rsaquo;</span><span class="here">By District</span></nav>
+<p class="hub-purpose">Part of step 3 &mdash; narrowing by place: resale prices grouped by postal district, a finer cut than towns.</p>
+<details class="hub-how" open>
+<summary>How to read this page</summary>
+<div class="hub-how-body">
+<p>Each district shows its median and volume, so you can spot pricing differences within a region.</p>
+<p>Districts pool several estates, so a median describes an area, not a block. For town-level detail, see <a href="/towns/">Towns</a>.</p>
+</div>
+</details>
+</div>
 <h1 class="pg-title">HDB resale by postal district</h1>
 <p class="pg-sub" id="pg-sub"></p>
 <p class="headline" id="headline"></p>

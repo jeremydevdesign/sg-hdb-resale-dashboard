@@ -24,7 +24,7 @@
 <meta name="twitter:title" content="Million-Dollar HDB Flats Tracker">
 <meta name="twitter:description" content="How many HDB flats sell for over a million dollars in Singapore: 1,290 so far in 2026 (1 in 13 resales), 5,391 since 2012, ranked by town, with the latest sales and the all-time record of $1,728,000. Counted from data.gov.sg, updated monthly.">
 <meta name="twitter:image" content="https://sghdbresale.com/og-image.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Million-Dollar HDB Flats Tracker","url":"https://sghdbresale.com/million-dollar-flats","description":"How many HDB flats sell for over a million dollars in Singapore: 1,290 so far in 2026 (1 in 13 resales), 5,391 since 2012, ranked by town, with the latest sales and the all-time record of $1,728,000. Counted from data.gov.sg, updated monthly.","inLanguage":"en-SG","datePublished":"2026-09-13","isPartOf":{"@type":"WebSite","name":"SG HDB Resale","url":"https://sghdbresale.com/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Million-Dollar HDB Flats Tracker","url":"https://sghdbresale.com/million-dollar-flats","description":"How many HDB flats sell for over a million dollars in Singapore: 1,290 so far in 2026 (1 in 13 resales), 5,391 since 2012, ranked by town, with the latest sales and the all-time record of $1,728,000. Counted from data.gov.sg, updated monthly.","inLanguage":"en-SG","datePublished":"2026-09-17","isPartOf":{"@type":"WebSite","name":"SG HDB Resale","url":"https://sghdbresale.com/"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many HDB flats have sold for over a million dollars?","acceptedAnswer":{"@type":"Answer","text":"As of August 2026, 5,391 HDB resale flats have crossed S$1,000,000 in the public record since 2012. The pace has risen sharply: 1,290 have done so far in 2026 alone, versus 1,071 over the same months of 2025. About one in 13 resales this year has been a million-dollar sale."}},{"@type":"Question","name":"What is the most expensive HDB flat ever sold?","acceptedAnswer":{"@type":"Answer","text":"The highest resale price in the public record is $1,728,000, for a 5-room flat in Bukit Merah (96A Henderson Rd), transacted in April 2026. Records like this are usually large, high-floor units in central or mature towns, often executive flats or maisonettes."}},{"@type":"Question","name":"Which towns have the most million-dollar flats?","acceptedAnswer":{"@type":"Answer","text":"Central and mature towns dominate - places like Bukit Merah, Queenstown, Toa Payoh, Kallang/Whampoa and Bishan, where location, larger older units and short distances to the city push prices up. The table above ranks every town by its all-time count. Newer towns rarely appear."}},{"@type":"Question","name":"Are million-dollar HDB flats overpriced?","acceptedAnswer":{"@type":"Answer","text":"Not necessarily - a high price usually reflects size, a high floor, a central location or a rare flat type, not a bad deal. To judge any single flat, compare it against the median for that town and flat type rather than the headline. Browse prices by town or read the guide on judging a fair price."}},{"@type":"Question","name":"Where does this data come from?","acceptedAnswer":{"@type":"Answer","text":"Every figure is counted directly from HDB resale transactions published on data.gov.sg - actual recorded sales, not estimates or listings. The page updates as new monthly data is released. The current year is shown as year-to-date."}}]}</script>
 <link rel="manifest" href="/manifest.webmanifest">
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
@@ -108,6 +108,23 @@ a{color:var(--color-text-info)}
 .crumbs{margin-top:1.5rem;font-size:13px;color:var(--color-text-tertiary)}
 .crumbs a{color:var(--color-text-secondary);text-decoration:none}
 .crumbs a:hover{text-decoration:underline}
+.hubhead{margin:0 0 18px;font-family:var(--font-sans)}
+.hubhead .crumbs,.hubhead .hub-purpose,.hubhead .hub-how>summary,.hubhead .hub-how-body,.hubhead .hub-how-body p{font-family:var(--font-sans)}
+.crumbs{font-size:12px;color:var(--color-text-tertiary);margin:0 0 11px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.crumbs a{color:var(--color-text-secondary);text-decoration:none}
+.crumbs a:hover{color:var(--color-text-info);text-decoration:underline}
+.crumbs .sep{opacity:.45}
+.crumbs .here{color:var(--color-text-primary);font-weight:500}
+.hub-purpose{font-size:14.5px;line-height:1.5;color:var(--color-text-secondary);margin:0 0 12px;max-width:66ch}
+.hub-how{background:var(--color-background-info);border:1px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);padding:0 14px;margin:0}
+.hub-how>summary{list-style:none;cursor:pointer;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--color-text-info);padding:11px 0;display:flex;align-items:center;gap:8px}
+.hub-how>summary::-webkit-details-marker{display:none}
+.hub-how>summary::after{content:"";width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(-45deg);transition:transform .15s}
+.hub-how[open]>summary::after{transform:rotate(45deg)}
+.hub-how-body{padding:0 0 13px;font-size:13.5px;line-height:1.55;color:var(--color-text-secondary);max-width:66ch}
+.hub-how-body p{margin:0 0 8px}
+.hub-how-body p:last-child{margin-bottom:0}
+.hub-how-body a{color:var(--color-text-info)}
 h1{font-family:var(--font-serif);font-size:clamp(31px,5vw,44px);line-height:1.1;letter-spacing:-0.01em;font-weight:600;margin:14px 0 0;text-wrap:balance}
 .standfirst{font-family:var(--font-serif);font-size:clamp(18px,2.4vw,21px);line-height:1.5;color:var(--color-text-secondary);margin:18px 0 0}
 .article p{font-family:var(--font-serif);font-size:18.5px;line-height:1.68;margin:22px 0 0}
@@ -209,7 +226,18 @@ thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:v
 <div class="nav"><div class="nav-inner"><a class="nav-brand" href="/"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>SG HDB Resale</a><button class="nav-toggle" id="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button><div class="nav-links" id="nav-links"><a class="nav-link" href="/towns/">Towns</a><a class="nav-link" href="/search">Search</a><a class="nav-link" href="/map">Map</a><a class="nav-link" href="/calculators">Calculators</a><a class="nav-link" href="/guides/">Guides</a><div class="nav-group"><button type="button" class="nav-link nav-group-btn active" aria-haspopup="true" aria-expanded="false">More<svg class="nav-caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="nav-menu" role="menu"><a class="nav-menu-link" href="/overview" role="menuitem">Overview</a><a class="nav-menu-link" href="/this-year" role="menuitem">This Year</a><a class="nav-menu-link" href="/this-month" role="menuitem">This Month</a><a class="nav-menu-link active" href="/million-dollar-flats" role="menuitem">Million-Dollar Flats</a><a class="nav-menu-link" href="/insights" role="menuitem">Insights</a><a class="nav-menu-link" href="/by-district" role="menuitem">By District</a><a class="nav-menu-link" href="/analysis-by-town" role="menuitem">Analysis by Town</a></div></div></div><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme"></button></div></div>
 
 <article class="article">
-  <div class="kicker">Data &middot; Updated monthly</div>
+  <div class="hubhead">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span class="sep">&rsaquo;</span><a href="/#roadmap">Buyer's roadmap</a><span class="sep">&rsaquo;</span><span class="here">Million-Dollar Flats</span></nav>
+<p class="hub-purpose">A market curiosity, not a buying step: how many HDB flats cross $1,000,000, where, and how fast the count is climbing.</p>
+<details class="hub-how" open>
+<summary>How to read this page</summary>
+<div class="hub-how-body">
+<p>The charts and tables count million-dollar sales by year and town; the records list the highest prices to date.</p>
+<p>These are the market&rsquo;s extremes, not typical prices &mdash; context, not a benchmark for your budget. For everyday medians, start at <a href="/overview">Overview</a>.</p>
+</div>
+</details>
+</div>
+<div class="kicker">Data &middot; Updated monthly</div>
   <h1>Million-dollar HDB flats</h1>
   <p class="standfirst">Million-dollar HDB flats have gone from a handful a year to <strong>1,290</strong> so far in 2026 - about one in 13 resales. Here is every S$1M+ resale counted by year and town, the latest sales, and the all-time record of $1,728,000.</p>
 
