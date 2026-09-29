@@ -198,6 +198,8 @@ a.card:hover{border-color:var(--color-text-info);transform:translateY(-2px)}
 .theme-toggle:hover{background:var(--color-background-secondary);color:var(--color-text-primary);border-color:var(--color-border-primary)}
 .theme-toggle svg{width:17px;height:17px;display:block}
 @media(max-width:600px){.theme-toggle{width:30px;height:30px}}
+.pulse-link{color:inherit;text-decoration:underline;text-decoration-color:var(--color-border-secondary);text-underline-offset:3px}
+.pulse-link:hover{color:var(--color-text-info);text-decoration-color:currentColor}
 </style>
 </head>
 <body>
@@ -215,7 +217,7 @@ a.card:hover{border-color:var(--color-text-info);transform:translateY(-2px)}
       <span class="pulse-live"><span class="pulse-dot"></span>September 2026 so far</span>
       <span class="pulse-stat">median <b>$650,000</b></span>
       <span class="pulse-stat pulse-up">+0.8% YoY</span>
-      <span class="pulse-stat"><b>1,476</b> million-dollar sales in 2026</span>
+      <a class="pulse-stat pulse-link" href="/million-dollar-flats"><b>1,476</b> million-dollar sales in 2026</a>
       <a class="pulse-cta" href="/this-month">See what moved &rarr;</a>
       <!--PULSE:END-->
 </section>
