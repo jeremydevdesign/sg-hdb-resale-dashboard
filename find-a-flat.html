@@ -205,6 +205,17 @@ input[type=range]{accent-color:#1D9E75}
 .dash-tabs a{flex:0 0 auto;padding:9px 12px 10px;font-size:13.5px;font-weight:500;color:var(--color-text-secondary);text-decoration:none;white-space:nowrap;border-bottom:2px solid transparent;margin-bottom:-1px}
 .dash-tabs a:hover{color:var(--color-text-primary)}
 .dash-tabs a.active{color:var(--color-text-primary);font-weight:640;border-bottom-color:var(--color-text-info)}
+/*ABOUTDATA*/
+.about-data-wrap{max-width:1000px;margin:0 auto;padding:0 1.5rem 2.5rem}
+.about-data{border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-secondary);padding:20px 22px;font-family:var(--font-sans)}
+.about-data h2{display:flex;align-items:center;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--color-text-secondary);margin:0 0 12px}
+.about-data h2 svg{width:15px;height:15px;flex-shrink:0;color:var(--color-text-info)}
+.about-data h3{font-size:13px;font-weight:600;color:var(--color-text-secondary);margin:14px 0 4px}
+.about-data p{font-size:13px;line-height:1.6;color:var(--color-text-tertiary);margin:0 0 8px;max-width:78ch}
+.about-data p:last-child{margin-bottom:0}
+.about-data b{color:var(--color-text-secondary);font-weight:600}
+.about-data a{color:var(--color-text-info);text-decoration:none}
+.about-data a:hover{text-decoration:underline}
 </style>
 </head>
 <body>
@@ -551,6 +562,15 @@ if ('serviceWorker' in navigator) {
   });
 }
 </script>
+<div class="about-data-wrap"><section class="about-data" aria-labelledby="about-data-h"><h2 id="about-data-h"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>About this data</h2>
+<h3>What is counted</h3>
+<p>Only the most recent 3, 6 or 12 months of resale transactions (you choose), rolling forward each month. Each town and flat type is priced from the sales in that window that match your distance-to-MRT and minimum-remaining-lease filters.</p>
+<h3>How the figures are calculated</h3>
+<p><b>In budget</b> means the median matching sale was at or below your budget, so at least half of those sales went for your budget or less. <b>Best value</b> ranks by the median price per square metre. <b>Most choice</b> ranks by the number of matching sales. <b>Fastest appreciating</b> compares the 2012 median with the current window's median in the same distance band, and is left blank where either period has fewer than 20 sales.</p>
+<p>Distance to MRT is straight-line to the nearest station, not a walking route.</p>
+<h3>Limits</h3>
+<p>Shorter windows sit closer to today's prices but rest on fewer sales, so they move around more. A median in budget does not mean every flat is: floor, condition and the exact block all matter. This page does not include grants, loan limits or cash needs. For those, use the <a href="/affordability">affordability calculator</a> and <a href="/guides/buying-costs">what a resale flat really costs to buy</a>.</p>
+<p>Source: HDB resale flat prices, published on data.gov.sg and refreshed here weekly. Everything on this page describes past sales. It is not a valuation of any flat and not financial advice.</p></section></div>
 <footer class="site-footer"><div class="footer-inner">
 <span class="footer-brand">SG HDB Resale</span>
 <nav class="footer-nav"><a href="/about">About</a><a href="/contact">Contact</a><a href="/terms">Terms</a><a href="/privacy">Privacy</a></nav>
