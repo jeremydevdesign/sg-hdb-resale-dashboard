@@ -110,6 +110,8 @@ a{color:var(--color-text-info)}
 .crumbs a{color:var(--color-text-secondary);text-decoration:none}
 .crumbs a:hover{text-decoration:underline}
 .hubhead{margin:0 0 18px}
+.hubhead.hubhead-top{margin:0}
+.hubhead.hubhead-body{margin-top:14px}
 .crumbs{font-size:12px;color:var(--color-text-tertiary);margin:0 0 11px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
 .crumbs a{color:var(--color-text-secondary);text-decoration:none}
 .crumbs a:hover{color:var(--color-text-info);text-decoration:underline}
@@ -145,6 +147,9 @@ figure{margin:32px 0 0}
 .chart .ct{font-family:var(--font-sans);font-size:14px;font-weight:660;letter-spacing:-0.01em;color:var(--color-text-primary)}
 .chart .cs{font-family:var(--font-sans);font-size:12.5px;color:var(--color-text-tertiary);margin-top:4px}
 figcaption{font-family:var(--font-sans);font-size:12.5px;color:var(--color-text-tertiary);margin-top:11px;line-height:1.5}
+.recent td,.recent th{white-space:nowrap}
+.recent td:nth-child(2),.recent th:nth-child(2){text-align:left}
+figcaption a{color:var(--color-text-info)}
 
 .linechart{width:100%;height:auto;margin-top:16px;min-width:420px}
 .linechart .axl{font-family:var(--font-sans);font-size:11px;fill:var(--color-text-tertiary)}
@@ -272,6 +277,32 @@ thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:v
     </div>
     <figcaption>A street's 4-room median built on only a few sales describes those particular flats more than
       the street, so read it alongside the sales count.</figcaption>
+  </figure>
+
+  <h2>Recent sales in Clementi</h2>
+  <p>35 flats changed hands in Clementi in September 2026 so far. Here are 10 of them, picked to show the spread across flat types and prices.</p>
+  <figure>
+    <div class="chart">
+      <div class="ct">Recent resales in Clementi</div>
+      <div class="cs">September 2026 so far · actual recorded prices</div>
+      <table class="recent">
+        <thead><tr><th>Block &amp; street</th><th>Type</th><th>Price</th><th>Storey</th><th>Area</th><th>Lease left</th></tr></thead>
+        <tbody>
+<tr><td>706 Clementi West St 2</td><td>3-room</td><td class="tnum">$370,000</td><td class="tnum">07&ndash;09</td><td class="tnum">68 m&sup2;</td><td class="tnum">52y 11m</td></tr>
+<tr><td>330 Clementi Ave 2</td><td>3-room</td><td class="tnum">$435,000</td><td class="tnum">04&ndash;06</td><td class="tnum">67 m&sup2;</td><td class="tnum">50y 11m</td></tr>
+<tr><td>440B Clementi Ave 3</td><td>3-room</td><td class="tnum">$851,000</td><td class="tnum">28&ndash;30</td><td class="tnum">69 m&sup2;</td><td class="tnum">91y 00m</td></tr>
+<tr><td>707 Clementi West St 2</td><td>4-room</td><td class="tnum">$480,000</td><td class="tnum">01&ndash;03</td><td class="tnum">91 m&sup2;</td><td class="tnum">52y 11m</td></tr>
+<tr><td>333 Clementi Ave 2</td><td>4-room</td><td class="tnum">$625,000</td><td class="tnum">10&ndash;12</td><td class="tnum">92 m&sup2;</td><td class="tnum">50y 11m</td></tr>
+<tr><td>421 Clementi Ave 1</td><td>4-room</td><td class="tnum">$996,888</td><td class="tnum">22&ndash;24</td><td class="tnum">96 m&sup2;</td><td class="tnum">86y 00m</td></tr>
+<tr><td>440C Clementi Ave 3</td><td>4-room</td><td class="tnum">$1,220,000</td><td class="tnum">22&ndash;24</td><td class="tnum">94 m&sup2;</td><td class="tnum">90y 11m</td></tr>
+<tr><td>340 Clementi Ave 5</td><td>5-room</td><td class="tnum">$720,000</td><td class="tnum">01&ndash;03</td><td class="tnum">121 m&sup2;</td><td class="tnum">52y 03m</td></tr>
+<tr><td>445A Clementi Ave 3</td><td>5-room</td><td class="tnum">$1,590,000</td><td class="tnum">37&ndash;39</td><td class="tnum">113 m&sup2;</td><td class="tnum">93y 10m</td></tr>
+<tr><td>728 Clementi West St 2</td><td>Executive</td><td class="tnum">$1,060,000</td><td class="tnum">04&ndash;06</td><td class="tnum">163 m&sup2;</td><td class="tnum">53y 00m</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <figcaption>HDB's record dates each resale to the month, not the day, so these are a spread from the latest
+      month rather than the last few to complete. <a href="/search?town=CLEMENTI">Browse every Clementi sale since 2024 &rarr;</a></figcaption>
   </figure>
 
   <h2>How Clementi compares with other towns</h2>

@@ -110,6 +110,8 @@ a{color:var(--color-text-info)}
 .crumbs a{color:var(--color-text-secondary);text-decoration:none}
 .crumbs a:hover{text-decoration:underline}
 .hubhead{margin:0 0 18px}
+.hubhead.hubhead-top{margin:0}
+.hubhead.hubhead-body{margin-top:14px}
 .crumbs{font-size:12px;color:var(--color-text-tertiary);margin:0 0 11px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
 .crumbs a{color:var(--color-text-secondary);text-decoration:none}
 .crumbs a:hover{color:var(--color-text-info);text-decoration:underline}
@@ -145,6 +147,9 @@ figure{margin:32px 0 0}
 .chart .ct{font-family:var(--font-sans);font-size:14px;font-weight:660;letter-spacing:-0.01em;color:var(--color-text-primary)}
 .chart .cs{font-family:var(--font-sans);font-size:12.5px;color:var(--color-text-tertiary);margin-top:4px}
 figcaption{font-family:var(--font-sans);font-size:12.5px;color:var(--color-text-tertiary);margin-top:11px;line-height:1.5}
+.recent td,.recent th{white-space:nowrap}
+.recent td:nth-child(2),.recent th:nth-child(2){text-align:left}
+figcaption a{color:var(--color-text-info)}
 
 .linechart{width:100%;height:auto;margin-top:16px;min-width:420px}
 .linechart .axl{font-family:var(--font-sans);font-size:11px;fill:var(--color-text-tertiary)}
@@ -269,6 +274,32 @@ thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:v
     </div>
     <figcaption>A street's 4-room median built on only a few sales describes those particular flats more than
       the street, so read it alongside the sales count.</figcaption>
+  </figure>
+
+  <h2>Recent sales in Bukit Timah</h2>
+  <p>12 flats changed hands in Bukit Timah in August and September 2026 so far. Here are 10 of them, picked to show the spread across flat types and prices.</p>
+  <figure>
+    <div class="chart">
+      <div class="ct">Recent resales in Bukit Timah</div>
+      <div class="cs">August and September 2026 so far · actual recorded prices</div>
+      <table class="recent">
+        <thead><tr><th>Block &amp; street</th><th>Type</th><th>Price</th><th>Month</th><th>Storey</th><th>Area</th><th>Lease left</th></tr></thead>
+        <tbody>
+<tr><td>4 Toh Yi Dr</td><td>4-room</td><td class="tnum">$955,000</td><td>Aug</td><td class="tnum">10&ndash;12</td><td class="tnum">104 m&sup2;</td><td class="tnum">61y 00m</td></tr>
+<tr><td>4 Toh Yi Dr</td><td>4-room</td><td class="tnum">$978,000</td><td>Aug</td><td class="tnum">13&ndash;15</td><td class="tnum">104 m&sup2;</td><td class="tnum">61y 01m</td></tr>
+<tr><td>5 Toh Yi Dr</td><td>5-room</td><td class="tnum">$1,233,000</td><td>Aug</td><td class="tnum">10&ndash;12</td><td class="tnum">122 m&sup2;</td><td class="tnum">61y 11m</td></tr>
+<tr><td>4 Queen&#x27;s Rd</td><td>3-room</td><td class="tnum">$480,000</td><td>Sep</td><td class="tnum">10&ndash;12</td><td class="tnum">73 m&sup2;</td><td class="tnum">46y 07m</td></tr>
+<tr><td>4 Toh Yi Dr</td><td>4-room</td><td class="tnum">$930,000</td><td>Sep</td><td class="tnum">04&ndash;06</td><td class="tnum">104 m&sup2;</td><td class="tnum">61y 00m</td></tr>
+<tr><td>14 Toh Yi Dr</td><td>5-room</td><td class="tnum">$980,000</td><td>Sep</td><td class="tnum">04&ndash;06</td><td class="tnum">122 m&sup2;</td><td class="tnum">61y 01m</td></tr>
+<tr><td>5 Farrer Rd</td><td>5-room</td><td class="tnum">$1,045,000</td><td>Sep</td><td class="tnum">13&ndash;15</td><td class="tnum">123 m&sup2;</td><td class="tnum">46y 08m</td></tr>
+<tr><td>17 Toh Yi Dr</td><td>5-room</td><td class="tnum">$1,300,000</td><td>Sep</td><td class="tnum">04&ndash;06</td><td class="tnum">122 m&sup2;</td><td class="tnum">60y 11m</td></tr>
+<tr><td>2 Toh Yi Dr</td><td>Executive</td><td class="tnum">$1,310,000</td><td>Sep</td><td class="tnum">01&ndash;03</td><td class="tnum">154 m&sup2;</td><td class="tnum">61y 00m</td></tr>
+<tr><td>2 Toh Yi Dr</td><td>Executive</td><td class="tnum">$1,420,000</td><td>Sep</td><td class="tnum">07&ndash;09</td><td class="tnum">146 m&sup2;</td><td class="tnum">61y 00m</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <figcaption>HDB's record dates each resale to the month, not the day, so these are a spread from the latest
+      month rather than the last few to complete. <a href="/search?town=BUKIT+TIMAH">Browse every Bukit Timah sale since 2024 &rarr;</a></figcaption>
   </figure>
 
   <h2>How Bukit Timah compares with other towns</h2>

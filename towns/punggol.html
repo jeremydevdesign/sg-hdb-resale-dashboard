@@ -110,6 +110,8 @@ a{color:var(--color-text-info)}
 .crumbs a{color:var(--color-text-secondary);text-decoration:none}
 .crumbs a:hover{text-decoration:underline}
 .hubhead{margin:0 0 18px}
+.hubhead.hubhead-top{margin:0}
+.hubhead.hubhead-body{margin-top:14px}
 .crumbs{font-size:12px;color:var(--color-text-tertiary);margin:0 0 11px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
 .crumbs a{color:var(--color-text-secondary);text-decoration:none}
 .crumbs a:hover{color:var(--color-text-info);text-decoration:underline}
@@ -145,6 +147,9 @@ figure{margin:32px 0 0}
 .chart .ct{font-family:var(--font-sans);font-size:14px;font-weight:660;letter-spacing:-0.01em;color:var(--color-text-primary)}
 .chart .cs{font-family:var(--font-sans);font-size:12.5px;color:var(--color-text-tertiary);margin-top:4px}
 figcaption{font-family:var(--font-sans);font-size:12.5px;color:var(--color-text-tertiary);margin-top:11px;line-height:1.5}
+.recent td,.recent th{white-space:nowrap}
+.recent td:nth-child(2),.recent th:nth-child(2){text-align:left}
+figcaption a{color:var(--color-text-info)}
 
 .linechart{width:100%;height:auto;margin-top:16px;min-width:420px}
 .linechart .axl{font-family:var(--font-sans);font-size:11px;fill:var(--color-text-tertiary)}
@@ -272,6 +277,32 @@ thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:v
     </div>
     <figcaption>A street's 4-room median built on only a few sales describes those particular flats more than
       the street, so read it alongside the sales count.</figcaption>
+  </figure>
+
+  <h2>Recent sales in Punggol</h2>
+  <p>133 flats changed hands in Punggol in September 2026 so far. Here are 10 of them, picked to show the spread across flat types and prices.</p>
+  <figure>
+    <div class="chart">
+      <div class="ct">Recent resales in Punggol</div>
+      <div class="cs">September 2026 so far · actual recorded prices</div>
+      <table class="recent">
+        <thead><tr><th>Block &amp; street</th><th>Type</th><th>Price</th><th>Storey</th><th>Area</th><th>Lease left</th></tr></thead>
+        <tbody>
+<tr><td>659C Punggol East</td><td>2-room</td><td class="tnum">$400,000</td><td class="tnum">10&ndash;12</td><td class="tnum">47 m&sup2;</td><td class="tnum">91y 03m</td></tr>
+<tr><td>314B Punggol Way</td><td>3-room</td><td class="tnum">$540,000</td><td class="tnum">04&ndash;06</td><td class="tnum">68 m&sup2;</td><td class="tnum">90y 01m</td></tr>
+<tr><td>110C Punggol Field</td><td>4-room</td><td class="tnum">$532,000</td><td class="tnum">07&ndash;09</td><td class="tnum">85 m&sup2;</td><td class="tnum">75y 09m</td></tr>
+<tr><td>258B Punggol Field</td><td>4-room</td><td class="tnum">$645,000</td><td class="tnum">04&ndash;06</td><td class="tnum">93 m&sup2;</td><td class="tnum">88y 10m</td></tr>
+<tr><td>683A Edgedale Plains</td><td>4-room</td><td class="tnum">$710,000</td><td class="tnum">16&ndash;18</td><td class="tnum">93 m&sup2;</td><td class="tnum">91y 00m</td></tr>
+<tr><td>420A Northshore Dr</td><td>4-room</td><td class="tnum">$860,000</td><td class="tnum">16&ndash;18</td><td class="tnum">94 m&sup2;</td><td class="tnum">94y 05m</td></tr>
+<tr><td>133 Edgedale Plains</td><td>5-room</td><td class="tnum">$560,000</td><td class="tnum">01&ndash;03</td><td class="tnum">111 m&sup2;</td><td class="tnum">76y 03m</td></tr>
+<tr><td>308C Punggol Walk</td><td>5-room</td><td class="tnum">$848,888</td><td class="tnum">04&ndash;06</td><td class="tnum">112 m&sup2;</td><td class="tnum">88y 07m</td></tr>
+<tr><td>422B Northshore Dr</td><td>5-room</td><td class="tnum">$1,105,888</td><td class="tnum">10&ndash;12</td><td class="tnum">116 m&sup2;</td><td class="tnum">94y 01m</td></tr>
+<tr><td>186 Punggol Ctrl</td><td>Executive</td><td class="tnum">$880,000</td><td class="tnum">13&ndash;15</td><td class="tnum">128 m&sup2;</td><td class="tnum">76y 08m</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <figcaption>HDB's record dates each resale to the month, not the day, so these are a spread from the latest
+      month rather than the last few to complete. <a href="/search?town=PUNGGOL">Browse every Punggol sale since 2024 &rarr;</a></figcaption>
   </figure>
 
   <h2>How Punggol compares with other towns</h2>

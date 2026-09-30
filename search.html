@@ -164,6 +164,8 @@ td.price .main{font-weight:700}
 td.adj .main{font-variant-numeric:tabular-nums}
 td.adj .sub{color:var(--color-text-tertiary);font-variant-numeric:tabular-nums}
 .hubhead{margin:0 0 18px}
+.hubhead.hubhead-top{margin:0}
+.hubhead.hubhead-body{margin-top:14px}
 .crumbs{font-size:12px;color:var(--color-text-tertiary);margin:0 0 11px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
 .crumbs a{color:var(--color-text-secondary);text-decoration:none}
 .crumbs a:hover{color:var(--color-text-info);text-decoration:underline}
@@ -186,8 +188,15 @@ td.adj .sub{color:var(--color-text-tertiary);font-variant-numeric:tabular-nums}
 
 <div class="page">
   <div class="head">
-    <div class="hubhead">
+    <div class="hubhead hubhead-top">
 <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span class="sep">&rsaquo;</span><a href="/#roadmap">Buyer's roadmap</a><span class="sep">&rsaquo;</span><span class="here">Search</span></nav>
+</div>
+<h1>Search HDB resale transactions</h1>
+    <p id="intro">Every individual resale recorded since January 2024, straight from the official
+      data.gov.sg register - filter by town, street and flat type, or search a block, then sort any column.
+      Distance to the MRT is straight-line to the nearest station. <a href="/find-a-flat">Prefer medians by budget?
+      Try Find a Flat.</a></p>
+<div class="hubhead hubhead-body">
 <p class="hub-purpose">Browse the raw record: every resale transaction since 2024, filterable and sortable &mdash; the detail beneath the town and year summaries.</p>
 <details class="hub-how" open>
 <summary>How to read this page</summary>
@@ -197,11 +206,6 @@ td.adj .sub{color:var(--color-text-tertiary);font-variant-numeric:tabular-nums}
 </div>
 </details>
 </div>
-<h1>Search HDB resale transactions</h1>
-    <p id="intro">Every individual resale recorded since January 2024, straight from the official
-      data.gov.sg register - filter by town, street and flat type, or search a block, then sort any column.
-      Distance to the MRT is straight-line to the nearest station. <a href="/find-a-flat">Prefer medians by budget?
-      Try Find a Flat.</a></p>
   </div>
 
   <div class="filters">

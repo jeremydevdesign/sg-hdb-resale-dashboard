@@ -97,6 +97,8 @@ body{margin:0;background:var(--color-background-primary);color:var(--color-text-
 }
 .wrap{max-width:1000px;margin:0 auto;padding:2rem 1.5rem}
 .hubhead{margin:0 0 18px}
+.hubhead.hubhead-top{margin:0}
+.hubhead.hubhead-body{margin-top:14px}
 .crumbs{font-size:12px;color:var(--color-text-tertiary);margin:0 0 11px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
 .crumbs a{color:var(--color-text-secondary);text-decoration:none}
 .crumbs a:hover{color:var(--color-text-info);text-decoration:underline}
@@ -206,8 +208,12 @@ svg text{font-family:var(--font-sans)}
 <div class="wrap">
 <nav class="dash-tabs" aria-label="Dashboards"><a href="/overview">Overview</a><a href="/this-year">This Year</a><a href="/find-a-flat">Find a Flat</a><a href="/analysis-by-town" class="active" aria-current="page">Analysis by Town</a><a href="/by-district">By District</a><a href="/insights">Insights</a></nav>
 <script>(function(){var t=document.currentScript.previousElementSibling,a=t&&t.querySelector(".active");if(a&&a.offsetLeft+a.offsetWidth>t.clientWidth)t.scrollLeft=a.offsetLeft-12;})();</script>
-<div class="hubhead">
+<div class="hubhead hubhead-top">
 <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span class="sep">&rsaquo;</span><a href="/#roadmap">Buyer's roadmap</a><span class="sep">&rsaquo;</span><span class="here">Analysis by Town</span></nav>
+</div>
+<h1 class="pg-title">Analysis by town</h1>
+<p class="pg-sub">HDB resale prices by distance to the nearest MRT station &middot; 330,430 transactions &middot; 2012&ndash;2026 &middot; Source: data.gov.sg + OneMap</p>
+<div class="hubhead hubhead-body">
 <p class="hub-purpose">Part of step 3 &mdash; narrowing by place: every town&rsquo;s key measures in one comparison table.</p>
 <details class="hub-how" open>
 <summary>How to read this page</summary>
@@ -217,8 +223,6 @@ svg text{font-family:var(--font-sans)}
 </div>
 </details>
 </div>
-<h1 class="pg-title">Analysis by town</h1>
-<p class="pg-sub">HDB resale prices by distance to the nearest MRT station &middot; 330,430 transactions &middot; 2012&ndash;2026 &middot; Source: data.gov.sg + OneMap</p>
 
 <div class="fbar"><span class="flbl">Town</span><div id="town-pills" style="display:flex;gap:6px;flex-wrap:wrap"></div></div>
 <div class="fbar"><span class="flbl">Year range</span>

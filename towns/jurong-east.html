@@ -110,6 +110,8 @@ a{color:var(--color-text-info)}
 .crumbs a{color:var(--color-text-secondary);text-decoration:none}
 .crumbs a:hover{text-decoration:underline}
 .hubhead{margin:0 0 18px}
+.hubhead.hubhead-top{margin:0}
+.hubhead.hubhead-body{margin-top:14px}
 .crumbs{font-size:12px;color:var(--color-text-tertiary);margin:0 0 11px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
 .crumbs a{color:var(--color-text-secondary);text-decoration:none}
 .crumbs a:hover{color:var(--color-text-info);text-decoration:underline}
@@ -145,6 +147,9 @@ figure{margin:32px 0 0}
 .chart .ct{font-family:var(--font-sans);font-size:14px;font-weight:660;letter-spacing:-0.01em;color:var(--color-text-primary)}
 .chart .cs{font-family:var(--font-sans);font-size:12.5px;color:var(--color-text-tertiary);margin-top:4px}
 figcaption{font-family:var(--font-sans);font-size:12.5px;color:var(--color-text-tertiary);margin-top:11px;line-height:1.5}
+.recent td,.recent th{white-space:nowrap}
+.recent td:nth-child(2),.recent th:nth-child(2){text-align:left}
+figcaption a{color:var(--color-text-info)}
 
 .linechart{width:100%;height:auto;margin-top:16px;min-width:420px}
 .linechart .axl{font-family:var(--font-sans);font-size:11px;fill:var(--color-text-tertiary)}
@@ -272,6 +277,32 @@ thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:v
     </div>
     <figcaption>A street's 4-room median built on only a few sales describes those particular flats more than
       the street, so read it alongside the sales count.</figcaption>
+  </figure>
+
+  <h2>Recent sales in Jurong East</h2>
+  <p>50 flats changed hands in Jurong East in September 2026 so far. Here are 10 of them, picked to show the spread across flat types and prices.</p>
+  <figure>
+    <div class="chart">
+      <div class="ct">Recent resales in Jurong East</div>
+      <div class="cs">September 2026 so far · actual recorded prices</div>
+      <table class="recent">
+        <thead><tr><th>Block &amp; street</th><th>Type</th><th>Price</th><th>Storey</th><th>Area</th><th>Lease left</th></tr></thead>
+        <tbody>
+<tr><td>372 Jurong East St 32</td><td>2-room</td><td class="tnum">$355,000</td><td class="tnum">13&ndash;15</td><td class="tnum">44 m&sup2;</td><td class="tnum">86y 05m</td></tr>
+<tr><td>43 Teban Gdns Rd</td><td>3-room</td><td class="tnum">$350,000</td><td class="tnum">01&ndash;03</td><td class="tnum">68 m&sup2;</td><td class="tnum">58y 00m</td></tr>
+<tr><td>411 Pandan Gdns</td><td>3-room</td><td class="tnum">$380,000</td><td class="tnum">10&ndash;12</td><td class="tnum">72 m&sup2;</td><td class="tnum">51y 09m</td></tr>
+<tr><td>20 Teban Gdns Rd</td><td>3-room</td><td class="tnum">$515,000</td><td class="tnum">25&ndash;27</td><td class="tnum">72 m&sup2;</td><td class="tnum">86y 01m</td></tr>
+<tr><td>261 Jurong East St 24</td><td>4-room</td><td class="tnum">$420,000</td><td class="tnum">01&ndash;03</td><td class="tnum">95 m&sup2;</td><td class="tnum">55y 07m</td></tr>
+<tr><td>55 Teban Gdns Rd</td><td>4-room</td><td class="tnum">$700,000</td><td class="tnum">28&ndash;30</td><td class="tnum">92 m&sup2;</td><td class="tnum">89y 02m</td></tr>
+<tr><td>403 Pandan Gdns</td><td>5-room</td><td class="tnum">$510,000</td><td class="tnum">07&ndash;09</td><td class="tnum">104 m&sup2;</td><td class="tnum">51y 08m</td></tr>
+<tr><td>265 Toh Guan Rd</td><td>5-room</td><td class="tnum">$710,000</td><td class="tnum">01&ndash;03</td><td class="tnum">121 m&sup2;</td><td class="tnum">71y 01m</td></tr>
+<tr><td>286A Toh Guan Rd</td><td>5-room</td><td class="tnum">$820,000</td><td class="tnum">04&ndash;06</td><td class="tnum">123 m&sup2;</td><td class="tnum">71y 03m</td></tr>
+<tr><td>216 Jurong East St 21</td><td>Executive</td><td class="tnum">$868,000</td><td class="tnum">13&ndash;15</td><td class="tnum">142 m&sup2;</td><td class="tnum">57y 09m</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <figcaption>HDB's record dates each resale to the month, not the day, so these are a spread from the latest
+      month rather than the last few to complete. <a href="/search?town=JURONG+EAST">Browse every Jurong East sale since 2024 &rarr;</a></figcaption>
   </figure>
 
   <h2>How Jurong East compares with other towns</h2>

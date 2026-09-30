@@ -60,6 +60,8 @@
 body{margin:0;background:var(--color-background-primary);color:var(--color-text-primary);font-family:var(--font-sans)}
 .wrap{max-width:1000px;margin:0 auto;padding:2rem 1.5rem}
 .hubhead{margin:0 0 18px}
+.hubhead.hubhead-top{margin:0}
+.hubhead.hubhead-body{margin-top:14px}
 .crumbs{font-size:12px;color:var(--color-text-tertiary);margin:0 0 11px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
 .crumbs a{color:var(--color-text-secondary);text-decoration:none}
 .crumbs a:hover{color:var(--color-text-info);text-decoration:underline}
@@ -231,8 +233,12 @@ svg text{font-family:var(--font-sans)}
 <div class="wrap">
 <nav class="dash-tabs" aria-label="Dashboards"><a href="/overview" class="active" aria-current="page">Overview</a><a href="/this-year">This Year</a><a href="/find-a-flat">Find a Flat</a><a href="/analysis-by-town">Analysis by Town</a><a href="/by-district">By District</a><a href="/insights">Insights</a></nav>
 <script>(function(){var t=document.currentScript.previousElementSibling,a=t&&t.querySelector(".active");if(a&&a.offsetLeft+a.offsetWidth>t.clientWidth)t.scrollLeft=a.offsetLeft-12;})();</script>
-<div class="hubhead">
+<div class="hubhead hubhead-top">
 <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span class="sep">&rsaquo;</span><a href="/#roadmap">Buyer's roadmap</a><span class="sep">&rsaquo;</span><span class="here">Overview</span></nav>
+</div>
+<h1 class="pg-title" id="overview">Singapore HDB resale market</h1>
+<p class="pg-sub">330,840 transactions &middot; Mar 2012 &ndash; Sep 2026 &middot; Source: data.gov.sg</p>
+<div class="hubhead hubhead-body">
 <p class="hub-purpose">Get a feel for the whole HDB resale market before you narrow down &mdash; a decade of median prices across every flat type. This is <b>step 1 of the buyer's roadmap</b>: the baseline everything else is measured against.</p>
 <details class="hub-how" open>
 <summary>How to read this page</summary>
@@ -242,8 +248,6 @@ svg text{font-family:var(--font-sans)}
 </div>
 </details>
 </div>
-<h1 class="pg-title" id="overview">Singapore HDB resale market</h1>
-<p class="pg-sub">330,840 transactions &middot; Mar 2012 &ndash; Sep 2026 &middot; Source: data.gov.sg</p>
 <p class="headline" id="headline"></p>
 
 <div class="filter-block">

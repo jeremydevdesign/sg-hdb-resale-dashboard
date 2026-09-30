@@ -110,6 +110,8 @@ a{color:var(--color-text-info)}
 .crumbs a{color:var(--color-text-secondary);text-decoration:none}
 .crumbs a:hover{text-decoration:underline}
 .hubhead{margin:0 0 18px}
+.hubhead.hubhead-top{margin:0}
+.hubhead.hubhead-body{margin-top:14px}
 .crumbs{font-size:12px;color:var(--color-text-tertiary);margin:0 0 11px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
 .crumbs a{color:var(--color-text-secondary);text-decoration:none}
 .crumbs a:hover{color:var(--color-text-info);text-decoration:underline}
@@ -145,6 +147,9 @@ figure{margin:32px 0 0}
 .chart .ct{font-family:var(--font-sans);font-size:14px;font-weight:660;letter-spacing:-0.01em;color:var(--color-text-primary)}
 .chart .cs{font-family:var(--font-sans);font-size:12.5px;color:var(--color-text-tertiary);margin-top:4px}
 figcaption{font-family:var(--font-sans);font-size:12.5px;color:var(--color-text-tertiary);margin-top:11px;line-height:1.5}
+.recent td,.recent th{white-space:nowrap}
+.recent td:nth-child(2),.recent th:nth-child(2){text-align:left}
+figcaption a{color:var(--color-text-info)}
 
 .linechart{width:100%;height:auto;margin-top:16px;min-width:420px}
 .linechart .axl{font-family:var(--font-sans);font-size:11px;fill:var(--color-text-tertiary)}
@@ -272,6 +277,32 @@ thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:v
     </div>
     <figcaption>A street's 4-room median built on only a few sales describes those particular flats more than
       the street, so read it alongside the sales count.</figcaption>
+  </figure>
+
+  <h2>Recent sales in Hougang</h2>
+  <p>111 flats changed hands in Hougang in September 2026 so far. Here are 10 of them, picked to show the spread across flat types and prices.</p>
+  <figure>
+    <div class="chart">
+      <div class="ct">Recent resales in Hougang</div>
+      <div class="cs">September 2026 so far · actual recorded prices</div>
+      <table class="recent">
+        <thead><tr><th>Block &amp; street</th><th>Type</th><th>Price</th><th>Storey</th><th>Area</th><th>Lease left</th></tr></thead>
+        <tbody>
+<tr><td>995A Buangkok Cres</td><td>2-room</td><td class="tnum">$390,000</td><td class="tnum">04&ndash;06</td><td class="tnum">47 m&sup2;</td><td class="tnum">92y 01m</td></tr>
+<tr><td>23 Hougang Ave 3</td><td>3-room</td><td class="tnum">$370,000</td><td class="tnum">07&ndash;09</td><td class="tnum">73 m&sup2;</td><td class="tnum">50y 10m</td></tr>
+<tr><td>476A Upp Serangoon View</td><td>3-room</td><td class="tnum">$610,000</td><td class="tnum">16&ndash;18</td><td class="tnum">67 m&sup2;</td><td class="tnum">88y 07m</td></tr>
+<tr><td>115 Hougang Ave 1</td><td>4-room</td><td class="tnum">$467,000</td><td class="tnum">01&ndash;03</td><td class="tnum">91 m&sup2;</td><td class="tnum">54y 00m</td></tr>
+<tr><td>301 Hougang Ave 5</td><td>4-room</td><td class="tnum">$605,000</td><td class="tnum">01&ndash;03</td><td class="tnum">110 m&sup2;</td><td class="tnum">56y 00m</td></tr>
+<tr><td>471A Upp Serangoon Cres</td><td>4-room</td><td class="tnum">$675,000</td><td class="tnum">07&ndash;09</td><td class="tnum">92 m&sup2;</td><td class="tnum">87y 08m</td></tr>
+<tr><td>365C Upp Serangoon Rd</td><td>4-room</td><td class="tnum">$828,000</td><td class="tnum">07&ndash;09</td><td class="tnum">92 m&sup2;</td><td class="tnum">90y 06m</td></tr>
+<tr><td>306 Hougang Ave 5</td><td>5-room</td><td class="tnum">$688,000</td><td class="tnum">01&ndash;03</td><td class="tnum">131 m&sup2;</td><td class="tnum">55y 07m</td></tr>
+<tr><td>377B Hougang St 32</td><td>5-room</td><td class="tnum">$1,180,000</td><td class="tnum">19&ndash;21</td><td class="tnum">114 m&sup2;</td><td class="tnum">94y 00m</td></tr>
+<tr><td>455 Hougang Ave 10</td><td>Executive</td><td class="tnum">$978,000</td><td class="tnum">01&ndash;03</td><td class="tnum">147 m&sup2;</td><td class="tnum">64y 11m</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <figcaption>HDB's record dates each resale to the month, not the day, so these are a spread from the latest
+      month rather than the last few to complete. <a href="/search?town=HOUGANG">Browse every Hougang sale since 2024 &rarr;</a></figcaption>
   </figure>
 
   <h2>How Hougang compares with other towns</h2>

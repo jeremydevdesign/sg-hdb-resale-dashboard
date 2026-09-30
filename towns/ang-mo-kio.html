@@ -110,6 +110,8 @@ a{color:var(--color-text-info)}
 .crumbs a{color:var(--color-text-secondary);text-decoration:none}
 .crumbs a:hover{text-decoration:underline}
 .hubhead{margin:0 0 18px}
+.hubhead.hubhead-top{margin:0}
+.hubhead.hubhead-body{margin-top:14px}
 .crumbs{font-size:12px;color:var(--color-text-tertiary);margin:0 0 11px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
 .crumbs a{color:var(--color-text-secondary);text-decoration:none}
 .crumbs a:hover{color:var(--color-text-info);text-decoration:underline}
@@ -145,6 +147,9 @@ figure{margin:32px 0 0}
 .chart .ct{font-family:var(--font-sans);font-size:14px;font-weight:660;letter-spacing:-0.01em;color:var(--color-text-primary)}
 .chart .cs{font-family:var(--font-sans);font-size:12.5px;color:var(--color-text-tertiary);margin-top:4px}
 figcaption{font-family:var(--font-sans);font-size:12.5px;color:var(--color-text-tertiary);margin-top:11px;line-height:1.5}
+.recent td,.recent th{white-space:nowrap}
+.recent td:nth-child(2),.recent th:nth-child(2){text-align:left}
+figcaption a{color:var(--color-text-info)}
 
 .linechart{width:100%;height:auto;margin-top:16px;min-width:420px}
 .linechart .axl{font-family:var(--font-sans);font-size:11px;fill:var(--color-text-tertiary)}
@@ -272,6 +277,32 @@ thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:v
     </div>
     <figcaption>A street's 4-room median built on only a few sales describes those particular flats more than
       the street, so read it alongside the sales count.</figcaption>
+  </figure>
+
+  <h2>Recent sales in Ang Mo Kio</h2>
+  <p>71 flats changed hands in Ang Mo Kio in September 2026 so far. Here are 10 of them, picked to show the spread across flat types and prices.</p>
+  <figure>
+    <div class="chart">
+      <div class="ct">Recent resales in Ang Mo Kio</div>
+      <div class="cs">September 2026 so far · actual recorded prices</div>
+      <table class="recent">
+        <thead><tr><th>Block &amp; street</th><th>Type</th><th>Price</th><th>Storey</th><th>Area</th><th>Lease left</th></tr></thead>
+        <tbody>
+<tr><td>170 Ang Mo Kio Ave 4</td><td>2-room</td><td class="tnum">$360,000</td><td class="tnum">07&ndash;09</td><td class="tnum">45 m&sup2;</td><td class="tnum">58y 05m</td></tr>
+<tr><td>558 Ang Mo Kio Ave 10</td><td>3-room</td><td class="tnum">$360,000</td><td class="tnum">10&ndash;12</td><td class="tnum">67 m&sup2;</td><td class="tnum">52y 06m</td></tr>
+<tr><td>330 Ang Mo Kio Ave 1</td><td>3-room</td><td class="tnum">$398,000</td><td class="tnum">04&ndash;06</td><td class="tnum">68 m&sup2;</td><td class="tnum">53y 05m</td></tr>
+<tr><td>218 Ang Mo Kio Ave 1</td><td>3-room</td><td class="tnum">$415,000</td><td class="tnum">04&ndash;06</td><td class="tnum">82 m&sup2;</td><td class="tnum">48y 09m</td></tr>
+<tr><td>320 Ang Mo Kio Ave 1</td><td>3-room</td><td class="tnum">$510,000</td><td class="tnum">04&ndash;06</td><td class="tnum">88 m&sup2;</td><td class="tnum">49y 09m</td></tr>
+<tr><td>612 Ang Mo Kio Ave 4</td><td>4-room</td><td class="tnum">$450,000</td><td class="tnum">01&ndash;03</td><td class="tnum">91 m&sup2;</td><td class="tnum">53y 00m</td></tr>
+<tr><td>131 Ang Mo Kio Ave 3</td><td>4-room</td><td class="tnum">$600,000</td><td class="tnum">10&ndash;12</td><td class="tnum">98 m&sup2;</td><td class="tnum">51y 05m</td></tr>
+<tr><td>308A Ang Mo Kio Ave 1</td><td>4-room</td><td class="tnum">$1,020,000</td><td class="tnum">28&ndash;30</td><td class="tnum">95 m&sup2;</td><td class="tnum">85y 01m</td></tr>
+<tr><td>253 Ang Mo Kio St 21</td><td>5-room</td><td class="tnum">$940,000</td><td class="tnum">04&ndash;06</td><td class="tnum">128 m&sup2;</td><td class="tnum">68y 07m</td></tr>
+<tr><td>465 Ang Mo Kio Ave 10</td><td>Executive</td><td class="tnum">$1,090,000</td><td class="tnum">10&ndash;12</td><td class="tnum">150 m&sup2;</td><td class="tnum">52y 06m</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <figcaption>HDB's record dates each resale to the month, not the day, so these are a spread from the latest
+      month rather than the last few to complete. <a href="/search?town=ANG+MO+KIO">Browse every Ang Mo Kio sale since 2024 &rarr;</a></figcaption>
   </figure>
 
   <h2>How Ang Mo Kio compares with other towns</h2>

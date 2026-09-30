@@ -101,6 +101,8 @@ body{margin:0;background:var(--color-background-primary);color:var(--color-text-
 a{color:var(--color-text-info)}
 
 .hubhead{margin:0 0 18px}
+.hubhead.hubhead-top{margin:0}
+.hubhead.hubhead-body{margin-top:14px}
 .crumbs{font-size:12px;color:var(--color-text-tertiary);margin:0 0 11px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
 .crumbs a{color:var(--color-text-secondary);text-decoration:none}
 .crumbs a:hover{color:var(--color-text-info);text-decoration:underline}
@@ -178,8 +180,12 @@ select.filter{font-family:inherit;font-size:13.5px;padding:8px 30px 8px 12px;bor
 
 <main class="wrap">
   <p class="kicker">Resale price map</p>
-  <div class="hubhead">
+  <div class="hubhead hubhead-top">
 <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span class="sep">&rsaquo;</span><a href="/#roadmap">Buyer's roadmap</a><span class="sep">&rsaquo;</span><span class="here">Map</span></nav>
+</div>
+<h1>The island, priced by the block</h1>
+  <p class="standfirst">Every HDB block with a recorded resale since 2024, mapped on Singapore's own base map. Switch between total price and price per square foot, and tap any block to see what actually changed hands.</p>
+<div class="hubhead hubhead-body">
 <p class="hub-purpose">See location at a glance: HDB resale prices across the island as a heatmap &mdash; where&rsquo;s dear, where&rsquo;s not.</p>
 <details class="hub-how" open>
 <summary>How to read this page</summary>
@@ -189,8 +195,6 @@ select.filter{font-family:inherit;font-size:13.5px;padding:8px 30px 8px 12px;bor
 </div>
 </details>
 </div>
-<h1>The island, priced by the block</h1>
-  <p class="standfirst">Every HDB block with a recorded resale since 2024, mapped on Singapore's own base map. Switch between total price and price per square foot, and tap any block to see what actually changed hands.</p>
 
   <div class="controls">
     <label class="ctrl"><span>Colour by</span>
