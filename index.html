@@ -105,19 +105,40 @@ body{margin:0;background:var(--color-background-primary);color:var(--color-text-
 .hero-trust{display:flex;flex-wrap:wrap;gap:6px 20px;padding:12px 0;border-top:1px solid var(--color-border-secondary);border-bottom:1px solid var(--color-border-secondary);margin-bottom:1.75rem}
 .hero-trust span{font-size:13px;color:var(--color-text-secondary);display:inline-flex;align-items:center}
 .hero-trust span::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--color-text-success);display:inline-block;margin-right:8px}
-.pulse{display:flex;flex-wrap:wrap;align-items:center;gap:7px 15px;margin:0 0 1.75rem;border:1px solid var(--color-border-secondary);border-radius:999px;background:var(--color-background-secondary);padding:9px 10px 9px 18px;font-size:13px}
+.pulse-card{border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-secondary);margin:0 0 2.25rem;overflow:hidden}
+a.pstat{text-decoration:none;color:inherit;transition:background .12s}
+a.pstat:hover{background:var(--color-background-primary)}
+a.pstat:hover .pk{color:var(--color-text-info)}
+/*PRICECHECK*/
+.pc{border:1px solid var(--color-border-primary);border-radius:var(--border-radius-lg);background:var(--color-background-primary);padding:22px 24px 24px;margin:0 0 16px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.pc-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 16px;margin:0 0 14px}
+.pc-title{font-size:19px;font-weight:650;margin:0;letter-spacing:-.01em}
+.pc-win{font-size:12.5px;color:var(--color-text-tertiary);margin:0}
+.pc-form{display:grid;grid-template-columns:1.4fr 1fr;gap:12px;margin:0 0 18px}
+.pc-field{display:flex;flex-direction:column;gap:6px;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--color-text-tertiary)}
+.pc-field select{font:inherit;font-size:16px;font-weight:500;letter-spacing:0;text-transform:none;color:var(--color-text-primary);background:var(--color-background-secondary);border:1px solid var(--color-border-primary);border-radius:9px;padding:10px 12px;width:100%;cursor:pointer}
+.pc-field select:focus{outline:2px solid var(--color-text-info);outline-offset:1px}
+.pc-k{font-size:13.5px;color:var(--color-text-secondary)}
+.pc-v{font-size:40px;font-weight:700;letter-spacing:-.02em;line-height:1.1;margin:4px 0 6px;font-variant-numeric:tabular-nums}
+.pc-r{font-size:14px;line-height:1.5;color:var(--color-text-secondary)}
+.pc-r b{color:var(--color-text-primary);font-weight:600;font-variant-numeric:tabular-nums}
+.pc-links{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:14px}
+.pc-links a{font-size:14px;font-weight:600;color:var(--color-text-info);text-decoration:none}
+.pc-links a:hover{text-decoration:underline}
+@media(max-width:600px){.pc{padding:18px 16px 20px}.pc-form{grid-template-columns:1fr 1fr;gap:10px}.pc-v{font-size:34px}}
 .pulse-live{display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--color-text-primary)}
 .pulse-stat{color:var(--color-text-secondary)}
 .pulse-stat b{color:var(--color-text-primary);font-weight:600;font-variant-numeric:tabular-nums}
 .pulse-up{color:var(--color-text-success);font-weight:600}
 .pulse-down{color:var(--color-text-danger);font-weight:600}
-.pulse-head{display:flex;align-items:center;gap:9px;padding:12px 20px;border-bottom:1px solid var(--color-border-secondary);font-size:12.5px;color:var(--color-text-secondary)}
+.pulse-head{display:flex;flex-wrap:wrap;align-items:center;gap:9px;padding:10px 12px 10px 20px;border-bottom:1px solid var(--color-border-secondary);font-size:12.5px;color:var(--color-text-secondary)}
 .pulse-cta{margin-left:auto;display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:999px;font-size:12.5px;font-weight:600;color:var(--color-text-info);text-decoration:none;background:var(--color-background-primary);border:1px solid var(--color-border-secondary)}
 .pulse-cta:hover{border-color:var(--color-text-info)}
 .escape-hatch{font-size:13.5px;line-height:1.6;color:var(--color-text-secondary);text-align:center;margin:22px auto 0;max-width:64ch}
 .escape-hatch a{color:var(--color-text-info);text-decoration:none;font-weight:600}
 .escape-hatch a:hover{text-decoration:underline}
 .pulse-head strong{color:var(--color-text-primary);font-weight:600}
+.pulse-head>span:not(.pulse-dot){flex:1 1 200px;min-width:0}
 .pulse-dot{width:8px;height:8px;border-radius:50%;background:var(--color-text-success);flex:none;animation:pulseping 2.6s ease-out infinite}
 @keyframes pulseping{0%{box-shadow:0 0 0 0 rgba(15,110,86,.5)}70%{box-shadow:0 0 0 7px transparent}100%{box-shadow:0 0 0 0 transparent}}
 @media(prefers-reduced-motion:reduce){.pulse-dot{animation:none}}
@@ -128,7 +149,7 @@ body{margin:0;background:var(--color-background-primary);color:var(--color-text-
 .pv{font-size:28px;font-weight:700;letter-spacing:-.02em;margin-top:8px;line-height:1;font-variant-numeric:tabular-nums}
 .ps{font-size:12px;color:var(--color-text-tertiary);margin-top:8px;line-height:1.4}
 @media(max-width:640px){.pulse-grid{grid-template-columns:repeat(2,1fr)}.pstat:nth-child(2){border-right:none}.pstat:nth-child(1),.pstat:nth-child(2){border-bottom:1px solid var(--color-border-secondary)}}
-@media(max-width:380px){.pulse-grid{grid-template-columns:1fr}.pstat{border-right:none;border-bottom:1px solid var(--color-border-secondary)}.pstat:last-child{border-bottom:none}}
+@media(max-width:340px){.pulse-grid{grid-template-columns:1fr}.pstat{border-right:none;border-bottom:1px solid var(--color-border-secondary)}.pstat:last-child{border-bottom:none}}
 
 .section-label{font-size:12px;font-weight:640;letter-spacing:.06em;text-transform:uppercase;color:var(--color-text-tertiary);margin:0 0 16px}
 #roadmap{scroll-margin-top:72px}
@@ -143,9 +164,9 @@ body{margin:0;background:var(--color-background-primary);color:var(--color-text-
 .rlabel{font-family:var(--font-sans);font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--color-text-tertiary);margin-right:2px}
 .rlink{font-family:var(--font-sans);font-size:13px;font-weight:600;text-decoration:none;padding:6px 12px;border-radius:8px;border:1px solid var(--color-border-primary);color:var(--color-text-primary);background:var(--color-background-primary);transition:border-color .12s,color .12s}
 .rlink:hover{border-color:var(--color-text-info);color:var(--color-text-info)}
-.rlink.read{background:transparent;border-style:dashed;color:var(--color-text-secondary)}
+.rlink.read{background:transparent;border-color:var(--color-border-secondary);color:var(--color-text-info)}
 .rlink.read:hover{color:var(--color-text-info);border-color:var(--color-text-info)}
-@media(max-width:600px){.rstep{padding:20px 18px}.rnum{position:static;margin-bottom:12px}}
+@media(max-width:600px){.rstep{padding:16px 16px 16px 56px}.rnum{left:16px;top:15px;width:28px;height:28px;font-size:13px}.rstep h3{font-size:18.5px}.rstep p{font-size:14.5px;margin-top:6px}.rrow{margin-top:10px}.rlink{font-size:12.5px;padding:5px 10px}.roadmap{gap:10px}}
 .feature{display:block;text-decoration:none;border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-secondary);padding:28px 30px;transition:border-color .12s,transform .12s}
 .feature:hover{border-color:var(--color-text-primary);transform:translateY(-2px)}
 .feature .tag{font-size:12px;font-weight:640;letter-spacing:.05em;text-transform:uppercase;color:var(--color-text-info)}
@@ -208,18 +229,28 @@ a.card:hover{border-color:var(--color-text-info);transform:translateY(-2px)}
 <section class="hero">
 <p class="hero-eyebrow">A decade of Singapore's HDB resale market</p>
 <h1 class="hero-title">Buying a resale flat? Start here.</h1>
-<p class="hero-lede">Work through the seven stages below in order. Each one hands you the exact dashboards and guides for where you are - all built on every official resale transaction in Singapore since 2012, refreshed weekly. Nothing modelled or estimated.</p>
-<div class="hero-trust"><span>Official data.gov.sg records</span><span>300,000+ transactions</span><span>Refreshed weekly</span></div>
+<p class="hero-lede">Check what flats really sell for, then work through the seven-step roadmap below. Every figure is an official resale record since 2012, refreshed weekly - nothing modelled or estimated.</p>
 </section>
 
-<section class="pulse" aria-label="Latest market snapshot">
+<section class="pc" aria-label="Check a resale price">
+<!--PRICECHECK:START-->
+<div class="pc-head"><h2 class="pc-title">What do flats actually sell for?</h2><p class="pc-win">Real resale prices, Oct 2025 &ndash; Sep 2026</p></div>
+<div class="pc-form"><label class="pc-field"><span>Town</span><select id="pc-town"><option value="_ALL">All towns</option><option value="ANG MO KIO">Ang Mo Kio</option><option value="BEDOK">Bedok</option><option value="BISHAN">Bishan</option><option value="BUKIT BATOK">Bukit Batok</option><option value="BUKIT MERAH">Bukit Merah</option><option value="BUKIT PANJANG">Bukit Panjang</option><option value="BUKIT TIMAH">Bukit Timah</option><option value="CENTRAL AREA">Central Area</option><option value="CHOA CHU KANG">Choa Chu Kang</option><option value="CLEMENTI">Clementi</option><option value="GEYLANG">Geylang</option><option value="HOUGANG">Hougang</option><option value="JURONG EAST">Jurong East</option><option value="JURONG WEST">Jurong West</option><option value="KALLANG/WHAMPOA">Kallang/Whampoa</option><option value="MARINE PARADE">Marine Parade</option><option value="PASIR RIS">Pasir Ris</option><option value="PUNGGOL">Punggol</option><option value="QUEENSTOWN">Queenstown</option><option value="SEMBAWANG">Sembawang</option><option value="SENGKANG">Sengkang</option><option value="SERANGOON">Serangoon</option><option value="TAMPINES">Tampines</option><option value="TOA PAYOH">Toa Payoh</option><option value="WOODLANDS">Woodlands</option><option value="YISHUN">Yishun</option></select></label><label class="pc-field"><span>Flat type</span><select id="pc-type"><option value="2 ROOM">2-room</option><option value="3 ROOM">3-room</option><option value="4 ROOM" selected>4-room</option><option value="5 ROOM">5-room</option><option value="EXECUTIVE">Executive</option></select></label></div>
+<div class="pc-out" id="pc-out" aria-live="polite"><div class="pc-k">Median 4-room resale price across Singapore</div><div class="pc-v">$628,888</div><div class="pc-r">Typical range <b>$510k&ndash;$944k</b> (middle 80% of sales) &middot; <b>10,711</b> sales</div><div class="pc-links"><a href="/search?type=4">Browse every sale since 2024 &rarr;</a><a href="/towns/">Compare all 26 towns &rarr;</a></div></div>
+<script type="application/json" id="pc-data">{"w":"Oct 2025 &ndash; Sep 2026","t":{"2 ROOM":"2-room","3 ROOM":"3-room","4 ROOM":"4-room","5 ROOM":"5-room","EXECUTIVE":"Executive"},"q":{"2 ROOM":2,"3 ROOM":3,"4 ROOM":4,"5 ROOM":5,"EXECUTIVE":6},"d":{"_ALL":{"l":"Singapore","s":"","f":{"2 ROOM":[372800,300000,421888,745],"3 ROOM":[440000,355000,625000,5726],"4 ROOM":[628888,510000,943888,10711],"5 ROOM":[740000,613888,1033000,5736],"EXECUTIVE":[915000,775000,1128000,1504]}},"ANG MO KIO":{"l":"Ang Mo Kio","s":"ang-mo-kio","f":{"2 ROOM":[332500,290000,360000,22],"3 ROOM":[430888,387500,500000,419],"4 ROOM":[615000,513000,1048000,278],"5 ROOM":[991500,732000,1277000,134],"EXECUTIVE":[1201888,1050000,1330000,7]}},"BEDOK":{"l":"Bedok","s":"bedok","f":{"2 ROOM":[325000,300000,353000,22],"3 ROOM":[417944,370000,538000,496],"4 ROOM":[593000,495000,940000,509],"5 ROOM":[794000,648000,1052000,210],"EXECUTIVE":[1010000,930000,1188888,60]}},"BISHAN":{"l":"Bishan","s":"bishan","f":{"2 ROOM":[null,null,null,0],"3 ROOM":[530000,368000,570000,60],"4 ROOM":[788000,644000,910000,188],"5 ROOM":[970000,868888,1160000,110],"EXECUTIVE":[1295000,1090000,1460000,47]}},"BUKIT BATOK":{"l":"Bukit Batok","s":"bukit-batok","f":{"2 ROOM":[380000,345000,405000,87],"3 ROOM":[413888,380000,530000,329],"4 ROOM":[630000,490000,738000,579],"5 ROOM":[810000,715000,920000,298],"EXECUTIVE":[868444,798888,968888,66]}},"BUKIT MERAH":{"l":"Bukit Merah","s":"bukit-merah","f":{"2 ROOM":[290000,260000,465000,38],"3 ROOM":[430000,345000,780000,297],"4 ROOM":[935000,620000,1110000,382],"5 ROOM":[1060000,770000,1358000,173],"EXECUTIVE":[null,null,null,0]}},"BUKIT PANJANG":{"l":"Bukit Panjang","s":"bukit-panjang","f":{"2 ROOM":[368888,325000,410000,11],"3 ROOM":[460444,410000,530000,104],"4 ROOM":[570000,490000,675000,372],"5 ROOM":[695888,605000,880000,211],"EXECUTIVE":[850000,700000,980000,77]}},"BUKIT TIMAH":{"l":"Bukit Timah","s":"bukit-timah","f":{"2 ROOM":[null,null,null,0],"3 ROOM":[480000,455000,545000,9],"4 ROOM":[938000,910000,970000,16],"5 ROOM":[1107500,990000,1280000,24],"EXECUTIVE":[1390000,1310000,1428000,9]}},"CENTRAL AREA":{"l":"Central Area","s":"central-area","f":{"2 ROOM":[330000,280000,360000,6],"3 ROOM":[550000,470000,610000,65],"4 ROOM":[870000,628000,1448888,75],"5 ROOM":[1473000,800000,1560000,28],"EXECUTIVE":[null,null,null,0]}},"CHOA CHU KANG":{"l":"Choa Chu Kang","s":"choa-chu-kang","f":{"2 ROOM":[357500,330000,430000,14],"3 ROOM":[456500,375000,508000,68],"4 ROOM":[553500,500000,626000,493],"5 ROOM":[670000,570000,740000,338],"EXECUTIVE":[835000,758000,900000,87]}},"CLEMENTI":{"l":"Clementi","s":"clementi","f":{"2 ROOM":[415000,305000,458000,5],"3 ROOM":[433000,370000,685000,205],"4 ROOM":[821500,530000,1178000,196],"5 ROOM":[1160000,765000,1498000,82],"EXECUTIVE":[1065000,1030000,1135000,8]}},"GEYLANG":{"l":"Geylang","s":"geylang","f":{"2 ROOM":[290000,280000,347000,21],"3 ROOM":[380000,312000,715000,315],"4 ROOM":[740000,538888,1008000,226],"5 ROOM":[915000,750000,1280000,75],"EXECUTIVE":[1050000,943000,1100000,11]}},"HOUGANG":{"l":"Hougang","s":"hougang","f":{"2 ROOM":[385250,358000,408888,38],"3 ROOM":[455000,410000,565000,251],"4 ROOM":[618444,530000,750000,578],"5 ROOM":[785000,665000,980000,240],"EXECUTIVE":[970000,870000,1098000,121]}},"JURONG EAST":{"l":"Jurong East","s":"jurong-east","f":{"2 ROOM":[352000,330000,361000,11],"3 ROOM":[410000,360000,485000,177],"4 ROOM":[548444,472888,670000,142],"5 ROOM":[710000,600000,840000,109],"EXECUTIVE":[935000,777200,1080000,33]}},"JURONG WEST":{"l":"Jurong West","s":"jurong-west","f":{"2 ROOM":[361500,345000,378800,26],"3 ROOM":[394000,313000,513888,298],"4 ROOM":[535000,480000,640000,581],"5 ROOM":[635000,565000,730000,429],"EXECUTIVE":[781900,700000,865000,120]}},"KALLANG/WHAMPOA":{"l":"Kallang/Whampoa","s":"kallang-whampoa","f":{"2 ROOM":[328000,308000,360000,11],"3 ROOM":[459500,355000,750000,306],"4 ROOM":[906500,570000,1160000,292],"5 ROOM":[964000,730000,1365000,114],"EXECUTIVE":[994000,860000,1280000,14]}},"MARINE PARADE":{"l":"Marine Parade","s":"marine-parade","f":{"2 ROOM":[null,null,null,1],"3 ROOM":[470000,415000,528888,60],"4 ROOM":[645000,550000,700000,37],"5 ROOM":[978888,858888,1180000,33],"EXECUTIVE":[null,null,null,0]}},"PASIR RIS":{"l":"Pasir Ris","s":"pasir-ris","f":{"2 ROOM":[412500,400000,433000,10],"3 ROOM":[608000,340000,639000,21],"4 ROOM":[635444,590000,770000,308],"5 ROOM":[732000,685000,803888,230],"EXECUTIVE":[925000,840000,1008000,187]}},"PUNGGOL":{"l":"Punggol","s":"punggol","f":{"2 ROOM":[396800,360000,440000,119],"3 ROOM":[545000,510000,595000,179],"4 ROOM":[680000,600000,772000,841],"5 ROOM":[780000,628000,952000,459],"EXECUTIVE":[832500,768000,873888,24]}},"QUEENSTOWN":{"l":"Queenstown","s":"queenstown","f":{"2 ROOM":[515000,280000,650000,19],"3 ROOM":[450000,335000,838000,339],"4 ROOM":[1029000,832888,1200000,296],"5 ROOM":[1235940,910000,1500000,82],"EXECUTIVE":[1375000,1170000,1420000,6]}},"SEMBAWANG":{"l":"Sembawang","s":"sembawang","f":{"2 ROOM":[377500,355000,416000,90],"3 ROOM":[520000,483000,580000,97],"4 ROOM":[600000,523000,718000,381],"5 ROOM":[640000,570000,805000,236],"EXECUTIVE":[751000,688888,840000,57]}},"SENGKANG":{"l":"Sengkang","s":"sengkang","f":{"2 ROOM":[388000,360000,410000,74],"3 ROOM":[544500,507000,578000,134],"4 ROOM":[640000,560000,760888,833],"5 ROOM":[700000,620000,873000,582],"EXECUTIVE":[845000,800000,925000,100]}},"SERANGOON":{"l":"Serangoon","s":"serangoon","f":{"2 ROOM":[null,null,null,0],"3 ROOM":[464000,410000,528000,94],"4 ROOM":[659000,570000,850000,174],"5 ROOM":[830000,725000,1000000,67],"EXECUTIVE":[1102500,960000,1200000,46]}},"TAMPINES":{"l":"Tampines","s":"tampines","f":{"2 ROOM":[425000,405000,465000,11],"3 ROOM":[490000,446000,615000,369],"4 ROOM":[663000,585000,804000,889],"5 ROOM":[810000,715000,962000,551],"EXECUTIVE":[980000,905000,1120000,165]}},"TOA PAYOH":{"l":"Toa Payoh","s":"toa-payoh","f":{"2 ROOM":[280000,270000,325000,20],"3 ROOM":[380000,325000,818888,416],"4 ROOM":[1000000,600000,1160000,400],"5 ROOM":[1050000,721888,1480000,145],"EXECUTIVE":[988000,950888,1225000,13]}},"WOODLANDS":{"l":"Woodlands","s":"woodlands","f":{"2 ROOM":[378000,355000,390388,35],"3 ROOM":[415000,335000,530000,205],"4 ROOM":[550000,480888,640000,870],"5 ROOM":[655000,590000,745000,522],"EXECUTIVE":[918000,820000,1080000,181]}},"YISHUN":{"l":"Yishun","s":"yishun","f":{"2 ROOM":[362500,340000,381000,54],"3 ROOM":[433000,395000,500000,413],"4 ROOM":[550000,470000,630000,775],"5 ROOM":[692388,618000,780000,254],"EXECUTIVE":[900000,825000,1050000,65]}}}}</script>
+<!--PRICECHECK:END-->
+</section>
+
+<section class="pulse-card" aria-label="Latest market snapshot">
 <!--PULSE:START-->
-      <span class="pulse-live"><span class="pulse-dot"></span>September 2026 so far</span>
-      <span class="pulse-stat">median <b>$650,000</b></span>
-      <span class="pulse-stat pulse-up">+0.8% YoY</span>
-      <a class="pulse-stat pulse-link" href="/million-dollar-flats"><b>1,476</b> million-dollar sales in 2026</a>
-      <a class="pulse-cta" href="/this-month">See what moved &rarr;</a>
-      <!--PULSE:END-->
+<div class="pulse-head"><span class="pulse-dot"></span><span><strong>September 2026</strong> so far - refreshed weekly from data.gov.sg</span><a class="pulse-cta" href="/this-month">See what moved &rarr;</a></div>
+<div class="pulse-grid">
+<div class="pstat"><div class="pk">Median resale price</div><div class="pv">$650,000</div><div class="ps">2,020 sales so far in September</div></div>
+<div class="pstat"><div class="pk">Year on year</div><div class="pv pulse-up">+0.8%</div><div class="ps">vs September 2025 - provisional so far</div></div>
+<a class="pstat" href="/million-dollar-flats"><div class="pk">Million-dollar sales</div><div class="pv">1,476</div><div class="ps">so far in 2026 (1,593 in 2025)</div></a>
+<div class="pstat"><div class="pk">Resales on record</div><div class="pv">330,840</div><div class="ps">every sale since 2012</div></div>
+</div>
+<!--PULSE:END-->
 </section>
 
 <section id="roadmap" aria-label="Buyer's roadmap">
@@ -314,6 +345,24 @@ function paint(){var d=eff()==='dark';btn.innerHTML=d?SUN:MOON;var l=d?'Switch t
 btn.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';root.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}paint();});
 paint();
 })();
+</script>
+<script>/*PRICECHECK*/
+(function(){var el=document.getElementById('pc-data'),ts=document.getElementById('pc-town'),fs=document.getElementById('pc-type'),out=document.getElementById('pc-out');if(!el||!ts||!fs||!out)return;
+var P;try{P=JSON.parse(el.textContent);}catch(e){return;}
+function k(v){return '$'+Math.round(v/1000).toLocaleString('en-SG')+'k';}
+function n(v){return v.toLocaleString('en-SG');}
+function render(){var town=ts.value,ft=fs.value,t=P.d[town];if(!t)return;var c=t.f[ft]||[null,null,null,0],fl=P.t[ft];
+var where=town==='_ALL'?'across Singapore':'in '+t.l;
+var link2=town==='_ALL'?'<a href="/towns/">Compare all 26 towns &rarr;</a>':'<a href="/towns/'+t.s+'">'+t.l+' prices in full &rarr;</a>';
+var q='?type='+P.q[ft]+(town==='_ALL'?'':'&town='+encodeURIComponent(town).replace(/%20/g,'+'));
+var h;
+if(c[0]!==null){h='<div class="pc-k">Median '+fl+' resale price '+where+'</div><div class="pc-v">$'+n(c[0])+'</div><div class="pc-r">Typical range <b>'+k(c[1])+'&ndash;'+k(c[2])+'</b> (middle 80% of sales) &middot; <b>'+n(c[3])+'</b> sales</div>';}
+else if(c[3]>0){h='<div class="pc-k">'+fl+' flats '+where+'</div><div class="pc-v">'+c[3]+' sale'+(c[3]>1?'s':'')+'</div><div class="pc-r">Too few in the last 12 months for a meaningful median - look at each sale instead.</div>';}
+else{h='<div class="pc-k">'+fl+' flats '+where+'</div><div class="pc-v">No sales</div><div class="pc-r">None changed hands in the last 12 months.</div>';}
+out.innerHTML=h+'<div class="pc-links">'+(c[3]>0?'<a href="/search'+q+'">Browse every sale since 2024 &rarr;</a>':'')+link2+'</div>';
+try{localStorage.setItem('pc',town+'|'+ft);}catch(e){}}
+try{var saved=(localStorage.getItem('pc')||'').split('|');if(saved.length===2&&P.d[saved[0]]&&P.t[saved[1]]){ts.value=saved[0];fs.value=saved[1];render();}}catch(e){}
+ts.addEventListener('change',render);fs.addEventListener('change',render);})();
 </script>
 <script>/*NAVJS*/
 (function(){document.querySelectorAll('.nav-group').forEach(function(g){var btn=g.querySelector('.nav-group-btn');if(!btn)return;function set(o){g.setAttribute('data-open',o?'true':'false');btn.setAttribute('aria-expanded',o?'true':'false');}if(window.matchMedia&&window.matchMedia('(hover:hover)').matches){g.addEventListener('mouseenter',function(){set(true);});g.addEventListener('mouseleave',function(){set(false);});}btn.addEventListener('click',function(e){e.preventDefault();set(g.getAttribute('data-open')!=='true');});document.addEventListener('click',function(e){if(!g.contains(e.target))set(false);});document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});});})();

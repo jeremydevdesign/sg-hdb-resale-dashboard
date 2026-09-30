@@ -312,6 +312,11 @@ paint();
     // town -> set of street indices present
     for(var i=0;i<d.rows.length;i++){var t=d.rows[i][1],s=d.rows[i][2];(townStreets[t]||(townStreets[t]=Object.create(null)))[s]=1;}
     buildTownOptions(); buildTypeOptions(); buildStreetOptions('');
+    // Deep links, e.g. /search?town=TAMPINES&type=4&q=296 (from the homepage price check)
+    try{var qp=new URLSearchParams(location.search),pt=(qp.get('town')||'').toUpperCase(),pi=D.towns.indexOf(pt),py=qp.get('type'),pq=qp.get('q');
+      if(pi>=0){fTown.value=String(pi);buildStreetOptions(fTown.value);}
+      if(py&&FTNAME[py])fType.value=py;
+      if(pq)fSearch.value=pq;}catch(e){}
     var mo=d.meta.updated.slice(5), yr=d.meta.updated.slice(0,4);
     $('intro').insertAdjacentHTML('beforeend',' <span style="color:var(--color-text-tertiary)">Data through '+MONTHS[mo]+' '+yr+'.</span>');
     markSort(); apply();
