@@ -210,6 +210,7 @@ thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:v
   <h1>Bukit Merah HDB Resale Prices</h1>
   <p class="standfirst">Median resale prices for HDB flats in Bukit Merah - by flat type, with the price
     trend and the near-MRT premium. Bukit Merah is a mature estate in Singapore's central region.</p>
+  <div class="watchrow"><button class="wbtn" data-watch="t:BUKIT MERAH" data-watch-label="Bukit Merah" hidden></button></div>
 
   <div class="keyfig">
     <div class="cell"><div class="n blue tnum">$790k</div><div class="l">median resale price, all flat types<br>(Oct 2025 – Sep 2026)</div></div>
@@ -265,25 +266,26 @@ thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:v
       <table>
         <thead><tr><th>Street</th><th>Resales</th><th>4-room median</th><th>4-room sales</th></tr></thead>
         <tbody>
-<tr><td>Telok Blangah St 31</td><td class="tnum">76</td><td class="tnum">$975,000</td><td class="tnum">53</td></tr>
-<tr><td>Telok Blangah Cres</td><td class="tnum">62</td><td class="tnum">$778,000</td><td class="tnum">12</td></tr>
-<tr><td>Jln Membina</td><td class="tnum">59</td><td class="tnum">$948,888</td><td class="tnum">39</td></tr>
-<tr><td>Telok Blangah Hts</td><td class="tnum">54</td><td class="tnum">$765,000</td><td class="tnum">33</td></tr>
-<tr><td>Jln Bt Merah</td><td class="tnum">52</td><td class="tnum">$728,000</td><td class="tnum">7</td></tr>
-<tr><td>Kim Tian Rd</td><td class="tnum">49</td><td class="tnum">$990,000</td><td class="tnum">29</td></tr>
+<tr><td><span class="wst"><button class="wbtn wbtn-sm" data-watch="s:BUKIT MERAH|TELOK BLANGAH ST 31" data-watch-label="Telok Blangah St 31" hidden></button><span>Telok Blangah St 31</span></span></td><td class="tnum">76</td><td class="tnum">$975,000</td><td class="tnum">53</td></tr>
+<tr><td><span class="wst"><button class="wbtn wbtn-sm" data-watch="s:BUKIT MERAH|TELOK BLANGAH CRES" data-watch-label="Telok Blangah Cres" hidden></button><span>Telok Blangah Cres</span></span></td><td class="tnum">62</td><td class="tnum">$778,000</td><td class="tnum">12</td></tr>
+<tr><td><span class="wst"><button class="wbtn wbtn-sm" data-watch="s:BUKIT MERAH|JLN MEMBINA" data-watch-label="Jln Membina" hidden></button><span>Jln Membina</span></span></td><td class="tnum">59</td><td class="tnum">$948,888</td><td class="tnum">39</td></tr>
+<tr><td><span class="wst"><button class="wbtn wbtn-sm" data-watch="s:BUKIT MERAH|TELOK BLANGAH HTS" data-watch-label="Telok Blangah Hts" hidden></button><span>Telok Blangah Hts</span></span></td><td class="tnum">54</td><td class="tnum">$765,000</td><td class="tnum">33</td></tr>
+<tr><td><span class="wst"><button class="wbtn wbtn-sm" data-watch="s:BUKIT MERAH|JLN BT MERAH" data-watch-label="Jln Bt Merah" hidden></button><span>Jln Bt Merah</span></span></td><td class="tnum">52</td><td class="tnum">$728,000</td><td class="tnum">7</td></tr>
+<tr><td><span class="wst"><button class="wbtn wbtn-sm" data-watch="s:BUKIT MERAH|KIM TIAN RD" data-watch-label="Kim Tian Rd" hidden></button><span>Kim Tian Rd</span></span></td><td class="tnum">49</td><td class="tnum">$990,000</td><td class="tnum">29</td></tr>
         </tbody>
       </table>
     </div>
     <figcaption>A street's 4-room median built on only a few sales describes those particular flats more than
-      the street, so read it alongside the sales count.</figcaption>
+      the street, so read it alongside the sales count. Star a street (or the town, at the top of the page) to see
+      its new sales on the homepage each time the data updates.</figcaption>
   </figure>
 
   <h2>Recent sales in Bukit Merah</h2>
-  <p>68 flats changed hands in Bukit Merah in September 2026 so far. Here are 10 of them, picked to show the spread across flat types and prices.</p>
+  <p>68 flats changed hands in Bukit Merah in September 2026. Here are 10 of them, picked to show the spread across flat types and prices.</p>
   <figure>
     <div class="chart">
       <div class="ct">Recent resales in Bukit Merah</div>
-      <div class="cs">September 2026 so far · actual recorded prices</div>
+      <div class="cs">September 2026 · actual recorded prices</div>
       <table class="recent">
         <thead><tr><th>Block &amp; street</th><th>Type</th><th>Price</th><th>Storey</th><th>Area</th><th>Lease left</th></tr></thead>
         <tbody>
@@ -374,5 +376,6 @@ paint();
 <script>/*NAVJS*/
 (function(){document.querySelectorAll('.nav-group').forEach(function(g){var btn=g.querySelector('.nav-group-btn');if(!btn)return;function set(o){g.setAttribute('data-open',o?'true':'false');btn.setAttribute('aria-expanded',o?'true':'false');}if(window.matchMedia&&window.matchMedia('(hover:hover)').matches){g.addEventListener('mouseenter',function(){set(true);});g.addEventListener('mouseleave',function(){set(false);});}btn.addEventListener('click',function(e){e.preventDefault();set(g.getAttribute('data-open')!=='true');});document.addEventListener('click',function(e){if(!g.contains(e.target))set(false);});document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});});})();(function(){var n=document.querySelector('.nav');if(!n)return;var t=document.getElementById('nav-toggle');if(!t)return;function set(o){n.setAttribute('data-menu-open',o?'true':'false');t.setAttribute('aria-expanded',o?'true':'false');}t.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();set(n.getAttribute('data-menu-open')!=='true');});document.addEventListener('click',function(e){if(!n.contains(e.target))set(false);});document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});n.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener('click',function(){set(false);});});})();
 </script>
+<script src="/assets/watch.js"></script>
 </body>
 </html>

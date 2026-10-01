@@ -210,6 +210,7 @@ thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:v
   <h1>Sengkang HDB Resale Prices</h1>
   <p class="standfirst">Median resale prices for HDB flats in Sengkang - by flat type, with the price
     trend and the near-MRT premium. Sengkang is a non-mature estate in Singapore's north-east region.</p>
+  <div class="watchrow"><button class="wbtn" data-watch="t:SENGKANG" data-watch-label="Sengkang" hidden></button></div>
 
   <div class="keyfig">
     <div class="cell"><div class="n blue tnum">$655k</div><div class="l">median resale price, all flat types<br>(Oct 2025 – Sep 2026)</div></div>
@@ -266,25 +267,26 @@ thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:v
       <table>
         <thead><tr><th>Street</th><th>Resales</th><th>4-room median</th><th>4-room sales</th></tr></thead>
         <tbody>
-<tr><td>Fernvale Link</td><td class="tnum">166</td><td class="tnum">$649,000</td><td class="tnum">82</td></tr>
-<tr><td>Fernvale Rd</td><td class="tnum">137</td><td class="tnum">$643,500</td><td class="tnum">94</td></tr>
-<tr><td>Rivervale Cres</td><td class="tnum">135</td><td class="tnum">$582,944</td><td class="tnum">82</td></tr>
-<tr><td>Rivervale Dr</td><td class="tnum">100</td><td class="tnum">$568,000</td><td class="tnum">27</td></tr>
-<tr><td>Anchorvale Link</td><td class="tnum">95</td><td class="tnum">$600,000</td><td class="tnum">31</td></tr>
-<tr><td>Compassvale Cres</td><td class="tnum">84</td><td class="tnum">$670,000</td><td class="tnum">52</td></tr>
+<tr><td><span class="wst"><button class="wbtn wbtn-sm" data-watch="s:SENGKANG|FERNVALE LINK" data-watch-label="Fernvale Link" hidden></button><span>Fernvale Link</span></span></td><td class="tnum">166</td><td class="tnum">$649,000</td><td class="tnum">82</td></tr>
+<tr><td><span class="wst"><button class="wbtn wbtn-sm" data-watch="s:SENGKANG|FERNVALE RD" data-watch-label="Fernvale Rd" hidden></button><span>Fernvale Rd</span></span></td><td class="tnum">137</td><td class="tnum">$643,500</td><td class="tnum">94</td></tr>
+<tr><td><span class="wst"><button class="wbtn wbtn-sm" data-watch="s:SENGKANG|RIVERVALE CRES" data-watch-label="Rivervale Cres" hidden></button><span>Rivervale Cres</span></span></td><td class="tnum">135</td><td class="tnum">$582,944</td><td class="tnum">82</td></tr>
+<tr><td><span class="wst"><button class="wbtn wbtn-sm" data-watch="s:SENGKANG|RIVERVALE DR" data-watch-label="Rivervale Dr" hidden></button><span>Rivervale Dr</span></span></td><td class="tnum">100</td><td class="tnum">$568,000</td><td class="tnum">27</td></tr>
+<tr><td><span class="wst"><button class="wbtn wbtn-sm" data-watch="s:SENGKANG|ANCHORVALE LINK" data-watch-label="Anchorvale Link" hidden></button><span>Anchorvale Link</span></span></td><td class="tnum">95</td><td class="tnum">$600,000</td><td class="tnum">31</td></tr>
+<tr><td><span class="wst"><button class="wbtn wbtn-sm" data-watch="s:SENGKANG|COMPASSVALE CRES" data-watch-label="Compassvale Cres" hidden></button><span>Compassvale Cres</span></span></td><td class="tnum">84</td><td class="tnum">$670,000</td><td class="tnum">52</td></tr>
         </tbody>
       </table>
     </div>
     <figcaption>A street's 4-room median built on only a few sales describes those particular flats more than
-      the street, so read it alongside the sales count.</figcaption>
+      the street, so read it alongside the sales count. Star a street (or the town, at the top of the page) to see
+      its new sales on the homepage each time the data updates.</figcaption>
   </figure>
 
   <h2>Recent sales in Sengkang</h2>
-  <p>146 flats changed hands in Sengkang in September 2026 so far. Here are 10 of them, picked to show the spread across flat types and prices.</p>
+  <p>146 flats changed hands in Sengkang in September 2026. Here are 10 of them, picked to show the spread across flat types and prices.</p>
   <figure>
     <div class="chart">
       <div class="ct">Recent resales in Sengkang</div>
-      <div class="cs">September 2026 so far · actual recorded prices</div>
+      <div class="cs">September 2026 · actual recorded prices</div>
       <table class="recent">
         <thead><tr><th>Block &amp; street</th><th>Type</th><th>Price</th><th>Storey</th><th>Area</th><th>Lease left</th></tr></thead>
         <tbody>
@@ -375,5 +377,6 @@ paint();
 <script>/*NAVJS*/
 (function(){document.querySelectorAll('.nav-group').forEach(function(g){var btn=g.querySelector('.nav-group-btn');if(!btn)return;function set(o){g.setAttribute('data-open',o?'true':'false');btn.setAttribute('aria-expanded',o?'true':'false');}if(window.matchMedia&&window.matchMedia('(hover:hover)').matches){g.addEventListener('mouseenter',function(){set(true);});g.addEventListener('mouseleave',function(){set(false);});}btn.addEventListener('click',function(e){e.preventDefault();set(g.getAttribute('data-open')!=='true');});document.addEventListener('click',function(e){if(!g.contains(e.target))set(false);});document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});});})();(function(){var n=document.querySelector('.nav');if(!n)return;var t=document.getElementById('nav-toggle');if(!t)return;function set(o){n.setAttribute('data-menu-open',o?'true':'false');t.setAttribute('aria-expanded',o?'true':'false');}t.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();set(n.getAttribute('data-menu-open')!=='true');});document.addEventListener('click',function(e){if(!n.contains(e.target))set(false);});document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});n.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener('click',function(){set(false);});});})();
 </script>
+<script src="/assets/watch.js"></script>
 </body>
 </html>

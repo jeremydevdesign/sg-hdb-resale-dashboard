@@ -210,6 +210,7 @@ thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:v
   <h1>Woodlands HDB Resale Prices</h1>
   <p class="standfirst">Median resale prices for HDB flats in Woodlands - by flat type, with the price
     trend and the near-MRT premium. Woodlands is a non-mature estate in Singapore's north region.</p>
+  <div class="watchrow"><button class="wbtn" data-watch="t:WOODLANDS" data-watch-label="Woodlands" hidden></button></div>
 
   <div class="keyfig">
     <div class="cell"><div class="n blue tnum">$585k</div><div class="l">median resale price, all flat types<br>(Oct 2025 – Sep 2026)</div></div>
@@ -266,25 +267,26 @@ thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:v
       <table>
         <thead><tr><th>Street</th><th>Resales</th><th>4-room median</th><th>4-room sales</th></tr></thead>
         <tbody>
-<tr><td>Woodlands St 13</td><td class="tnum">140</td><td class="tnum">$509,000</td><td class="tnum">66</td></tr>
-<tr><td>Woodlands Dr 50</td><td class="tnum">131</td><td class="tnum">$580,600</td><td class="tnum">82</td></tr>
-<tr><td>Woodlands Ring Rd</td><td class="tnum">121</td><td class="tnum">$548,000</td><td class="tnum">49</td></tr>
-<tr><td>Marsiling Dr</td><td class="tnum">113</td><td class="tnum">$435,000</td><td class="tnum">49</td></tr>
-<tr><td>Woodlands Dr 16</td><td class="tnum">112</td><td class="tnum">$588,000</td><td class="tnum">53</td></tr>
-<tr><td>Woodlands Circle</td><td class="tnum">111</td><td class="tnum">$538,000</td><td class="tnum">83</td></tr>
+<tr><td><span class="wst"><button class="wbtn wbtn-sm" data-watch="s:WOODLANDS|WOODLANDS ST 13" data-watch-label="Woodlands St 13" hidden></button><span>Woodlands St 13</span></span></td><td class="tnum">140</td><td class="tnum">$509,000</td><td class="tnum">66</td></tr>
+<tr><td><span class="wst"><button class="wbtn wbtn-sm" data-watch="s:WOODLANDS|WOODLANDS DR 50" data-watch-label="Woodlands Dr 50" hidden></button><span>Woodlands Dr 50</span></span></td><td class="tnum">131</td><td class="tnum">$580,600</td><td class="tnum">82</td></tr>
+<tr><td><span class="wst"><button class="wbtn wbtn-sm" data-watch="s:WOODLANDS|WOODLANDS RING RD" data-watch-label="Woodlands Ring Rd" hidden></button><span>Woodlands Ring Rd</span></span></td><td class="tnum">121</td><td class="tnum">$548,000</td><td class="tnum">49</td></tr>
+<tr><td><span class="wst"><button class="wbtn wbtn-sm" data-watch="s:WOODLANDS|MARSILING DR" data-watch-label="Marsiling Dr" hidden></button><span>Marsiling Dr</span></span></td><td class="tnum">113</td><td class="tnum">$435,000</td><td class="tnum">49</td></tr>
+<tr><td><span class="wst"><button class="wbtn wbtn-sm" data-watch="s:WOODLANDS|WOODLANDS DR 16" data-watch-label="Woodlands Dr 16" hidden></button><span>Woodlands Dr 16</span></span></td><td class="tnum">112</td><td class="tnum">$588,000</td><td class="tnum">53</td></tr>
+<tr><td><span class="wst"><button class="wbtn wbtn-sm" data-watch="s:WOODLANDS|WOODLANDS CIRCLE" data-watch-label="Woodlands Circle" hidden></button><span>Woodlands Circle</span></span></td><td class="tnum">111</td><td class="tnum">$538,000</td><td class="tnum">83</td></tr>
         </tbody>
       </table>
     </div>
     <figcaption>A street's 4-room median built on only a few sales describes those particular flats more than
-      the street, so read it alongside the sales count.</figcaption>
+      the street, so read it alongside the sales count. Star a street (or the town, at the top of the page) to see
+      its new sales on the homepage each time the data updates.</figcaption>
   </figure>
 
   <h2>Recent sales in Woodlands</h2>
-  <p>130 flats changed hands in Woodlands in September 2026 so far. Here are 10 of them, picked to show the spread across flat types and prices.</p>
+  <p>130 flats changed hands in Woodlands in September 2026. Here are 10 of them, picked to show the spread across flat types and prices.</p>
   <figure>
     <div class="chart">
       <div class="ct">Recent resales in Woodlands</div>
-      <div class="cs">September 2026 so far · actual recorded prices</div>
+      <div class="cs">September 2026 · actual recorded prices</div>
       <table class="recent">
         <thead><tr><th>Block &amp; street</th><th>Type</th><th>Price</th><th>Storey</th><th>Area</th><th>Lease left</th></tr></thead>
         <tbody>
@@ -375,5 +377,6 @@ paint();
 <script>/*NAVJS*/
 (function(){document.querySelectorAll('.nav-group').forEach(function(g){var btn=g.querySelector('.nav-group-btn');if(!btn)return;function set(o){g.setAttribute('data-open',o?'true':'false');btn.setAttribute('aria-expanded',o?'true':'false');}if(window.matchMedia&&window.matchMedia('(hover:hover)').matches){g.addEventListener('mouseenter',function(){set(true);});g.addEventListener('mouseleave',function(){set(false);});}btn.addEventListener('click',function(e){e.preventDefault();set(g.getAttribute('data-open')!=='true');});document.addEventListener('click',function(e){if(!g.contains(e.target))set(false);});document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});});})();(function(){var n=document.querySelector('.nav');if(!n)return;var t=document.getElementById('nav-toggle');if(!t)return;function set(o){n.setAttribute('data-menu-open',o?'true':'false');t.setAttribute('aria-expanded',o?'true':'false');}t.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();set(n.getAttribute('data-menu-open')!=='true');});document.addEventListener('click',function(e){if(!n.contains(e.target))set(false);});document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});n.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener('click',function(){set(false);});});})();
 </script>
+<script src="/assets/watch.js"></script>
 </body>
 </html>

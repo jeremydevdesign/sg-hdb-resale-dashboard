@@ -115,6 +115,8 @@ body{margin:0;background:var(--color-background-primary);color:var(--color-text-
 .btn-reset:hover{background:var(--color-background-secondary);color:var(--color-text-primary)}
 
 .meta{margin:18px 0 10px;font-size:13px;color:var(--color-text-secondary)}
+.metarow{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 16px;margin:18px 0 10px}
+.metarow .meta{margin:0}
 .meta b{color:var(--color-text-primary);font-weight:700}
 
 .tablewrap{border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);overflow-x:auto}
@@ -222,7 +224,7 @@ td.adj .sub{color:var(--color-text-tertiary);font-variant-numeric:tabular-nums}
     <button class="btn-reset" id="fReset" type="button">Reset</button>
   </div>
 
-  <div class="meta" id="meta">Loading transactions&hellip;</div>
+  <div class="metarow"><div class="meta" id="meta">Loading transactions&hellip;</div><span id="wslot"></span></div>
 
   <div class="adjbox" id="adjBox">
     <h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>About lease-adjusted psf</h2>
@@ -319,6 +321,8 @@ paint();
     // Deep links, e.g. /search?town=TAMPINES&type=4&q=296 (from the homepage price check)
     try{var qp=new URLSearchParams(location.search),pt=(qp.get('town')||'').toUpperCase(),pi=D.towns.indexOf(pt),py=qp.get('type'),pq=qp.get('q');
       if(pi>=0){fTown.value=String(pi);buildStreetOptions(fTown.value);}
+      var ps=D.streets.indexOf((qp.get('street')||'').toUpperCase());
+      if(ps>=0&&fStreet.querySelector('option[value="'+ps+'"]'))fStreet.value=String(ps);
       if(py&&FTNAME[py])fType.value=py;
       if(pq)fSearch.value=pq;}catch(e){}
     var mo=d.meta.updated.slice(5), yr=d.meta.updated.slice(0,4);
@@ -387,7 +391,17 @@ paint();
     }
     var f=SORT[sortKey];
     out.sort(function(a,b){var x=f(a),y=f(b);return (x<y?-1:x>y?1:0)*sortDir;});
-    filtered=out; page=0; render();
+    filtered=out; page=0; render(); wslot();
+  }
+
+  // Watchlist star for the chosen town, or street within it (assets/watch.js)
+  function wslot(){
+    var el=$('wslot'),tv=fTown.value,sv=fStreet.value;if(!el)return;
+    if(tv===''){el.innerHTML='';return;}
+    var key='t:'+D.towns[+tv],label=townsTitle[+tv];
+    if(sv!==''){key='s:'+D.towns[+tv]+'|'+D.streets[+sv];label=streetsTitle[+sv];}
+    el.innerHTML='<button class="wbtn" data-watch="'+esc(key)+'" data-watch-label="'+esc(label)+'" hidden></button>';
+    if(window.HDBWatch)HDBWatch.paint();
   }
 
   function render(){
@@ -451,5 +465,6 @@ paint();
   if(adjInfo&&adjBox){adjInfo.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();var open=adjBox.classList.toggle('open');adjInfo.setAttribute('aria-expanded',open?'true':'false');if(open)adjBox.scrollIntoView({behavior:'smooth',block:'nearest'});});}
 })();
 </script>
+<script src="/assets/watch.js"></script>
 </body>
 </html>

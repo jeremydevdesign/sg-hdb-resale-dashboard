@@ -210,6 +210,7 @@ thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:v
   <h1>Ang Mo Kio HDB Resale Prices</h1>
   <p class="standfirst">Median resale prices for HDB flats in Ang Mo Kio - by flat type, with the price
     trend and the near-MRT premium. Ang Mo Kio is a mature estate in Singapore's north-east region.</p>
+  <div class="watchrow"><button class="wbtn" data-watch="t:ANG MO KIO" data-watch-label="Ang Mo Kio" hidden></button></div>
 
   <div class="keyfig">
     <div class="cell"><div class="n blue tnum">$512k</div><div class="l">median resale price, all flat types<br>(Oct 2025 – Sep 2026)</div></div>
@@ -266,25 +267,26 @@ thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:v
       <table>
         <thead><tr><th>Street</th><th>Resales</th><th>4-room median</th><th>4-room sales</th></tr></thead>
         <tbody>
-<tr><td>Ang Mo Kio Ave 10</td><td class="tnum">173</td><td class="tnum">$520,000</td><td class="tnum">36</td></tr>
-<tr><td>Ang Mo Kio Ave 3</td><td class="tnum">146</td><td class="tnum">$595,000</td><td class="tnum">41</td></tr>
-<tr><td>Ang Mo Kio Ave 4</td><td class="tnum">111</td><td class="tnum">$545,000</td><td class="tnum">31</td></tr>
-<tr><td>Ang Mo Kio Ave 1</td><td class="tnum">96</td><td class="tnum">$600,000</td><td class="tnum">32</td></tr>
-<tr><td>Ang Mo Kio Ave 5</td><td class="tnum">87</td><td class="tnum">$558,000</td><td class="tnum">16</td></tr>
-<tr><td>Ang Mo Kio St 23</td><td class="tnum">73</td><td class="tnum">$1,029,000</td><td class="tnum">46</td></tr>
+<tr><td><span class="wst"><button class="wbtn wbtn-sm" data-watch="s:ANG MO KIO|ANG MO KIO AVE 10" data-watch-label="Ang Mo Kio Ave 10" hidden></button><span>Ang Mo Kio Ave 10</span></span></td><td class="tnum">173</td><td class="tnum">$520,000</td><td class="tnum">36</td></tr>
+<tr><td><span class="wst"><button class="wbtn wbtn-sm" data-watch="s:ANG MO KIO|ANG MO KIO AVE 3" data-watch-label="Ang Mo Kio Ave 3" hidden></button><span>Ang Mo Kio Ave 3</span></span></td><td class="tnum">146</td><td class="tnum">$595,000</td><td class="tnum">41</td></tr>
+<tr><td><span class="wst"><button class="wbtn wbtn-sm" data-watch="s:ANG MO KIO|ANG MO KIO AVE 4" data-watch-label="Ang Mo Kio Ave 4" hidden></button><span>Ang Mo Kio Ave 4</span></span></td><td class="tnum">111</td><td class="tnum">$545,000</td><td class="tnum">31</td></tr>
+<tr><td><span class="wst"><button class="wbtn wbtn-sm" data-watch="s:ANG MO KIO|ANG MO KIO AVE 1" data-watch-label="Ang Mo Kio Ave 1" hidden></button><span>Ang Mo Kio Ave 1</span></span></td><td class="tnum">96</td><td class="tnum">$600,000</td><td class="tnum">32</td></tr>
+<tr><td><span class="wst"><button class="wbtn wbtn-sm" data-watch="s:ANG MO KIO|ANG MO KIO AVE 5" data-watch-label="Ang Mo Kio Ave 5" hidden></button><span>Ang Mo Kio Ave 5</span></span></td><td class="tnum">87</td><td class="tnum">$558,000</td><td class="tnum">16</td></tr>
+<tr><td><span class="wst"><button class="wbtn wbtn-sm" data-watch="s:ANG MO KIO|ANG MO KIO ST 23" data-watch-label="Ang Mo Kio St 23" hidden></button><span>Ang Mo Kio St 23</span></span></td><td class="tnum">73</td><td class="tnum">$1,029,000</td><td class="tnum">46</td></tr>
         </tbody>
       </table>
     </div>
     <figcaption>A street's 4-room median built on only a few sales describes those particular flats more than
-      the street, so read it alongside the sales count.</figcaption>
+      the street, so read it alongside the sales count. Star a street (or the town, at the top of the page) to see
+      its new sales on the homepage each time the data updates.</figcaption>
   </figure>
 
   <h2>Recent sales in Ang Mo Kio</h2>
-  <p>71 flats changed hands in Ang Mo Kio in September 2026 so far. Here are 10 of them, picked to show the spread across flat types and prices.</p>
+  <p>71 flats changed hands in Ang Mo Kio in September 2026. Here are 10 of them, picked to show the spread across flat types and prices.</p>
   <figure>
     <div class="chart">
       <div class="ct">Recent resales in Ang Mo Kio</div>
-      <div class="cs">September 2026 so far · actual recorded prices</div>
+      <div class="cs">September 2026 · actual recorded prices</div>
       <table class="recent">
         <thead><tr><th>Block &amp; street</th><th>Type</th><th>Price</th><th>Storey</th><th>Area</th><th>Lease left</th></tr></thead>
         <tbody>
@@ -375,5 +377,6 @@ paint();
 <script>/*NAVJS*/
 (function(){document.querySelectorAll('.nav-group').forEach(function(g){var btn=g.querySelector('.nav-group-btn');if(!btn)return;function set(o){g.setAttribute('data-open',o?'true':'false');btn.setAttribute('aria-expanded',o?'true':'false');}if(window.matchMedia&&window.matchMedia('(hover:hover)').matches){g.addEventListener('mouseenter',function(){set(true);});g.addEventListener('mouseleave',function(){set(false);});}btn.addEventListener('click',function(e){e.preventDefault();set(g.getAttribute('data-open')!=='true');});document.addEventListener('click',function(e){if(!g.contains(e.target))set(false);});document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});});})();(function(){var n=document.querySelector('.nav');if(!n)return;var t=document.getElementById('nav-toggle');if(!t)return;function set(o){n.setAttribute('data-menu-open',o?'true':'false');t.setAttribute('aria-expanded',o?'true':'false');}t.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();set(n.getAttribute('data-menu-open')!=='true');});document.addEventListener('click',function(e){if(!n.contains(e.target))set(false);});document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});n.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener('click',function(){set(false);});});})();
 </script>
+<script src="/assets/watch.js"></script>
 </body>
 </html>

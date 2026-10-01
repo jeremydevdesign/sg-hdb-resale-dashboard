@@ -210,6 +210,7 @@ thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:v
   <h1>Bukit Timah HDB Resale Prices</h1>
   <p class="standfirst">Median resale prices for HDB flats in Bukit Timah - by flat type, with the price
     trend and the near-MRT premium. Bukit Timah is a mature estate in Singapore's central region.</p>
+  <div class="watchrow"><button class="wbtn" data-watch="t:BUKIT TIMAH" data-watch-label="Bukit Timah" hidden></button></div>
 
   <div class="keyfig">
     <div class="cell"><div class="n blue tnum">$1,010k</div><div class="l">median resale price, all flat types<br>(Oct 2025 – Sep 2026)</div></div>
@@ -265,23 +266,24 @@ thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:v
       <table>
         <thead><tr><th>Street</th><th>Resales</th><th>4-room median</th><th>4-room sales</th></tr></thead>
         <tbody>
-<tr><td>Toh Yi Dr</td><td class="tnum">41</td><td class="tnum">$938,000</td><td class="tnum">15</td></tr>
-<tr><td>Queen&#x27;s Rd</td><td class="tnum">9</td><td class="tnum">$680,000</td><td class="tnum">1</td></tr>
-<tr><td>Empress Rd</td><td class="tnum">4</td><td class="tnum">&ndash;</td><td class="tnum">0</td></tr>
-<tr><td>Farrer Rd</td><td class="tnum">4</td><td class="tnum">&ndash;</td><td class="tnum">0</td></tr>
+<tr><td><span class="wst"><button class="wbtn wbtn-sm" data-watch="s:BUKIT TIMAH|TOH YI DR" data-watch-label="Toh Yi Dr" hidden></button><span>Toh Yi Dr</span></span></td><td class="tnum">41</td><td class="tnum">$938,000</td><td class="tnum">15</td></tr>
+<tr><td><span class="wst"><button class="wbtn wbtn-sm" data-watch="s:BUKIT TIMAH|QUEEN&#x27;S RD" data-watch-label="Queen&#x27;s Rd" hidden></button><span>Queen&#x27;s Rd</span></span></td><td class="tnum">9</td><td class="tnum">$680,000</td><td class="tnum">1</td></tr>
+<tr><td><span class="wst"><button class="wbtn wbtn-sm" data-watch="s:BUKIT TIMAH|EMPRESS RD" data-watch-label="Empress Rd" hidden></button><span>Empress Rd</span></span></td><td class="tnum">4</td><td class="tnum">&ndash;</td><td class="tnum">0</td></tr>
+<tr><td><span class="wst"><button class="wbtn wbtn-sm" data-watch="s:BUKIT TIMAH|FARRER RD" data-watch-label="Farrer Rd" hidden></button><span>Farrer Rd</span></span></td><td class="tnum">4</td><td class="tnum">&ndash;</td><td class="tnum">0</td></tr>
         </tbody>
       </table>
     </div>
     <figcaption>A street's 4-room median built on only a few sales describes those particular flats more than
-      the street, so read it alongside the sales count.</figcaption>
+      the street, so read it alongside the sales count. Star a street (or the town, at the top of the page) to see
+      its new sales on the homepage each time the data updates.</figcaption>
   </figure>
 
   <h2>Recent sales in Bukit Timah</h2>
-  <p>12 flats changed hands in Bukit Timah in August and September 2026 so far. Here are 10 of them, picked to show the spread across flat types and prices.</p>
+  <p>12 flats changed hands in Bukit Timah in August and September 2026. Here are 10 of them, picked to show the spread across flat types and prices.</p>
   <figure>
     <div class="chart">
       <div class="ct">Recent resales in Bukit Timah</div>
-      <div class="cs">August and September 2026 so far · actual recorded prices</div>
+      <div class="cs">August and September 2026 · actual recorded prices</div>
       <table class="recent">
         <thead><tr><th>Block &amp; street</th><th>Type</th><th>Price</th><th>Month</th><th>Storey</th><th>Area</th><th>Lease left</th></tr></thead>
         <tbody>
@@ -371,5 +373,6 @@ paint();
 <script>/*NAVJS*/
 (function(){document.querySelectorAll('.nav-group').forEach(function(g){var btn=g.querySelector('.nav-group-btn');if(!btn)return;function set(o){g.setAttribute('data-open',o?'true':'false');btn.setAttribute('aria-expanded',o?'true':'false');}if(window.matchMedia&&window.matchMedia('(hover:hover)').matches){g.addEventListener('mouseenter',function(){set(true);});g.addEventListener('mouseleave',function(){set(false);});}btn.addEventListener('click',function(e){e.preventDefault();set(g.getAttribute('data-open')!=='true');});document.addEventListener('click',function(e){if(!g.contains(e.target))set(false);});document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});});})();(function(){var n=document.querySelector('.nav');if(!n)return;var t=document.getElementById('nav-toggle');if(!t)return;function set(o){n.setAttribute('data-menu-open',o?'true':'false');t.setAttribute('aria-expanded',o?'true':'false');}t.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();set(n.getAttribute('data-menu-open')!=='true');});document.addEventListener('click',function(e){if(!n.contains(e.target))set(false);});document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});n.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener('click',function(){set(false);});});})();
 </script>
+<script src="/assets/watch.js"></script>
 </body>
 </html>

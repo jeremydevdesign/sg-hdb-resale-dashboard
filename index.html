@@ -125,6 +125,7 @@ a.pstat:hover .pk{color:var(--color-text-info)}
 .pc-links{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:14px}
 .pc-links a{font-size:14px;font-weight:600;color:var(--color-text-info);text-decoration:none}
 .pc-links a:hover{text-decoration:underline}
+.pc-links .wbtn{margin:-5px 0}
 @media(max-width:600px){.pc{padding:18px 16px 20px}.pc-form{grid-template-columns:1fr 1fr;gap:10px}.pc-v{font-size:34px}}
 .pulse-live{display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--color-text-primary)}
 .pulse-stat{color:var(--color-text-secondary)}
@@ -152,7 +153,7 @@ a.pstat:hover .pk{color:var(--color-text-info)}
 @media(max-width:340px){.pulse-grid{grid-template-columns:1fr}.pstat{border-right:none;border-bottom:1px solid var(--color-border-secondary)}.pstat:last-child{border-bottom:none}}
 
 .section-label{font-size:12px;font-weight:640;letter-spacing:.06em;text-transform:uppercase;color:var(--color-text-tertiary);margin:0 0 16px}
-#roadmap{scroll-margin-top:72px}
+#roadmap,#watchlist{scroll-margin-top:72px}
 .roadmap-intro{font-size:15px;line-height:1.6;color:var(--color-text-secondary);margin:0 0 18px;max-width:60ch}
 .roadmap{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:16px;align-items:stretch}
 @media(max-width:720px){.roadmap{grid-template-columns:1fr}}
@@ -232,6 +233,8 @@ a.card:hover{border-color:var(--color-text-info);transform:translateY(-2px)}
 <p class="hero-lede">Check what flats really sell for, then work through the seven-step roadmap below. Every figure is an official resale record since 2012, refreshed weekly - nothing modelled or estimated.</p>
 </section>
 
+<section class="wl" id="watchlist" aria-label="Your watchlist" hidden></section>
+
 <section class="pc" aria-label="Check a resale price">
 <!--PRICECHECK:START-->
 <div class="pc-head"><h2 class="pc-title">What do flats actually sell for?</h2><p class="pc-win">Real resale prices, Oct 2025 &ndash; Sep 2026</p></div>
@@ -243,10 +246,10 @@ a.card:hover{border-color:var(--color-text-info);transform:translateY(-2px)}
 
 <section class="pulse-card" aria-label="Latest market snapshot">
 <!--PULSE:START-->
-<div class="pulse-head"><span class="pulse-dot"></span><span><strong>September 2026</strong> so far - refreshed weekly from data.gov.sg</span><a class="pulse-cta" href="/this-month">See what moved &rarr;</a></div>
+<div class="pulse-head"><span class="pulse-dot"></span><span>latest data <strong>September 2026</strong> refreshed weekly from data.gov.sg</span><a class="pulse-cta" href="/this-month">See what moved &rarr;</a></div>
 <div class="pulse-grid">
-<div class="pstat"><div class="pk">Median resale price</div><div class="pv">$650,000</div><div class="ps">2,020 sales so far in September</div></div>
-<div class="pstat"><div class="pk">Year on year</div><div class="pv pulse-up">+0.8%</div><div class="ps">vs September 2025 - provisional so far</div></div>
+<div class="pstat"><div class="pk">Median resale price</div><div class="pv">$650,000</div><div class="ps">across 2,020 sales in September</div></div>
+<div class="pstat"><div class="pk">Year on year</div><div class="pv pulse-up">+0.8%</div><div class="ps">median vs September 2025 - essentially flat</div></div>
 <a class="pstat" href="/million-dollar-flats"><div class="pk">Million-dollar sales</div><div class="pv">1,476</div><div class="ps">so far in 2026 (1,593 in 2025)</div></a>
 <div class="pstat"><div class="pk">Resales on record</div><div class="pv">330,840</div><div class="ps">every sale since 2012</div></div>
 </div>
@@ -359,7 +362,9 @@ var h;
 if(c[0]!==null){h='<div class="pc-k">Median '+fl+' resale price '+where+'</div><div class="pc-v">$'+n(c[0])+'</div><div class="pc-r">Typical range <b>'+k(c[1])+'&ndash;'+k(c[2])+'</b> (middle 80% of sales) &middot; <b>'+n(c[3])+'</b> sales</div>';}
 else if(c[3]>0){h='<div class="pc-k">'+fl+' flats '+where+'</div><div class="pc-v">'+c[3]+' sale'+(c[3]>1?'s':'')+'</div><div class="pc-r">Too few in the last 12 months for a meaningful median - look at each sale instead.</div>';}
 else{h='<div class="pc-k">'+fl+' flats '+where+'</div><div class="pc-v">No sales</div><div class="pc-r">None changed hands in the last 12 months.</div>';}
-out.innerHTML=h+'<div class="pc-links">'+(c[3]>0?'<a href="/search'+q+'">Browse every sale since 2024 &rarr;</a>':'')+link2+'</div>';
+var wb=town==='_ALL'?'':'<button class="wbtn" data-watch="t:'+town+'" data-watch-label="'+t.l+'" hidden></button>';
+out.innerHTML=h+'<div class="pc-links">'+(c[3]>0?'<a href="/search'+q+'">Browse every sale since 2024 &rarr;</a>':'')+link2+wb+'</div>';
+if(window.HDBWatch)HDBWatch.paint();
 try{localStorage.setItem('pc',town+'|'+ft);}catch(e){}}
 try{var saved=(localStorage.getItem('pc')||'').split('|');if(saved.length===2&&P.d[saved[0]]&&P.t[saved[1]]){ts.value=saved[0];fs.value=saved[1];render();}}catch(e){}
 ts.addEventListener('change',render);fs.addEventListener('change',render);})();
@@ -368,5 +373,6 @@ ts.addEventListener('change',render);fs.addEventListener('change',render);})();
 (function(){document.querySelectorAll('.nav-group').forEach(function(g){var btn=g.querySelector('.nav-group-btn');if(!btn)return;function set(o){g.setAttribute('data-open',o?'true':'false');btn.setAttribute('aria-expanded',o?'true':'false');}if(window.matchMedia&&window.matchMedia('(hover:hover)').matches){g.addEventListener('mouseenter',function(){set(true);});g.addEventListener('mouseleave',function(){set(false);});}btn.addEventListener('click',function(e){e.preventDefault();set(g.getAttribute('data-open')!=='true');});document.addEventListener('click',function(e){if(!g.contains(e.target))set(false);});document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});});})();
 (function(){var n=document.querySelector('.nav');if(!n)return;var t=document.getElementById('nav-toggle');if(!t)return;function set(o){n.setAttribute('data-menu-open',o?'true':'false');t.setAttribute('aria-expanded',o?'true':'false');}t.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();set(n.getAttribute('data-menu-open')!=='true');});document.addEventListener('click',function(e){if(!n.contains(e.target))set(false);});document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});n.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener('click',function(){set(false);});});})();
 </script>
+<script src="/assets/watch.js"></script>
 </body>
 </html>

@@ -210,6 +210,7 @@ thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:v
   <h1>Kallang/Whampoa HDB Resale Prices</h1>
   <p class="standfirst">Median resale prices for HDB flats in Kallang/Whampoa - by flat type, with the price
     trend and the near-MRT premium. Kallang/Whampoa is a mature estate in Singapore's central region.</p>
+  <div class="watchrow"><button class="wbtn" data-watch="t:KALLANG/WHAMPOA" data-watch-label="Kallang/Whampoa" hidden></button></div>
 
   <div class="keyfig">
     <div class="cell"><div class="n blue tnum">$729k</div><div class="l">median resale price, all flat types<br>(Oct 2025 – Sep 2026)</div></div>
@@ -266,25 +267,26 @@ thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:v
       <table>
         <thead><tr><th>Street</th><th>Resales</th><th>4-room median</th><th>4-room sales</th></tr></thead>
         <tbody>
-<tr><td>Bendemeer Rd</td><td class="tnum">81</td><td class="tnum">$980,000</td><td class="tnum">33</td></tr>
-<tr><td>Mcnair Rd</td><td class="tnum">68</td><td class="tnum">$970,000</td><td class="tnum">43</td></tr>
-<tr><td>Upp Boon Keng Rd</td><td class="tnum">68</td><td class="tnum">$932,500</td><td class="tnum">34</td></tr>
-<tr><td>St. George&#x27;s Lane</td><td class="tnum">58</td><td class="tnum">$1,120,000</td><td class="tnum">39</td></tr>
-<tr><td>Geylang Bahru</td><td class="tnum">53</td><td class="tnum">$825,000</td><td class="tnum">5</td></tr>
-<tr><td>Whampoa Dr</td><td class="tnum">47</td><td class="tnum">$500,000</td><td class="tnum">14</td></tr>
+<tr><td><span class="wst"><button class="wbtn wbtn-sm" data-watch="s:KALLANG/WHAMPOA|BENDEMEER RD" data-watch-label="Bendemeer Rd" hidden></button><span>Bendemeer Rd</span></span></td><td class="tnum">81</td><td class="tnum">$980,000</td><td class="tnum">33</td></tr>
+<tr><td><span class="wst"><button class="wbtn wbtn-sm" data-watch="s:KALLANG/WHAMPOA|MCNAIR RD" data-watch-label="Mcnair Rd" hidden></button><span>Mcnair Rd</span></span></td><td class="tnum">68</td><td class="tnum">$970,000</td><td class="tnum">43</td></tr>
+<tr><td><span class="wst"><button class="wbtn wbtn-sm" data-watch="s:KALLANG/WHAMPOA|UPP BOON KENG RD" data-watch-label="Upp Boon Keng Rd" hidden></button><span>Upp Boon Keng Rd</span></span></td><td class="tnum">68</td><td class="tnum">$932,500</td><td class="tnum">34</td></tr>
+<tr><td><span class="wst"><button class="wbtn wbtn-sm" data-watch="s:KALLANG/WHAMPOA|ST. GEORGE&#x27;S LANE" data-watch-label="St. George&#x27;s Lane" hidden></button><span>St. George&#x27;s Lane</span></span></td><td class="tnum">58</td><td class="tnum">$1,120,000</td><td class="tnum">39</td></tr>
+<tr><td><span class="wst"><button class="wbtn wbtn-sm" data-watch="s:KALLANG/WHAMPOA|GEYLANG BAHRU" data-watch-label="Geylang Bahru" hidden></button><span>Geylang Bahru</span></span></td><td class="tnum">53</td><td class="tnum">$825,000</td><td class="tnum">5</td></tr>
+<tr><td><span class="wst"><button class="wbtn wbtn-sm" data-watch="s:KALLANG/WHAMPOA|WHAMPOA DR" data-watch-label="Whampoa Dr" hidden></button><span>Whampoa Dr</span></span></td><td class="tnum">47</td><td class="tnum">$500,000</td><td class="tnum">14</td></tr>
         </tbody>
       </table>
     </div>
     <figcaption>A street's 4-room median built on only a few sales describes those particular flats more than
-      the street, so read it alongside the sales count.</figcaption>
+      the street, so read it alongside the sales count. Star a street (or the town, at the top of the page) to see
+      its new sales on the homepage each time the data updates.</figcaption>
   </figure>
 
   <h2>Recent sales in Kallang/Whampoa</h2>
-  <p>74 flats changed hands in Kallang/Whampoa in September 2026 so far. Here are 10 of them, picked to show the spread across flat types and prices.</p>
+  <p>74 flats changed hands in Kallang/Whampoa in September 2026. Here are 10 of them, picked to show the spread across flat types and prices.</p>
   <figure>
     <div class="chart">
       <div class="ct">Recent resales in Kallang/Whampoa</div>
-      <div class="cs">September 2026 so far · actual recorded prices</div>
+      <div class="cs">September 2026 · actual recorded prices</div>
       <table class="recent">
         <thead><tr><th>Block &amp; street</th><th>Type</th><th>Price</th><th>Storey</th><th>Area</th><th>Lease left</th></tr></thead>
         <tbody>
@@ -375,5 +377,6 @@ paint();
 <script>/*NAVJS*/
 (function(){document.querySelectorAll('.nav-group').forEach(function(g){var btn=g.querySelector('.nav-group-btn');if(!btn)return;function set(o){g.setAttribute('data-open',o?'true':'false');btn.setAttribute('aria-expanded',o?'true':'false');}if(window.matchMedia&&window.matchMedia('(hover:hover)').matches){g.addEventListener('mouseenter',function(){set(true);});g.addEventListener('mouseleave',function(){set(false);});}btn.addEventListener('click',function(e){e.preventDefault();set(g.getAttribute('data-open')!=='true');});document.addEventListener('click',function(e){if(!g.contains(e.target))set(false);});document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});});})();(function(){var n=document.querySelector('.nav');if(!n)return;var t=document.getElementById('nav-toggle');if(!t)return;function set(o){n.setAttribute('data-menu-open',o?'true':'false');t.setAttribute('aria-expanded',o?'true':'false');}t.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();set(n.getAttribute('data-menu-open')!=='true');});document.addEventListener('click',function(e){if(!n.contains(e.target))set(false);});document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});n.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener('click',function(){set(false);});});})();
 </script>
+<script src="/assets/watch.js"></script>
 </body>
 </html>
