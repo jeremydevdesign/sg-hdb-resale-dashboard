@@ -212,6 +212,7 @@ thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:v
 .field input:focus{outline:2px solid var(--color-text-info);outline-offset:-1px}
 .seg{display:inline-flex;border:1px solid var(--color-border-primary);border-radius:var(--border-radius-md);overflow:hidden;font-family:var(--font-sans)}
 .seg button{font-family:inherit;font-size:14px;font-weight:600;padding:9px 16px;border:0;background:var(--color-background-primary);color:var(--color-text-secondary);cursor:pointer}
+.cta .t h2{margin:0;font-family:var(--font-sans);font-size:18px;font-weight:700;letter-spacing:-0.01em}  /* h2 so headings run h1 -> h2 */
 .seg button.on{background:var(--color-text-primary);color:var(--color-background-primary)}
 .result{margin-top:26px;border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-secondary);padding:24px 26px}
 .result .big{font-family:var(--font-sans);font-size:13px;font-weight:600;color:var(--color-text-secondary);margin:0}
@@ -265,9 +266,9 @@ thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:v
 </details>
 </div>
 
-  <div class="seg" role="tablist" aria-label="Loan type" style="margin-top:24px">
-    <button type="button" id="seg-hdb" class="on" onclick="setLoan('hdb')">HDB loan</button>
-    <button type="button" id="seg-bank" onclick="setLoan('bank')">Bank loan</button>
+  <div class="seg" role="group" aria-label="Loan type" style="margin-top:24px">
+    <button type="button" id="seg-hdb" class="on" aria-pressed="true" onclick="setLoan('hdb')">HDB loan</button>
+    <button type="button" id="seg-bank" aria-pressed="false" onclick="setLoan('bank')">Bank loan</button>
   </div>
 
   <div class="calcgrid">
@@ -316,7 +317,7 @@ thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:v
 
   <div class="cta" style="margin-top:34px">
     <div class="t">
-      <h3>Now see what those towns actually sell for</h3>
+      <h2>Now see what those towns actually sell for</h2>
       <p>Your budget above is matched to each town's current 4-room median. Open a town for its full
         breakdown, or set the same budget in Find a Flat to browse real recent sales.</p>
     </div>
@@ -330,7 +331,7 @@ thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:v
     <p><b>Bank loan:</b> qualified at the <code>4%</code> stress rate against both the MSR (<code>30%</code>) and the Total Debt Servicing Ratio (all debts &le; <code>55%</code> of income), up to <code>75%</code> loan-to-value with a minimum <code>5%</code> cash downpayment, tenure up to 30 years. Tenure is also capped so the loan ends by age 65.</p>
     <p>The maximum price is the lower of what your income supports and what your cash + CPF can cover as downpayment. The illustrative monthly instalment uses 2.6% (HDB) or your assumed rate (bank). Town budget-match uses each town's median 4-room resale price over the latest 12 months (through September 2026); a median means about half of recent 4-room sales were below it.</p>
     <p>Figures are estimates, not an offer of credit or financial advice. Data: data.gov.sg.</p>
-    <p class="rev">Rules last reviewed 2026-09-30.</p>
+    <p class="rev">Rules last reviewed 2026-08-14.</p>
   </aside>
 
   <p class="morelink"><a href="/loan-calculator">HDB loan calculator: monthly repayment →</a> &nbsp;&middot;&nbsp;
@@ -352,6 +353,8 @@ function setLoan(t){
   loanType = t;
   document.getElementById('seg-hdb').classList.toggle('on', t==='hdb');
   document.getElementById('seg-bank').classList.toggle('on', t==='bank');
+  document.getElementById('seg-hdb').setAttribute('aria-pressed', t==='hdb' ? 'true' : 'false');
+  document.getElementById('seg-bank').setAttribute('aria-pressed', t==='bank' ? 'true' : 'false');
   document.getElementById('rate-field').style.display = (t==='bank') ? 'flex' : 'none';
   calc();
 }

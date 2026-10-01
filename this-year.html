@@ -178,7 +178,7 @@ table.heat td.tn{text-align:left;padding:8px 10px;color:var(--color-text-primary
 .cell .n{font-size:10px;color:var(--color-text-tertiary);letter-spacing:.02em}
 /* a filled (statistically solid) cell carries dark ink on its colour wash */
 .cell.fill .p{color:#1a1a1a;font-weight:500}
-.cell.fill .m{color:#1a1a1a}
+.cell.fill .m{color:#1a1a1a;opacity:.9}  /* .75 fell to 3.9:1 on the orange end; .9 keeps >= 5:1 */
 /* thin + empty cells get no wash, so they can never read as solid */
 .cell.thin{background:transparent!important;border:1px dashed var(--color-border-secondary);border-radius:6px;margin:3px}
 .cell.thin .p{color:var(--color-text-secondary);font-weight:400}
