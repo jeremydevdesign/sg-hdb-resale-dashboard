@@ -28,6 +28,10 @@ function title(s){return s.toLowerCase().replace(/(^|[\s\/\-])\w/g,function(c){r
 function k$(v){return '$'+Math.round(v/1000).toLocaleString('en-SG')+'k';}
 function n$(v){return v.toLocaleString('en-SG');}
 
+// GoatCounter event (anonymous: which place, never who). count.js loads async, so retry briefly.
+function gc(path,title,tries){tries=tries||0;try{if(window.goatcounter&&window.goatcounter.count){window.goatcounter.count({path:path,title:title||path,event:true});return;}}catch(e){return;}
+  if(tries<10)setTimeout(function(){gc(path,title,tries+1);},1000);}
+
 var dataP=null;
 function data(){if(!dataP)dataP=fetch(DATA).then(function(r){if(!r.ok)throw 0;return r.json();}).catch(function(){dataP=null;return null;});return dataP;}
 function entry(D,k){
@@ -97,13 +101,14 @@ function add(k,l){
   var s=read();if(find(s,k)>=0)return;
   if(s.items.length>=MAX){toast('Your watchlist is full ('+MAX+' places). Remove one on the <a href="/#watchlist">homepage</a> first.');return;}
   s.items.push({k:k,l:l});write(s);changed();
+  gc('watch-add-'+(k.charAt(0)==='t'?'town':'street'),l);
   var home=!!document.getElementById('watchlist');
   toast('Watching '+esc(l)+'. New sales will show on '+(home?'your watchlist above.':'the homepage. <a href="/#watchlist">View</a>'));
   // record the starting count, so the first refresh after this shows what's new
   data().then(function(D){var e=entry(D,k);if(!e)return;var s2=read(),i=find(s2,k);if(i<0||s2.items[i].b!=null)return;
     s2.items[i].b=e.c;s2.items[i].bv=D.v;s2.items[i].bt=today();write(s2);});
 }
-function remove(k){var s=read(),i=find(s,k);if(i<0)return;s.items.splice(i,1);write(s);changed();}
+function remove(k){var s=read(),i=find(s,k);if(i<0)return;var l=s.items[i].l||k;s.items.splice(i,1);write(s);changed();gc('watch-remove',l);}
 
 document.addEventListener('click',function(e){
   var b=e.target.closest&&e.target.closest('[data-watch]');
@@ -113,7 +118,7 @@ document.addEventListener('click',function(e){
 });
 
 /* ---- homepage panel ---- */
-var panel=document.getElementById('watchlist');
+var panel=document.getElementById('watchlist'),viewed=false;
 function render(){
   if(!panel)return;
   var s=read();
@@ -142,6 +147,9 @@ function render(){
         '<div class="wl-act"><a class="wl-go" href="'+go+'">See sales &rarr;</a><button type="button" class="wl-x" data-unwatch="'+esc(it.k)+'" aria-label="Stop watching '+esc(name)+'" title="Stop watching">&times;</button></div></div>';
     }
     if(dirty)write(s);
+    // once per page load: how many places, and whether any had new sales to show
+    if(!viewed){viewed=true;var withNew=0;for(var j=0;j<s.items.length;j++)if(s.items[j].n>0)withNew++;
+      gc('watchlist-view',s.items.length+' place'+(s.items.length===1?'':'s')+(withNew?', '+withNew+' with new sales':''));}
     var m=D.m.split('-');
     panel.innerHTML='<div class="wl-head"><h2 class="wl-title">'+STAR+'Your watchlist</h2><p class="wl-sub">Data through '+MON[+m[1]-1]+' '+m[0]+' &middot; refreshed weekly</p></div>'+rows+
       '<p class="wl-note">"New" counts sales added to the official record since you last looked, and updates when the data does (weekly). Sales are dated only by month, so some may be from the month before. Your list is saved in this browser only - no account needed.</p>';
