@@ -29,7 +29,10 @@
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16.png">
-<link rel="stylesheet" href="/assets/maplibre-gl.css">
+<link rel="preconnect" href="https://www.onemap.gov.sg" crossorigin>
+<link rel="preload" href="/assets/maplibre-gl.js" as="script">
+<link rel="stylesheet" href="/assets/maplibre-gl.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="/assets/maplibre-gl.css"></noscript>
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6257747517291345" crossorigin="anonymous"></script>
 <title>Singapore HDB resale price map - SG HDB Resale</title>
@@ -174,6 +177,7 @@ select.filter{font-family:inherit;font-size:13.5px;padding:8px 30px 8px 12px;bor
 .footer-nav a{font-size:13px;color:var(--color-text-secondary);text-decoration:none;display:inline-block;padding:5px 2px}
 .footer-nav a:hover{color:var(--color-text-primary)}
 .footer-note{font-size:12px;color:var(--color-text-tertiary)}
+/*A11Y*/.method p a{text-decoration:underline;text-underline-offset:2px}
 </style>
 </head>
 <body>
@@ -234,9 +238,9 @@ select.filter{font-family:inherit;font-size:13.5px;padding:8px 30px 8px 12px;bor
   <span class="footer-note">Data: data.gov.sg &amp; OneMap</span>
 </div></footer>
 
-<script src="/assets/maplibre-gl.js"></script>
+<script src="/assets/maplibre-gl.js" defer></script>
 <script>
-(function(){
+document.addEventListener('DOMContentLoaded', function(){
   var YlOrRd = ['#ffffb2','#fed976','#feb24c','#fd8d3c','#f03b20','#bd0026'];
   var metric = 'psf';                 // 'psf' | 'price'
   var townFilter = '';
@@ -413,7 +417,7 @@ select.filter{font-family:inherit;font-size:13.5px;padding:8px 30px 8px 12px;bor
   var themeBtn=document.getElementById('theme-toggle');
   if(themeBtn){ themeBtn.addEventListener('click', function(){ setTimeout(setBase,0); }); }
   if(window.matchMedia){ try{ window.matchMedia('(prefers-color-scheme:dark)').addEventListener('change', function(){ setTimeout(setBase,0); }); }catch(e){} }
-})();
+});
 </script>
 
 <script>window.goatcounter={no_onload:location.hostname==='localhost'};</script>

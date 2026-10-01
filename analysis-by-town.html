@@ -201,6 +201,7 @@ svg text{font-family:var(--font-sans)}
 .about-data b{color:var(--color-text-secondary);font-weight:600}
 .about-data a{color:var(--color-text-info);text-decoration:none}
 .about-data a:hover{text-decoration:underline}
+/*A11Y*/.about-data a{text-decoration:underline;text-underline-offset:2px}.cmp-hint a{color:var(--color-text-info);text-decoration:underline;text-underline-offset:2px}
 </style>
 </head>
 <body>
@@ -357,7 +358,7 @@ function scopeChip(){return FT_LABELS[activeFT]+' \u00b7 '+(activeTown==='ALL'?'
 // ---- slider ----
 function initSlider(){
   const wrap=document.getElementById('rw'),fill=document.getElementById('rf'),tl=document.getElementById('tl'),tr=document.getElementById('tr');
-  function upd(){const lp=((yL-MINY)/RG*100),rp=((yR-MINY)/RG*100);tl.style.left=`calc(${lp}% - 8px)`;tr.style.left=`calc(${rp}% - 8px)`;fill.style.left=lp+'%';fill.style.width=(rp-lp)+'%';document.getElementById('rdsp').textContent=yL===yR?String(yL):yL+' – '+yR;
+  function upd(){const lp=((yL-MINY)/RG*100),rp=((yR-MINY)/RG*100);tl.style.left=`calc(${lp}% - 8px)`;tr.style.left=`calc(${rp}% - 8px)`;[[tl,yL],[tr,yR]].forEach(function(t){t[0].setAttribute('aria-valuemin',MINY);t[0].setAttribute('aria-valuemax',MAXY);t[0].setAttribute('aria-valuenow',t[1]);});fill.style.left=lp+'%';fill.style.width=(rp-lp)+'%';document.getElementById('rdsp').textContent=yL===yR?String(yL):yL+' – '+yR;
     // when stacked, lift the handle that still has room to move so it's clickable
     if(yL===yR){if(yR>=MAXY){tl.style.zIndex=3;tr.style.zIndex=2;}else{tr.style.zIndex=3;tl.style.zIndex=2;}}else{tl.style.zIndex=2;tr.style.zIndex=2;}}
   function yearAt(e){const r=wrap.getBoundingClientRect();const x=Math.max(0,Math.min(1,(e.clientX-r.left)/r.width));return Math.round(MINY+x*RG);}

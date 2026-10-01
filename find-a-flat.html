@@ -218,6 +218,7 @@ input[type=range]{accent-color:#1D9E75}
 .about-data b{color:var(--color-text-secondary);font-weight:600}
 .about-data a{color:var(--color-text-info);text-decoration:none}
 .about-data a:hover{text-decoration:underline}
+/*A11Y*/.about-data a{text-decoration:underline;text-underline-offset:2px}
 </style>
 </head>
 <body>
@@ -243,7 +244,7 @@ input[type=range]{accent-color:#1D9E75}
 
 <div class="budget-block">
   <div class="budget-top"><span class="budget-lbl">My budget</span><span class="budget-val" id="budget-val">$600K</span></div>
-  <input type="range" id="budget" min="300000" max="1500000" step="10000" value="600000" style="width:100%">
+  <input type="range" id="budget" aria-label="My budget" min="300000" max="1500000" step="10000" value="600000" style="width:100%">
 </div>
 
 <div class="fbar"><span class="flbl">Flat type</span>
@@ -259,7 +260,7 @@ input[type=range]{accent-color:#1D9E75}
   <button class="pill on" data-mrt="ANY" onclick="setMrt(this)">Any</button>
 </div>
 <div class="fbar"><span class="flbl">Min lease</span>
-  <div class="lease-row"><input type="range" id="lease" min="40" max="90" step="5" value="40" style="flex:1"><span class="lease-val" id="lease-val">Any remaining</span></div>
+  <div class="lease-row"><input type="range" id="lease" aria-label="Minimum remaining lease" min="40" max="90" step="5" value="40" style="flex:1"><span class="lease-val" id="lease-val">Any remaining</span></div>
 </div>
 <div class="fbar"><span class="flbl">Recent sales</span>
   <button class="pill" data-win="3" onclick="setWindow(this)">3 months</button>

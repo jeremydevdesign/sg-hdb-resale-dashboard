@@ -224,6 +224,7 @@ table.heat td.tn{text-align:left;padding:8px 10px;color:var(--color-text-primary
 .about-data b{color:var(--color-text-secondary);font-weight:600}
 .about-data a{color:var(--color-text-info);text-decoration:none}
 .about-data a:hover{text-decoration:underline}
+/*A11Y*/.about-data a{text-decoration:underline;text-underline-offset:2px}
 </style>
 </head>
 <body>
@@ -285,7 +286,7 @@ table.heat td.tn{text-align:left;padding:8px 10px;color:var(--color-text-primary
 <div class="ctl">
   <div class="ctl-label">Max flat age</div>
   <div class="slider-row">
-    <input type="range" id="agez" min="0" step="1" value="99">
+    <input type="range" id="agez" aria-label="Maximum flat age" min="0" step="1" value="99">
     <span class="slider-val" id="age-val"></span>
   </div>
 </div>
