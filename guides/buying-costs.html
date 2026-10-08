@@ -105,7 +105,7 @@ body{margin:0;background:var(--color-background-primary);color:var(--color-text-
 a{color:var(--color-text-info)}
 
 .article{max-width:720px;margin:0 auto;padding:0 1.5rem}
-.kicker{margin-top:2.5rem;font-size:12.5px;font-weight:640;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-text-info)}
+.kicker{margin-top:2.5rem;font-size:14px;font-weight:500;color:var(--color-text-tertiary)}
 .crumbs{margin-top:1.5rem;font-size:13px;color:var(--color-text-tertiary)}
 .crumbs a{color:var(--color-text-secondary);text-decoration:none}
 .crumbs a:hover{text-decoration:underline}
@@ -152,15 +152,17 @@ tr.spot td:first-child{border-left:3px solid var(--color-text-info)}
 .callout p{margin:0;font-family:var(--font-serif);font-size:18px;line-height:1.6;color:var(--color-text-primary)}
 
 .checks{margin-top:20px;border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);padding:6px 24px 18px}
-.checks h3{font-family:var(--font-sans);font-size:13px;text-transform:uppercase;letter-spacing:0.06em;color:var(--color-text-tertiary);margin:18px 0 0}
+.checks h3{font-family:var(--font-sans);font-size:16.5px;font-weight:650;color:var(--color-text-primary);margin:18px 0 0}
 .checks ol{margin:14px 0 0;padding:0;list-style:none;counter-reset:c;display:flex;flex-direction:column;gap:14px}
 .checks li{font-family:var(--font-serif);font-size:17.5px;line-height:1.5;padding-left:40px;position:relative;counter-increment:c}
 .checks li::before{content:counter(c);position:absolute;left:0;top:2px;width:26px;height:26px;border-radius:50%;background:var(--color-background-info);color:var(--color-text-info);font-family:var(--font-sans);font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center}
+/*RELATED*/.related{margin-top:32px}.related h3{font-family:var(--font-sans);font-size:15px;font-weight:600;margin:0}.related ul{margin:10px 0 0;padding-left:1.1em}.related li{font-family:var(--font-serif);font-size:17.5px;line-height:1.55;margin:6px 0}
+.closing{margin-top:34px!important}
 .takeaways{margin-top:20px;border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);padding:6px 24px 16px}
-.takeaways h3{font-family:var(--font-sans);font-size:13px;text-transform:uppercase;letter-spacing:0.06em;color:var(--color-text-tertiary);margin:18px 0 0}
+.takeaways h3{font-family:var(--font-sans);font-size:16.5px;font-weight:650;color:var(--color-text-primary);margin:18px 0 0}
 .takeaways ul{margin:12px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px}
 .takeaways li{font-family:var(--font-serif);font-size:17.5px;line-height:1.55;padding-left:26px;position:relative}
-.takeaways li::before{content:"";position:absolute;left:0;top:8px;width:13px;height:13px;border-radius:4px;background:var(--color-background-info);border:1.5px solid var(--color-text-info)}
+.takeaways li::before{content:"";position:absolute;left:6px;top:12px;width:6px;height:6px;border-radius:50%;background:var(--color-text-tertiary)}
 
 .cta{margin:42px 0 0;border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-secondary);padding:24px 26px;display:flex;gap:20px;align-items:center;justify-content:space-between;flex-wrap:wrap}
 .cta .t h3{margin:0;font-family:var(--font-sans);font-size:18px;font-weight:700;letter-spacing:-0.01em}
@@ -168,7 +170,7 @@ tr.spot td:first-child{border-left:3px solid var(--color-text-info)}
 .cta .btn{font-family:var(--font-sans);font-weight:640;font-size:14.5px;color:var(--color-background-primary);background:var(--color-text-primary);padding:12px 20px;border-radius:10px;white-space:nowrap;text-decoration:none;transition:opacity .12s}
 .cta .btn:hover{opacity:.85}
 
-.method{margin:40px 0 0;font-family:var(--font-sans);border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-secondary);padding:20px 22px}.method-head{display:flex;align-items:center;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--color-text-secondary);margin:0 0 12px}.method-head svg{width:15px;height:15px;flex-shrink:0;color:var(--color-text-info)}.method p{font-size:13px;line-height:1.6;color:var(--color-text-tertiary);margin:0 0 10px}.method p:last-child{margin:0}.method a{color:var(--color-text-info);text-decoration:none}.method a:hover{text-decoration:underline}.method .rev{font-style:italic}
+.method{margin:40px 0 0;font-family:var(--font-sans);border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-secondary);padding:20px 22px}.method-head{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--color-text-secondary);margin:0 0 12px}.method-head svg{width:15px;height:15px;flex-shrink:0;color:var(--color-text-info)}.method p{font-size:13px;line-height:1.6;color:var(--color-text-tertiary);margin:0 0 10px}.method p:last-child{margin:0}.method a{color:var(--color-text-info);text-decoration:none}.method a:hover{text-decoration:underline}.method .rev{font-style:italic}
 .method b{color:var(--color-text-secondary)}
 .morelink{margin:26px 0 0;font-family:var(--font-sans);font-size:14px}
 .morelink a{color:var(--color-text-info);text-decoration:none;font-weight:600}
@@ -190,25 +192,20 @@ tr.spot td:first-child{border-left:3px solid var(--color-text-info)}
   <div class="crumbs"><a href="/guides/">Guides</a> &nbsp;/&nbsp; Cost of buying</div>
   <div class="kicker">Guide &middot; Buying</div>
   <h1>What a resale flat really costs to buy</h1>
-  <p class="standfirst">The number on the listing is the loudest cost, not the only one. Four others move real
-    money on completion day - and only some of them are allowed to come out of your CPF.</p>
+  <p class="standfirst">The price is the biggest cost but not the only one. Several others have to be paid by completion, and only some of them can come from CPF.</p>
   <div class="byline">
     <span class="who">SG HDB Resale</span><span>&middot;</span>
     <span>Worked example: a $600,000 four-room flat, first-timer Citizen couple</span>
     <span class="pill">6 min read</span>
   </div>
 
-  <p>You have agreed on $600,000 for a four-room flat. So you need $600,000, give or take? Not quite. Some of that
-    price is a loan you repay over decades, not cash you produce now. Meanwhile several costs that never appear on
-    the listing - stamp duty, the option cheque, fees - do have to be found upfront. And a different question sits
-    underneath all of it: which of these can come from your CPF, and which must be cold, hard cash?</p>
+  <p>Say you have agreed $600,000 for a four-room flat. Most of that is a loan you repay over many years, so you do not need $600,000 now. On the other hand, some costs that are not part of the price, such as stamp duty, the option fee and legal fees, have to be paid upfront. And for each cost, it matters whether it can come from CPF or has to be paid in cash.</p>
 
-  <p>Sort the price into its real pieces and the picture gets clearer, and usually less frightening. Here is the
-    same $600,000 flat, broken into what you actually hand over and where each part comes from.</p>
+  <p>Here is the same $600,000 flat, split into what you pay and where each part comes from.</p>
 
   <figure>
     <div class="chart">
-      <div class="ct">The one price, split into what it really is</div>
+      <div class="ct">Where the money for a $600,000 flat comes from</div>
       <div class="cs">Illustrative costs on a $600,000 resale flat &middot; first-timer Citizen couple &middot; HDB loan</div>
       <table class="costtbl">
         <thead><tr><th>Cost</th><th>Amount</th><th>Paid from</th></tr></thead>
@@ -224,60 +221,36 @@ tr.spot td:first-child{border-left:3px solid var(--color-text-info)}
         </tbody>
       </table>
     </div>
-    <figcaption>Agent commission (if you use a buyer's agent) and any cash-over-valuation sit on top of this, both
-      in cash. Grants come back the other way - see below. Figures are illustrative and rounded.</figcaption>
+    <figcaption>Agent commission (if you use a buyer's agent) and any cash over valuation are on top of this, both paid in cash. Grants reduce the cost, as explained below. Figures are illustrative and rounded.</figcaption>
   </figure>
 
-  <p>The loan aside, you are looking at roughly <strong>$164,000</strong> to bring a $600,000 flat to completion -
-    and for a first-timer household, grants can give a large slice of that back. But the more useful split isn't
-    price versus fees. It is <strong>cash versus CPF</strong>, because that is what actually catches people short.</p>
+  <p>Leaving out the loan, it takes roughly <strong>$164,000</strong> to complete on a $600,000 flat, and for first-time buyers grants can cover a large part of that. The more useful question, though, is how much has to be <strong>cash rather than CPF</strong>, because that is where buyers most often come up short.</p>
 
-  <h2>The cash nobody budgets for</h2>
+  <h2>Costs that must be paid in cash</h2>
 
-  <p>Most of the big money - the bulk of the downpayment, the stamp duty, the legal fee - can be drawn from your
-    CPF Ordinary Account. That is a relief, but it hides a trap: a handful of costs <em>cannot</em> touch CPF and
-    have to be actual cash in your bank.</p>
+  <p>Most of the large amounts (most of the downpayment, the stamp duty and the legal fee) can be paid from your CPF Ordinary Account. A few costs cannot, and need cash in the bank.</p>
 
-  <p>When you take the <strong>Option to Purchase</strong>, you pay the seller an <strong>option fee</strong> of up
-    to $1,000; when you exercise it, you top that up to a deposit that, by HDB's rules, can total up to
-    <strong>$5,000</strong> - all in cash. The <strong>Request for Value</strong>, HDB's valuation step, costs a
-    fixed <strong>$120</strong>, also cash. If you engage a buyer's agent, their commission - commonly around
-    <strong>1% plus GST</strong> of the price, so roughly $6,500 on this flat - is cash too. None of these is
-    enormous on its own, but together they are five figures that CPF will not cover.</p>
+  <p>When you take the <strong>Option to Purchase</strong>, you pay the seller an <strong>option fee</strong> of up to $1,000. When you exercise it, you top that up to a deposit of up to <strong>$5,000</strong> in total under HDB's rules, all in cash. The <strong>Request for Value</strong> (HDB's valuation) costs <strong>$120</strong>, also in cash. If you use a buyer's agent, their commission, commonly around <strong>1% plus GST</strong> of the price or roughly $6,500 here, is cash as well. Together these can come to over $10,000 that CPF will not cover.</p>
 
   <div class="callout">
-    <p>The one that surprises people most is cash-over-valuation. If the agreed price sits above HDB's valuation,
-      the gap can be paid with neither CPF nor loan. Every dollar of it is cash - so a flat priced well over its
-      valuation can quietly demand tens of thousands more in the bank than the sticker suggests.</p>
+    <p>The cost that catches people out most often is cash over valuation. If the agreed price is above HDB's valuation, the difference cannot be paid with CPF or the loan. A flat priced well above its valuation can need tens of thousands of dollars more in cash than you might expect.</p>
   </div>
 
-  <p>This is why the price you offer and the flat's valuation matter so much together. Your loan and your CPF are
-    both sized off the <em>lower</em> of price or valuation; anything above it is on you, in cash. Reading where a
-    fair price sits is a skill in itself - we cover it in
-    <a href="/guides/fair-price">how to tell if an asking price is fair</a>.</p>
+  <p>Your loan and your CPF use are both based on the <em>lower</em> of price and valuation, and anything above that is paid in cash. That is why the price you offer matters so much. The guide on <a href="/guides/fair-price">how to tell if an asking price is fair</a> covers how to judge it.</p>
 
-  <h2>The downpayment: a quarter of the price, and where it hides</h2>
+  <h2>The downpayment</h2>
 
-  <p>You can borrow up to <strong>75%</strong> of the price (or valuation, if lower), which leaves a
-    <strong>25% downpayment</strong> - $150,000 on our flat. The good news for most HDB buyers: on an
-    <strong>HDB loan</strong> at 2.6%, that entire 25% may come from CPF, so it need not be cash at all. On a
-    <strong>bank loan</strong> the split is stricter - at least 5% of the price must be cash (about $30,000 here),
-    with the rest from CPF or cash.</p>
+  <p>You can borrow up to <strong>75%</strong> of the price (or the valuation, if lower), so the <strong>downpayment is 25%</strong>, or $150,000 on this flat. With an <strong>HDB loan</strong> at 2.6%, all of that 25% can come from CPF. With a <strong>bank loan</strong>, at least 5% of the price (about $30,000 here) must be cash, and the rest can come from CPF or cash.</p>
 
-  <p>So the honest cash floor depends on your loan. With an HDB loan and enough CPF, a first-timer couple can reach
-    completion on this flat with only the deposit, the $120 valuation, an agent fee if any, and any
-    cash-over-valuation actually leaving their bank account. With a bank loan, add that 5%. What your income and
-    savings can actually support - the real ceiling - is what the
-    <a href="/affordability">affordability calculator</a> works out under the MSR, TDSR and LTV rules.</p>
+  <p>So the minimum cash you need depends on the loan. With an HDB loan and enough CPF, a first-time couple could complete on this flat paying only the deposit, the $120 valuation fee, any agent fee and any cash over valuation from their bank account. With a bank loan, add the 5%. The <a href="/affordability">affordability calculator</a> works out the highest price your income and savings can support under the MSR, TDSR and LTV rules.</p>
 
-  <h2>Stamp duty: the tax that lands on top</h2>
+  <h2>Stamp duty</h2>
 
-  <p>Buyer's Stamp Duty is charged on the higher of price or valuation, on a tiered scale. On $600,000 it comes to
-    <strong>$12,600</strong>, built up like this:</p>
+  <p>Buyer's Stamp Duty is charged on the higher of price and valuation, at tiered rates. On $600,000 it comes to <strong>$12,600</strong>:</p>
 
   <figure>
     <div class="chart">
-      <div class="ct">How the $12,600 is built up</div>
+      <div class="ct">How the $12,600 is worked out</div>
       <div class="cs">Buyer's Stamp Duty on a $600,000 flat &middot; residential rates</div>
       <table>
         <thead><tr><th>Band</th><th>Rate</th><th>Duty</th></tr></thead>
@@ -289,65 +262,35 @@ tr.spot td:first-child{border-left:3px solid var(--color-text-info)}
         </tbody>
       </table>
     </div>
-    <figcaption>You can reimburse the duty from CPF, but it is usually paid in cash first and refunded to CPF
-      shortly after - so budget the timing. It is due within 14 days of exercising the option.</figcaption>
+    <figcaption>You can use CPF for the duty, but it is usually paid in cash first and refunded to you from CPF shortly after. It is due within 14 days of exercising the option.</figcaption>
   </figure>
 
-  <p>For a standard HDB purchase that is the whole stamp-duty story: <strong>Additional Buyer's Stamp Duty is 0%</strong>
-    for a Citizen buying their first property, and you generally cannot own another property and buy an HDB flat
-    anyway. If ABSD ever does apply to your situation, the
-    <a href="/stamp-duty">stamp duty calculator</a> works out both parts.</p>
+  <p>For most HDB purchases that is all the stamp duty there is. <strong>Additional Buyer's Stamp Duty is 0%</strong> for a Citizen buying their first property, and in general you cannot own another property while buying an HDB flat. If ABSD does apply to you, the <a href="/stamp-duty">stamp duty calculator</a> works out both parts.</p>
 
-  <h2>Grants: real money, but it flows into CPF</h2>
+  <h2>Grants are paid into CPF</h2>
 
-  <p>Costs run one way; for a first-timer household, grants run the other. They are the reason the net cost of a
-    first flat is often far below the gross. A first-timer Citizen couple buying a four-room resale flat, within
-    the income ceiling, can receive the <strong>CPF Housing Grant</strong> of up to $80,000, plus an income-tiered
-    <strong>Enhanced CPF Housing Grant</strong> of up to $120,000, plus a <strong>Proximity Housing Grant</strong>
-    of $20,000 to $30,000 if they buy near or with family.</p>
+  <p>For first-time buyers, grants can reduce the net cost a great deal. A first-time Citizen couple buying a four-room resale flat, within the income ceiling, can get the <strong>CPF Housing Grant</strong> of up to $80,000, an income-based <strong>Enhanced CPF Housing Grant</strong> of up to $120,000, and a <strong>Proximity Housing Grant</strong> of $20,000 to $30,000 if they buy near or with their parents or children.</p>
 
   <div class="keyfig">
     <div class="cell"><div class="n blue tnum">$150,000</div><div class="l">the 25% downpayment on a $600k flat</div></div>
     <div class="cell"><div class="n green tnum">up to $80,000+</div><div class="l">in grants a first-timer couple may receive, credited to CPF</div></div>
-    <div class="cell"><div class="n tnum">$0</div><div class="l">of those grants you can take as cash - they must go to the flat</div></div>
+    <div class="cell"><div class="n tnum">$0</div><div class="l">of the grants can be taken as cash; they go towards the flat</div></div>
   </div>
 
-  <p>The catch in the good news: grants are paid <strong>into your CPF</strong>, not your pocket. They can cover a
-    big share of that downpayment, which is exactly what makes a first flat reachable - but they do nothing for the
-    cash costs above. Which grants you qualify for, and how much, comes down to who is buying, the flat size and
-    your income; the <a href="/grants">grant eligibility checker</a> runs the published rules, and your exact
-    Enhanced Grant is confirmed in your HFE letter.</p>
+  <p>Grants are paid <strong>into your CPF</strong>, not to you directly. They can cover much of the downpayment, but they do not help with the cash costs above. Which grants you get, and how much, depends on who is buying, the flat size and your income. The <a href="/grants">grant checker</a> applies the published rules, and your HFE letter confirms the exact Enhanced Grant amount.</p>
 
   <div class="checks">
-    <h3>The full cost checklist, by where the money comes from</h3>
+    <h3>Checklist: where each cost is paid from</h3>
     <ol>
-      <li><strong>Cash you truly need.</strong> Option fee and deposit (up to $5,000), the $120 valuation, agent
-        commission if any, plus - for a bank loan - 5% of the price. And every dollar of any cash-over-valuation.</li>
-      <li><strong>CPF (or cash) covers the rest of the downpayment.</strong> Up to the full 25% on an HDB loan;
-        on a bank loan, whatever is left after the 5% cash floor.</li>
-      <li><strong>Stamp duty and legal fees.</strong> Reimbursable from CPF, but budget to pay the stamp duty in
-        cash first. On $600,000 that is $12,600 in duty and roughly $1,000 to $1,500 in HDB conveyancing.</li>
-      <li><strong>The loan is not upfront cost.</strong> Up to 75% of the price is borrowed and repaid monthly -
-        size the instalment to your income, not to today's bank balance.</li>
-      <li><strong>Count grants back in, but into CPF.</strong> For a first-timer household they can offset most of
-        the downpayment - just not the cash costs, and never as cash in hand.</li>
+      <li><strong>Cash.</strong> Option fee and deposit (up to $5,000), the $120 valuation fee, agent commission if any, 5% of the price if you take a bank loan, and all of any cash over valuation.</li>
+      <li><strong>CPF or cash: the rest of the downpayment.</strong> Up to the full 25% with an HDB loan. With a bank loan, whatever is left after the 5% cash minimum.</li>
+      <li><strong>Stamp duty and legal fees.</strong> Can be paid from CPF, but expect to pay the stamp duty in cash first. On $600,000 that is $12,600 in duty and roughly $1,000 to $1,500 for HDB's conveyancing.</li>
+      <li><strong>The loan.</strong> Up to 75% of the price is borrowed and repaid monthly, so what matters is whether your income covers the instalment.</li>
+      <li><strong>Grants.</strong> For first-time buyers they can cover most of the downpayment, but they are paid into CPF and do not help with cash costs.</li>
     </ol>
   </div>
 
-  <div class="callout">
-    <p>The price tells you what to borrow. The cash-versus-CPF split tells you whether you can actually complete.
-      Get that split right before you sign, and completion day holds no surprises.</p>
-  </div>
-
-  <div class="cta">
-    <div class="t">
-      <h3>Put your own numbers through it</h3>
-      <p>See what flats really sell for by town and flat type, then run your income, savings and CPF through the
-        affordability calculator to find the price you can actually support.</p>
-    </div>
-    <a class="btn" href="/affordability">Affordability calculator &rarr;</a>
-    <a class="btn" href="/loan-calculator">HDB loan calculator &rarr;</a>
-  </div>
+  <p class="closing">To put your own figures through this, the <a href="/affordability">affordability calculator</a> takes your income, savings and CPF and works out the price you can support.</p>
 
     <aside class="method">
     <div class="method-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg><span>How we sourced this</span></div>
@@ -358,16 +301,14 @@ tr.spot td:first-child{border-left:3px solid var(--color-text-info)}
     <p class="rev">Last reviewed August 2026.</p>
   </aside>
 
-  <nav class="takeaways" aria-label="Related guides">
-    <h3>Related guides</h3>
+  <nav class="related" aria-label="Related guides">
+    <h3>Related reading</h3>
     <ul>
       <li><a href="/guides/fair-price">How to tell if an HDB asking price is fair</a></li>
       <li><a href="/guides/hdb-vs-bank-loan">HDB loan or bank loan: which costs less?</a></li>
       <li><a href="/guides/buying-timeline">The HDB resale buying timeline, step by step</a></li>
     </ul>
   </nav>
-
-  <p class="morelink"><a href="/guides/">&larr; All guides</a></p>
 </article>
 
 <footer class="site-footer"><div class="footer-inner">

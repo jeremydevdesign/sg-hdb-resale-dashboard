@@ -105,7 +105,7 @@ body{margin:0;background:var(--color-background-primary);color:var(--color-text-
 a{color:var(--color-text-info)}
 
 .article{max-width:720px;margin:0 auto;padding:0 1.5rem}
-.kicker{margin-top:2.5rem;font-size:12.5px;font-weight:640;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-text-info)}
+.kicker{margin-top:2.5rem;font-size:14px;font-weight:500;color:var(--color-text-tertiary)}
 .crumbs{margin-top:1.5rem;font-size:13px;color:var(--color-text-tertiary)}
 .crumbs a{color:var(--color-text-secondary);text-decoration:none}
 .crumbs a:hover{text-decoration:underline}
@@ -155,15 +155,17 @@ tr.spot td:first-child{border-left:3px solid var(--color-text-info)}
 .callout p{margin:0;font-family:var(--font-serif);font-size:18px;line-height:1.6;color:var(--color-text-primary)}
 
 .checks{margin-top:20px;border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);padding:6px 24px 18px}
-.checks h3{font-family:var(--font-sans);font-size:13px;text-transform:uppercase;letter-spacing:0.06em;color:var(--color-text-tertiary);margin:18px 0 0}
+.checks h3{font-family:var(--font-sans);font-size:16.5px;font-weight:650;color:var(--color-text-primary);margin:18px 0 0}
 .checks ol{margin:14px 0 0;padding:0;list-style:none;counter-reset:c;display:flex;flex-direction:column;gap:14px}
 .checks li{font-family:var(--font-serif);font-size:17.5px;line-height:1.5;padding-left:40px;position:relative;counter-increment:c}
 .checks li::before{content:counter(c);position:absolute;left:0;top:2px;width:26px;height:26px;border-radius:50%;background:var(--color-background-info);color:var(--color-text-info);font-family:var(--font-sans);font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center}
+/*RELATED*/.related{margin-top:32px}.related h3{font-family:var(--font-sans);font-size:15px;font-weight:600;margin:0}.related ul{margin:10px 0 0;padding-left:1.1em}.related li{font-family:var(--font-serif);font-size:17.5px;line-height:1.55;margin:6px 0}
+.closing{margin-top:34px!important}
 .takeaways{margin-top:20px;border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);padding:6px 24px 16px}
-.takeaways h3{font-family:var(--font-sans);font-size:13px;text-transform:uppercase;letter-spacing:0.06em;color:var(--color-text-tertiary);margin:18px 0 0}
+.takeaways h3{font-family:var(--font-sans);font-size:16.5px;font-weight:650;color:var(--color-text-primary);margin:18px 0 0}
 .takeaways ul{margin:12px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px}
 .takeaways li{font-family:var(--font-serif);font-size:17.5px;line-height:1.55;padding-left:26px;position:relative}
-.takeaways li::before{content:"";position:absolute;left:0;top:8px;width:13px;height:13px;border-radius:4px;background:var(--color-background-info);border:1.5px solid var(--color-text-info)}
+.takeaways li::before{content:"";position:absolute;left:6px;top:12px;width:6px;height:6px;border-radius:50%;background:var(--color-text-tertiary)}
 
 .cta{margin:42px 0 0;border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-secondary);padding:24px 26px;display:flex;gap:20px;align-items:center;justify-content:space-between;flex-wrap:wrap}
 .cta .t h3{margin:0;font-family:var(--font-sans);font-size:18px;font-weight:700;letter-spacing:-0.01em}
@@ -171,7 +173,7 @@ tr.spot td:first-child{border-left:3px solid var(--color-text-info)}
 .cta .btn{font-family:var(--font-sans);font-weight:640;font-size:14.5px;color:var(--color-background-primary);background:var(--color-text-primary);padding:12px 20px;border-radius:10px;white-space:nowrap;text-decoration:none;transition:opacity .12s}
 .cta .btn:hover{opacity:.85}
 
-.method{margin:40px 0 0;font-family:var(--font-sans);border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-secondary);padding:20px 22px}.method-head{display:flex;align-items:center;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--color-text-secondary);margin:0 0 12px}.method-head svg{width:15px;height:15px;flex-shrink:0;color:var(--color-text-info)}.method p{font-size:13px;line-height:1.6;color:var(--color-text-tertiary);margin:0 0 10px}.method p:last-child{margin:0}.method a{color:var(--color-text-info);text-decoration:none}.method a:hover{text-decoration:underline}.method .rev{font-style:italic}
+.method{margin:40px 0 0;font-family:var(--font-sans);border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-secondary);padding:20px 22px}.method-head{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--color-text-secondary);margin:0 0 12px}.method-head svg{width:15px;height:15px;flex-shrink:0;color:var(--color-text-info)}.method p{font-size:13px;line-height:1.6;color:var(--color-text-tertiary);margin:0 0 10px}.method p:last-child{margin:0}.method a{color:var(--color-text-info);text-decoration:none}.method a:hover{text-decoration:underline}.method .rev{font-style:italic}
 .method b{color:var(--color-text-secondary)}
 .morelink{margin:26px 0 0;font-family:var(--font-sans);font-size:14px}
 .morelink a{color:var(--color-text-info);text-decoration:none;font-weight:600}
@@ -193,29 +195,20 @@ tr.spot td:first-child{border-left:3px solid var(--color-text-info)}
   <div class="crumbs"><a href="/guides/">Guides</a> &nbsp;/&nbsp; Fair price</div>
   <div class="kicker">Guide · Buying</div>
   <h1>How to tell if an asking price is fair</h1>
-  <p class="standfirst">There is no single fair price for an HDB flat. There is a fair <em>range</em> - and the
-    skill worth having is knowing where one particular flat sits inside it.</p>
+  <p class="standfirst">Comparable flats in the same town sell across a wide band of prices. Judging an asking price means working out where in that band a particular flat should sit.</p>
   <div class="byline">
     <span class="who">SG HDB Resale</span><span>·</span>
     <span>Worked example: Tampines four-room flats, 2025</span>
     <span class="pill">5 min read</span>
   </div>
 
-  <p>You’ve found a flat you like. The listing says $700,000. The agent mentions that a unit two floors up sold
-    for $720,000 last month, so this one’s a steal. Two questions land at once: is the asking price fair, and how
-    would you even know?</p>
+  <p>Say you have found a flat you like and the listing says $700,000. The agent mentions that a unit two floors up went for $720,000 last month, which makes this one sound cheap. Is it?</p>
 
-  <p>Here’s the good news. Unlike almost anywhere else in the world, every HDB resale price is public record -
-    nothing is hidden behind an agent or an estimate. Here’s the catch: that record doesn’t hand you a single
-    “fair price.” It hands you a range, and a surprisingly wide one.</p>
+  <p>Every HDB resale price is public, which makes this easier to check here than in most property markets. The record does not give you one fair price for a flat, though. It gives you a range, and the range is wider than most people expect.</p>
 
-  <h2>Identical flats, wildly different prices</h2>
+  <h2>How wide the range is</h2>
 
-  <p>Take the cleanest comparison you can make: one town, one flat type, one year. <a href="/towns/tampines">Tampines</a>, four-room, 2025 -
-    <strong>892 sales</strong>. The median was <strong>$668,000</strong>. But the sales ran from
-    <strong>$595,000</strong> at the 10th percentile to <strong>$790,000</strong> at the 90th, and even the
-    <em>middle half</em> of them - the most ordinary, unremarkable flats - spanned <strong>$620,000 to
-    $758,000</strong>.</p>
+  <p>Take one town, one flat type and one year: <a href="/towns/tampines">Tampines</a> four-room flats in 2025, of which there were <strong>892 sales</strong>. The median was <strong>$668,000</strong>. The 10th percentile was <strong>$595,000</strong> and the 90th was <strong>$790,000</strong>. Even the middle half of sales, the most ordinary flats, ran from <strong>$620,000 to $758,000</strong>.</p>
 
   <div class="keyfig">
     <div class="cell"><div class="n blue tnum">$668k</div><div class="l">median four-room price, Tampines, 2025</div></div>
@@ -240,19 +233,14 @@ tr.spot td:first-child{border-left:3px solid var(--color-text-info)}
         </div>
       </div>
     </div>
-    <figcaption>The full range stretched further still - from $300k to $925k once you include the extremes. A
-      single “the one upstairs sold for $720k” is one dot in this cloud; on its own it tells you very little.</figcaption>
+    <figcaption>Including the extremes, sales ran from $300k to $925k. A single sale upstairs at $720k is one point somewhere in this spread.</figcaption>
   </figure>
 
-  <p>This isn’t a quirk of Tampines. Across the 22 towns with enough four-room sales to measure, the middle 50%
-    typically spans about <strong>19% of the median</strong>. Quote any single recent sale as “the price” and
-    you could be anchoring to a flat quite unlike the one in front of you.</p>
+  <p>Tampines is typical. Across the 22 towns with enough four-room sales to measure, the middle 50% usually spans about <strong>19% of the median</strong>. So if you take any one recent sale as the going rate, you may be comparing against a flat that is quite different from the one you are looking at.</p>
 
-  <h2>The spread isn’t noise - it’s the flat</h2>
+  <h2>What puts a flat high or low in the range</h2>
 
-  <p>The range exists for reasons you can actually read. The same forces that
-    <a href="/guides/mrt-price-premium">bend prices around the MRT</a> - floor, remaining lease, exact location,
-    size and model - are what stretch a single town-and-type into a wide band. Floor alone is dramatic:</p>
+  <p>Most of the spread comes from things you can see in the record: floor, remaining lease, exact location, size and flat model. These are the same factors that <a href="/guides/mrt-price-premium">affect prices around MRT stations</a>. Floor level alone makes a large difference:</p>
 
   <figure>
     <div class="chart">
@@ -267,53 +255,28 @@ tr.spot td:first-child{border-left:3px solid var(--color-text-info)}
         </tbody>
       </table>
     </div>
-    <figcaption>A $155,000 gap - about 24% - between low and high floors of the same flat type, same town, same year.</figcaption>
+    <figcaption>High floors sold for $155,000 (about 24%) more than low floors, for the same flat type in the same town and year.</figcaption>
   </figure>
 
-  <p>Stack floor together with remaining lease and distance to the MRT and you can explain most of where any
-    given flat lands in the range. Which turns the vague question “is this fair?” into a precise one you can
-    actually answer.</p>
+  <p>Floor, remaining lease and distance to the MRT together explain most of where a given flat ends up. Once you know those for the flat you are looking at, you can say roughly where it should sit.</p>
 
-  <h2>“Fair” means placing this flat in the range</h2>
+  <h2>Placing one flat in the range</h2>
 
-  <p>Don’t ask <em>what’s the fair price for a Tampines four-room</em> - there isn’t one. Ask: given its floor,
-    its lease, its location and its condition, <strong>where in the range should this particular flat sit</strong>
-    - and does the asking price match? A high-floor, long-lease, near-MRT, freshly renovated unit belongs up near
-    the top, $758k and above. A low-floor, shorter-lease, further-out one belongs near the bottom, around $620k or
-    less. The asking price is fair when it matches where the flat honestly sits - not the town average, and
-    certainly not the single sale an agent happens to quote.</p>
+  <p>There is no fair price for a Tampines four-room flat in general. The useful question is where this particular flat should sit, given its floor, lease, location and condition, and whether the asking price matches. A high-floor unit with a long lease, close to the MRT and recently renovated should be near the top, at $758k or more. A low-floor unit with a shorter lease and a longer walk to the station should be near the bottom, at around $620k or less. The town median is only a starting point, and the one sale an agent mentions is not much of a guide at all.</p>
 
   <div class="checks">
-    <h3>The five checks to run before you offer</h3>
+    <h3>Five checks before you make an offer</h3>
     <ol>
-      <li><strong>Start from the median of many, not the memory of one.</strong> Pull recent comparables - same
-        town, same flat type, the last twelve months - and take the median. Never anchor to a single sale or the
-        cheapest one on the listing site.</li>
-      <li><strong>Adjust for this flat.</strong> Move up or down from that median for floor (big), remaining
-        lease, distance to the MRT, and size or model. These are what create the range in the first place.</li>
-      <li><strong>Compare dollars per square foot, not just the total.</strong> A larger flat costs more without
-        being dearer. $psf strips out size so you’re comparing like with like.</li>
-      <li><strong>Keep it recent.</strong> The market moves. A 2022 comparable is a different market entirely;
-        weight the last few months most.</li>
-      <li><strong>Test it against the range.</strong> An asking price above the middle band needs a reason - top
-        floor, long lease, renovated. If you can’t find the reason for the premium, you’ve just found your
-        negotiating room.</li>
+      <li><strong>Start from the median of many sales.</strong> Take recent comparables (same town, same flat type, last twelve months) and use their median. Don't anchor on a single sale, or on the cheapest listing you have seen.</li>
+      <li><strong>Adjust for this flat.</strong> Move up or down from that median for floor (the biggest factor), remaining lease, distance to the MRT, and size or model.</li>
+      <li><strong>Compare price per square foot as well as the total.</strong> A bigger flat costs more without being more expensive per square foot, so $psf lets you compare flats of different sizes.</li>
+      <li><strong>Use recent sales.</strong> Prices in 2022 were a different market. Give the last few months the most weight.</li>
+      <li><strong>Check the asking price against the range.</strong> A price above the middle band should come with a reason, such as a top floor, a long lease or a renovation. If there is no obvious reason, that is where you have room to negotiate.</li>
     </ol>
   </div>
 
-  <div class="callout">
-    <p>“Fair” isn’t a number you look up. It’s a range you read from the record, then position one flat inside.
-      Do that, and you’ll never overpay on a story about the unit upstairs.</p>
-  </div>
 
-  <div class="cta">
-    <div class="t">
-      <h3>See what flats like yours are selling for</h3>
-      <p>This Year shows recent monthly medians by town and flat type; Analysis by Town adds $psf and the
-        near-MRT premium. Between them you can build the comparable set these checks call for.</p>
-    </div>
-    <a class="btn" href="/this-year">Open This Year →</a>
-  </div>
+  <p class="closing">To build your own set of comparable sales, <a href="/this-year">This Year</a> has recent monthly medians by town and flat type, and <a href="/analysis-by-town">Analysis by Town</a> adds price per square foot and distance to the MRT.</p>
 
     <aside class="method">
     <div class="method-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg><span>How we measured this</span></div>
@@ -322,16 +285,14 @@ tr.spot td:first-child{border-left:3px solid var(--color-text-info)}
     <p>These describe past sales, not valuations or forecasts.</p>
   </aside>
 
-  <nav class="takeaways" aria-label="Related guides">
-    <h3>Related guides</h3>
+  <nav class="related" aria-label="Related guides">
+    <h3>Related reading</h3>
     <ul>
       <li><a href="/guides/lease-decay">Does HDB lease decay really cut your flat's value?</a></li>
       <li><a href="/guides/mrt-price-premium">Is an HDB flat near an MRT worth the premium?</a></li>
       <li><a href="/guides/is-now-a-good-time">Is now a good time to buy an HDB resale flat?</a></li>
     </ul>
   </nav>
-
-  <p class="morelink"><a href="/guides/">← All guides</a></p>
 </article>
 
 <footer class="site-footer"><div class="footer-inner">

@@ -104,7 +104,7 @@ body{margin:0;background:var(--color-background-primary);color:var(--color-text-
 a{color:var(--color-text-info)}
 
 .article{max-width:720px;margin:0 auto;padding:0 1.5rem}
-.kicker{margin-top:2.5rem;font-size:12.5px;font-weight:640;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-text-info)}
+.kicker{margin-top:2.5rem;font-size:14px;font-weight:500;color:var(--color-text-tertiary)}
 .crumbs{margin-top:1.5rem;font-size:13px;color:var(--color-text-tertiary)}
 .crumbs a{color:var(--color-text-secondary);text-decoration:none}
 .crumbs a:hover{text-decoration:underline}
@@ -148,18 +148,19 @@ tr.spot td:first-child{border-left:3px solid var(--color-text-info)}
 .callout p{margin:0;font-family:var(--font-serif);font-size:18px;line-height:1.6;color:var(--color-text-primary)}
 
 .checks{margin-top:20px;border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);padding:6px 24px 18px}
-.checks h3{font-family:var(--font-sans);font-size:13px;text-transform:uppercase;letter-spacing:0.06em;color:var(--color-text-tertiary);margin:18px 0 0}
+.checks h3{font-family:var(--font-sans);font-size:16.5px;font-weight:650;color:var(--color-text-primary);margin:18px 0 0}
 .checks ol{margin:14px 0 0;padding:0;list-style:none;counter-reset:c;display:flex;flex-direction:column;gap:14px}
 .checks li{font-family:var(--font-serif);font-size:17.5px;line-height:1.5;padding-left:40px;position:relative;counter-increment:c}
 .checks li::before{content:counter(c);position:absolute;left:0;top:2px;width:26px;height:26px;border-radius:50%;background:var(--color-background-info);color:var(--color-text-info);font-family:var(--font-sans);font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center}
 
+/*RELATED*/.closing{margin-top:34px!important}
 .cta{margin:42px 0 0;border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-secondary);padding:24px 26px;display:flex;gap:20px;align-items:center;justify-content:space-between;flex-wrap:wrap}
 .cta .t h3{margin:0;font-family:var(--font-sans);font-size:18px;font-weight:700;letter-spacing:-0.01em}
 .cta .t p{margin:8px 0 0;font-family:var(--font-sans);font-size:14.5px;color:var(--color-text-secondary);max-width:46ch}
 .cta .btn{font-family:var(--font-sans);font-weight:640;font-size:14.5px;color:var(--color-background-primary);background:var(--color-text-primary);padding:12px 20px;border-radius:10px;white-space:nowrap;text-decoration:none;transition:opacity .12s}
 .cta .btn:hover{opacity:.85}
 
-.method{margin:40px 0 0;font-family:var(--font-sans);border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-secondary);padding:20px 22px}.method-head{display:flex;align-items:center;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--color-text-secondary);margin:0 0 12px}.method-head svg{width:15px;height:15px;flex-shrink:0;color:var(--color-text-info)}.method p{font-size:13px;line-height:1.6;color:var(--color-text-tertiary);margin:0 0 10px}.method p:last-child{margin:0}.method a{color:var(--color-text-info);text-decoration:none}.method a:hover{text-decoration:underline}.method .rev{font-style:italic}
+.method{margin:40px 0 0;font-family:var(--font-sans);border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-secondary);padding:20px 22px}.method-head{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--color-text-secondary);margin:0 0 12px}.method-head svg{width:15px;height:15px;flex-shrink:0;color:var(--color-text-info)}.method p{font-size:13px;line-height:1.6;color:var(--color-text-tertiary);margin:0 0 10px}.method p:last-child{margin:0}.method a{color:var(--color-text-info);text-decoration:none}.method a:hover{text-decoration:underline}.method .rev{font-style:italic}
 .method b{color:var(--color-text-secondary)}
 .morelink{margin:26px 0 0;font-family:var(--font-sans);font-size:14px}
 .morelink a{color:var(--color-text-info);text-decoration:none;font-weight:600}
@@ -181,37 +182,24 @@ tr.spot td:first-child{border-left:3px solid var(--color-text-info)}
   <div class="crumbs"><a href="/guides/">Guides</a> &nbsp;/&nbsp; Cash over valuation</div>
   <div class="kicker">Guide &middot; Buying</div>
   <h1>Cash over valuation, explained</h1>
-  <p class="standfirst">Agree a price above the flat's valuation and the gap comes with a hard rule: it is paid in
-    cash. Not from your CPF, not from your loan - cash, on top of everything else.</p>
+  <p class="standfirst">If you agree a price above the flat's valuation, the difference has to be paid in cash. It cannot come from CPF or from your loan.</p>
   <div class="byline">
     <span class="who">SG HDB Resale</span><span>&middot;</span>
     <span>Worked example: a $620,000 price on a $580,000 valuation</span>
     <span class="pill">6 min read</span>
   </div>
 
-  <p>Cash over valuation, or COV, is simply the amount by which the price you agree exceeds the flat's official
-    valuation. Agree $620,000 on a flat HDB values at $580,000 and the COV is $40,000. It sounds like an accounting
-    footnote. It is anything but - because of one rule about where that $40,000 can come from.</p>
+  <p>Cash over valuation (COV) is the amount by which the agreed price exceeds the flat's official valuation. If you agree $620,000 for a flat valued at $580,000, the COV is $40,000. What makes it important is the rule about how that $40,000 can be paid.</p>
 
-  <h2>Why you only find out after you have agreed</h2>
+  <h2>You only find out the valuation after agreeing a price</h2>
 
-  <p>It used to work the other way around. Before 2014, valuations came first and buyers openly haggled a COV on
-    top, which helped push COV to eye-watering levels - a median near <strong>$38,000</strong> across the island in
-    2011, and far more for sought-after units. So the rules were flipped. Today you must secure an
-    <strong>Option to Purchase</strong> - agreeing the price with the seller - <em>before</em> you can request the
-    valuation. The valuation is revealed only after you have committed to a number.</p>
+  <p>Before 2014 the valuation came first, and buyers negotiated a COV on top of it. That helped push COV very high: the island-wide median was close to <strong>$38,000</strong> in 2011, and much more for popular flats. The process was then reversed. You now need an <strong>Option to Purchase</strong>, which means agreeing the price with the seller, <em>before</em> you can request a valuation.</p>
 
-  <p>That is the trap hiding in the process. You commit to $620,000 first; only later does the valuation come back
-    at $580,000 and hand you a $40,000 COV you now have to fund in cash. Which is exactly why judging a fair number
-    before you sign - from real, recent comparables rather than one hopeful sale - matters so much. We walk through
-    that in <a href="/guides/fair-price">how to tell if an asking price is fair</a>.</p>
+  <p>So you commit to $620,000 first, and only later learn that the valuation is $580,000 and you need $40,000 in cash. This is why it pays to judge the price carefully before signing, using recent comparable sales rather than one optimistic example. The guide on <a href="/guides/fair-price">how to tell if an asking price is fair</a> explains how.</p>
 
-  <h2>The rule that bites: everything is sized off the valuation</h2>
+  <h2>Your loan and CPF are based on the valuation</h2>
 
-  <p>Your housing loan and your CPF are both capped at the <strong>lower</strong> of price or valuation. The bank or
-    HDB lends up to 75% of the <em>valuation</em>; CPF can fund the flat up to the <em>valuation</em>. Anything you
-    pay above the valuation is beyond both - so the COV has nowhere to come from but your own cash. Here is the
-    same $620,000 purchase, fully accounted for:</p>
+  <p>Both the housing loan and CPF use are capped at the <strong>lower</strong> of the price and the valuation. HDB or the bank lends up to 75% of the <em>valuation</em>, and CPF can be used up to the <em>valuation</em>. Anything above that is outside both, so the COV has to come from cash. Here is the same $620,000 purchase in full:</p>
 
   <figure>
     <div class="chart">
@@ -227,67 +215,41 @@ tr.spot td:first-child{border-left:3px solid var(--color-text-info)}
         </tbody>
       </table>
     </div>
-    <figcaption>The loan and the 25% downpayment are both figured on the $580,000 valuation, not the $620,000
-      price. The $40,000 difference sits outside both, so it can be met with neither CPF nor loan. Figures are
-      illustrative and rounded.</figcaption>
+    <figcaption>The loan and the 25% downpayment are both based on the $580,000 valuation, not the $620,000 price. The $40,000 difference cannot be paid with CPF or the loan. Figures are illustrative and rounded.</figcaption>
   </figure>
 
   <div class="keyfig">
-    <div class="cell"><div class="n blue tnum">$580,000</div><div class="l">valuation - what the loan and CPF are sized on</div></div>
+    <div class="cell"><div class="n blue tnum">$580,000</div><div class="l">valuation, which the loan and CPF are based on</div></div>
     <div class="cell"><div class="n tnum">$435,000</div><div class="l">the most you could borrow (75% of valuation)</div></div>
-    <div class="cell"><div class="n red tnum">$40,000</div><div class="l">cash over valuation - straight from your bank account</div></div>
+    <div class="cell"><div class="n red tnum">$40,000</div><div class="l">cash over valuation, paid from your own savings</div></div>
   </div>
 
-  <p>So a COV does not just raise the price. It raises the share of the purchase that has to be
-    <strong>cash rather than CPF</strong>, which for many buyers is the real constraint. On an HDB loan the entire
-    25% downpayment might have come from CPF; the $40,000 COV cannot, and lands on top of the deposit, fees and
-    stamp duty covered in <a href="/guides/buying-costs">what a resale flat really costs to buy</a>.</p>
+  <p>COV therefore does more than raise the price. It increases the part of the purchase that must be <strong>cash rather than CPF</strong>, and for many buyers cash is the tighter limit. With an HDB loan, the whole 25% downpayment could come from CPF, but the $40,000 COV cannot. It is paid on top of the deposit, fees and stamp duty described in <a href="/guides/buying-costs">what a resale flat really costs to buy</a>.</p>
 
-  <p>It nudges the tax up too. Buyer's Stamp Duty is charged on the <strong>higher</strong> of price or valuation -
-    so here it is worked on the $620,000 price, not the $580,000 valuation, adding a little more to the bill.</p>
+  <p>It also raises the stamp duty slightly. Buyer's Stamp Duty is charged on the <strong>higher</strong> of price and valuation, so in this example it is worked out on $620,000 rather than $580,000.</p>
 
   <h2>How big does COV get?</h2>
 
-  <p>It swings with the market, hard. At the 2011 peak the median sat near <strong>$38,000</strong>, with popular
-    flats reportedly commanding six figures. After the 2014 rule change COV all but vanished: by 2016 roughly
-    <strong>four in five</strong> resale flats changed hands at or below valuation, and COV faded from the
-    conversation entirely.</p>
+  <p>It depends heavily on the market. At the 2011 peak the median was close to <strong>$38,000</strong>, and popular flats reportedly went for six-figure COVs. After the 2014 change COV almost disappeared. By 2016 roughly <strong>four in five</strong> resale flats sold at or below valuation.</p>
 
-  <p>Then the post-2020 boom brought it back. As resale prices climbed faster than valuations could follow, COV
-    returned for the more wanted flats - recent quarters have seen somewhere between <strong>one in six and one in
-    three</strong> buyers paying some COV, though well short of the 2011 frenzy. One wrinkle to know: HDB stopped
-    publishing COV figures back in 2014, so there is no official median to look up now - you learn your own COV,
-    and only after your valuation comes in.</p>
+  <p>COV came back after 2020, as resale prices rose faster than valuations. In recent quarters, somewhere between <strong>one in six and one in three</strong> buyers have paid some COV, though amounts are well below 2011 levels. HDB stopped publishing COV figures in 2014, so there is no official median to check. You only learn your own COV once the valuation comes in.</p>
 
   <div class="callout">
-    <p>COV is not a fee or a rule you can appeal. It is just arithmetic: price minus valuation, payable in cash. The
-      only levers you control are the price you agree and the cash buffer you keep for the gap.</p>
+    <p>COV is simply the price minus the valuation, paid in cash. What you control is the price you agree and how much cash you keep aside in case there is a gap.</p>
   </div>
 
   <div class="checks">
-    <h3>How to keep COV from catching you out</h3>
+    <h3>Practical points</h3>
     <ol>
-      <li><strong>Price off real comparables, not hope.</strong> The valuation will track recent like-for-like
-        sales in the block and area. Anchor your offer to the same evidence and the gap tends to shrink.</li>
-      <li><strong>Keep a cash buffer for the gap.</strong> In a market where COV has returned, budget as if you may
-        pay some - and remember it is cash the CPF and loan will not touch.</li>
-      <li><strong>Do not treat the seller's asking COV as fixed.</strong> Since 2014 there is no official COV to
-        "match". A price above valuation is a negotiation, not a given.</li>
-      <li><strong>Weigh COV against the flat, not your ego.</strong> Paying over valuation can be rational for a
-        genuinely scarce unit - a high floor, a rare layout - but know you are spending unrecoverable cash for it.</li>
-      <li><strong>Mind the resale value.</strong> The cash you pay over valuation is not lent against or bankable;
-        if the market softens, it is the first money you will not see again.</li>
+      <li><strong>Base your offer on comparable sales.</strong> The valuation will follow recent sales of similar flats in the block and area. If your offer is based on the same evidence, any gap is likely to be smaller.</li>
+      <li><strong>Keep some cash in reserve.</strong> While COV is common, budget for the possibility that you will pay some, and remember that CPF and the loan will not cover it.</li>
+      <li><strong>A seller's asking COV is negotiable.</strong> There has been no official COV figure since 2014, so a price above valuation is a matter for negotiation.</li>
+      <li><strong>Decide whether the flat is worth it.</strong> Paying above valuation can make sense for a genuinely scarce unit, such as a high floor or an unusual layout, but the cash you pay is not covered by the loan.</li>
+      <li><strong>Think about resale.</strong> If prices fall, the amount you paid above valuation is the part you are least likely to get back.</li>
     </ol>
   </div>
 
-  <div class="cta">
-    <div class="t">
-      <h3>Anchor your offer to real prices</h3>
-      <p>See what flats of the same type and town have actually sold for recently, so the number you agree stays
-        close to what a valuer will see.</p>
-    </div>
-    <a class="btn" href="/this-year">Open This Year &rarr;</a>
-  </div>
+  <p class="closing"><a href="/this-year">This Year</a> shows recent prices by town and flat type, which is a quick way to check whether an asking price is likely to be supported by the valuation.</p>
 
     <aside class="method">
     <div class="method-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg><span>How we sourced this</span></div>
@@ -296,8 +258,6 @@ tr.spot td:first-child{border-left:3px solid var(--color-text-info)}
     <p>Historical COV levels - the 2011 median near $38,000, the fall to around four in five sales at or below valuation by 2016, and the post-2020 resurgence - are drawn from HDB figures and market reporting; exact figures vary by quarter and source, and no official median is published today. This is general information to help you budget, not financial advice.</p>
     <p class="rev">Last reviewed August 2026.</p>
   </aside>
-
-  <p class="morelink"><a href="/guides/">&larr; All guides</a></p>
 </article>
 
 <footer class="site-footer"><div class="footer-inner">

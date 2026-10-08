@@ -105,7 +105,7 @@ body{margin:0;background:var(--color-background-primary);color:var(--color-text-
 a{color:var(--color-text-info)}
 
 .article{max-width:720px;margin:0 auto;padding:0 1.5rem}
-.kicker{margin-top:2.5rem;font-size:12.5px;font-weight:640;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-text-info)}
+.kicker{margin-top:2.5rem;font-size:14px;font-weight:500;color:var(--color-text-tertiary)}
 .crumbs{margin-top:1.5rem;font-size:13px;color:var(--color-text-tertiary)}
 .crumbs a{color:var(--color-text-secondary);text-decoration:none}
 .crumbs a:hover{text-decoration:underline}
@@ -148,11 +148,13 @@ figcaption{font-family:var(--font-sans);font-size:12.5px;color:var(--color-text-
 .callout{margin:32px 0 0;border-left:3px solid var(--color-text-info);background:var(--color-background-info);border-radius:0 var(--border-radius-lg) var(--border-radius-lg) 0;padding:18px 22px}
 .callout p{margin:0;font-family:var(--font-serif);font-size:18px;line-height:1.6;color:var(--color-text-primary)}
 
+/*RELATED*/.related{margin-top:32px}.related h3{font-family:var(--font-sans);font-size:15px;font-weight:600;margin:0}.related ul{margin:10px 0 0;padding-left:1.1em}.related li{font-family:var(--font-serif);font-size:17.5px;line-height:1.55;margin:6px 0}
+.closing{margin-top:34px!important}
 .takeaways{margin-top:20px;border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);padding:6px 24px 16px}
-.takeaways h3{font-family:var(--font-sans);font-size:13px;text-transform:uppercase;letter-spacing:0.06em;color:var(--color-text-tertiary);margin:18px 0 0}
+.takeaways h3{font-family:var(--font-sans);font-size:16.5px;font-weight:650;color:var(--color-text-primary);margin:18px 0 0}
 .takeaways ul{margin:12px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px}
 .takeaways li{font-family:var(--font-serif);font-size:17.5px;line-height:1.55;padding-left:26px;position:relative}
-.takeaways li::before{content:"";position:absolute;left:0;top:8px;width:13px;height:13px;border-radius:4px;background:var(--color-background-info);border:1.5px solid var(--color-text-info)}
+.takeaways li::before{content:"";position:absolute;left:6px;top:12px;width:6px;height:6px;border-radius:50%;background:var(--color-text-tertiary)}
 
 .cta{margin:42px 0 0;border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-secondary);padding:24px 26px;display:flex;gap:20px;align-items:center;justify-content:space-between;flex-wrap:wrap}
 .cta .t h3{margin:0;font-family:var(--font-sans);font-size:18px;font-weight:700;letter-spacing:-0.01em}
@@ -160,7 +162,7 @@ figcaption{font-family:var(--font-sans);font-size:12.5px;color:var(--color-text-
 .cta .btn{font-family:var(--font-sans);font-weight:640;font-size:14.5px;color:var(--color-background-primary);background:var(--color-text-primary);padding:12px 20px;border-radius:10px;white-space:nowrap;text-decoration:none;transition:opacity .12s}
 .cta .btn:hover{opacity:.85}
 
-.method{margin:40px 0 0;font-family:var(--font-sans);border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-secondary);padding:20px 22px}.method-head{display:flex;align-items:center;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--color-text-secondary);margin:0 0 12px}.method-head svg{width:15px;height:15px;flex-shrink:0;color:var(--color-text-info)}.method p{font-size:13px;line-height:1.6;color:var(--color-text-tertiary);margin:0 0 10px}.method p:last-child{margin:0}.method a{color:var(--color-text-info);text-decoration:none}.method a:hover{text-decoration:underline}.method .rev{font-style:italic}
+.method{margin:40px 0 0;font-family:var(--font-sans);border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-secondary);padding:20px 22px}.method-head{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--color-text-secondary);margin:0 0 12px}.method-head svg{width:15px;height:15px;flex-shrink:0;color:var(--color-text-info)}.method p{font-size:13px;line-height:1.6;color:var(--color-text-tertiary);margin:0 0 10px}.method p:last-child{margin:0}.method a{color:var(--color-text-info);text-decoration:none}.method a:hover{text-decoration:underline}.method .rev{font-style:italic}
 .method b{color:var(--color-text-secondary)}
 .morelink{margin:26px 0 0;font-family:var(--font-sans);font-size:14px}
 .morelink a{color:var(--color-text-info);text-decoration:none;font-weight:600}
@@ -182,53 +184,38 @@ figcaption{font-family:var(--font-sans);font-size:12.5px;color:var(--color-text-
   <div class="crumbs"><a href="/guides/">Guides</a> &nbsp;/&nbsp; Lease decay</div>
   <div class="kicker">Guide · Value</div>
   <h1>Lease decay, explained without the panic</h1>
-  <p class="standfirst">Every HDB flat is a 99-year clock, and the fear is that an older one melts away to nothing.
-    The record tells a calmer story: a slow drift for most of that clock, and a real bite only near the end -
-    for a reason that has little to do with the flat.</p>
+  <p class="standfirst">Older flats are often assumed to lose value steadily as the lease runs down. The sales record shows a slow decline for most of the lease and a much sharper one in the last 60 years or so, mainly because of the rules on CPF and loans.</p>
   <div class="byline">
     <span class="who">SG HDB Resale</span><span>·</span>
     <span>Based on 2025 four-room resales, by remaining lease</span>
     <span class="pill">6 min read</span>
   </div>
 
-  <p>Every HDB flat is sold on a 99-year lease, and when it runs out the flat returns to the state, worth
-    nothing. That single fact drives one of the most repeated warnings in the market: don’t buy an old flat, or
-    you’ll watch your money evaporate as the lease ticks down. It sounds airtight. The transaction record says
-    it’s mostly wrong.</p>
+  <p>HDB flats are sold on 99-year leases, and when the lease ends the flat returns to the state. That is the basis of a common warning: avoid older flats, because their value falls as the lease runs down. The sales data supports a milder version of that.</p>
 
-  <h2>You can’t even see the decay in the prices</h2>
+  <h2>In the raw prices, the effect is hard to see</h2>
 
-  <p>If lease decay were the dominant force, older flats would be visibly cheaper. They often aren’t. As
-    <a href="/guides/mrt-price-premium">the MRT guide showed</a>, four-room flats with 80–85 years left outsold
-    flats with a full decade more lease - because the shorter-lease ones sat in prime, central, near-MRT
-    locations. Age and location are tangled together, and in the raw numbers location wins. So the market flatly
-    contradicts the panic: buyers are routinely paying <em>more</em> for less lease.</p>
+  <p>If lease were the main driver, older flats would be clearly cheaper. Often they are not. As the <a href="/guides/mrt-price-premium">MRT guide</a> shows, four-room flats with 80–85 years left sold for more than flats with ten more years, because the shorter-lease flats tended to be in central locations near the MRT. Age and location are tied together, and in the raw numbers location matters more.</p>
 
-  <p>To actually see decay, you have to hold location still - compare older against newer flats <em>within the
-    same town</em>, and let the lease be the only thing that really changes.</p>
+  <p>To isolate the effect of lease, you need to compare older and newer flats within the same town, so that location stays roughly constant.</p>
 
-  <h2>Do that, and decay is gentle</h2>
+  <h2>Within a town, the decline is gradual</h2>
 
-  <p>Within a single town, price eases down by roughly <strong>1% of the flat’s value for each year of lease</strong>
-    - very roughly $3,000 to $6,000 a year on a mid-priced flat. That’s the whole gradient, and even some of it is
-    really newer flats having better layouts and locations, not the lease clock alone. A flat with 90 years left
-    and one with 80 are almost indistinguishable on lease grounds. For the broad middle of the range, the steady
-    “melting ice cube” simply isn’t there.</p>
+  <p>Within a town, price falls by roughly <strong>1% of the flat's value for each year of lease</strong>, or very roughly $3,000 to $6,000 a year on a mid-priced flat. Part of even that is because newer flats tend to have better layouts and locations. A flat with 90 years left and one with 80 years left are priced very similarly. For most of the range, the decline is slow.</p>
 
   <div class="keyfig">
-    <div class="cell"><div class="n blue tnum">~1%<span style="font-size:16px">/yr</span></div><div class="l">how fast price eases with lease, within a town - a slow drift</div></div>
+    <div class="cell"><div class="n blue tnum">~1%<span style="font-size:16px">/yr</span></div><div class="l">how fast price falls with lease, within a town</div></div>
     <div class="cell"><div class="n red tnum">~60 yrs</div><div class="l">where the gentle drift turns into a real decline</div></div>
     <div class="cell"><div class="n tnum">3&times;</div><div class="l">how much steeper the fall gets below that point</div></div>
   </div>
 
-  <h2>The cliff is real - but it’s at ~60 years, not zero</h2>
+  <h2>The decline steepens below about 60 years</h2>
 
-  <p>Netting out location so we’re measuring the lease itself, the decline is mild while a flat still has plenty
-    of runway - then it steepens sharply as the lease gets short:</p>
+  <p>With location netted out, the decline is mild while a flat has plenty of lease left, and gets much steeper once the lease is short:</p>
 
   <figure>
     <div class="chart">
-      <div class="ct">The fall gets three times steeper once lease runs low</div>
+      <div class="ct">Below 60 years, each year of lease costs about three times as much</div>
       <div class="cs">How fast four-room price drops per year of lease, location held constant · 2025</div>
       <div class="cmp">
         <div class="cmprow gentle">
@@ -241,48 +228,24 @@ figcaption{font-family:var(--font-sans);font-size:12.5px;color:var(--color-text-
         </div>
       </div>
     </div>
-    <figcaption>Each bar is the average price change per extra year of lease, after subtracting each flat’s town
-      median so location is netted out. Below roughly 60 years remaining, the same year of lease costs more than
-      three times as much.</figcaption>
+    <figcaption>Each bar is the average price change per extra year of lease, after subtracting each flat's town median to remove the effect of location.</figcaption>
   </figure>
 
-  <p>And the reason isn’t the flat - it’s money. Around the 60-year mark, a flat’s remaining lease stops being
-    long enough to cover a young buyer to age 95. Past that line, CPF savings can only be used on a
-    <strong>pro-rated</strong> basis and housing loans shrink; shorter still, and CPF and financing largely
-    disappear. Fewer buyers can fund the purchase, the pool tilts toward older, cash-richer ones, and the price
-    has to fall to clear. It’s no accident that the data’s inflection sits right where that financing rule bites.</p>
+  <p>The main reason is financing. At around 60 years, the remaining lease no longer covers a young buyer to age 95. Below that point CPF can only be used on a <strong>pro-rated</strong> basis and the housing loan is smaller, and for shorter leases still, CPF and loans are largely unavailable. Fewer buyers can afford these flats, more of them are older buyers with cash, and prices adjust to match. The steeper decline in the data starts at about the same point as these rules.</p>
 
   <h2>What this means for you</h2>
 
   <div class="takeaways">
-    <h3>How to hold lease in your head</h3>
+    <h3>Practical points</h3>
     <ul>
-      <li><strong>For most resale flats - 70-plus years left - decay is a slow drag, not a countdown.</strong>
-        Floor, location and condition will move the price far more than the lease clock.</li>
-      <li><strong>Watch the ~60-year line.</strong> Below it, reselling gets harder: your eventual buyers hit the
-        same CPF and loan limits, so you’re selling to a smaller, more cash-heavy crowd.</li>
-      <li><strong>Ask the financing question first.</strong> Does the remaining lease cover the youngest buyer to
-        age 95? That one line decides whether full CPF and loans are on the table - for you now, and for whoever
-        buys from you later.</li>
-      <li><strong>Match the lease to your plan.</strong> Buying a great location to live in, with 65-plus years
-        and the sums working? Reasonable. Counting on an easy resale or passing it on? Short leases are where the
-        real risk lives.</li>
+      <li><strong>With 70 or more years left, lease is a minor factor.</strong> Floor, location and condition affect the price far more.</li>
+      <li><strong>Pay attention below about 60 years.</strong> Your eventual buyers will face the same CPF and loan limits, so there will be fewer of them and they will need more cash.</li>
+      <li><strong>Check the financing first.</strong> Does the remaining lease cover the youngest buyer to age 95? That decides whether full CPF use and a full loan are available, both for you and for whoever buys from you later.</li>
+      <li><strong>Match the lease to your plans.</strong> A flat in a good location with 65 or more years left can make sense if you plan to live there and the numbers work. If you are counting on an easy resale or on passing the flat on, a short lease is where most of the risk is.</li>
     </ul>
   </div>
 
-  <div class="callout">
-    <p>Lease decay isn’t a melting ice cube. It’s a gentle drift that turns into a financing cliff around 60 years
-      left - so the number that should worry you isn’t the age of the flat, it’s whether the lease still covers a loan.</p>
-  </div>
-
-  <div class="cta">
-    <div class="t">
-      <h3>See how lease changes the picture</h3>
-      <p>Find a Flat lets you filter by minimum remaining lease and watch how prices - and the towns within
-        reach - shift as you move the lease bar.</p>
-    </div>
-    <a class="btn" href="/find-a-flat">Open Find a Flat →</a>
-  </div>
+  <p class="closing">In <a href="/find-a-flat">Find a Flat</a> you can set a minimum remaining lease and see how prices, and the towns within your budget, change as you move it.</p>
 
     <aside class="method">
     <div class="method-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg><span>How we measured this</span></div>
@@ -291,16 +254,14 @@ figcaption{font-family:var(--font-sans);font-size:12.5px;color:var(--color-text-
     <p>Medians describe past sales, not valuations or forecasts.</p>
   </aside>
 
-  <nav class="takeaways" aria-label="Related guides">
-    <h3>Related guides</h3>
+  <nav class="related" aria-label="Related guides">
+    <h3>Related reading</h3>
     <ul>
       <li><a href="/guides/fair-price">How to tell if an HDB asking price is fair</a></li>
       <li><a href="/guides/is-now-a-good-time">Is now a good time to buy an HDB resale flat?</a></li>
       <li><a href="/guides/mrt-price-premium">Is an HDB flat near an MRT worth the premium?</a></li>
     </ul>
   </nav>
-
-  <p class="morelink"><a href="/guides/">← All guides</a></p>
 </article>
 
 <footer class="site-footer"><div class="footer-inner">

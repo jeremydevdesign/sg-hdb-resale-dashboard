@@ -124,8 +124,8 @@ a.pstat:hover .pk{color:var(--color-text-info)}
 .pc-r{font-size:14px;line-height:1.5;color:var(--color-text-secondary)}
 .pc-r b{color:var(--color-text-primary);font-weight:600;font-variant-numeric:tabular-nums}
 .pc-links{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:14px}
-.pc-links a{font-size:14px;font-weight:600;color:var(--color-text-info);text-decoration:none}
-.pc-links a:hover{text-decoration:underline}
+.pc-links a{font-size:14px;font-weight:500;color:var(--color-text-info);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+.pc-links a:hover{text-decoration-thickness:2px}
 .pc-links .wbtn{margin:-5px 0}
 @media(max-width:600px){.pc{padding:18px 16px 20px}.pc-form{grid-template-columns:1fr 1fr;gap:10px}.pc-v{font-size:34px}}
 .pulse-live{display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--color-text-primary)}
@@ -134,11 +134,9 @@ a.pstat:hover .pk{color:var(--color-text-info)}
 .pulse-up{color:var(--color-text-success);font-weight:600}
 .pulse-down{color:var(--color-text-danger);font-weight:600}
 .pulse-head{display:flex;flex-wrap:wrap;align-items:center;gap:9px;padding:10px 12px 10px 20px;border-bottom:1px solid var(--color-border-secondary);font-size:12.5px;color:var(--color-text-secondary)}
-.pulse-cta{margin-left:auto;display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:999px;font-size:12.5px;font-weight:600;color:var(--color-text-info);text-decoration:none;background:var(--color-background-primary);border:1px solid var(--color-border-secondary)}
-.pulse-cta:hover{border-color:var(--color-text-info)}
-.escape-hatch{font-size:13.5px;line-height:1.6;color:var(--color-text-secondary);text-align:center;margin:22px auto 0;max-width:64ch}
-.escape-hatch a{color:var(--color-text-info);text-decoration:none;font-weight:600}
-.escape-hatch a:hover{text-decoration:underline}
+.pulse-cta{margin-left:auto;padding:4px 8px;font-size:12.5px;font-weight:500;color:var(--color-text-info);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+.pulse-cta:hover{text-decoration-thickness:2px}
+.escape-hatch{font-family:var(--font-serif);font-size:16px;line-height:1.6;color:var(--color-text-secondary);margin:22px 0 0;max-width:68ch}
 .pulse-head strong{color:var(--color-text-primary);font-weight:600}
 .pulse-head>span:not(.pulse-dot){flex:1 1 200px;min-width:0}
 .pulse-dot{width:8px;height:8px;border-radius:50%;background:var(--color-text-success);flex:none;animation:pulseping 2.6s ease-out infinite}
@@ -155,20 +153,17 @@ a.pstat:hover .pk{color:var(--color-text-info)}
 
 .section-label{font-size:12px;font-weight:640;letter-spacing:.06em;text-transform:uppercase;color:var(--color-text-tertiary);margin:0 0 16px}
 #roadmap,#watchlist{scroll-margin-top:72px}
-.roadmap-intro{font-size:15px;line-height:1.6;color:var(--color-text-secondary);margin:0 0 18px;max-width:60ch}
-.roadmap{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:16px;align-items:stretch}
-@media(max-width:720px){.roadmap{grid-template-columns:1fr}}
-.rstep{position:relative;border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-secondary);padding:22px 24px 22px 66px}
-.rnum{position:absolute;left:22px;top:22px;width:30px;height:30px;border-radius:50%;background:var(--color-text-primary);color:var(--color-background-primary);font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center;font-variant-numeric:tabular-nums}
-.rstep h3{font-family:var(--font-serif);margin:0;font-size:20px;line-height:1.2;font-weight:600;color:var(--color-text-primary)}
-.rstep p{font-family:var(--font-serif);margin:8px 0 0;font-size:15.5px;line-height:1.5;color:var(--color-text-secondary);max-width:60ch}
-.rrow{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px 8px;align-items:center}
-.rlabel{font-family:var(--font-sans);font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--color-text-tertiary);margin-right:2px}
-.rlink{font-family:var(--font-sans);font-size:13px;font-weight:600;text-decoration:none;padding:6px 12px;border-radius:8px;border:1px solid var(--color-border-primary);color:var(--color-text-primary);background:var(--color-background-primary);transition:border-color .12s,color .12s}
-.rlink:hover{border-color:var(--color-text-info);color:var(--color-text-info)}
-.rlink.read{background:transparent;border-color:var(--color-border-secondary);color:var(--color-text-info)}
-.rlink.read:hover{color:var(--color-text-info);border-color:var(--color-text-info)}
-@media(max-width:600px){.rstep{padding:16px 16px 16px 56px}.rnum{left:16px;top:15px;width:28px;height:28px;font-size:13px}.rstep h3{font-size:18.5px}.rstep p{font-size:14.5px;margin-top:6px}.rrow{margin-top:10px}.rlink{font-size:12.5px;padding:5px 10px}.roadmap{gap:10px}}
+.roadmap-h{font-family:var(--font-serif);font-size:clamp(24px,3.4vw,30px);line-height:1.2;font-weight:600;margin:0 0 8px;letter-spacing:-.005em}
+.roadmap-intro{font-family:var(--font-serif);font-size:17px;line-height:1.6;color:var(--color-text-secondary);margin:0 0 8px;max-width:60ch}
+.roadmap{list-style:none;counter-reset:rs;margin:0;padding:0;max-width:68ch}
+.roadmap li{counter-increment:rs;position:relative;padding:18px 0 18px 46px;border-top:1px solid var(--color-border-secondary)}
+.roadmap li:last-child{border-bottom:1px solid var(--color-border-secondary)}
+.roadmap li::before{content:counter(rs);position:absolute;left:0;top:15px;font-family:var(--font-serif);font-size:26px;line-height:1;color:var(--color-text-tertiary);font-variant-numeric:oldstyle-nums}
+.roadmap h3{font-family:var(--font-serif);margin:0;font-size:20px;line-height:1.25;font-weight:600;color:var(--color-text-primary)}
+.roadmap p{font-family:var(--font-serif);margin:6px 0 0;font-size:16.5px;line-height:1.6;color:var(--color-text-secondary)}
+.roadmap a,.escape-hatch a{color:var(--color-text-info);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+.roadmap a:hover,.escape-hatch a:hover{text-decoration-thickness:2px}
+@media(max-width:600px){.roadmap li{padding:16px 0 16px 36px}.roadmap li::before{font-size:22px}.roadmap h3{font-size:18.5px}.roadmap p{font-size:15.5px}}
 .feature{display:block;text-decoration:none;border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-secondary);padding:28px 30px;transition:border-color .12s,transform .12s}
 .feature:hover{border-color:var(--color-text-primary);transform:translateY(-2px)}
 .feature .tag{font-size:12px;font-weight:640;letter-spacing:.05em;text-transform:uppercase;color:var(--color-text-info)}
@@ -230,9 +225,8 @@ a.card:hover{border-color:var(--color-text-info);transform:translateY(-2px)}
 <div class="nav"><div class="nav-inner"><a class="nav-brand" href="/"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>SG HDB Resale</a><button class="nav-toggle" id="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button><div class="nav-links" id="nav-links"><a class="nav-link" href="/towns/">Towns</a><a class="nav-link" href="/search">Search</a><a class="nav-link" href="/map">Map</a><a class="nav-link" href="/calculators">Calculators</a><a class="nav-link" href="/guides/">Guides</a><div class="nav-group"><button type="button" class="nav-link nav-group-btn" aria-haspopup="true" aria-expanded="false">Dashboard<svg class="nav-caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="nav-menu" role="menu"><a class="nav-menu-link" href="/overview" role="menuitem">Overview</a><a class="nav-menu-link" href="/this-year" role="menuitem">This Year</a><a class="nav-menu-link" href="/find-a-flat" role="menuitem">Find a Flat</a><a class="nav-menu-link" href="/analysis-by-town" role="menuitem">Analysis by Town</a><a class="nav-menu-link" href="/by-district" role="menuitem">By District</a><a class="nav-menu-link" href="/insights" role="menuitem">Insights</a></div></div><div class="nav-group"><button type="button" class="nav-link nav-group-btn" aria-haspopup="true" aria-expanded="false">More<svg class="nav-caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="nav-menu" role="menu"><a class="nav-menu-link" href="/this-month" role="menuitem">This Month</a><a class="nav-menu-link" href="/million-dollar-flats" role="menuitem">Million-Dollar Flats</a><a class="nav-menu-link" href="/resale-price-index" role="menuitem">Resale Price Index</a></div></div></div><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme"></button></div></div>
 <div class="wrap">
 <section class="hero">
-<p class="hero-eyebrow">A decade of Singapore's HDB resale market</p>
 <h1 class="hero-title">Buying a resale flat? Start here.</h1>
-<p class="hero-lede">Check what flats really sell for, then work through the seven-step roadmap below. Every figure is an official resale record since 2012, refreshed weekly - nothing modelled or estimated.</p>
+<p class="hero-lede">Every HDB resale since 2012, taken from the official record, with new sales added each week.</p>
 </section>
 
 <section class="wl" id="watchlist" aria-label="Your watchlist" hidden></section>
@@ -241,14 +235,14 @@ a.card:hover{border-color:var(--color-text-info);transform:translateY(-2px)}
 <!--PRICECHECK:START-->
 <div class="pc-head"><h2 class="pc-title">What do flats actually sell for?</h2><p class="pc-win">Real resale prices, Nov 2025 &ndash; Oct 2026</p></div>
 <div class="pc-form"><label class="pc-field"><span>Town</span><select id="pc-town"><option value="_ALL">All towns</option><option value="ANG MO KIO">Ang Mo Kio</option><option value="BEDOK">Bedok</option><option value="BISHAN">Bishan</option><option value="BUKIT BATOK">Bukit Batok</option><option value="BUKIT MERAH">Bukit Merah</option><option value="BUKIT PANJANG">Bukit Panjang</option><option value="BUKIT TIMAH">Bukit Timah</option><option value="CENTRAL AREA">Central Area</option><option value="CHOA CHU KANG">Choa Chu Kang</option><option value="CLEMENTI">Clementi</option><option value="GEYLANG">Geylang</option><option value="HOUGANG">Hougang</option><option value="JURONG EAST">Jurong East</option><option value="JURONG WEST">Jurong West</option><option value="KALLANG/WHAMPOA">Kallang/Whampoa</option><option value="MARINE PARADE">Marine Parade</option><option value="PASIR RIS">Pasir Ris</option><option value="PUNGGOL">Punggol</option><option value="QUEENSTOWN">Queenstown</option><option value="SEMBAWANG">Sembawang</option><option value="SENGKANG">Sengkang</option><option value="SERANGOON">Serangoon</option><option value="TAMPINES">Tampines</option><option value="TOA PAYOH">Toa Payoh</option><option value="WOODLANDS">Woodlands</option><option value="YISHUN">Yishun</option></select></label><label class="pc-field"><span>Flat type</span><select id="pc-type"><option value="2 ROOM">2-room</option><option value="3 ROOM">3-room</option><option value="4 ROOM" selected>4-room</option><option value="5 ROOM">5-room</option><option value="EXECUTIVE">Executive</option></select></label></div>
-<div class="pc-out" id="pc-out" aria-live="polite"><div class="pc-k">Median 4-room resale price across Singapore</div><div class="pc-v">$630,000</div><div class="pc-r">Typical range <b>$510k&ndash;$945k</b> (middle 80% of sales) &middot; <b>10,322</b> sales</div><div class="pc-links"><a href="/search?type=4">Browse every sale since 2024 &rarr;</a><a href="/towns/">Compare all 26 towns &rarr;</a></div></div>
+<div class="pc-out" id="pc-out" aria-live="polite"><div class="pc-k">Median 4-room resale price across Singapore</div><div class="pc-v">$630,000</div><div class="pc-r">Typical range <b>$510k&ndash;$945k</b> (middle 80% of sales) &middot; <b>10,322</b> sales</div><div class="pc-links"><a href="/search?type=4">See each sale since 2024</a><a href="/towns/">Compare all 26 towns</a></div></div>
 <script type="application/json" id="pc-data">{"w":"Nov 2025 &ndash; Oct 2026","t":{"2 ROOM":"2-room","3 ROOM":"3-room","4 ROOM":"4-room","5 ROOM":"5-room","EXECUTIVE":"Executive"},"q":{"2 ROOM":2,"3 ROOM":3,"4 ROOM":4,"5 ROOM":5,"EXECUTIVE":6},"d":{"_ALL":{"l":"Singapore","s":"","f":{"2 ROOM":[375000,300000,422888,715],"3 ROOM":[440000,352000,630000,5450],"4 ROOM":[630000,510000,945000,10322],"5 ROOM":[740000,612000,1038000,5540],"EXECUTIVE":[918000,777200,1128888,1495]}},"ANG MO KIO":{"l":"Ang Mo Kio","s":"ang-mo-kio","f":{"2 ROOM":[325000,285000,360000,23],"3 ROOM":[430000,385000,500000,388],"4 ROOM":[620000,513000,1050000,261],"5 ROOM":[988000,730000,1278888,133],"EXECUTIVE":[1201888,1050000,1330000,7]}},"BEDOK":{"l":"Bedok","s":"bedok","f":{"2 ROOM":[325000,300888,353000,18],"3 ROOM":[417694,370000,582000,470],"4 ROOM":[600000,495000,945000,495],"5 ROOM":[795000,648000,1056888,206],"EXECUTIVE":[1020000,930000,1200000,61]}},"BISHAN":{"l":"Bishan","s":"bishan","f":{"2 ROOM":[null,null,null,0],"3 ROOM":[530000,368000,578000,61],"4 ROOM":[788000,644000,910000,186],"5 ROOM":[970000,865000,1270000,105],"EXECUTIVE":[1290000,1090000,1460000,47]}},"BUKIT BATOK":{"l":"Bukit Batok","s":"bukit-batok","f":{"2 ROOM":[380000,345000,405000,88],"3 ROOM":[415000,380000,530000,309],"4 ROOM":[630000,488888,730000,567],"5 ROOM":[810000,715000,920000,289],"EXECUTIVE":[869444,800000,970000,64]}},"BUKIT MERAH":{"l":"Bukit Merah","s":"bukit-merah","f":{"2 ROOM":[289444,260000,465000,34],"3 ROOM":[430000,345000,780000,288],"4 ROOM":[935000,616000,1110000,366],"5 ROOM":[1065000,772000,1358000,171],"EXECUTIVE":[null,null,null,0]}},"BUKIT PANJANG":{"l":"Bukit Panjang","s":"bukit-panjang","f":{"2 ROOM":[355000,325000,410000,9],"3 ROOM":[465000,410000,530000,95],"4 ROOM":[570000,490000,675000,358],"5 ROOM":[698000,604000,880000,207],"EXECUTIVE":[850000,700000,989000,75]}},"BUKIT TIMAH":{"l":"Bukit Timah","s":"bukit-timah","f":{"2 ROOM":[null,null,null,0],"3 ROOM":[480000,455000,545000,9],"4 ROOM":[938000,910000,970000,16],"5 ROOM":[1107500,990000,1280000,24],"EXECUTIVE":[1390000,1310000,1428000,9]}},"CENTRAL AREA":{"l":"Central Area","s":"central-area","f":{"2 ROOM":[330000,280000,360000,6],"3 ROOM":[548000,470000,610000,61],"4 ROOM":[843000,628000,1445000,75],"5 ROOM":[1480000,787000,1630000,25],"EXECUTIVE":[null,null,null,0]}},"CHOA CHU KANG":{"l":"Choa Chu Kang","s":"choa-chu-kang","f":{"2 ROOM":[358000,330000,430000,13],"3 ROOM":[441500,370000,506888,66],"4 ROOM":[554250,500000,626000,478],"5 ROOM":[670000,570000,745000,327],"EXECUTIVE":[835000,754313,900000,85]}},"CLEMENTI":{"l":"Clementi","s":"clementi","f":{"2 ROOM":[415000,305000,458000,5],"3 ROOM":[434000,370000,695888,194],"4 ROOM":[847000,530000,1160000,189],"5 ROOM":[1165000,765000,1498000,80],"EXECUTIVE":[1065000,1030000,1135000,8]}},"GEYLANG":{"l":"Geylang","s":"geylang","f":{"2 ROOM":[288000,278000,320000,19],"3 ROOM":[380000,312000,713888,304],"4 ROOM":[740000,540000,1010000,215],"5 ROOM":[925444,753000,1310000,68],"EXECUTIVE":[1062500,943000,1100000,12]}},"HOUGANG":{"l":"Hougang","s":"hougang","f":{"2 ROOM":[385250,360000,410000,36],"3 ROOM":[452250,405000,560000,242],"4 ROOM":[618444,530000,750000,558],"5 ROOM":[785000,670000,980000,228],"EXECUTIVE":[970000,870000,1098000,121]}},"JURONG EAST":{"l":"Jurong East","s":"jurong-east","f":{"2 ROOM":[353500,330000,361000,10],"3 ROOM":[408000,365000,485000,167],"4 ROOM":[549444,472888,674000,132],"5 ROOM":[710000,600000,829888,107],"EXECUTIVE":[942500,765000,1080000,34]}},"JURONG WEST":{"l":"Jurong West","s":"jurong-west","f":{"2 ROOM":[361500,340000,378800,26],"3 ROOM":[393000,310000,510000,284],"4 ROOM":[535000,480000,640000,556],"5 ROOM":[635000,565000,728000,418],"EXECUTIVE":[784000,700000,858000,117]}},"KALLANG/WHAMPOA":{"l":"Kallang/Whampoa","s":"kallang-whampoa","f":{"2 ROOM":[328000,308000,360000,11],"3 ROOM":[458888,352000,750000,289],"4 ROOM":[905000,570000,1160000,280],"5 ROOM":[968000,750000,1300000,111],"EXECUTIVE":[994000,860000,1280000,14]}},"MARINE PARADE":{"l":"Marine Parade","s":"marine-parade","f":{"2 ROOM":[null,null,null,1],"3 ROOM":[466500,408000,520000,54],"4 ROOM":[642500,550000,700000,36],"5 ROOM":[1050000,872000,1160000,30],"EXECUTIVE":[null,null,null,0]}},"PASIR RIS":{"l":"Pasir Ris","s":"pasir-ris","f":{"2 ROOM":[415000,400000,433000,9],"3 ROOM":[608000,340000,639000,21],"4 ROOM":[635000,590000,770000,298],"5 ROOM":[730000,685000,815000,222],"EXECUTIVE":[928000,840000,1000000,187]}},"PUNGGOL":{"l":"Punggol","s":"punggol","f":{"2 ROOM":[398000,360000,450000,119],"3 ROOM":[545000,510000,600000,174],"4 ROOM":[680000,598000,775000,808],"5 ROOM":[783444,625000,955000,444],"EXECUTIVE":[827500,768000,873888,22]}},"QUEENSTOWN":{"l":"Queenstown","s":"queenstown","f":{"2 ROOM":[517500,280000,650000,18],"3 ROOM":[450000,330888,838540,332],"4 ROOM":[1029000,825000,1200000,290],"5 ROOM":[1240000,908888,1520000,85],"EXECUTIVE":[1375000,1170000,1420000,6]}},"SEMBAWANG":{"l":"Sembawang","s":"sembawang","f":{"2 ROOM":[379000,355000,420000,88],"3 ROOM":[520000,483000,588888,91],"4 ROOM":[601250,520888,720000,368],"5 ROOM":[640000,570000,815000,223],"EXECUTIVE":[751000,688000,880000,55]}},"SENGKANG":{"l":"Sengkang","s":"sengkang","f":{"2 ROOM":[388000,360000,410000,70],"3 ROOM":[541444,507000,575000,128],"4 ROOM":[640000,560000,768000,811],"5 ROOM":[700000,620000,873000,550],"EXECUTIVE":[845000,795000,930000,105]}},"SERANGOON":{"l":"Serangoon","s":"serangoon","f":{"2 ROOM":[null,null,null,0],"3 ROOM":[460000,410000,528000,89],"4 ROOM":[653000,560000,850000,165],"5 ROOM":[838000,725000,1000000,67],"EXECUTIVE":[1128000,970000,1205000,45]}},"TAMPINES":{"l":"Tampines","s":"tampines","f":{"2 ROOM":[426444,405000,465000,10],"3 ROOM":[490000,445000,615000,358],"4 ROOM":[665000,582888,805000,852],"5 ROOM":[814000,718000,960888,540],"EXECUTIVE":[980000,908000,1120000,166]}},"TOA PAYOH":{"l":"Toa Payoh","s":"toa-payoh","f":{"2 ROOM":[280000,270000,320000,20],"3 ROOM":[378888,324000,810000,391],"4 ROOM":[1000000,616000,1160000,385],"5 ROOM":[1037844,721888,1450000,138],"EXECUTIVE":[984000,950888,1225000,14]}},"WOODLANDS":{"l":"Woodlands","s":"woodlands","f":{"2 ROOM":[378000,355000,390388,33],"3 ROOM":[410000,335000,530000,195],"4 ROOM":[550000,480000,640000,833],"5 ROOM":[655000,590000,740000,498],"EXECUTIVE":[918000,822000,1080000,178]}},"YISHUN":{"l":"Yishun","s":"yishun","f":{"2 ROOM":[363000,340000,381000,49],"3 ROOM":[435000,395000,498888,390],"4 ROOM":[550000,470000,630000,744],"5 ROOM":[690000,615000,780000,244],"EXECUTIVE":[900000,830000,1068888,63]}}}}</script>
 <!--PRICECHECK:END-->
 </section>
 
 <section class="pulse-card" aria-label="Latest market snapshot">
 <!--PULSE:START-->
-<div class="pulse-head"><span class="pulse-dot"></span><span><strong>October 2026</strong> so far - refreshed weekly from data.gov.sg</span><a class="pulse-cta" href="/this-month">See what moved &rarr;</a></div>
+<div class="pulse-head"><span class="pulse-dot"></span><span><strong>October 2026</strong> so far - refreshed weekly from data.gov.sg</span><a class="pulse-cta" href="/this-month">Full monthly update</a></div>
 <div class="pulse-grid">
 <div class="pstat"><div class="pk">Median resale price</div><div class="pv">$691,500</div><div class="ps">212 sales so far in October</div></div>
 <div class="pstat"><div class="pk">Year on year</div><div class="pv pulse-up">+11.5%</div><div class="ps">vs October 2025 - provisional so far</div></div>
@@ -258,71 +252,23 @@ a.card:hover{border-color:var(--color-text-info);transform:translateY(-2px)}
 <!--PULSE:END-->
 </section>
 
-<section id="roadmap" aria-label="Buyer's roadmap">
-<p class="section-label">Start here &middot; Buyer's roadmap</p>
-<p class="roadmap-intro">New to buying a resale flat? Work through it in order - each step points to the dashboards and guides for that stage.</p>
-<div class="roadmap">
-
-<div class="rstep">
-<div class="rnum">1</div>
-<h3>See where prices have been</h3>
-<p>Before anything else, get a feel for the whole market. A decade of medians shows how far prices have climbed, and how steady the climb has (or hasn't) been.</p>
-<div class="rrow"><span class="rlabel">Explore</span><a class="rlink" href="/overview">Overview</a><a class="rlink" href="/resale-price-index">Resale Price Index</a></div>
-<div class="rrow"><span class="rlabel">Read</span><a class="rlink read" href="/guides/is-now-a-good-time">Is now a good time to buy?</a></div>
-</div>
-
-<div class="rstep">
-<div class="rnum">2</div>
-<h3>Zoom in on right now</h3>
-<p>The decade sets context; the last few months set expectations. See the latest medians and what actually moved in the newest data.</p>
-<div class="rrow"><span class="rlabel">Explore</span><a class="rlink" href="/this-month">This Month</a><a class="rlink" href="/this-year">This Year</a></div>
-</div>
-
-<div class="rstep">
-<div class="rnum">3</div>
-<h3>Narrow down to towns</h3>
-<p>Price is mostly about place. Compare all 26 towns, then dig into the ones you like - flat types, the near-MRT premium, mature vs non-mature.</p>
-<div class="rrow"><span class="rlabel">Explore</span><a class="rlink" href="/towns/">Towns</a><a class="rlink" href="/analysis-by-town">Analysis by Town</a><a class="rlink" href="/by-district">By District</a></div>
-<div class="rrow"><span class="rlabel">Read</span><a class="rlink read" href="/guides/mature-vs-non-mature">Mature vs non-mature estates</a><a class="rlink read" href="/guides/mrt-price-premium">Is the near-MRT premium worth it?</a></div>
-</div>
-
-<div class="rstep">
-<div class="rnum">4</div>
-<h3>Check what you can afford</h3>
-<p>With a shortlist in hand, turn it into a budget. Work out a realistic price ceiling, then see which towns and flat types actually fit.</p>
-<div class="rrow"><span class="rlabel">Explore</span><a class="rlink" href="/affordability">Affordability calculator</a><a class="rlink" href="/loan-calculator">HDB loan calculator</a><a class="rlink" href="/find-a-flat">Find a Flat</a></div>
-<div class="rrow"><span class="rlabel">Read</span><a class="rlink read" href="/guides/hdb-vs-bank-loan">HDB loan or bank loan?</a></div>
-</div>
-
-<div class="rstep">
-<div class="rnum">5</div>
-<h3>Count the real costs</h3>
-<p>The price tag isn't the whole bill. Downpayment, stamp duty, option fee, grants, COV - and which parts must be cash, not CPF.</p>
-<div class="rrow"><span class="rlabel">Explore</span><a class="rlink" href="/stamp-duty">Stamp duty calculator</a><a class="rlink" href="/grants">Grant checker</a></div>
-<div class="rrow"><span class="rlabel">Read</span><a class="rlink read" href="/guides/buying-costs">What a resale flat really costs</a><a class="rlink read" href="/guides/cash-over-valuation">Cash over valuation, explained</a></div>
-</div>
-
-<div class="rstep">
-<div class="rnum">6</div>
-<h3>Know what you're buying into</h3>
-<p>Two flats at the same price aren't equal. Lease age quietly shapes value and financing; eligibility and the 5-year MOP shape your options.</p>
-<div class="rrow"><span class="rlabel">Read</span><a class="rlink read" href="/guides/lease-decay">Lease decay, explained</a><a class="rlink read" href="/guides/mop-and-eligibility">Who can buy, and when can you sell?</a></div>
-</div>
-
-<div class="rstep">
-<div class="rnum">7</div>
-<h3>Make the offer, step by step</h3>
-<p>You've found the flat. Here's every gate from the HFE letter to the keys - in order, with costs and timing - plus how to place an asking price inside a fair range.</p>
-<div class="rrow"><span class="rlabel">Read</span><a class="rlink read" href="/guides/buying-timeline">Buying a resale flat, step by step</a><a class="rlink read" href="/guides/fair-price">How to tell if an asking price is fair</a></div>
-</div>
-
-</div>
-<p class="roadmap-intro" style="margin:18px 0 0"><a class="rlink read" href="/guides/" style="display:inline-block">Browse all guides &rarr;</a></p>
-<p class="escape-hatch">Not buying? &nbsp;Selling your flat - price it with <a href="/towns/">Towns</a> and <a href="/this-year">This Year</a>. &nbsp;Just exploring the data - jump into <a href="/search">Search</a> or the <a href="/map">Map</a>.</p>
+<section id="roadmap" aria-labelledby="roadmap-h">
+<h2 class="roadmap-h" id="roadmap-h">Buying a resale flat, in seven steps</h2>
+<p class="roadmap-intro">If this is your first resale purchase, it helps to go roughly in this order.</p>
+<ol class="roadmap">
+<li><h3>See where prices have been</h3><p>A decade of sales puts any single price in context. The <a href="/overview">Overview</a> shows how far prices have climbed and how unevenly. If you are unsure about timing, the guide on <a href="/guides/is-now-a-good-time">whether now is a good time to buy</a> looks at what the history can and cannot tell you.</p></li>
+<li><h3>Look at the latest month</h3><p>Recent sales are a better guide to what you will pay than the long-run trend. <a href="/this-month">This Month</a> covers the newest data and what changed.</p></li>
+<li><h3>Shortlist a few towns</h3><p>Location matters more than anything else. Compare all 26 on the <a href="/towns/">Towns</a> page, then open the ones you like for prices by flat type, the busiest streets and how much being near an MRT station matters there.</p></li>
+<li><h3>Work out a budget</h3><p>The <a href="/affordability">affordability calculator</a> turns income, savings and CPF into a price ceiling. <a href="/find-a-flat">Find a Flat</a> then shows which towns and flat types fit it.</p></li>
+<li><h3>Add up the other costs</h3><p>Stamp duty, legal fees, the option fee and any cash over valuation all come on top of the price, and some of it has to be cash rather than CPF. <a href="/guides/buying-costs">What a resale flat really costs</a> goes through each item.</p></li>
+<li><h3>Check the lease and the rules</h3><p>The remaining lease affects both what a flat is worth and how much you can borrow against it. See <a href="/guides/lease-decay">lease decay</a> and <a href="/guides/mop-and-eligibility">who can buy, and when you can sell</a>.</p></li>
+<li><h3>Make an offer</h3><p><a href="/guides/fair-price">How to tell if an asking price is fair</a> shows how to place one flat among comparable sales. The <a href="/guides/buying-timeline">buying timeline</a> covers everything from the HFE letter to collecting the keys.</p></li>
+</ol>
+<p class="escape-hatch">Selling instead? <a href="/towns/">Towns</a> and <a href="/this-year">This Year</a> show what similar flats fetched recently. Just curious? Try <a href="/search">Search</a> or the <a href="/map">Map</a>. All the write-ups are under <a href="/guides/">Guides</a>.</p>
 </section>
 
 <hr class="div">
-<p class="note">Every figure comes from the official <a href="https://data.gov.sg/collections/189/view" rel="noopener">data.gov.sg</a> resale-price records, geocoded against OneMap for MRT distance and postal district. Nothing is modelled or estimated - these are actual recorded transactions. <a href="/about">How this site works &rarr;</a></p>
+<p class="note">Every figure comes from the official <a href="https://data.gov.sg/collections/189/view" rel="noopener">data.gov.sg</a> resale-price records, with MRT distance and postal district added using OneMap. More on <a href="/about">where the numbers come from</a>.</p>
 </div>
 <footer class="site-footer"><div class="footer-inner">
 <span class="footer-brand">SG HDB Resale</span>
@@ -358,14 +304,14 @@ function k(v){return '$'+Math.round(v/1000).toLocaleString('en-SG')+'k';}
 function n(v){return v.toLocaleString('en-SG');}
 function render(){var town=ts.value,ft=fs.value,t=P.d[town];if(!t)return;var c=t.f[ft]||[null,null,null,0],fl=P.t[ft];
 var where=town==='_ALL'?'across Singapore':'in '+t.l;
-var link2=town==='_ALL'?'<a href="/towns/">Compare all 26 towns &rarr;</a>':'<a href="/towns/'+t.s+'">'+t.l+' prices in full &rarr;</a>';
+var link2=town==='_ALL'?'<a href="/towns/">Compare all 26 towns</a>':'<a href="/towns/'+t.s+'">More on '+t.l+'</a>';
 var q='?type='+P.q[ft]+(town==='_ALL'?'':'&town='+encodeURIComponent(town).replace(/%20/g,'+'));
 var h;
 if(c[0]!==null){h='<div class="pc-k">Median '+fl+' resale price '+where+'</div><div class="pc-v">$'+n(c[0])+'</div><div class="pc-r">Typical range <b>'+k(c[1])+'&ndash;'+k(c[2])+'</b> (middle 80% of sales) &middot; <b>'+n(c[3])+'</b> sales</div>';}
 else if(c[3]>0){h='<div class="pc-k">'+fl+' flats '+where+'</div><div class="pc-v">'+c[3]+' sale'+(c[3]>1?'s':'')+'</div><div class="pc-r">Too few in the last 12 months for a meaningful median - look at each sale instead.</div>';}
 else{h='<div class="pc-k">'+fl+' flats '+where+'</div><div class="pc-v">No sales</div><div class="pc-r">None changed hands in the last 12 months.</div>';}
 var wb=town==='_ALL'?'':'<button class="wbtn" data-watch="t:'+town+'" data-watch-label="'+t.l+'" hidden></button>';
-out.innerHTML=h+'<div class="pc-links">'+(c[3]>0?'<a href="/search'+q+'">Browse every sale since 2024 &rarr;</a>':'')+link2+wb+'</div>';
+out.innerHTML=h+'<div class="pc-links">'+(c[3]>0?'<a href="/search'+q+'">See each sale since 2024</a>':'')+link2+wb+'</div>';
 if(window.HDBWatch)HDBWatch.paint();
 try{localStorage.setItem('pc',town+'|'+ft);}catch(e){}}
 try{var saved=(localStorage.getItem('pc')||'').split('|');if(saved.length===2&&P.d[saved[0]]&&P.t[saved[1]]){ts.value=saved[0];fs.value=saved[1];render();}}catch(e){}

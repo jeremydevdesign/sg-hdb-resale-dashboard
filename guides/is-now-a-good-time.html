@@ -105,7 +105,7 @@ body{margin:0;background:var(--color-background-primary);color:var(--color-text-
 a{color:var(--color-text-info)}
 
 .article{max-width:720px;margin:0 auto;padding:0 1.5rem}
-.kicker{margin-top:2.5rem;font-size:12.5px;font-weight:640;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-text-info)}
+.kicker{margin-top:2.5rem;font-size:14px;font-weight:500;color:var(--color-text-tertiary)}
 .crumbs{margin-top:1.5rem;font-size:13px;color:var(--color-text-tertiary)}
 .crumbs a{color:var(--color-text-secondary);text-decoration:none}
 .crumbs a:hover{text-decoration:underline}
@@ -144,11 +144,13 @@ figcaption{font-family:var(--font-sans);font-size:12.5px;color:var(--color-text-
 .callout{margin:32px 0 0;border-left:3px solid var(--color-text-info);background:var(--color-background-info);border-radius:0 var(--border-radius-lg) var(--border-radius-lg) 0;padding:18px 22px}
 .callout p{margin:0;font-family:var(--font-serif);font-size:18px;line-height:1.6;color:var(--color-text-primary)}
 
+/*RELATED*/.related{margin-top:32px}.related h3{font-family:var(--font-sans);font-size:15px;font-weight:600;margin:0}.related ul{margin:10px 0 0;padding-left:1.1em}.related li{font-family:var(--font-serif);font-size:17.5px;line-height:1.55;margin:6px 0}
+.closing{margin-top:34px!important}
 .takeaways{margin-top:20px;border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);padding:6px 24px 16px}
-.takeaways h3{font-family:var(--font-sans);font-size:13px;text-transform:uppercase;letter-spacing:0.06em;color:var(--color-text-tertiary);margin:18px 0 0}
+.takeaways h3{font-family:var(--font-sans);font-size:16.5px;font-weight:650;color:var(--color-text-primary);margin:18px 0 0}
 .takeaways ul{margin:12px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px}
 .takeaways li{font-family:var(--font-serif);font-size:17.5px;line-height:1.55;padding-left:26px;position:relative}
-.takeaways li::before{content:"";position:absolute;left:0;top:8px;width:13px;height:13px;border-radius:4px;background:var(--color-background-info);border:1.5px solid var(--color-text-info)}
+.takeaways li::before{content:"";position:absolute;left:6px;top:12px;width:6px;height:6px;border-radius:50%;background:var(--color-text-tertiary)}
 
 .cta{margin:42px 0 0;border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-secondary);padding:24px 26px;display:flex;gap:20px;align-items:center;justify-content:space-between;flex-wrap:wrap}
 .cta .t h3{margin:0;font-family:var(--font-sans);font-size:18px;font-weight:700;letter-spacing:-0.01em}
@@ -156,7 +158,7 @@ figcaption{font-family:var(--font-sans);font-size:12.5px;color:var(--color-text-
 .cta .btn{font-family:var(--font-sans);font-weight:640;font-size:14.5px;color:var(--color-background-primary);background:var(--color-text-primary);padding:12px 20px;border-radius:10px;white-space:nowrap;text-decoration:none;transition:opacity .12s}
 .cta .btn:hover{opacity:.85}
 
-.method{margin:40px 0 0;font-family:var(--font-sans);border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-secondary);padding:20px 22px}.method-head{display:flex;align-items:center;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--color-text-secondary);margin:0 0 12px}.method-head svg{width:15px;height:15px;flex-shrink:0;color:var(--color-text-info)}.method p{font-size:13px;line-height:1.6;color:var(--color-text-tertiary);margin:0 0 10px}.method p:last-child{margin:0}.method a{color:var(--color-text-info);text-decoration:none}.method a:hover{text-decoration:underline}.method .rev{font-style:italic}
+.method{margin:40px 0 0;font-family:var(--font-sans);border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-secondary);padding:20px 22px}.method-head{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--color-text-secondary);margin:0 0 12px}.method-head svg{width:15px;height:15px;flex-shrink:0;color:var(--color-text-info)}.method p{font-size:13px;line-height:1.6;color:var(--color-text-tertiary);margin:0 0 10px}.method p:last-child{margin:0}.method a{color:var(--color-text-info);text-decoration:none}.method a:hover{text-decoration:underline}.method .rev{font-style:italic}
 .method b{color:var(--color-text-secondary)}
 .morelink{margin:26px 0 0;font-family:var(--font-sans);font-size:14px}
 .morelink a{color:var(--color-text-info);text-decoration:none;font-weight:600}
@@ -178,28 +180,22 @@ figcaption{font-family:var(--font-sans);font-size:12.5px;color:var(--color-text-
   <div class="crumbs"><a href="/guides/">Guides</a> &nbsp;/&nbsp; Is now a good time to buy?</div>
   <div class="kicker">Guide · Timing</div>
   <h1>Is now a good time to buy?</h1>
-  <p class="standfirst">Everyone wants to buy at the bottom. A decade of HDB resale prices says the bottom is almost
-    impossible to spot in advance - and that for most buyers, timing the market matters far less than which flat
-    they pick.</p>
+  <p class="standfirst">Over the past decade the low points in HDB resale prices were hard to spot until well after they had passed. For most buyers, which flat they choose has mattered more than when they bought it.</p>
   <div class="byline">
     <span class="who">SG HDB Resale</span><span>·</span>
     <span>Based on resale medians, 2013-2025</span>
     <span class="pill">6 min read</span>
   </div>
 
-  <p>It's the question behind every viewing: buy now, or wait for prices to cool? Nobody wants to sign just before a
-    fall, or discover they missed the low by a month. It's a fair worry - so it's worth asking what the actual
-    record does, and doesn't, reward.</p>
+  <p>Many buyers wonder whether to buy now or wait for prices to cool. Nobody wants to commit just before a fall. Here is what the last decade of prices says about that.</p>
 
-  <h2>The decade in one line</h2>
+  <h2>Ten years of prices</h2>
 
-  <p>Since 2015 the median HDB resale flat has climbed about <strong>55%</strong>. But it didn't rise in a straight
-    line. Prices drifted <em>down</em> through the cooling-measure years, bottomed out around 2019, then turned and
-    climbed hard from 2020 onwards:</p>
+  <p>Since 2015 the median HDB resale price has risen about <strong>55%</strong>, but not steadily. Prices fell slowly through the years of cooling measures, reached a low around 2019, and have risen strongly since 2020:</p>
 
   <figure>
     <div class="chart">
-      <div class="ct">One slow dip, then a long climb</div>
+      <div class="ct">A slow dip, then a long rise</div>
       <div class="cs">Median HDB resale price, all flat types, by year · 2013-2025</div>
       <svg class="linechart" viewBox="0 0 700 270" role="img" aria-label="Line chart of median HDB resale price by year, drifting down from 455,000 dollars in 2013 to 400,000 in 2019, then rising to 628,000 by 2025.">
         <line class="grid" x1="46" y1="221.6" x2="686" y2="221.6"/>
@@ -223,84 +219,48 @@ figcaption{font-family:var(--font-sans);font-size:12.5px;color:var(--color-text-
         <text x="686" y="250" text-anchor="end">2025</text>
       </svg>
     </div>
-    <figcaption>Annual median resale price across all flat types. The whole 2013-2019 "decline" was a gentle 12%
-      drift spread over six years; the 2020-2025 climb added more than 50%.</figcaption>
+    <figcaption>Annual median resale price across all flat types. The 2013–2019 decline was 12% spread over six years. The 2020–2025 rise added more than 50%.</figcaption>
   </figure>
 
   <div class="keyfig">
-    <div class="cell"><div class="n blue tnum">+55%</div><div class="l">HDB resale's rise over the decade - 2015 to 2025 median</div></div>
-    <div class="cell"><div class="n tnum">6 years</div><div class="l">how long the one real soft patch lasted: a slow drift, not a crash</div></div>
-    <div class="cell"><div class="n tnum">~2 in 3</div><div class="l">years-ahead the price was higher, not lower, over the past decade</div></div>
+    <div class="cell"><div class="n blue tnum">+55%</div><div class="l">rise in the median resale price, 2015 to 2025</div></div>
+    <div class="cell"><div class="n tnum">6 years</div><div class="l">length of the only sustained decline in the decade</div></div>
+    <div class="cell"><div class="n tnum">~2 in 3</div><div class="l">share of years in which prices were higher a year later</div></div>
   </div>
 
-  <h2>The dips are slow and shallow - there's no bottom to catch</h2>
+  <h2>The declines were slow and shallow</h2>
 
-  <p>The scary word is "crash", but the record doesn't contain one. The worst stretch in the whole decade was a
-    <strong>12% slide spread over six years</strong> - from a 2013 peak to a 2019 low - as successive cooling
-    measures leaned on the market. HDB's official <a href="/resale-price-index">Resale Price Index</a> traces the
-    same slide. That's not a cliff you time; it's a slow drift you'd only recognise well after
-    the fact. By the time 2019 clearly looked like the bottom, it was 2021 and prices were already up double digits.</p>
+  <p>There was no crash in this period. The weakest stretch was a <strong>12% fall over six years</strong>, from a peak in 2013 to a low in 2019, while a series of cooling measures held the market back. HDB's official <a href="/resale-price-index">Resale Price Index</a> shows the same pattern. A decline that slow is hard to recognise while it is happening. By the time 2019 was clearly the low point, it was 2021 and prices had already risen by more than 10%.</p>
 
-  <p>Put the other way round: across the past decade, a flat cost <strong>more</strong> a year later about
-    <strong>two times in three</strong>. Waiting for a better price more often meant paying a higher one.</p>
+  <p>Over the decade, a flat cost <strong>more</strong> a year later in about <strong>two years out of three</strong>. Waiting for a lower price more often meant paying a higher one.</p>
 
-  <h2>If you're moving within HDB, timing mostly cancels</h2>
+  <h2>If you are selling one HDB flat to buy another</h2>
 
-  <p>Here's the part the "buy at the bottom" instinct misses. If you're selling one HDB flat to buy another, you
-    transact on <em>both</em> sides of the same market. A hot market that inflates the flat you're buying also
-    inflates the one you're selling; a soft market discounts both. For upgraders, downgraders and relocators, the
-    overall price level largely nets out - what actually matters is the <em>gap</em> between your sale and your
-    purchase, not whether the whole market is high or low that year.</p>
+  <p>In that case you are selling and buying in the same market. A strong market raises the price of the flat you buy, but also the price of the one you sell, and a weak market lowers both. For upgraders, downgraders and people moving, what matters is the difference between the two prices, more than whether the market as a whole is high or low that year.</p>
 
-  <h2>And waiting has a cost</h2>
+  <h2>Waiting has a cost</h2>
 
-  <p>In each of the last three years the median rose roughly <strong>5% to 7%</strong> - about $30,000 a year on a
-    $500,000 flat - and that's before the rent you'd pay while you wait. To come out ahead by holding off, you'd need
-    a dip that's both deeper and faster than anything the past decade delivered outside that one slow patch. Possible;
-    just not something the record has often handed to people who waited.</p>
+  <p>In each of the last three years the median rose by roughly <strong>5% to 7%</strong>, about $30,000 a year on a $500,000 flat, and that is before any rent you pay while you wait. To come out ahead by waiting, you would need a fall that is deeper and quicker than anything in the past decade apart from that one slow decline. It could happen, but it has not been the usual outcome.</p>
 
-  <h2>What matters more than the moment</h2>
+  <h2>What matters more than timing</h2>
 
-  <p>The things you actually control move your outcome more than the cycle does. <strong>The specific flat</strong> -
-    its location, remaining lease and floor - swings the price far more than a year of market drift, as
-    <a href="/guides/mrt-price-premium">the MRT guide</a> and <a href="/guides/lease-decay">the lease guide</a> both
-    show. <strong>How long you'll hold</strong> smooths out whichever point in the cycle you entered. And
-    <strong>paying a fair price</strong> for the flat you choose is squarely in your hands, in a way the market's
-    turning points never are - which is exactly what <a href="/guides/fair-price">the fair-price guide</a> is for.</p>
-
-  <div class="callout">
-    <p>A decade of prices doesn't reward market-timing: the dips are too slow to catch and too shallow to matter. The
-      lever you actually control is the flat you choose and the price you pay for it.</p>
-  </div>
+  <p>Several things you can control have a bigger effect than the market cycle. <strong>The flat itself</strong> (its location, remaining lease and floor) moves the price far more than a year of market change, as the guides on <a href="/guides/mrt-price-premium">the MRT premium</a> and <a href="/guides/lease-decay">lease decay</a> show. <strong>How long you hold the flat</strong> evens out the point in the cycle when you bought. And <strong>paying a fair price</strong> for the flat you choose is up to you in a way the market is not. The <a href="/guides/fair-price">fair-price guide</a> covers how to judge that.</p>
 
   <h2>What this means for you</h2>
 
   <div class="takeaways">
-    <h3>How to think about timing</h3>
+    <h3>Practical points</h3>
     <ul>
-      <li><strong>There's rarely a clean bottom to catch.</strong> The one real soft patch in a decade was a gentle
-        12% drift over six years - obvious only in hindsight.</li>
-      <li><strong>Waiting usually costs.</strong> Prices were higher a year later about two times in three, and the
-        last three years each added 5-7%.</li>
-      <li><strong>If you're moving within HDB, the level largely cancels</strong> between your sale and your purchase -
-        focus on the gap between the two, not the market mood.</li>
-      <li><strong>Pick the flat, not the moment.</strong> Location, lease and a fair price move your result more than
-        trying to time the cycle ever will.</li>
+      <li><strong>Low points are hard to spot.</strong> The only sustained decline in the decade was 12% over six years, and it was only obvious afterwards.</li>
+      <li><strong>Waiting has usually cost money.</strong> Prices were higher a year later in about two years out of three, and each of the last three years added 5–7%.</li>
+      <li><strong>If you are selling one HDB flat to buy another,</strong> the market level largely cancels out. Focus on the gap between your sale price and your purchase price.</li>
+      <li><strong>Concentrate on the flat.</strong> Location, lease and paying a fair price affect the outcome more than timing the cycle.</li>
     </ul>
   </div>
 
-  <p>One honest caveat: none of this is a forecast. The past decade's moves don't guarantee the next one's, and this
-    guide is a read of history, not advice to buy or wait. The point isn't that prices will keep rising - it's that
-    timing is genuinely hard, and there are better things to spend your energy on.</p>
+  <p>None of this is a forecast. The last ten years do not tell you what the next ten will do, and this guide describes past prices rather than giving advice on whether to buy or wait. The point is that timing the market is hard, and there are other decisions where your effort counts for more.</p>
 
-  <div class="cta">
-    <div class="t">
-      <h3>See the whole decade for yourself</h3>
-      <p>The Overview charts median price by flat type and transaction volume across the years, so you can watch how
-        the market has actually moved rather than guess at it.</p>
-    </div>
-    <a class="btn" href="/overview">Open the Overview →</a>
-  </div>
+  <p class="closing">The <a href="/overview">Overview</a> charts median prices by flat type and the number of sales in every year since 2012.</p>
 
     <aside class="method">
     <div class="method-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg><span>How we measured this</span></div>
@@ -309,16 +269,14 @@ figcaption{font-family:var(--font-sans);font-size:12.5px;color:var(--color-text-
     <p>Medians describe past sales - this guide is a read of history, not a valuation or a forecast.</p>
   </aside>
 
-  <nav class="takeaways" aria-label="Related guides">
-    <h3>Related guides</h3>
+  <nav class="related" aria-label="Related guides">
+    <h3>Related reading</h3>
     <ul>
       <li><a href="/guides/fair-price">How to tell if an HDB asking price is fair</a></li>
       <li><a href="/guides/buying-costs">What an HDB resale flat really costs to buy</a></li>
       <li><a href="/guides/lease-decay">Does HDB lease decay really cut your flat's value?</a></li>
     </ul>
   </nav>
-
-  <p class="morelink"><a href="/guides/">← All guides</a></p>
 </article>
 
 <footer class="site-footer"><div class="footer-inner">

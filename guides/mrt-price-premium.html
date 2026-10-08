@@ -107,7 +107,7 @@ a{color:var(--color-text-info)}
 
 /* article */
 .article{max-width:720px;margin:0 auto;padding:0 1.5rem}
-.kicker{margin-top:2.5rem;font-size:12.5px;font-weight:640;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-text-info)}
+.kicker{margin-top:2.5rem;font-size:14px;font-weight:500;color:var(--color-text-tertiary)}
 .crumbs{margin-top:1.5rem;font-size:13px;color:var(--color-text-tertiary)}
 .crumbs a{color:var(--color-text-secondary);text-decoration:none}
 .crumbs a:hover{text-decoration:underline}
@@ -159,11 +159,13 @@ tr.spot td:first-child{border-left:3px solid var(--color-text-info)}
 .callout{margin:32px 0 0;border-left:3px solid var(--color-text-info);background:var(--color-background-info);border-radius:0 var(--border-radius-lg) var(--border-radius-lg) 0;padding:18px 22px}
 .callout p{margin:0;font-family:var(--font-serif);font-size:18px;line-height:1.6;color:var(--color-text-primary)}
 
-.takeaways{margin-top:20px;border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);padding:4px 22px 14px}
-.takeaways h3{font-family:var(--font-sans);font-size:13px;text-transform:uppercase;letter-spacing:0.06em;color:var(--color-text-tertiary);margin:16px 0 0}
+/*RELATED*/.related{margin-top:32px}.related h3{font-family:var(--font-sans);font-size:15px;font-weight:600;margin:0}.related ul{margin:10px 0 0;padding-left:1.1em}.related li{font-family:var(--font-serif);font-size:17.5px;line-height:1.55;margin:6px 0}
+.closing{margin-top:34px!important}
+.takeaways{margin-top:20px;border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);padding:6px 24px 16px}
+.takeaways h3{font-family:var(--font-sans);font-size:16.5px;font-weight:650;color:var(--color-text-primary);margin:18px 0 0}
 .takeaways ul{margin:12px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px}
 .takeaways li{font-family:var(--font-serif);font-size:17.5px;line-height:1.55;padding-left:26px;position:relative}
-.takeaways li::before{content:"";position:absolute;left:0;top:8px;width:13px;height:13px;border-radius:4px;background:var(--color-background-info);border:1.5px solid var(--color-text-info)}
+.takeaways li::before{content:"";position:absolute;left:6px;top:12px;width:6px;height:6px;border-radius:50%;background:var(--color-text-tertiary)}
 
 .cta{margin:42px 0 0;border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-secondary);padding:24px 26px;display:flex;gap:20px;align-items:center;justify-content:space-between;flex-wrap:wrap}
 .cta .t h3{margin:0;font-family:var(--font-sans);font-size:18px;font-weight:700;letter-spacing:-0.01em}
@@ -171,7 +173,7 @@ tr.spot td:first-child{border-left:3px solid var(--color-text-info)}
 .cta .btn{font-family:var(--font-sans);font-weight:640;font-size:14.5px;color:var(--color-background-primary);background:var(--color-text-primary);padding:12px 20px;border-radius:10px;white-space:nowrap;text-decoration:none;transition:opacity .12s}
 .cta .btn:hover{opacity:.85}
 
-.method{margin:40px 0 0;font-family:var(--font-sans);border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-secondary);padding:20px 22px}.method-head{display:flex;align-items:center;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--color-text-secondary);margin:0 0 12px}.method-head svg{width:15px;height:15px;flex-shrink:0;color:var(--color-text-info)}.method p{font-size:13px;line-height:1.6;color:var(--color-text-tertiary);margin:0 0 10px}.method p:last-child{margin:0}.method a{color:var(--color-text-info);text-decoration:none}.method a:hover{text-decoration:underline}.method .rev{font-style:italic}
+.method{margin:40px 0 0;font-family:var(--font-sans);border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-secondary);padding:20px 22px}.method-head{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--color-text-secondary);margin:0 0 12px}.method-head svg{width:15px;height:15px;flex-shrink:0;color:var(--color-text-info)}.method p{font-size:13px;line-height:1.6;color:var(--color-text-tertiary);margin:0 0 10px}.method p:last-child{margin:0}.method a{color:var(--color-text-info);text-decoration:none}.method a:hover{text-decoration:underline}.method .rev{font-style:italic}
 .method b{color:var(--color-text-secondary)}
 
 .morelink{margin:26px 0 0;font-family:var(--font-sans);font-size:14px}
@@ -194,21 +196,16 @@ tr.spot td:first-child{border-left:3px solid var(--color-text-info)}
   <div class="crumbs"><a href="/guides/">Guides</a> &nbsp;/&nbsp; MRT premium</div>
   <div class="kicker">Guide · Buying</div>
   <h1>Is it worth paying more to live near an MRT?</h1>
-  <p class="standfirst">Everyone “knows” a flat near the train sells for a premium. The transaction record says
-    that’s true - but far smaller than you think, and in some towns it runs the other way entirely.</p>
+  <p class="standfirst">Flats near MRT stations do sell for more, but the premium is smaller than the raw numbers suggest, and in a few towns flats near the station sell for less.</p>
   <div class="byline">
     <span class="who">SG HDB Resale</span><span>·</span>
     <span>Based on 10,837 four-room resales in 2025</span>
     <span class="pill">5 min read</span>
   </div>
 
-  <p>It’s the most repeated rule in HDB buying: get one near the MRT, it holds its value. So we tested it the
-    obvious way - took every four-room resale in 2025 and split it by straight-line distance to the nearest
-    station.</p>
+  <p>A common piece of advice is to buy near an MRT station because the flat will hold its value. To test it, we took every four-room resale in 2025 and split the sales by straight-line distance to the nearest station.</p>
 
-  <p>At first glance, the folklore holds. Flats within 500 metres of a station sold for a median of
-    <strong>$670 per square foot</strong>; everything further out sold for <strong>$606</strong>. That’s a
-    <strong>10% premium</strong> - about <strong>$58,000</strong> on a typical four-room flat.</p>
+  <p>On the raw numbers the advice holds up. Flats within 500 metres of a station sold for a median of <strong>$670 per square foot</strong>, against <strong>$606</strong> for flats further out. That is a <strong>10% premium</strong>, or about <strong>$58,000</strong> on a typical four-room flat.</p>
 
   <div class="keyfig">
     <div class="cell"><div class="n blue tnum">$670</div><div class="l">median $psf, four-room flats <b>within 500m</b> of an MRT</div></div>
@@ -216,28 +213,19 @@ tr.spot td:first-child{border-left:3px solid var(--color-text-info)}
     <div class="cell"><div class="n blue tnum">+$58k</div><div class="l">difference in median <b>price</b> ($678k vs $620k)</div></div>
   </div>
 
-  <p>Case closed? Not quite. That $58,000 gap is measuring two things at once, and only one of them is the MRT.</p>
+  <p>But that $58,000 gap mixes two effects, and only one of them is the MRT.</p>
 
-  <h2>The number is mostly geography, not the train</h2>
+  <h2>Most of the gap is location</h2>
 
-  <p>Here’s the problem. Flats near MRT stations aren’t scattered randomly across Singapore - they cluster in
-    the older, central, mature estates that were built up around the rail lines decades ago. So when you compare
-    “near a station” against “far from one” <em>across the whole island</em>, you’re really comparing <a href="/towns/queenstown">Queenstown</a>
-    and <a href="/towns/toa-payoh">Toa Payoh</a> against <a href="/towns/sengkang">Sengkang</a> and <a href="/towns/woodlands">Woodlands</a>. The premium you measure is mostly the <em>town</em>, not the
-    walk to the platform.</p>
+  <p>Flats near stations are not spread evenly across Singapore. Many are in the older, central, mature estates that grew up around the rail lines. So an island-wide comparison of near and far is partly a comparison of <a href="/towns/queenstown">Queenstown</a> and <a href="/towns/toa-payoh">Toa Payoh</a> with <a href="/towns/sengkang">Sengkang</a> and <a href="/towns/woodlands">Woodlands</a>. A good share of what looks like an MRT premium is really a town premium.</p>
 
-  <p>The fix is to compare like with like: near-MRT flats against far-MRT flats <em>inside the same town</em>,
-    then see how big the gap is. Do that across the 20 towns with enough sales on both sides, and the premium
-    shrinks by half - to a median of <strong>about 5%</strong>. Real, but a long way from the 10% the raw
-    numbers advertised.</p>
+  <p>A fairer test compares near and far flats <em>within the same town</em>. Across the 20 towns with enough sales on both sides, the median premium falls to <strong>about 5%</strong>, half the raw figure.</p>
 
-  <p>And that median hides something more useful: the premium is <strong>wildly</strong> uneven from town to
-    town. In some it’s enormous. In others it’s <em>negative</em> - the flats nearest the MRT actually sell for
-    less per square foot.</p>
+  <p>The median also hides how much the premium varies. In some towns it is very large. In others it is <em>negative</em>, and the flats nearest the station sell for less per square foot.</p>
 
   <figure class="wide">
     <div class="chart">
-      <div class="ct">The MRT premium is a local phenomenon, not a national one</div>
+      <div class="ct">The premium varies a lot from town to town</div>
       <div class="cs">Median $psf of four-room flats within 500m of a station vs. beyond 500m, same town · 2025</div>
       <div class="rows">
         <div class="drow"><span class="lab">Clementi</span><span class="zone"><span class="fill pos" style="width:50.0%"></span></span><span class="v pos">+73%</span></div>
@@ -256,24 +244,17 @@ tr.spot td:first-child{border-left:3px solid var(--color-text-info)}
       the same town. Towns shown have at least 30 four-room sales on each side of the 500m line.</figcaption>
   </figure>
 
-  <p>The split isn’t random. The big premiums are all <strong>central, mature towns</strong> - <a href="/towns/clementi">Clementi</a>, Toa
-    Payoh, <a href="/towns/geylang">Geylang</a> - where being near the station also means being near town, near the city, near everything.
-    There, the MRT premium and the location premium point the same way and stack up.</p>
+  <p>The largest premiums are in <strong>central, mature towns</strong> such as <a href="/towns/clementi">Clementi</a>, Toa Payoh and <a href="/towns/geylang">Geylang</a>, where a flat near the station is also close to shops, services and the city. In those towns the MRT and the wider location both push prices up.</p>
 
-  <p>The negative towns tell the opposite story. In <strong><a href="/towns/tampines">Tampines</a></strong> and <strong><a href="/towns/bukit-batok">Bukit Batok</a></strong>,
-    the flats packed around the interchange are the <em>oldest</em> ones - first-generation blocks from when the
-    town centre was built. The newer, larger, pricier flats went up later, in precincts further from the rail.
-    So “near the MRT” in these towns quietly means “older and smaller,” and the price follows the flat, not the
-    train.</p>
+  <p>In <strong><a href="/towns/tampines">Tampines</a></strong> and <strong><a href="/towns/bukit-batok">Bukit Batok</a></strong> it works the other way. The blocks closest to the interchange are often the oldest, built when the town centre went up. Newer and larger flats came later, in precincts further from the line. In these towns a flat near the MRT is more likely to be older and smaller, and its price reflects that.</p>
 
-  <h2>The trap this sets: lease looks like the price story. It isn’t.</h2>
+  <h2>The same effect shows up in lease</h2>
 
-  <p>The same confusion shows up in a place that catches buyers constantly. Sort 2025’s four-room sales by
-    remaining lease and one band stands out:</p>
+  <p>Sort 2025's four-room sales by remaining lease and one band stands out:</p>
 
   <figure>
     <div class="chart">
-      <div class="ct">More lease doesn’t mean more money</div>
+      <div class="ct">More lease does not always mean a higher price</div>
       <div class="cs">Median resale price of four-room flats by remaining lease · 2025</div>
       <table>
         <thead><tr><th>Remaining lease</th><th>Median price</th><th>Typical dist. to MRT</th><th>Sales</th></tr></thead>
@@ -289,51 +270,27 @@ tr.spot td:first-child{border-left:3px solid var(--color-text-info)}
     <figcaption>The 80–85 year band sells for more than bands with a full decade more lease remaining.</figcaption>
   </figure>
 
-  <p>Look at the highlighted row. Flats with <strong>80–85 years</strong> left sell for a median
-    <strong>$845,000</strong> - more than flats with <em>ten years more</em> lease. If lease were setting the
-    price, this is impossible. So what’s different about that band? The last column gives it away: those flats
-    sit about <strong>350 metres</strong> from a station, while the longer-lease bands around them are a
-    kilometre or more out.</p>
+  <p>Flats with <strong>80–85 years</strong> left sold for a median of <strong>$845,000</strong>, more than flats with ten more years of lease. Lease alone cannot explain that. The last column shows the reason: those flats are about <strong>350 metres</strong> from a station on average, while the bands either side of them are a kilometre or more away.</p>
 
-  <p>Those 80–85 year flats are the prime central infill HDB built around 2006–2010 - in Queenstown, Toa Payoh,
-    <a href="/towns/bukit-merah">Bukit Merah</a> - built right next to existing lines. Remaining lease is really flat age in disguise, and flat
-    age tracks <em>where</em> HDB was building in a given era. Once again, the thing doing the work is location.
-    Lease is just correlated with it.</p>
+  <p>Many of the 80–85 year flats are central infill projects HDB built around 2006–2010 in Queenstown, Toa Payoh and <a href="/towns/bukit-merah">Bukit Merah</a>, next to existing lines. Remaining lease is closely tied to when a flat was built, and that in turn reflects where HDB was building at the time. Again, location is doing most of the work.</p>
 
-  <div class="callout">
-    <p>The consistent lesson across both cuts of the data: near-MRT, more-lease, and higher-price tend to travel
-      together - but the force underneath all three is <em>where the flat is</em>. Pay for the location. Don’t
-      pay twice for its shadows.</p>
-  </div>
+  <p>In both cases, being near the MRT, having more lease and selling for more tend to go together, and the common cause is mostly location. It is worth knowing this so you do not pay for the same advantage twice.</p>
 
-  <h2>So - should you pay up for the MRT?</h2>
+  <h2>Is it worth paying more?</h2>
 
-  <p>Yes, within reason, and with your eyes open. A genuine near-station premium exists, it’s just smaller and
-    far more local than the folklore claims. Here’s how to hold that in your head when an agent tells you a flat
-    is “worth more because it’s near the MRT”:</p>
+  <p>Usually some extra is justified. There is a real premium for being near a station, but it is smaller and more local than people tend to assume. A few things to keep in mind when an agent says a flat is worth more because of the MRT:</p>
 
   <div class="takeaways">
-    <h3>What to actually do</h3>
+    <h3>Practical points</h3>
     <ul>
-      <li><strong>Don’t assume a 15% premium.</strong> Island-wide the near-MRT gap is ~10%, and half of that is
-        just central location. The pure proximity premium is closer to <strong>5%</strong> in most towns.</li>
-      <li><strong>Check <em>your</em> town, not the average.</strong> The premium swings from +73% in Clementi to
-        −16% in Bukit Batok. Your town’s number is the only one that matters for your offer.</li>
-      <li><strong>In newer towns, “near MRT” can mean “older flat.”</strong> If the station-side blocks are the
-        first-generation ones, you may be paying a premium for the shortest lease in the estate.</li>
-      <li><strong>Don’t double-count.</strong> A near-MRT, long-lease, central flat isn’t three separate premiums
-        to pay for - they’re largely the same premium described three ways.</li>
+      <li><strong>Expect a modest premium.</strong> The island-wide gap is about 10%, and half of that is central location. Within a town, the premium for being near a station is closer to <strong>5%</strong>.</li>
+      <li><strong>Look at your own town.</strong> The premium ranges from +73% in Clementi to −16% in Bukit Batok, so the island-wide average tells you little about a particular offer.</li>
+      <li><strong>Near the MRT can mean an older flat.</strong> Where the blocks next to the station are the first ones built, you may be paying extra for the shortest lease in the town.</li>
+      <li><strong>Don't count the same thing twice.</strong> A central flat near the MRT with a long lease does not carry three separate premiums. They are largely the same location premium.</li>
     </ul>
   </div>
 
-  <div class="cta">
-    <div class="t">
-      <h3>See the premium for your town</h3>
-      <p>The Analysis by Town dashboard breaks down $psf near the MRT versus beyond it, town by town, for any
-        flat type and year range.</p>
-    </div>
-    <a class="btn" href="/analysis-by-town">Open Analysis by Town →</a>
-  </div>
+  <p class="closing"><a href="/analysis-by-town">Analysis by Town</a> compares price per square foot near the MRT with flats further out, town by town, for any flat type and range of years.</p>
 
     <aside class="method">
     <div class="method-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg><span>How we measured this</span></div>
@@ -342,16 +299,14 @@ tr.spot td:first-child{border-left:3px solid var(--color-text-info)}
     <p>Medians describe past sales; they are not valuations or forecasts.</p>
   </aside>
 
-  <nav class="takeaways" aria-label="Related guides">
-    <h3>Related guides</h3>
+  <nav class="related" aria-label="Related guides">
+    <h3>Related reading</h3>
     <ul>
       <li><a href="/guides/fair-price">How to tell if an HDB asking price is fair</a></li>
       <li><a href="/guides/lease-decay">Does HDB lease decay really cut your flat's value?</a></li>
       <li><a href="/guides/mature-vs-non-mature">Mature vs non-mature estates: what you pay for</a></li>
     </ul>
   </nav>
-
-  <p class="morelink"><a href="/guides/">← All guides</a></p>
 </article>
 
 <footer class="site-footer"><div class="footer-inner">

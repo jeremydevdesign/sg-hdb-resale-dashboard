@@ -104,7 +104,7 @@ body{margin:0;background:var(--color-background-primary);color:var(--color-text-
 a{color:var(--color-text-info)}
 
 .article{max-width:720px;margin:0 auto;padding:0 1.5rem}
-.kicker{margin-top:2.5rem;font-size:12.5px;font-weight:640;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-text-info)}
+.kicker{margin-top:2.5rem;font-size:14px;font-weight:500;color:var(--color-text-tertiary)}
 .crumbs{margin-top:1.5rem;font-size:13px;color:var(--color-text-tertiary)}
 .crumbs a{color:var(--color-text-secondary);text-decoration:none}
 .crumbs a:hover{text-decoration:underline}
@@ -153,11 +153,13 @@ figcaption{font-family:var(--font-sans);font-size:12.5px;color:var(--color-text-
 .callout{margin:32px 0 0;border-left:3px solid var(--color-text-info);background:var(--color-background-info);border-radius:0 var(--border-radius-lg) var(--border-radius-lg) 0;padding:18px 22px}
 .callout p{margin:0;font-family:var(--font-serif);font-size:18px;line-height:1.6;color:var(--color-text-primary)}
 
+/*RELATED*/.related{margin-top:32px}.related h3{font-family:var(--font-sans);font-size:15px;font-weight:600;margin:0}.related ul{margin:10px 0 0;padding-left:1.1em}.related li{font-family:var(--font-serif);font-size:17.5px;line-height:1.55;margin:6px 0}
+.closing{margin-top:34px!important}
 .takeaways{margin-top:20px;border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);padding:6px 24px 16px}
-.takeaways h3{font-family:var(--font-sans);font-size:13px;text-transform:uppercase;letter-spacing:0.06em;color:var(--color-text-tertiary);margin:18px 0 0}
+.takeaways h3{font-family:var(--font-sans);font-size:16.5px;font-weight:650;color:var(--color-text-primary);margin:18px 0 0}
 .takeaways ul{margin:12px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px}
 .takeaways li{font-family:var(--font-serif);font-size:17.5px;line-height:1.55;padding-left:26px;position:relative}
-.takeaways li::before{content:"";position:absolute;left:0;top:8px;width:13px;height:13px;border-radius:4px;background:var(--color-background-info);border:1.5px solid var(--color-text-info)}
+.takeaways li::before{content:"";position:absolute;left:6px;top:12px;width:6px;height:6px;border-radius:50%;background:var(--color-text-tertiary)}
 
 .cta{margin:42px 0 0;border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-secondary);padding:24px 26px;display:flex;gap:20px;align-items:center;justify-content:space-between;flex-wrap:wrap}
 .cta .t h3{margin:0;font-family:var(--font-sans);font-size:18px;font-weight:700;letter-spacing:-0.01em}
@@ -165,7 +167,7 @@ figcaption{font-family:var(--font-sans);font-size:12.5px;color:var(--color-text-
 .cta .btn{font-family:var(--font-sans);font-weight:640;font-size:14.5px;color:var(--color-background-primary);background:var(--color-text-primary);padding:12px 20px;border-radius:10px;white-space:nowrap;text-decoration:none;transition:opacity .12s}
 .cta .btn:hover{opacity:.85}
 
-.method{margin:40px 0 0;font-family:var(--font-sans);border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-secondary);padding:20px 22px}.method-head{display:flex;align-items:center;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--color-text-secondary);margin:0 0 12px}.method-head svg{width:15px;height:15px;flex-shrink:0;color:var(--color-text-info)}.method p{font-size:13px;line-height:1.6;color:var(--color-text-tertiary);margin:0 0 10px}.method p:last-child{margin:0}.method a{color:var(--color-text-info);text-decoration:none}.method a:hover{text-decoration:underline}.method .rev{font-style:italic}
+.method{margin:40px 0 0;font-family:var(--font-sans);border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-secondary);padding:20px 22px}.method-head{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--color-text-secondary);margin:0 0 12px}.method-head svg{width:15px;height:15px;flex-shrink:0;color:var(--color-text-info)}.method p{font-size:13px;line-height:1.6;color:var(--color-text-tertiary);margin:0 0 10px}.method p:last-child{margin:0}.method a{color:var(--color-text-info);text-decoration:none}.method a:hover{text-decoration:underline}.method .rev{font-style:italic}
 .method b{color:var(--color-text-secondary)}
 .morelink{margin:26px 0 0;font-family:var(--font-sans);font-size:14px}
 .morelink a{color:var(--color-text-info);text-decoration:none;font-weight:600}
@@ -187,51 +189,36 @@ figcaption{font-family:var(--font-sans);font-size:12.5px;color:var(--color-text-
   <div class="crumbs"><a href="/guides/">Guides</a> &nbsp;/&nbsp; Mature vs non-mature</div>
   <div class="kicker">Guide · Location</div>
   <h1>Mature vs non-mature estates: what you pay for</h1>
-  <p class="standfirst">Buyers treat "mature estate" as a synonym for "expensive", and the record backs them up: a
-    four-room there runs about $140,000 more. The interesting part is why - because it isn't the flats, which are
-    actually older. It's the address.</p>
+  <p class="standfirst">Four-room flats in mature estates sell for about $140,000 more than those elsewhere, even though the flats themselves are older. The extra cost is for the location.</p>
   <div class="byline">
     <span class="who">SG HDB Resale</span><span>·</span>
     <span>Based on 10,843 four-room resales in 2025, by estate type</span>
     <span class="pill">6 min read</span>
   </div>
 
-  <p>"Is it a mature estate?" is one of the first questions a resale buyer asks, usually with a wince - because
-    everyone knows mature means pricier. The public record agrees. But it pays to be precise about <em>how much</em>
-    more you hand over, and <em>what</em> you are actually buying with it, because the honest answer changes the
-    advice.</p>
+  <p>Whether a flat is in a mature estate is one of the first things resale buyers ask, and most expect mature estates to be more expensive. The sales record confirms that. It is still worth knowing how much more you pay and what the extra money is buying.</p>
 
   <h2>How big is the gap?</h2>
 
-  <p>Line up every four-room resale in 2025 and split it by estate type. The mature-estate flats carry a median
-    price of <strong>$740,000</strong>; everywhere else, <strong>$600,000</strong>. That is a $140,000 gap, or about
-    <strong>23%</strong> - and it holds up per square metre too, at roughly 22% more for the same floor space. So the
-    premium is real, it is large, and it is not a size illusion.</p>
+  <p>Splitting every four-room resale in 2025 by estate type, the median in mature estates was <strong>$740,000</strong> and elsewhere <strong>$600,000</strong>. That is a gap of $140,000, or about <strong>23%</strong>. Per square metre the gap is about 22%, so it is not because mature-estate flats are bigger.</p>
 
   <div class="keyfig">
-    <div class="cell"><div class="n blue tnum">+$140k</div><div class="l">the mature-estate premium on a four-room - 2025 medians, $740k vs $600k</div></div>
-    <div class="cell"><div class="n tnum">+22%</div><div class="l">the gap measured per square metre, so it isn't just bigger flats</div></div>
-    <div class="cell"><div class="n tnum">8 yrs less</div><div class="l">remaining lease on the typical mature flat - the older stock, yet dearer</div></div>
+    <div class="cell"><div class="n blue tnum">+$140k</div><div class="l">mature-estate premium on a four-room flat (2025 medians, $740k vs $600k)</div></div>
+    <div class="cell"><div class="n tnum">+22%</div><div class="l">the gap per square metre, which rules out flat size</div></div>
+    <div class="cell"><div class="n tnum">8 yrs less</div><div class="l">remaining lease on the typical mature-estate flat</div></div>
   </div>
 
-  <h2>It isn't the flats - they're older</h2>
+  <h2>The flats are older, not newer</h2>
 
-  <p>The instinct is that mature estates cost more because the flats are somehow better. The lease numbers say
-    otherwise. The typical mature-estate four-room sold in 2025 had about <strong>70 years</strong> of lease left;
-    the typical non-mature one had <strong>78</strong>. Mature estates are the older stock - <a href="/towns/toa-payoh">Toa Payoh</a> and
-    <a href="/towns/queenstown">Queenstown</a> were being built while <a href="/towns/punggol">Punggol</a> was still farmland. If anything, age is a <em>headwind</em> for their
-    prices, as <a href="/guides/lease-decay">the lease-decay guide</a> lays out. They still command 23% more while
-    carrying eight fewer years of lease. Whatever the premium buys, it isn't newness.</p>
+  <p>You might expect mature-estate flats to cost more because they are better flats. The lease figures point the other way. The typical mature-estate four-room sold in 2025 had about <strong>70 years</strong> of lease left, against <strong>78</strong> for a non-mature one. Mature estates are older towns: <a href="/towns/toa-payoh">Toa Payoh</a> and <a href="/towns/queenstown">Queenstown</a> were being built while <a href="/towns/punggol">Punggol</a> was still farmland. If anything, their age should hold prices down, as the <a href="/guides/lease-decay">lease decay guide</a> explains. They still sell for 23% more with eight fewer years of lease.</p>
 
-  <h2>Hold age still, and the gap doesn't shrink - it grows</h2>
+  <h2>Comparing flats of the same age, the gap is wider</h2>
 
-  <p>To separate location from age, compare flats of the same vintage. Group four-room sales by how much lease they
-    have left, and inside <em>every</em> band the mature premium is not just intact - it is wider than the headline
-    23%:</p>
+  <p>To separate location from age, group four-room sales by remaining lease and compare within each group. In every group, the mature-estate premium is larger than the overall 23%:</p>
 
   <figure>
     <div class="chart">
-      <div class="ct">Same age, different address: mature costs more in every lease band</div>
+      <div class="ct">Mature estates cost more in every lease band</div>
       <div class="cs">Median four-room resale price, mature vs non-mature estates, by remaining lease · 2025</div>
       <div class="grp">
         <div class="gband">
@@ -257,65 +244,34 @@ figcaption{font-family:var(--font-sans);font-size:12.5px;color:var(--color-text-
       </div>
       <div class="leg"><span><i class="mat"></i>Mature estates</span><span><i class="non"></i>Non-mature estates</span></div>
     </div>
-    <figcaption>Bars are median four-room prices within each remaining-lease band, so flats of the same age are
-      compared with each other. The pooled 23% gap understates the like-for-like premium because mature estates are
-      weighed down by all their older stock.</figcaption>
+    <figcaption>Bars are median four-room prices within each remaining-lease band, so flats of similar age are compared with each other. The overall 23% gap is smaller because mature estates have more older flats, which pull their median down.</figcaption>
   </figure>
 
-  <p>Among the newest flats - 90 or more years of lease left - a mature-estate four-room runs <strong>$970,000</strong>
-    against <strong>$658,000</strong> elsewhere, a 47% gap. Match age for age and location is doing even more of the
-    work than the headline number lets on.</p>
+  <p>Among the newest flats, with 90 or more years left, a mature-estate four-room sold for a median of <strong>$970,000</strong> against <strong>$658,000</strong> elsewhere, a gap of 47%.</p>
 
   <h2>Why the newest flats show the biggest gap</h2>
 
-  <p>The premium is largest exactly where the scarcity is. A brand-new four-room in a mature town means an infill
-    project on rare, central land - Bidadari in Toa Payoh, Dawson in Queenstown - and those clear the market north of
-    a million dollars ($1.09m and $1.08m medians in 2025). The equivalent new flat in Punggol or <a href="/towns/sengkang">Sengkang</a> sits around
-    <strong>$680,000</strong>. Same age, same size, roughly $400,000 apart, almost entirely on address. Down in the
-    old-lease bands, where mature estates have plenty of supply, the gap narrows to 12-21%.</p>
+  <p>New flats in mature towns are infill projects on scarce central land, such as Bidadari in Toa Payoh and Dawson in Queenstown. Their 2025 medians were $1.09m and $1.08m. A new four-room in Punggol or <a href="/towns/sengkang">Sengkang</a> sold for around <strong>$680,000</strong>. The flats are of similar age and size, and the difference of about $400,000 is mostly location. Among older flats, where mature estates have plenty of supply, the gap narrows to 12–21%.</p>
 
-  <h2>"Mature" is not one thing</h2>
+  <h2>Mature estates vary a lot</h2>
 
-  <p>The label hides an enormous range. Among mature estates a median four-room runs from about <strong>$590,000 in
-    <a href="/towns/bedok">Bedok</a></strong> to <strong>$1.245m in the <a href="/towns/central-area">Central Area</a></strong> - a wider spread than the entire non-mature market,
-    which clusters from roughly $545,000 in <a href="/towns/jurong-west">Jurong West</a> to $680,000 in Punggol. And plenty of mature-town flats
-    undercut the premium: <a href="/towns/tampines">Tampines</a>, a mature estate, medians $768,000 even among its newest four-rooms. So "mature" on
-    its own doesn't set the price - the specific town, and where you are inside it, does.</p>
+  <p>Within mature estates, the median four-room price ranges from about <strong>$590,000 in <a href="/towns/bedok">Bedok</a></strong> to <strong>$1.245m in the <a href="/towns/central-area">Central Area</a></strong>. That is a wider spread than the whole non-mature market, which runs from roughly $545,000 in <a href="/towns/jurong-west">Jurong West</a> to $680,000 in Punggol. Some mature towns are well below the premium suggested by the average: in <a href="/towns/tampines">Tampines</a>, even the newest four-rooms had a median of $768,000. The specific town, and the location within it, matter more than the label.</p>
 
-  <p>One footnote for accuracy: HDB retired the mature and non-mature labels for <em>new</em> flats in 2024, folding
-    them into a Standard, Plus and Prime framework. But the divide those labels described - central, established and
-    well-connected versus newer and further out - is still plainly written into resale prices, which is what this
-    guide measures.</p>
+  <p>A note on terms: in 2024 HDB stopped using the mature and non-mature labels for <em>new</em> flats and moved to the Standard, Plus and Prime classification. The difference the old labels described, between established central towns and newer ones further out, still shows up clearly in resale prices, and that is what this guide measures.</p>
 
   <h2>What this means for you</h2>
 
   <div class="takeaways">
-    <h3>How to read the premium</h3>
+    <h3>Practical points</h3>
     <ul>
-      <li><strong>The gap is real and large - about 23%, or $140,000, on a four-room</strong> - and it survives every
-        fair comparison you throw at it.</li>
-      <li><strong>You are paying for location, not the flat.</strong> Mature stock is older; the premium holds, and
-        even widens, once you line up flats of the same age.</li>
-      <li><strong>The gap is biggest for new flats in mature towns</strong> - the scarcest, priciest slice. If you
-        don't need brand-new, an older flat in the same estate keeps much of the location at a smaller premium.</li>
-      <li><strong>Don't buy the label, buy the town.</strong> "Mature" spans $590k to over $1.2m; pick the specific
-        town and pocket you want, then check the asking price against the record.</li>
+      <li><strong>The gap is large: about 23%, or $140,000, on a four-room flat.</strong> It holds up under each comparison above.</li>
+      <li><strong>The premium is for location.</strong> Mature-estate flats are older, and the premium is even larger when flats of the same age are compared.</li>
+      <li><strong>The gap is biggest for new flats in mature towns.</strong> If you do not need a new flat, an older one in the same town gets you much of the location for a smaller premium.</li>
+      <li><strong>Look at the town, not the label.</strong> Mature-estate medians range from $590k to over $1.2m. Choose the town and area you want, then check the asking price against recent sales.</li>
     </ul>
   </div>
 
-  <div class="callout">
-    <p>The mature-estate premium isn't about better flats - the flats are older. It is the price of an established,
-      central, well-connected address, and holding age constant only makes that clearer.</p>
-  </div>
-
-  <div class="cta">
-    <div class="t">
-      <h3>See which estates fit your budget</h3>
-      <p>Find a Flat shows which towns - mature and not - fall inside a given budget, and how much further the money
-        stretches once you move a few MRT stops out.</p>
-    </div>
-    <a class="btn" href="/find-a-flat">Open Find a Flat →</a>
-  </div>
+  <p class="closing"><a href="/find-a-flat">Find a Flat</a> shows which towns, mature or not, fall within a given budget.</p>
 
     <aside class="method">
     <div class="method-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg><span>How we measured this</span></div>
@@ -323,8 +279,6 @@ figcaption{font-family:var(--font-sans);font-size:12.5px;color:var(--color-text-
     <p>Prices are medians; the per-square-metre figure divides price by floor area. The age-controlled comparison groups sales by remaining lease so like is compared with like.</p>
     <p>Medians describe past sales, not valuations or forecasts.</p>
   </aside>
-
-  <p class="morelink"><a href="/guides/">← All guides</a></p>
 </article>
 
 <footer class="site-footer"><div class="footer-inner">

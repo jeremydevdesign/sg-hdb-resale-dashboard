@@ -106,7 +106,7 @@ body{margin:0;background:var(--color-background-primary);color:var(--color-text-
 a{color:var(--color-text-info)}
 
 .article{max-width:720px;margin:0 auto;padding:0 1.5rem}
-.kicker{margin-top:2.5rem;font-size:12.5px;font-weight:640;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-text-info)}
+.kicker{margin-top:2.5rem;font-size:14px;font-weight:500;color:var(--color-text-tertiary)}
 .crumbs{margin-top:1.5rem;font-size:13px;color:var(--color-text-tertiary)}
 .crumbs a{color:var(--color-text-secondary);text-decoration:none}
 .crumbs a:hover{text-decoration:underline}
@@ -174,14 +174,15 @@ thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:v
 .faq .qa h3{font-family:var(--font-sans);font-size:16px;font-weight:680;margin:18px 0 0;letter-spacing:-0.01em}
 .faq .qa p{margin:8px 0 0;font-size:17px;line-height:1.6}
 
-.related{margin:40px 0 0;border-top:1px solid var(--color-border-secondary);padding:8px 0 0}
+.related{margin:40px 0 0;border-top:1px solid var(--color-border-secondary);padding:10px 0 0}
 .related h3{font-family:var(--font-sans);font-size:13px;text-transform:uppercase;letter-spacing:0.06em;color:var(--color-text-tertiary);margin:18px 0 0}
 .related p{font-family:var(--font-sans);font-size:14.5px;margin:8px 0 0;line-height:1.7}
-.related a{color:var(--color-text-info);text-decoration:none;font-weight:600}
+.related b{font-weight:600}
+.related a{color:var(--color-text-info);text-decoration:underline;text-underline-offset:2px}
 .related a:hover{text-decoration:underline}
 
 .method{margin:40px 0 0;font-family:var(--font-sans);border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-secondary);padding:20px 22px}
-.method-head{display:flex;align-items:center;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--color-text-secondary);margin:0 0 12px}
+.method-head{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--color-text-secondary);margin:0 0 12px}
 .method-head svg{width:15px;height:15px;flex-shrink:0;color:var(--color-text-info)}
 .method p{font-size:13px;line-height:1.6;color:var(--color-text-tertiary);margin:0 0 10px}
 .method p:last-child{margin:0}
@@ -189,9 +190,10 @@ thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:v
 .method a{color:var(--color-text-info);text-decoration:none}
 .method a:hover{text-decoration:underline}
 .method .rev{font-style:italic}
-.morelink{margin:26px 0 0;font-family:var(--font-sans);font-size:14px}
-.morelink a{color:var(--color-text-info);text-decoration:none;font-weight:600}
-.morelink a:hover{text-decoration:underline}
+.morelink{margin:26px 0 0;font-family:var(--font-sans);font-size:14px;color:var(--color-text-secondary)}
+.morelink a{color:var(--color-text-info);text-decoration:underline;text-underline-offset:2px}
+.morelink a:hover{text-decoration-thickness:2px}
+.nextp{margin-top:34px!important}
 
 .site-footer{border-top:1px solid var(--color-border-secondary);margin-top:3rem}
 .footer-inner{max-width:1000px;margin:0 auto;padding:1.25rem 1.5rem;display:flex;flex-wrap:wrap;align-items:center;gap:6px 16px;justify-content:space-between}
@@ -209,8 +211,8 @@ thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:v
   <div class="crumbs"><a href="/towns/">Towns</a> &nbsp;/&nbsp; Jurong West</div>
   <div class="kicker">Town prices · West</div>
   <h1>Jurong West HDB Resale Prices</h1>
-  <p class="standfirst">Median resale prices for HDB flats in Jurong West - by flat type, with the price
-    trend and the near-MRT premium. Jurong West is a non-mature estate in Singapore's west region.</p>
+  <p class="standfirst">What HDB resale flats in Jurong West have sold for, by flat type, how prices have
+    changed, and how much being near an MRT station matters. Jurong West is a non-mature estate in Singapore's west region.</p>
   <div class="watchrow"><button class="wbtn" data-watch="t:JURONG WEST" data-watch-label="Jurong West" hidden></button></div>
 
   <div class="keyfig">
@@ -220,8 +222,8 @@ thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:v
   </div>
 
   <p>Over the 12 months to Oct 2026, HDB resale flats in Jurong West sold at a median of <strong>$560,000</strong>
-    across all flat types - about 11% below the national median of $630k. Prices below come straight from the public transaction record; every figure
-    is a median of actual recorded sales, not a valuation or an estimate.</p>
+    across all flat types, about 11% below the national median of $630k. The figures on this page are medians of recorded sales from the public
+    transaction record.</p>
 
   <h2>Median price by flat type</h2>
   <figure>
@@ -253,7 +255,7 @@ thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:v
       <div class="cs">All flat types · Jurong West · 2019&ndash;2026 (2026 is year-to-date)</div>
       <svg viewBox="0 0 640 240" class="linechart" role="img" aria-label="Median resale price by year, 2019 to 2026"><polyline points="44.0,206.0 122.9,182.5 201.7,134.6 280.6,90.5 359.4,80.8 438.3,63.1 517.1,24.0 596.0,31.8" fill="none" stroke="var(--color-text-info)" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="44.0" cy="206.0" r="3.5" fill="var(--color-text-info)"/><circle cx="122.9" cy="182.5" r="3.5" fill="var(--color-text-info)"/><circle cx="201.7" cy="134.6" r="3.5" fill="var(--color-text-info)"/><circle cx="280.6" cy="90.5" r="3.5" fill="var(--color-text-info)"/><circle cx="359.4" cy="80.8" r="3.5" fill="var(--color-text-info)"/><circle cx="438.3" cy="63.1" r="3.5" fill="var(--color-text-info)"/><circle cx="517.1" cy="24.0" r="3.5" fill="var(--color-text-info)"/><circle cx="596.0" cy="31.8" r="3.5" fill="var(--color-text-info)"/><text x="44.0" y="228" text-anchor="middle" class="axl">2019</text><text x="122.9" y="228" text-anchor="middle" class="axl">2020</text><text x="201.7" y="228" text-anchor="middle" class="axl">2021</text><text x="280.6" y="228" text-anchor="middle" class="axl">2022</text><text x="359.4" y="228" text-anchor="middle" class="axl">2023</text><text x="438.3" y="228" text-anchor="middle" class="axl">2024</text><text x="517.1" y="228" text-anchor="middle" class="axl">2025</text><text x="596.0" y="228" text-anchor="middle" class="axl">2026</text><text x="44.0" y="196.0" text-anchor="start" class="vll">$382k</text><text x="596.0" y="21.8" text-anchor="end" class="vll">$560k</text></svg>
     </div>
-    <figcaption>Median of all HDB resale transactions recorded in Jurong West each year.</figcaption>
+    <figcaption>Median of all HDB resale transactions recorded in Jurong West each year. For the island-wide trend, see HDB's <a href="/resale-price-index">Resale Price Index</a>.</figcaption>
   </figure>
 
   <p>No HDB flat in Jurong West sold for $1 million or more in the 12 months to Oct 2026. For the towns where they do, see the <a href="/million-dollar-flats">million-dollar HDB flats tracker</a>.</p>
@@ -305,7 +307,7 @@ thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:v
       </table>
     </div>
     <figcaption>HDB's record dates each resale to the month, not the day, so these are a spread from the latest
-      month rather than the last few to complete. <a href="/search?town=JURONG+WEST">Browse every Jurong West sale since 2024 &rarr;</a></figcaption>
+      month rather than the last few to complete. You can also <a href="/search?town=JURONG+WEST">browse every Jurong West sale since 2024</a>.</figcaption>
   </figure>
 
   <h2>How Jurong West compares with other towns</h2>
@@ -313,17 +315,11 @@ thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:v
     price ($535,000) and <strong>#25</strong> by price per square foot ($513 psf). Just above it sits <a href="/towns/jurong-east">Jurong East</a> ($549,444).
     See every town side by side on the <a href="/towns/">towns overview</a>.</p>
 
-  <h2>The near-MRT premium in Jurong West</h2>
+  <h2>Flats near an MRT station in Jurong West</h2>
   <p>4-room flats <strong>within 500m of an MRT</strong> in Jurong West sold at a median <strong>$565,000</strong>, about <strong>7% more</strong> than those further out (<strong>$530,000</strong>) over the last two years. The busiest stations for resale here are Lakeside (599), Pioneer (447), Boon Lay (336), Chinese Garden (14).</p>
 
-  <div class="cta">
-    <div class="t">
-      <h3>Explore Jurong West in the tools</h3>
-      <p>Find a Flat filters live listings-era sales by town, flat type, budget and lease; Analysis by Town
-        adds $psf and the near-MRT premium across every distance band.</p>
-    </div>
-    <a class="btn" href="/find-a-flat">Open Find a Flat →</a>
-  </div>
+  <p>To narrow Jurong West down by budget, flat type and remaining lease, use <a href="/find-a-flat">Find a Flat</a>.
+    <a href="/analysis-by-town">Analysis by Town</a> compares price per square foot at different distances from the MRT.</p>
 
   <h2>Jurong West HDB resale FAQ</h2>
   <div class="faq">
@@ -335,15 +331,10 @@ thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:v
   </div>
 
   <div class="related">
-    <h3>Nearby towns</h3>
-    <p><a href="/towns/bukit-batok">Bukit Batok</a> · <a href="/towns/bukit-panjang">Bukit Panjang</a> · <a href="/towns/choa-chu-kang">Choa Chu Kang</a> · <a href="/towns/clementi">Clementi</a> · <a href="/towns/jurong-east">Jurong East</a></p>
-    <h3>Guides worth reading</h3>
-    <p><a href="/guides/fair-price">How to tell if a price is fair</a> ·
+    <p><b>Nearby towns:</b> <a href="/towns/bukit-batok">Bukit Batok</a> · <a href="/towns/bukit-panjang">Bukit Panjang</a> · <a href="/towns/choa-chu-kang">Choa Chu Kang</a> · <a href="/towns/clementi">Clementi</a> · <a href="/towns/jurong-east">Jurong East</a></p>
+    <p><b>Related guides:</b> <a href="/guides/fair-price">How to tell if a price is fair</a> ·
        <a href="/guides/mrt-price-premium">The MRT price premium</a> ·
        <a href="/guides/mature-vs-non-mature">Mature vs non-mature estates</a></p>
-    <h3>Market trackers</h3>
-    <p><a href="/resale-price-index">HDB Resale Price Index</a> ·
-       <a href="/this-month">This month's market update</a></p>
   </div>
 
   <aside class="method">
@@ -353,7 +344,6 @@ thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:v
     <p>These describe past sales, not valuations or forecasts. Data through Oct 2026.</p>
   </aside>
 
-  <p class="morelink"><a href="/towns/">← All towns</a></p>
 </article>
 
 <footer class="site-footer"><div class="footer-inner">

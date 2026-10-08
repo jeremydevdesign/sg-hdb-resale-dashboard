@@ -104,7 +104,7 @@ body{margin:0;background:var(--color-background-primary);color:var(--color-text-
 a{color:var(--color-text-info)}
 
 .article{max-width:720px;margin:0 auto;padding:0 1.5rem}
-.kicker{margin-top:2.5rem;font-size:12.5px;font-weight:640;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-text-info)}
+.kicker{margin-top:2.5rem;font-size:14px;font-weight:500;color:var(--color-text-tertiary)}
 .crumbs{margin-top:1.5rem;font-size:13px;color:var(--color-text-tertiary)}
 .crumbs a{color:var(--color-text-secondary);text-decoration:none}
 .crumbs a:hover{text-decoration:underline}
@@ -147,18 +147,19 @@ thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:v
 .callout p{margin:0;font-family:var(--font-serif);font-size:18px;line-height:1.6;color:var(--color-text-primary)}
 
 .checks{margin-top:20px;border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);padding:6px 24px 18px}
-.checks h3{font-family:var(--font-sans);font-size:13px;text-transform:uppercase;letter-spacing:0.06em;color:var(--color-text-tertiary);margin:18px 0 0}
+.checks h3{font-family:var(--font-sans);font-size:16.5px;font-weight:650;color:var(--color-text-primary);margin:18px 0 0}
 .checks ol{margin:14px 0 0;padding:0;list-style:none;counter-reset:c;display:flex;flex-direction:column;gap:14px}
 .checks li{font-family:var(--font-serif);font-size:17.5px;line-height:1.5;padding-left:40px;position:relative;counter-increment:c}
 .checks li::before{content:counter(c);position:absolute;left:0;top:2px;width:26px;height:26px;border-radius:50%;background:var(--color-background-info);color:var(--color-text-info);font-family:var(--font-sans);font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center}
 
+/*RELATED*/.closing{margin-top:34px!important}
 .cta{margin:42px 0 0;border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-secondary);padding:24px 26px;display:flex;gap:20px;align-items:center;justify-content:space-between;flex-wrap:wrap}
 .cta .t h3{margin:0;font-family:var(--font-sans);font-size:18px;font-weight:700;letter-spacing:-0.01em}
 .cta .t p{margin:8px 0 0;font-family:var(--font-sans);font-size:14.5px;color:var(--color-text-secondary);max-width:46ch}
 .cta .btn{font-family:var(--font-sans);font-weight:640;font-size:14.5px;color:var(--color-background-primary);background:var(--color-text-primary);padding:12px 20px;border-radius:10px;white-space:nowrap;text-decoration:none;transition:opacity .12s}
 .cta .btn:hover{opacity:.85}
 
-.method{margin:40px 0 0;font-family:var(--font-sans);border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-secondary);padding:20px 22px}.method-head{display:flex;align-items:center;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--color-text-secondary);margin:0 0 12px}.method-head svg{width:15px;height:15px;flex-shrink:0;color:var(--color-text-info)}.method p{font-size:13px;line-height:1.6;color:var(--color-text-tertiary);margin:0 0 10px}.method p:last-child{margin:0}.method a{color:var(--color-text-info);text-decoration:none}.method a:hover{text-decoration:underline}.method .rev{font-style:italic}
+.method{margin:40px 0 0;font-family:var(--font-sans);border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-secondary);padding:20px 22px}.method-head{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--color-text-secondary);margin:0 0 12px}.method-head svg{width:15px;height:15px;flex-shrink:0;color:var(--color-text-info)}.method p{font-size:13px;line-height:1.6;color:var(--color-text-tertiary);margin:0 0 10px}.method p:last-child{margin:0}.method a{color:var(--color-text-info);text-decoration:none}.method a:hover{text-decoration:underline}.method .rev{font-style:italic}
 .method b{color:var(--color-text-secondary)}
 .morelink{margin:26px 0 0;font-family:var(--font-sans);font-size:14px}
 .morelink a{color:var(--color-text-info);text-decoration:none;font-weight:600}
@@ -180,16 +181,14 @@ thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:v
   <div class="crumbs"><a href="/guides/">Guides</a> &nbsp;/&nbsp; HDB or bank loan</div>
   <div class="kicker">Guide &middot; Buying</div>
   <h1>HDB loan or bank loan?</h1>
-  <p class="standfirst">One is a fixed 2.6% that never moves and asks for no cash down. The other can be cheaper
-    today, but wants 5% in cash and can rise tomorrow. The choice is really certainty against opportunity.</p>
+  <p class="standfirst">An HDB loan has a fixed 2.6% rate and lets you pay the whole downpayment from CPF. A bank loan may be cheaper at times, but needs 5% in cash and its rate can go up.</p>
   <div class="byline">
     <span class="who">SG HDB Resale</span><span>&middot;</span>
     <span>The two ways to finance a resale flat, compared</span>
     <span class="pill">6 min read</span>
   </div>
 
-  <p>Assuming you qualify for both, the decision comes down to a handful of real differences - and one of them you
-    can never undo. Here they are side by side, then what each one actually means.</p>
+  <p>If you qualify for both, a few differences decide it, and one of them is permanent. The main differences side by side:</p>
 
   <figure>
     <div class="chart">
@@ -209,77 +208,39 @@ thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:v
         </tbody>
       </table>
     </div>
-    <figcaption>Both are capped at 75% loan-to-value since August 2024, so the deposit is 25% either way. What
-      differs is the rate, how much of that deposit must be cash, who is allowed in, and how freely you can leave.</figcaption>
+    <figcaption>Both have been capped at 75% loan-to-value since August 2024, so the downpayment is 25% either way. They differ in the interest rate, how much of the downpayment must be cash, who qualifies, and how easily you can switch.</figcaption>
   </figure>
 
-  <h2>The rate: a fixed 2.6% versus a moving target</h2>
+  <h2>Interest rate</h2>
 
-  <p>The HDB concessionary rate is <strong>2.6%</strong>, set at 0.1% above the CPF Ordinary Account rate, and it
-    has sat there for years. Its virtue is not that it is the lowest number you will ever see - a bank package can
-    undercut it in a soft-rate stretch - but that it is <strong>certain</strong>. It does not reset, it has no
-    lock-in, and it never springs a surprise at the end of a teaser period.</p>
+  <p>The HDB concessionary rate is <strong>2.6%</strong>, set at 0.1% above the CPF Ordinary Account rate, and it has stayed there for years. Bank packages can be cheaper when rates are low. The advantage of the HDB rate is that it is <strong>predictable</strong>: it does not reset, there is no lock-in period, and there is no promotional rate that ends.</p>
 
-  <p>A bank loan is a bet on rates. Take one when packages are cheap and you can pay noticeably less; but the rate
-    can climb when your fixed period ends, and staying competitive means refinancing every few years. Cheaper on
-    average, quite possibly - but only if you actively manage it, and only if rates behave.</p>
+  <p>With a bank loan, what you pay depends on interest rates. When packages are cheap you can pay noticeably less, but the rate can rise when the fixed period ends, and to keep it low you will probably need to refinance every few years. A bank loan may cost less overall, but that depends on rates and on you keeping on top of it.</p>
 
-  <h2>The cash gap: none versus 5%</h2>
+  <h2>Cash needed for the downpayment</h2>
 
-  <p>This is the difference that decides it for many buyers. On an HDB loan the entire <strong>25% downpayment can
-    come from CPF</strong> - a household with a healthy Ordinary Account can complete without a cash downpayment at
-    all. A bank loan requires at least <strong>5% of the price in cash</strong> - about $30,000 on a $600,000 flat -
-    that CPF cannot touch. If your savings are mostly in CPF rather than the bank, the HDB loan is the gentler
-    path. How this fits the rest of the upfront money is laid out in
-    <a href="/guides/buying-costs">what a resale flat really costs to buy</a>.</p>
+  <p>For many buyers this is the deciding factor. With an HDB loan the whole <strong>25% downpayment can come from CPF</strong>, so a household with enough in its Ordinary Account may need no cash for the downpayment. A bank loan needs at least <strong>5% of the price in cash</strong>, about $30,000 on a $600,000 flat. If most of your savings are in CPF, the HDB loan is easier. How this fits with the other upfront costs is covered in <a href="/guides/buying-costs">what a resale flat really costs to buy</a>.</p>
 
-  <h2>Who can even take the HDB loan</h2>
+  <h2>Who qualifies for an HDB loan</h2>
 
-  <p>The bank loan is open to almost anyone eligible to buy the flat. The HDB loan is not: your household needs at
-    least one <strong>Singapore Citizen</strong>, a monthly income within the <strong>$14,000</strong> ceiling for
-    families (higher for extended families, lower for singles), and you must not own or have recently disposed of a
-    private property. There is also a lifetime cap of two HDB concessionary loans. For many first-timer households
-    all of this is a formality - but if your income is above the ceiling, the choice is made for you.</p>
+  <p>Almost anyone eligible to buy the flat can take a bank loan. For an HDB loan, the household needs at least one <strong>Singapore Citizen</strong> and a monthly income within the <strong>$14,000</strong> ceiling for families (higher for extended families, lower for singles), and you must not own, or have recently sold, a private property. You can have at most two HDB concessionary loans in your lifetime. Most first-time households meet these conditions, but if your income is above the ceiling, a bank loan is the only option.</p>
 
-  <h2>The one-way door</h2>
+  <h2>You can switch from HDB to a bank, but not back</h2>
 
-  <p>The switch only runs in one direction. Start on an HDB loan and you can later <strong>refinance to a bank</strong>
-    if rates tempt you - keeping the HDB loan as a safe default you can leave when it suits. Start on a bank loan and
-    you <strong>cannot move back</strong> to an HDB loan later. That asymmetry is a quiet argument for the HDB loan
-    when you are unsure: it preserves the option to change your mind.</p>
-
-  <div class="callout">
-    <p>Take the HDB loan for certainty and a cashless downpayment, with the freedom to refinance later. Take the bank
-      loan for a lower rate today, if you have the cash and will actively manage it. The one thing you cannot buy
-      back is the HDB loan, once you have passed it up.</p>
-  </div>
+  <p>If you start with an HDB loan, you can later <strong>refinance to a bank</strong> if bank rates look better. If you start with a bank loan, you <strong>cannot switch to an HDB loan</strong> later. So if you are unsure, the HDB loan keeps both options open.</p>
 
   <div class="checks">
-    <h3>How to decide</h3>
+    <h3>Points to consider</h3>
     <ol>
-      <li><strong>Check eligibility first.</strong> Over the income ceiling, not a citizen household, or holding
-        private property? The bank loan may be your only option, and the question answers itself.</li>
-      <li><strong>Count your cash, not just your CPF.</strong> Thin on cash but strong on CPF? The HDB loan's
-        cashless 25% downpayment is worth a lot. A bank loan needs 5% of the price in actual cash.</li>
-      <li><strong>Decide how much certainty you want.</strong> The HDB 2.6% never moves. A bank rate can be lower
-        now and higher later - fine if you will refinance on schedule, costly if you set it and forget it.</li>
-      <li><strong>Value the escape hatch.</strong> HDB now, bank later is allowed; bank now, HDB later is not. When
-        in doubt, the reversible choice is the HDB loan.</li>
-      <li><strong>Stress-test the instalment, not today's rate.</strong> Size the loan so the monthly payment is
-        comfortable even a couple of points higher. Our tool qualifies a bank loan at a 4% floor for exactly this
-        reason.</li>
+      <li><strong>Check eligibility first.</strong> If your income is over the ceiling, no one in the household is a Citizen, or you own private property, you will need a bank loan.</li>
+      <li><strong>Look at your cash as well as your CPF.</strong> If you have plenty in CPF but not much cash, being able to pay the whole 25% from CPF is a real advantage. A bank loan needs 5% of the price in cash.</li>
+      <li><strong>Decide how much rate risk you are comfortable with.</strong> The HDB rate stays at 2.6%. A bank rate can be lower now and higher later, which is fine if you refinance when needed and expensive if you do not.</li>
+      <li><strong>Remember the switch only goes one way.</strong> You can move from HDB to a bank later, but not from a bank to HDB.</li>
+      <li><strong>Check the instalment at a higher rate.</strong> Make sure the monthly payment would still be manageable if rates were a couple of points higher. Our affordability calculator assesses bank loans at a 4% minimum rate for this reason.</li>
     </ol>
   </div>
 
-  <div class="cta">
-    <div class="t">
-      <h3>See what each loan supports</h3>
-      <p>Put your income, savings and CPF through the affordability calculator - it applies the HDB and bank rules,
-        the 75% cap and the 5% cash floor, and shows the price each path can carry.</p>
-    </div>
-    <a class="btn" href="/affordability">Affordability calculator &rarr;</a>
-    <a class="btn" href="/loan-calculator">HDB loan calculator &rarr;</a>
-  </div>
+  <p class="closing">The <a href="/affordability">affordability calculator</a> applies both sets of rules, including the 75% loan cap and the 5% cash minimum, and shows the price each loan would support.</p>
 
     <aside class="method">
     <div class="method-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg><span>How we sourced this</span></div>
@@ -288,8 +249,6 @@ thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:v
     <p>Bank interest rates move and are not shown here; our calculators qualify a bank loan at a 4% stress rate. Rules and rates change - confirm current figures at hdb.gov.sg and with lenders. This is general information, not financial advice.</p>
     <p class="rev">Last reviewed August 2026.</p>
   </aside>
-
-  <p class="morelink"><a href="/guides/">&larr; All guides</a></p>
 </article>
 
 <footer class="site-footer"><div class="footer-inner">

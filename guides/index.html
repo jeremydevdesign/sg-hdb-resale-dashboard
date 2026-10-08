@@ -108,10 +108,11 @@ body{margin:0;background:var(--color-background-primary);color:var(--color-text-
 .roadmap-cta a{font-size:13.5px;font-weight:600;text-decoration:none;padding:9px 16px;border-radius:9px;background:var(--color-text-primary);color:var(--color-background-primary);white-space:nowrap;transition:opacity .12s}
 .roadmap-cta a:hover{opacity:.85}
 
-.section-label{font-size:12px;font-weight:640;letter-spacing:.06em;text-transform:uppercase;color:var(--color-text-tertiary);margin:0 0 16px}
+.hero-lede a{color:var(--color-text-info);text-decoration:underline;text-underline-offset:3px}
+.section-label{font-size:14px;font-weight:500;color:var(--color-text-tertiary);margin:0 0 16px}
 .feature{display:block;text-decoration:none;border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-secondary);padding:28px 30px;transition:border-color .12s,transform .12s}
 .feature:hover{border-color:var(--color-text-primary);transform:translateY(-2px)}
-.feature .tag{font-size:12px;font-weight:640;letter-spacing:.05em;text-transform:uppercase;color:var(--color-text-info)}
+.feature .tag{font-size:13.5px;font-weight:500;color:var(--color-text-tertiary)}
 .feature h2{font-family:var(--font-serif);font-size:clamp(22px,3.2vw,29px);line-height:1.15;font-weight:600;margin:12px 0 0;color:var(--color-text-primary);text-wrap:balance}
 .feature p{font-family:var(--font-serif);font-size:16.5px;line-height:1.55;color:var(--color-text-secondary);margin:12px 0 0;max-width:56ch}
 .feature .meta{font-family:var(--font-sans);font-size:13px;color:var(--color-text-tertiary);margin:16px 0 0;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
@@ -119,7 +120,7 @@ body{margin:0;background:var(--color-background-primary);color:var(--color-text-
 .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:16px}
 @media(max-width:640px){.grid{grid-template-columns:1fr}}
 .card{border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-primary);padding:22px 24px;display:flex;flex-direction:column;gap:9px}
-.card .kick{font-family:var(--font-sans);font-size:12px;font-weight:640;letter-spacing:.05em;text-transform:uppercase;color:var(--color-text-tertiary)}
+.card .kick{font-family:var(--font-sans);font-size:13.5px;font-weight:500;color:var(--color-text-tertiary)}
 .card h3{font-family:var(--font-serif);margin:0;font-size:19px;line-height:1.25;font-weight:600;color:var(--color-text-primary)}
 .card p{font-family:var(--font-sans);margin:0;font-size:14px;line-height:1.5;color:var(--color-text-secondary)}
 a.card{text-decoration:none;transition:border-color .12s,transform .12s}
@@ -127,7 +128,7 @@ a.card:hover{border-color:var(--color-text-info);transform:translateY(-2px)}
 .card .go{font-family:var(--font-sans);font-size:13.5px;font-weight:640;color:var(--color-text-info);margin-top:2px}
 
 .method{margin:2.25rem 0 0;font-family:var(--font-sans);border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-secondary);padding:20px 22px}
-.method-head{display:flex;align-items:center;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--color-text-secondary);margin:0 0 12px}
+.method-head{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--color-text-secondary);margin:0 0 12px}
 .method-head svg{width:15px;height:15px;flex-shrink:0;color:var(--color-text-info)}
 .method p{font-family:var(--font-serif);font-size:13px;line-height:1.6;color:var(--color-text-tertiary);margin:0}
 .method a{color:var(--color-text-info);text-decoration:none}
@@ -150,84 +151,68 @@ a.card:hover{border-color:var(--color-text-info);transform:translateY(-2px)}
 <div class="nav"><div class="nav-inner"><a class="nav-brand" href="/"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>SG HDB Resale</a><button class="nav-toggle" id="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button><div class="nav-links" id="nav-links"><a class="nav-link" href="/towns/">Towns</a><a class="nav-link" href="/search">Search</a><a class="nav-link" href="/map">Map</a><a class="nav-link" href="/calculators">Calculators</a><a class="nav-link active" href="/guides/">Guides</a><div class="nav-group"><button type="button" class="nav-link nav-group-btn" aria-haspopup="true" aria-expanded="false">Dashboard<svg class="nav-caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="nav-menu" role="menu"><a class="nav-menu-link" href="/overview" role="menuitem">Overview</a><a class="nav-menu-link" href="/this-year" role="menuitem">This Year</a><a class="nav-menu-link" href="/find-a-flat" role="menuitem">Find a Flat</a><a class="nav-menu-link" href="/analysis-by-town" role="menuitem">Analysis by Town</a><a class="nav-menu-link" href="/by-district" role="menuitem">By District</a><a class="nav-menu-link" href="/insights" role="menuitem">Insights</a></div></div><div class="nav-group"><button type="button" class="nav-link nav-group-btn" aria-haspopup="true" aria-expanded="false">More<svg class="nav-caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="nav-menu" role="menu"><a class="nav-menu-link" href="/this-month" role="menuitem">This Month</a><a class="nav-menu-link" href="/million-dollar-flats" role="menuitem">Million-Dollar Flats</a><a class="nav-menu-link" href="/resale-price-index" role="menuitem">Resale Price Index</a></div></div></div><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme"></button></div></div>
 <div class="wrap">
 <section class="hero">
-<p class="hero-eyebrow">Guides</p>
 <h1 class="hero-title">Buying an HDB resale flat, explained</h1>
-<p class="hero-lede">Plain-English guides for anyone buying an HDB resale flat - each takes a question buyers actually ask and answers it with the real transaction record, not opinion. No jargon, no sign-up.</p>
+<p class="hero-lede">Guides to the main questions that come up when buying an HDB resale flat, using figures from the official resale records. If you are not sure where to start, the <a href="/#roadmap">seven-step overview</a> on the home page puts them in order.</p>
 </section>
-
-<div class="roadmap-cta">
-<p><strong>Not sure where to start?</strong> The buyer's roadmap walks you through the whole journey step by step, from the big picture to making an offer.</p>
-<a href="/#roadmap">Follow the roadmap &rarr;</a>
-</div>
-
 <section aria-label="Guides">
 <p class="section-label">All guides</p>
 <a class="feature" href="/guides/mrt-price-premium">
-<span class="tag">Featured &middot; Buying</span>
+<span class="tag">Buying</span>
 <h2>Is it worth paying more to live near an MRT?</h2>
-<p>Buyers assume the near-station premium is huge and universal. Split 10,837 four-room sales by distance and it turns out to be smaller than the folklore - and in some towns, it runs the other way entirely.</p>
-<span class="meta"><span>5 min read</span><span>&middot;</span><span class="go">Read the guide &rarr;</span></span>
+<p>Within the same town, flats near a station sell for about 5% more per square foot, not the 10% the raw figures suggest. In a few towns they sell for less.</p>
+<span class="meta"><span>5 min read</span></span>
 </a>
 <div class="grid">
 <a class="card" href="/guides/fair-price">
 <span class="kick">Buying</span>
 <h3>How to tell if an asking price is fair</h3>
-<p>There's no single fair price - there's a fair range. The five checks to place a flat inside it, using nothing but the public record.</p>
-<span class="go">Read the guide &rarr;</span>
+<p>Comparable flats sell across a wide range. Five checks for working out where a particular flat should sit in it.</p>
 </a>
 <a class="card" href="/guides/buying-costs">
 <span class="kick">Buying</span>
 <h3>What a resale flat really costs to buy</h3>
-<p>Beyond the price: the downpayment, stamp duty, option fee and grants - and which costs must be cash, not CPF. Worked on a real example.</p>
-<span class="go">Read the guide &rarr;</span>
+<p>The downpayment, stamp duty, option fee and grants on a $600,000 example, and which costs have to be paid in cash rather than CPF.</p>
 </a>
 <a class="card" href="/guides/cash-over-valuation">
 <span class="kick">Buying</span>
 <h3>Cash over valuation, explained</h3>
-<p>When the price beats the valuation, the gap is cash - not CPF, not your loan. Why COV happens, how the sums work, and how big it gets.</p>
-<span class="go">Read the guide &rarr;</span>
+<p>If you pay more than the valuation, the difference has to be cash. How COV works, and how large it has been.</p>
 </a>
 <a class="card" href="/guides/buying-timeline">
 <span class="kick">Buying</span>
 <h3>Buying a resale flat, step by step</h3>
-<p>From the HFE eligibility letter to the keys: every gate in order, what each step costs, and how long the journey really takes.</p>
-<span class="go">Read the guide &rarr;</span>
+<p>Each step from the HFE eligibility letter to collecting the keys, with costs and typical timings.</p>
 </a>
 <a class="card" href="/guides/hdb-vs-bank-loan">
 <span class="kick">Financing</span>
 <h3>HDB loan or bank loan?</h3>
-<p>A fixed 2.6% with no cash down, or a market rate that needs 5% cash and can move. How to choose - and why the switch only goes one way.</p>
-<span class="go">Read the guide &rarr;</span>
+<p>A fixed 2.6% rate with the downpayment payable from CPF, or a market rate that needs 5% in cash. Why you can switch from HDB to a bank but not back.</p>
 </a>
 <a class="card" href="/guides/mop-and-eligibility">
 <span class="kick">Buying</span>
 <h3>Who can buy, and when can you sell?</h3>
-<p>The eligibility gates that let you buy a resale flat, and the 5-year Minimum Occupation Period that starts the day you get the keys.</p>
-<span class="go">Read the guide &rarr;</span>
+<p>Who is eligible to buy a resale flat, and the 5-year Minimum Occupation Period that starts when you collect the keys.</p>
 </a>
 <a class="card" href="/guides/lease-decay">
 <span class="kick">Value</span>
-<h3>Lease decay, explained without the panic</h3>
-<p>A slow ~1%-a-year drift for most flats - and why the real bite comes around 60 years left, for a financing reason.</p>
-<span class="go">Read the guide &rarr;</span>
+<h3>Lease decay, explained</h3>
+<p>Within a town, price falls by about 1% a year of lease for most flats, and faster below about 60 years, mainly because of CPF and loan rules.</p>
 </a>
 <a class="card" href="/guides/mature-vs-non-mature">
 <span class="kick">Location</span>
 <h3>Mature vs non-mature estates: what you pay for</h3>
-<p>The price gap between estate types, and whether it's location or flat age doing the work.</p>
-<span class="go">Read the guide &rarr;</span>
+<p>Four-room flats in mature estates sell for about 23% more, even though they are older. What the extra cost is for.</p>
 </a>
 <a class="card" href="/guides/is-now-a-good-time">
 <span class="kick">Timing</span>
 <h3>Is now a good time to buy?</h3>
-<p>What a decade of prices says about market timing - and why it matters less than you'd think.</p>
-<span class="go">Read the guide &rarr;</span>
+<p>What ten years of prices say about timing a purchase, and why the choice of flat has mattered more.</p>
 </a>
 </div>
 </section>
 <aside class="method">
 <div class="method-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg><span>Where the numbers come from</span></div>
-<p>Every figure in these guides comes from the official <a href="https://data.gov.sg/collections/189/view" rel="noopener">data.gov.sg</a> resale-price records, geocoded against OneMap for MRT distance and postal district. Nothing is modelled or estimated - these are actual recorded transactions. <a href="/about">How this site works &rarr;</a></p>
+<p>Every figure in these guides comes from the official <a href="https://data.gov.sg/collections/189/view" rel="noopener">data.gov.sg</a> resale-price records, with MRT distance and postal district added using OneMap. More on <a href="/about">where the numbers come from</a>.</p>
 </aside>
 </div>
 <footer class="site-footer"><div class="footer-inner">

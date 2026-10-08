@@ -104,7 +104,7 @@ body{margin:0;background:var(--color-background-primary);color:var(--color-text-
 a{color:var(--color-text-info)}
 
 .article{max-width:720px;margin:0 auto;padding:0 1.5rem}
-.kicker{margin-top:2.5rem;font-size:12.5px;font-weight:640;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-text-info)}
+.kicker{margin-top:2.5rem;font-size:14px;font-weight:500;color:var(--color-text-tertiary)}
 .crumbs{margin-top:1.5rem;font-size:13px;color:var(--color-text-tertiary)}
 .crumbs a{color:var(--color-text-secondary);text-decoration:none}
 .crumbs a:hover{text-decoration:underline}
@@ -172,14 +172,15 @@ thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:v
 .faq .qa h3{font-family:var(--font-sans);font-size:16px;font-weight:680;margin:18px 0 0;letter-spacing:-0.01em}
 .faq .qa p{margin:8px 0 0;font-size:17px;line-height:1.6}
 
-.related{margin:40px 0 0;border-top:1px solid var(--color-border-secondary);padding:8px 0 0}
+.related{margin:40px 0 0;border-top:1px solid var(--color-border-secondary);padding:10px 0 0}
 .related h3{font-family:var(--font-sans);font-size:13px;text-transform:uppercase;letter-spacing:0.06em;color:var(--color-text-tertiary);margin:18px 0 0}
 .related p{font-family:var(--font-sans);font-size:14.5px;margin:8px 0 0;line-height:1.7}
-.related a{color:var(--color-text-info);text-decoration:none;font-weight:600}
+.related b{font-weight:600}
+.related a{color:var(--color-text-info);text-decoration:underline;text-underline-offset:2px}
 .related a:hover{text-decoration:underline}
 
 .method{margin:40px 0 0;font-family:var(--font-sans);border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-secondary);padding:20px 22px}
-.method-head{display:flex;align-items:center;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--color-text-secondary);margin:0 0 12px}
+.method-head{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--color-text-secondary);margin:0 0 12px}
 .method-head svg{width:15px;height:15px;flex-shrink:0;color:var(--color-text-info)}
 .method p{font-size:13px;line-height:1.6;color:var(--color-text-tertiary);margin:0 0 10px}
 .method p:last-child{margin:0}
@@ -187,9 +188,10 @@ thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:v
 .method a{color:var(--color-text-info);text-decoration:none}
 .method a:hover{text-decoration:underline}
 .method .rev{font-style:italic}
-.morelink{margin:26px 0 0;font-family:var(--font-sans);font-size:14px}
-.morelink a{color:var(--color-text-info);text-decoration:none;font-weight:600}
-.morelink a:hover{text-decoration:underline}
+.morelink{margin:26px 0 0;font-family:var(--font-sans);font-size:14px;color:var(--color-text-secondary)}
+.morelink a{color:var(--color-text-info);text-decoration:underline;text-underline-offset:2px}
+.morelink a:hover{text-decoration-thickness:2px}
+.nextp{margin-top:34px!important}
 
 .site-footer{border-top:1px solid var(--color-border-secondary);margin-top:3rem}
 .footer-inner{max-width:1000px;margin:0 auto;padding:1.25rem 1.5rem;display:flex;flex-wrap:wrap;align-items:center;gap:6px 16px;justify-content:space-between}
@@ -311,14 +313,8 @@ thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:v
       too few recent sales to be reliable show &ndash;.</figcaption>
   </figure>
 
-  <div class="cta">
-    <div class="t">
-      <h3>New here? Start with the guides</h3>
-      <p>Written, data-backed answers to the questions buyers actually ask - is this price fair, how much does
-        the MRT cost, and does lease decay matter.</p>
-    </div>
-    <a class="btn" href="/guides/">Read the guides →</a>
-  </div>
+  <p>If you are new to buying, the <a href="/guides/">guides</a> cover how to judge an asking price, what being
+    near the MRT is worth, and how much the remaining lease matters.</p>
 
   <aside class="method">
     <div class="method-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg><span>How we measured this</span></div>
