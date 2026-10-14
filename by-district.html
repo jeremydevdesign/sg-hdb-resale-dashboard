@@ -68,7 +68,7 @@ body{margin:0;background:var(--color-background-primary);color:var(--color-text-
 .crumbs .here{color:var(--color-text-primary);font-weight:500}
 .hubhead .hub-purpose{font-size:14.5px;line-height:1.5;color:var(--color-text-secondary);margin:0 0 12px;max-width:66ch}
 .hub-how{background:var(--color-background-info);border:1px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);padding:0 14px;margin:0}
-.hub-how>summary{list-style:none;cursor:pointer;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--color-text-info);padding:11px 0;display:flex;align-items:center;gap:8px}
+.hub-how>summary{list-style:none;cursor:pointer;font-size:12px;font-weight:600;color:var(--color-text-info);padding:11px 0;display:flex;align-items:center;gap:8px}
 .hub-how>summary::-webkit-details-marker{display:none}
 .hub-how>summary::after{content:"";width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(-45deg);transition:transform .15s}
 .hub-how[open]>summary::after{transform:rotate(45deg)}
@@ -81,7 +81,7 @@ body{margin:0;background:var(--color-background-primary);color:var(--color-text-
 .headline{font-size:14px;color:var(--color-text-primary);margin:0 0 1.5rem;padding:11px 15px;background:var(--color-background-info);border-radius:var(--border-radius-md);line-height:1.5}
 .headline strong{font-weight:600}
 .filter-block{padding:12px 16px;background:var(--color-background-secondary);border-radius:var(--border-radius-md);margin-bottom:6px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-.flbl{font-size:11px;font-weight:500;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:.06em;white-space:nowrap;min-width:74px}
+.flbl{font-size:12px;font-weight:500;color:var(--color-text-secondary);white-space:nowrap;min-width:74px}
 .range-wrap{flex:1;min-width:220px;position:relative;height:22px;display:flex;align-items:center;touch-action:none}
 .r-track{position:absolute;left:0;right:0;height:4px;background:var(--color-border-secondary);border-radius:2px}
 .r-fill{position:absolute;height:4px;background:var(--color-text-primary);border-radius:2px}
@@ -92,12 +92,12 @@ body{margin:0;background:var(--color-background-primary);color:var(--color-text-
 .pill.on{background:var(--color-text-primary);color:var(--color-background-primary);border-color:var(--color-text-primary)}
 .kgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:1.25rem 0}
 .kcard{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:13px 15px}
-.klbl{font-size:11px;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:.06em;margin:0 0 5px}
+.klbl{font-size:12px;color:var(--color-text-secondary);margin:0 0 5px}
 .kval{font-size:21px;font-weight:500;margin:0;line-height:1}
 .ksub{font-size:11px;margin:4px 0 0;color:var(--color-text-secondary)}
 .ksub.up{color:var(--color-text-success)}.ksub.dn{color:var(--color-text-danger)}
 .sec{margin-bottom:2rem}
-.seclbl{font-size:12px;font-weight:500;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:.07em;margin:0 0 10px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.seclbl{font-size:12px;font-weight:500;color:var(--color-text-secondary);margin:0 0 10px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .chip{font-size:11px;padding:2px 9px;border-radius:20px;background:var(--color-background-info);color:var(--color-text-info)}
 .div{border:none;border-top:.5px solid var(--color-border-tertiary);margin:0 0 1.5rem}
 .legend{display:flex;flex-wrap:wrap;gap:13px;margin-bottom:10px}
@@ -141,7 +141,7 @@ svg text{font-family:var(--font-sans)}
 .nav-links .nav-link{width:100%;box-sizing:border-box;text-align:left;font-size:14px;padding:11px 12px}
 .nav-links .nav-link.active{background:var(--color-text-primary);color:var(--color-background-primary)}
 .nav-group{display:block;width:100%;position:static}
-.nav-links .nav-group-btn{width:100%;justify-content:flex-start;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--color-text-tertiary);padding:14px 12px 4px;cursor:default}
+.nav-links .nav-group-btn{width:100%;justify-content:flex-start;font-size:12px;font-weight:700;color:var(--color-text-tertiary);padding:14px 12px 4px;cursor:default}
 .nav-links .nav-group-btn.active{background:transparent;color:var(--color-text-tertiary)}
 .nav-caret{display:none}
 .nav-menu{display:block;position:static;border:none;box-shadow:none;padding:0;min-width:0;background:transparent}
@@ -166,7 +166,7 @@ svg text{font-family:var(--font-sans)}
 /* ---- table ---- */
 .tbl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
 table.dt{border-collapse:collapse;width:100%;font-size:12px;min-width:720px}
-table.dt th{text-align:right;font-weight:500;color:var(--color-text-secondary);font-size:11px;text-transform:uppercase;letter-spacing:.05em;padding:7px 9px;border-bottom:1px solid var(--color-border-secondary);cursor:pointer;white-space:nowrap;user-select:none}
+table.dt th{text-align:right;font-weight:500;color:var(--color-text-secondary);font-size:12px;padding:7px 9px;border-bottom:1px solid var(--color-border-secondary);cursor:pointer;white-space:nowrap;user-select:none}
 table.dt th:first-child,table.dt td:first-child{text-align:left}
 table.dt th:nth-child(2),table.dt td:nth-child(2){text-align:left}
 table.dt th:hover{color:var(--color-text-primary)}
@@ -175,12 +175,12 @@ table.dt td{padding:7px 9px;text-align:right;border-bottom:.5px solid var(--colo
 table.dt tbody tr{cursor:pointer}
 table.dt tbody tr:hover{background:var(--color-background-secondary)}
 table.dt tbody tr.sel{background:var(--color-background-secondary)}
-.tw{font-size:10px;color:var(--color-text-tertiary);display:block;margin-top:1px;max-width:230px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tw{font-size:11px;color:var(--color-text-tertiary);display:block;margin-top:1px;max-width:230px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .thin{color:var(--color-text-tertiary)}
 .dname{display:flex;align-items:center;gap:6px}
-.note{font-size:11px;color:var(--color-text-tertiary);line-height:1.6;margin:6px 0 0}
+.note{font-size:12px;color:var(--color-text-tertiary);line-height:1.6;margin:6px 0 0}
 .note b{color:var(--color-text-secondary);font-weight:500}
-.foot{font-size:11px;color:var(--color-text-tertiary);line-height:1.7;margin-top:2.5rem;padding-top:1.25rem;border-top:.5px solid var(--color-border-tertiary)}
+.foot{font-size:12px;color:var(--color-text-tertiary);line-height:1.7;margin-top:2.5rem;padding-top:1.25rem;border-top:.5px solid var(--color-border-tertiary)}
 .site-footer{border-top:1px solid var(--color-border-secondary);margin-top:2.5rem}
 .footer-inner{max-width:1000px;margin:0 auto;padding:1.25rem 1.5rem;display:flex;flex-wrap:wrap;align-items:center;gap:6px 16px;justify-content:space-between}
 .footer-brand{font-size:13px;font-weight:600;color:var(--color-text-secondary)}
@@ -189,6 +189,9 @@ table.dt tbody tr.sel{background:var(--color-background-secondary)}
 .footer-nav a:hover{color:var(--color-text-primary)}
 .footer-note{font-size:12px;color:var(--color-text-tertiary)}
 .theme-toggle{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;padding:0;border:1px solid var(--color-border-secondary);background:transparent;border-radius:8px;color:var(--color-text-secondary);cursor:pointer;transition:background .12s,color .12s,border-color .12s}
+.nav-toggle,.theme-toggle{position:relative}.nav-toggle::after,.theme-toggle::after{content:"";position:absolute;inset:-7px}.skip{position:absolute;left:-9999px;top:8px;z-index:200;padding:8px 12px;border-radius:8px;background:var(--color-background-primary);color:var(--color-text-primary);border:1px solid var(--color-border-primary)}.skip:focus{left:8px}.nav-brand{text-decoration:none}
+/*TAPS*/button.pill,button.stab{position:relative;padding-top:7px;padding-bottom:7px}button.pill::after,button.stab::after{content:"";position:absolute;inset:-6px 0}
+/*MEASURE*/.method p,aside.method p,figcaption,.about-data p,.hub-how p,.assump p,.chart-note,.note,.foot,.coverage{max-width:72ch}
 .theme-toggle:hover{background:var(--color-background-secondary);color:var(--color-text-primary);border-color:var(--color-border-primary)}
 .theme-toggle svg{width:17px;height:17px;display:block}
 @media(max-width:600px){.theme-toggle{width:30px;height:30px}}
@@ -201,7 +204,7 @@ table.dt tbody tr.sel{background:var(--color-background-secondary)}
 /*ABOUTDATA*/
 .about-data-wrap{max-width:1000px;margin:0 auto;padding:0 1.5rem 2.5rem}
 .about-data{border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-secondary);padding:20px 22px;font-family:var(--font-sans)}
-.about-data h2{display:flex;align-items:center;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--color-text-secondary);margin:0 0 12px}
+.about-data h2{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:700;color:var(--color-text-secondary);margin:0 0 12px}
 .about-data h2 svg{width:15px;height:15px;flex-shrink:0;color:var(--color-text-info)}
 .about-data h3{font-size:13px;font-weight:600;color:var(--color-text-secondary);margin:14px 0 4px}
 .about-data p{font-size:13px;line-height:1.6;color:var(--color-text-tertiary);margin:0 0 8px;max-width:78ch}
@@ -213,7 +216,7 @@ table.dt tbody tr.sel{background:var(--color-background-secondary)}
 </style>
 </head>
 <body>
-<div class="nav"><div class="nav-inner"><a class="nav-brand" href="/"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>SG HDB Resale</a><button class="nav-toggle" id="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button><div class="nav-links" id="nav-links"><a class="nav-link" href="/towns/">Towns</a><a class="nav-link" href="/search">Search</a><a class="nav-link" href="/map">Map</a><a class="nav-link" href="/calculators">Calculators</a><a class="nav-link" href="/guides/">Guides</a><div class="nav-group"><button type="button" class="nav-link nav-group-btn active" aria-haspopup="true" aria-expanded="false">Dashboard<svg class="nav-caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="nav-menu" role="menu"><a class="nav-menu-link" href="/overview" role="menuitem">Overview</a><a class="nav-menu-link" href="/this-year" role="menuitem">This Year</a><a class="nav-menu-link" href="/find-a-flat" role="menuitem">Find a Flat</a><a class="nav-menu-link" href="/analysis-by-town" role="menuitem">Analysis by Town</a><a class="nav-menu-link active" href="/by-district" role="menuitem">By District</a><a class="nav-menu-link" href="/insights" role="menuitem">Insights</a></div></div><div class="nav-group"><button type="button" class="nav-link nav-group-btn" aria-haspopup="true" aria-expanded="false">More<svg class="nav-caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="nav-menu" role="menu"><a class="nav-menu-link" href="/this-month" role="menuitem">This Month</a><a class="nav-menu-link" href="/million-dollar-flats" role="menuitem">Million-Dollar Flats</a><a class="nav-menu-link" href="/resale-price-index" role="menuitem">Resale Price Index</a></div></div></div><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme"></button></div></div>
+<a class="skip" href="#main">Skip to content</a><div class="nav"><div class="nav-inner"><a class="nav-brand" href="/"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>SG HDB Resale</a><button class="nav-toggle" id="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button><div class="nav-links" id="nav-links"><a class="nav-link" href="/towns/">Towns</a><a class="nav-link" href="/search">Search</a><a class="nav-link" href="/map">Map</a><a class="nav-link" href="/calculators">Calculators</a><a class="nav-link" href="/guides/">Guides</a><div class="nav-group"><button type="button" class="nav-link nav-group-btn active" aria-haspopup="true" aria-expanded="false">Dashboard<svg class="nav-caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="nav-menu" role="menu"><a class="nav-menu-link" href="/overview" role="menuitem">Overview</a><a class="nav-menu-link" href="/this-year" role="menuitem">This Year</a><a class="nav-menu-link" href="/find-a-flat" role="menuitem">Find a Flat</a><a class="nav-menu-link" href="/analysis-by-town" role="menuitem">Analysis by Town</a><a class="nav-menu-link active" href="/by-district" role="menuitem">By District</a><a class="nav-menu-link" href="/insights" role="menuitem">Insights</a></div></div><div class="nav-group"><button type="button" class="nav-link nav-group-btn" aria-haspopup="true" aria-expanded="false">More<svg class="nav-caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="nav-menu" role="menu"><a class="nav-menu-link" href="/this-month" role="menuitem">This Month</a><a class="nav-menu-link" href="/million-dollar-flats" role="menuitem">Million-Dollar Flats</a><a class="nav-menu-link" href="/resale-price-index" role="menuitem">Resale Price Index</a></div></div></div><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme"></button></div></div><main id="main">
 <div class="wrap">
 <nav class="dash-tabs" aria-label="Dashboards"><a href="/overview">Overview</a><a href="/this-year">This Year</a><a href="/find-a-flat">Find a Flat</a><a href="/analysis-by-town">Analysis by Town</a><a href="/by-district" class="active" aria-current="page">By District</a><a href="/insights">Insights</a></nav>
 <script>(function(){var t=document.currentScript.previousElementSibling,a=t&&t.querySelector(".active");if(a&&a.offsetLeft+a.offsetWidth>t.clientWidth)t.scrollLeft=a.offsetLeft-12;})();</script>
@@ -223,7 +226,7 @@ table.dt tbody tr.sel{background:var(--color-background-secondary)}
 <h1 class="pg-title">HDB resale by postal district</h1>
 <p class="pg-sub" id="pg-sub"></p>
 <div class="hubhead hubhead-body">
-<p class="hub-purpose">Part of step 3 &mdash; narrowing by place: resale prices grouped by postal district, a finer cut than towns.</p>
+<p class="hub-purpose">Part of step 3 - narrowing by place: resale prices grouped by postal district, a finer cut than towns.</p>
 <details class="hub-how" open>
 <summary>How to read this page</summary>
 <div class="hub-how-body">
@@ -719,7 +722,7 @@ if ('serviceWorker' in navigator) {
 <p>Postal districts are not HDB towns. They cut across town boundaries and can mix mature and non-mature estates, so a district median describes a broad area, not a neighbourhood. Some districts have very few HDB flats at all. For estate-level prices, see <a href="/towns/">prices by town</a>, and for how estate maturity affects price, <a href="/guides/mature-vs-non-mature">mature vs non-mature estates</a>.</p>
 <p>Source: HDB resale flat prices, published on data.gov.sg and refreshed here weekly. Everything on this page describes past sales. It is not a valuation of any flat and not financial advice.</p><!--TOWNLINKS--><h3>Prices by town</h3>
 <p>Every HDB town has its own page with medians by flat type, the busiest streets, how it ranks against other towns and the near-MRT premium: <a href="/towns/ang-mo-kio">Ang Mo Kio</a> &middot; <a href="/towns/bedok">Bedok</a> &middot; <a href="/towns/bishan">Bishan</a> &middot; <a href="/towns/bukit-batok">Bukit Batok</a> &middot; <a href="/towns/bukit-merah">Bukit Merah</a> &middot; <a href="/towns/bukit-panjang">Bukit Panjang</a> &middot; <a href="/towns/bukit-timah">Bukit Timah</a> &middot; <a href="/towns/central-area">Central Area</a> &middot; <a href="/towns/choa-chu-kang">Choa Chu Kang</a> &middot; <a href="/towns/clementi">Clementi</a> &middot; <a href="/towns/geylang">Geylang</a> &middot; <a href="/towns/hougang">Hougang</a> &middot; <a href="/towns/jurong-east">Jurong East</a> &middot; <a href="/towns/jurong-west">Jurong West</a> &middot; <a href="/towns/kallang-whampoa">Kallang/Whampoa</a> &middot; <a href="/towns/marine-parade">Marine Parade</a> &middot; <a href="/towns/pasir-ris">Pasir Ris</a> &middot; <a href="/towns/punggol">Punggol</a> &middot; <a href="/towns/queenstown">Queenstown</a> &middot; <a href="/towns/sembawang">Sembawang</a> &middot; <a href="/towns/sengkang">Sengkang</a> &middot; <a href="/towns/serangoon">Serangoon</a> &middot; <a href="/towns/tampines">Tampines</a> &middot; <a href="/towns/toa-payoh">Toa Payoh</a> &middot; <a href="/towns/woodlands">Woodlands</a> &middot; <a href="/towns/yishun">Yishun</a>.</p></section></div>
-<footer class="site-footer"><div class="footer-inner">
+</main><footer class="site-footer"><div class="footer-inner">
 <span class="footer-brand">SG HDB Resale</span>
 <nav class="footer-nav"><a href="/about">About</a><a href="/contact">Contact</a><a href="/terms">Terms</a><a href="/privacy">Privacy</a></nav>
 <span class="footer-note">Data: data.gov.sg &amp; OneMap</span>
@@ -737,5 +740,6 @@ paint();
 <script>/*NAVJS*/
 (function(){document.querySelectorAll('.nav-group').forEach(function(g){var btn=g.querySelector('.nav-group-btn');if(!btn)return;function set(o){g.setAttribute('data-open',o?'true':'false');btn.setAttribute('aria-expanded',o?'true':'false');}if(window.matchMedia&&window.matchMedia('(hover:hover)').matches){g.addEventListener('mouseenter',function(){set(true);});g.addEventListener('mouseleave',function(){set(false);});}btn.addEventListener('click',function(e){e.preventDefault();set(g.getAttribute('data-open')!=='true');});document.addEventListener('click',function(e){if(!g.contains(e.target))set(false);});document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});});})();(function(){var n=document.querySelector('.nav');if(!n)return;var t=document.getElementById('nav-toggle');if(!t)return;function set(o){n.setAttribute('data-menu-open',o?'true':'false');t.setAttribute('aria-expanded',o?'true':'false');}t.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();set(n.getAttribute('data-menu-open')!=='true');});document.addEventListener('click',function(e){if(!n.contains(e.target))set(false);});document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});n.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener('click',function(){set(false);});});})();
 </script>
+<script>/*ARIAPRESSED*/(function(){var Q='button.pill:not(.alt),button.stab';function s(b){b.setAttribute('aria-pressed',b.classList.contains('on')?'true':'false')}function all(){document.querySelectorAll(Q).forEach(s)}all();new MutationObserver(function(m){m.forEach(function(r){if(r.type==='childList')all();else if(r.target.matches&&r.target.matches(Q))s(r.target)})}).observe(document.body,{subtree:true,childList:true,attributes:true,attributeFilter:['class']})})();</script>
 </body>
 </html>

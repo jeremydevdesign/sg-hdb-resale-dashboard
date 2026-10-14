@@ -88,7 +88,7 @@ body{margin:0;background:var(--color-background-primary);color:var(--color-text-
 .nav-links .nav-link{width:100%;box-sizing:border-box;text-align:left;font-size:14px;padding:11px 12px}
 .nav-links .nav-link.active{background:var(--color-text-primary);color:var(--color-background-primary)}
 .nav-group{display:block;width:100%;position:static}
-.nav-links .nav-group-btn{width:100%;justify-content:flex-start;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--color-text-tertiary);padding:14px 12px 4px;cursor:default}
+.nav-links .nav-group-btn{width:100%;justify-content:flex-start;font-size:12px;font-weight:700;color:var(--color-text-tertiary);padding:14px 12px 4px;cursor:default}
 .nav-links .nav-group-btn.active{background:transparent;color:var(--color-text-tertiary)}
 .nav-caret{display:none}
 .nav-menu{display:block;position:static;border:none;box-shadow:none;padding:0;min-width:0;background:transparent}
@@ -96,6 +96,8 @@ body{margin:0;background:var(--color-background-primary);color:var(--color-text-
 .nav-menu-link{padding:10px 12px 10px 22px;font-size:14px}
 }
 .theme-toggle{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;padding:0;border:1px solid var(--color-border-secondary);background:transparent;border-radius:8px;color:var(--color-text-secondary);cursor:pointer;transition:background .12s,color .12s,border-color .12s}
+.nav-toggle,.theme-toggle{position:relative}.nav-toggle::after,.theme-toggle::after{content:"";position:absolute;inset:-7px}.skip{position:absolute;left:-9999px;top:8px;z-index:200;padding:8px 12px;border-radius:8px;background:var(--color-background-primary);color:var(--color-text-primary);border:1px solid var(--color-border-primary)}.skip:focus{left:8px}.nav-brand{text-decoration:none}
+/*MEASURE*/.method p,aside.method p,figcaption,.about-data p,.hub-how p,.assump p,.chart-note,.note,.foot,.coverage{max-width:72ch}
 .theme-toggle:hover{background:var(--color-background-secondary);color:var(--color-text-primary);border-color:var(--color-border-primary)}
 .theme-toggle svg{width:17px;height:17px;display:block}
 
@@ -111,7 +113,8 @@ body{margin:0;background:var(--color-background-primary);color:var(--color-text-
 .field select,.field input{font-family:inherit;font-size:14px;color:var(--color-text-primary);background:var(--color-background-primary);border:1px solid var(--color-border-primary);border-radius:9px;padding:9px 12px;min-width:190px;height:40px}
 .field.grow{flex:1;min-width:200px}
 .field.grow input{width:100%}
-.field select:focus,.field input:focus{outline:none;border-color:var(--color-text-info)}
+.field select:focus,.field input:focus{border-color:var(--color-text-info)}
+.field select:focus-visible,.field input:focus-visible{outline:2px solid var(--color-text-info);outline-offset:1px}
 .btn-reset{font-family:inherit;font-size:13px;font-weight:600;color:var(--color-text-secondary);background:transparent;border:1px solid var(--color-border-primary);border-radius:9px;padding:9px 14px;height:40px;cursor:pointer}
 .btn-reset:hover{background:var(--color-background-secondary);color:var(--color-text-primary)}
 
@@ -122,10 +125,10 @@ body{margin:0;background:var(--color-background-primary);color:var(--color-text-
 
 .tablewrap{border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);overflow-x:auto}
 table.tx{width:100%;border-collapse:collapse;min-width:1040px;font-size:13.5px}
-table.tx th{position:sticky;top:0;background:var(--color-background-secondary);text-align:left;font-size:11.5px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:var(--color-text-secondary);padding:12px 14px;white-space:nowrap;border-bottom:1px solid var(--color-border-secondary)}
+table.tx th{position:sticky;top:0;background:var(--color-background-secondary);text-align:left;font-size:12px;font-weight:700;color:var(--color-text-secondary);padding:12px 14px;white-space:nowrap;border-bottom:1px solid var(--color-border-secondary)}
 table.tx th.sortable{cursor:pointer;user-select:none}
 table.tx th.sortable:hover{color:var(--color-text-primary)}
-table.tx th .ar{opacity:0;margin-left:4px;font-size:10px}
+table.tx th .ar{opacity:0;margin-left:4px;font-size:11px}
 table.tx th.sorted .ar{opacity:1;color:var(--color-text-info)}
 table.tx th.num,table.tx td.num{text-align:right}
 table.tx td{padding:11px 14px;border-bottom:1px solid var(--color-border-tertiary);vertical-align:top;white-space:nowrap}
@@ -157,9 +160,10 @@ td.price .main{font-weight:700}
 /* lease-adjusted psf */
 .adjbtn{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;margin-left:5px;padding:0;border:none;border-radius:50%;background:transparent;color:var(--color-text-info);cursor:pointer;vertical-align:middle;font-family:inherit}
 .adjbtn svg{width:14px;height:14px;display:block}
+.adjbtn{position:relative}.adjbtn::after{content:"";position:absolute;inset:-10px}
 .adjbox{display:none;margin:18px 0 16px;border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-secondary);padding:18px 20px}
 .adjbox.open{display:block}
-.adjbox h2{display:flex;align-items:center;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--color-text-secondary);margin:0 0 12px}
+.adjbox h2{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:700;color:var(--color-text-secondary);margin:0 0 12px}
 .adjbox h2 svg{width:15px;height:15px;flex-shrink:0;color:var(--color-text-info)}
 .adjbox p{font-size:13px;line-height:1.6;color:var(--color-text-tertiary);margin:0 0 10px}
 .adjbox p:last-child{margin:0}
@@ -176,7 +180,7 @@ td.adj .sub{color:var(--color-text-tertiary);font-variant-numeric:tabular-nums}
 .crumbs .here{color:var(--color-text-primary);font-weight:500}
 .hubhead .hub-purpose{font-size:14.5px;line-height:1.5;color:var(--color-text-secondary);margin:0 0 12px;max-width:66ch}
 .hub-how{background:var(--color-background-info);border:1px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);padding:0 14px;margin:0}
-.hub-how>summary{list-style:none;cursor:pointer;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--color-text-info);padding:11px 0;display:flex;align-items:center;gap:8px}
+.hub-how>summary{list-style:none;cursor:pointer;font-size:12px;font-weight:600;color:var(--color-text-info);padding:11px 0;display:flex;align-items:center;gap:8px}
 .hub-how>summary::-webkit-details-marker{display:none}
 .hub-how>summary::after{content:"";width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(-45deg);transition:transform .15s}
 .hub-how[open]>summary::after{transform:rotate(45deg)}
@@ -188,7 +192,7 @@ td.adj .sub{color:var(--color-text-tertiary);font-variant-numeric:tabular-nums}
 </style>
 </head>
 <body>
-<div class="nav"><div class="nav-inner"><a class="nav-brand" href="/"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>SG HDB Resale</a><button class="nav-toggle" id="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button><div class="nav-links" id="nav-links"><a class="nav-link" href="/towns/">Towns</a><a class="nav-link active" href="/search">Search</a><a class="nav-link" href="/map">Map</a><a class="nav-link" href="/calculators">Calculators</a><a class="nav-link" href="/guides/">Guides</a><div class="nav-group"><button type="button" class="nav-link nav-group-btn" aria-haspopup="true" aria-expanded="false">Dashboard<svg class="nav-caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="nav-menu" role="menu"><a class="nav-menu-link" href="/overview" role="menuitem">Overview</a><a class="nav-menu-link" href="/this-year" role="menuitem">This Year</a><a class="nav-menu-link" href="/find-a-flat" role="menuitem">Find a Flat</a><a class="nav-menu-link" href="/analysis-by-town" role="menuitem">Analysis by Town</a><a class="nav-menu-link" href="/by-district" role="menuitem">By District</a><a class="nav-menu-link" href="/insights" role="menuitem">Insights</a></div></div><div class="nav-group"><button type="button" class="nav-link nav-group-btn" aria-haspopup="true" aria-expanded="false">More<svg class="nav-caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="nav-menu" role="menu"><a class="nav-menu-link" href="/this-month" role="menuitem">This Month</a><a class="nav-menu-link" href="/million-dollar-flats" role="menuitem">Million-Dollar Flats</a><a class="nav-menu-link" href="/resale-price-index" role="menuitem">Resale Price Index</a></div></div></div><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme"></button></div></div>
+<a class="skip" href="#main">Skip to content</a><div class="nav"><div class="nav-inner"><a class="nav-brand" href="/"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>SG HDB Resale</a><button class="nav-toggle" id="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button><div class="nav-links" id="nav-links"><a class="nav-link" href="/towns/">Towns</a><a class="nav-link active" href="/search">Search</a><a class="nav-link" href="/map">Map</a><a class="nav-link" href="/calculators">Calculators</a><a class="nav-link" href="/guides/">Guides</a><div class="nav-group"><button type="button" class="nav-link nav-group-btn" aria-haspopup="true" aria-expanded="false">Dashboard<svg class="nav-caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="nav-menu" role="menu"><a class="nav-menu-link" href="/overview" role="menuitem">Overview</a><a class="nav-menu-link" href="/this-year" role="menuitem">This Year</a><a class="nav-menu-link" href="/find-a-flat" role="menuitem">Find a Flat</a><a class="nav-menu-link" href="/analysis-by-town" role="menuitem">Analysis by Town</a><a class="nav-menu-link" href="/by-district" role="menuitem">By District</a><a class="nav-menu-link" href="/insights" role="menuitem">Insights</a></div></div><div class="nav-group"><button type="button" class="nav-link nav-group-btn" aria-haspopup="true" aria-expanded="false">More<svg class="nav-caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="nav-menu" role="menu"><a class="nav-menu-link" href="/this-month" role="menuitem">This Month</a><a class="nav-menu-link" href="/million-dollar-flats" role="menuitem">Million-Dollar Flats</a><a class="nav-menu-link" href="/resale-price-index" role="menuitem">Resale Price Index</a></div></div></div><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme"></button></div></div><main id="main">
 
 <div class="page">
   <div class="head">
@@ -201,12 +205,12 @@ td.adj .sub{color:var(--color-text-tertiary);font-variant-numeric:tabular-nums}
       Distance to the MRT is straight-line to the nearest station. <a href="/find-a-flat">Prefer medians by budget?
       Try Find a Flat.</a></p>
 <div class="hubhead hubhead-body">
-<p class="hub-purpose">Browse the raw record: every resale transaction since 2024, filterable and sortable &mdash; the detail beneath the town and year summaries.</p>
+<p class="hub-purpose">Browse the raw record: every resale transaction since 2024, filterable and sortable - the detail beneath the town and year summaries.</p>
 <details class="hub-how" open>
 <summary>How to read this page</summary>
 <div class="hub-how-body">
 <p>Filter by town, street and flat type, then sort any column. Lease-adjusted $psf compares flats of different ages on a fairer footing.</p>
-<p>These are past sales, not valuations &mdash; a look at what real flats fetched. To compare whole towns instead, see <a href="/towns/">Towns</a>.</p>
+<p>These are past sales, not valuations - a look at what real flats fetched. To compare whole towns instead, see <a href="/towns/">Towns</a>.</p>
 </div>
 </details>
 </div>
@@ -267,7 +271,7 @@ td.adj .sub{color:var(--color-text-tertiary);font-variant-numeric:tabular-nums}
     <span style="color:var(--color-text-tertiary)">Lease-adj. psf scales each price to a ~97-year lease basis so shorter leases are comparable; <b>*</b> marks flats under 55 years left, where the estimate is rough. Tap the <span aria-hidden="true">&#9432;</span> in that column for details.</span></p>
 </div>
 
-<footer class="site-footer"><div class="footer-inner">
+</main><footer class="site-footer"><div class="footer-inner">
   <span class="footer-brand">SG HDB Resale</span>
   <nav class="footer-nav"><a href="/guides/">Guides</a><a href="/about">About</a><a href="/contact">Contact</a><a href="/terms">Terms</a><a href="/privacy">Privacy</a></nav>
   <span class="footer-note">Data: data.gov.sg &amp; OneMap</span>
@@ -459,8 +463,9 @@ paint();
   fMrt.addEventListener('change',apply);
   var deb;fSearch.addEventListener('input',function(){clearTimeout(deb);deb=setTimeout(apply,160);});
   $('fReset').addEventListener('click',function(){fTown.value='';fType.value='';fMrt.value='';fSearch.value='';buildStreetOptions('');sortKey='date';sortDir=-1;markSort();apply();});
-  $('prev').addEventListener('click',function(){if(page>0){page--;render();window.scrollTo({top:0,behavior:'smooth'});}});
-  $('next').addEventListener('click',function(){page++;render();window.scrollTo({top:0,behavior:'smooth'});});
+  var RM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  $('prev').addEventListener('click',function(){if(page>0){page--;render();window.scrollTo({top:0,behavior:RM?'auto':'smooth'});}});
+  $('next').addEventListener('click',function(){page++;render();window.scrollTo({top:0,behavior:RM?'auto':'smooth'});});
 
   // lease-adjusted psf explainer toggle (stop click bubbling to the sort header)
   var adjInfo=$('adjInfo'), adjBox=$('adjBox');

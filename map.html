@@ -92,7 +92,7 @@ body{margin:0;background:var(--color-background-primary);color:var(--color-text-
 .nav-links .nav-link{width:100%;box-sizing:border-box;text-align:left;font-size:14px;padding:11px 12px}
 .nav-links .nav-link.active{background:var(--color-text-primary);color:var(--color-background-primary)}
 .nav-group{display:block;width:100%;position:static}
-.nav-links .nav-group-btn{width:100%;justify-content:flex-start;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--color-text-tertiary);padding:14px 12px 4px;cursor:default}
+.nav-links .nav-group-btn{width:100%;justify-content:flex-start;font-size:12px;font-weight:700;color:var(--color-text-tertiary);padding:14px 12px 4px;cursor:default}
 .nav-links .nav-group-btn.active{background:transparent;color:var(--color-text-tertiary)}
 .nav-caret{display:none}
 .nav-menu{display:block;position:static;border:none;box-shadow:none;padding:0;min-width:0;background:transparent}
@@ -100,6 +100,8 @@ body{margin:0;background:var(--color-background-primary);color:var(--color-text-
 .nav-menu-link{padding:10px 12px 10px 22px;font-size:14px}
 }
 .theme-toggle{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;padding:0;border:1px solid var(--color-border-secondary);background:transparent;border-radius:8px;color:var(--color-text-secondary);cursor:pointer;transition:background .12s,color .12s,border-color .12s}
+.nav-toggle,.theme-toggle{position:relative}.nav-toggle::after,.theme-toggle::after{content:"";position:absolute;inset:-7px}.skip{position:absolute;left:-9999px;top:8px;z-index:200;padding:8px 12px;border-radius:8px;background:var(--color-background-primary);color:var(--color-text-primary);border:1px solid var(--color-border-primary)}.skip:focus{left:8px}.nav-brand{text-decoration:none}
+/*MEASURE*/.method p,aside.method p,figcaption,.about-data p,.hub-how p,.assump p,.chart-note,.note,.foot,.coverage{max-width:72ch}
 .theme-toggle:hover{background:var(--color-background-secondary);color:var(--color-text-primary);border-color:var(--color-border-primary)}
 .theme-toggle svg{width:17px;height:17px;display:block}
 a{color:var(--color-text-info)}
@@ -114,7 +116,7 @@ a{color:var(--color-text-info)}
 .crumbs .here{color:var(--color-text-primary);font-weight:500}
 .hubhead .hub-purpose{font-size:14.5px;line-height:1.5;color:var(--color-text-secondary);margin:0 0 12px;max-width:66ch}
 .hub-how{background:var(--color-background-info);border:1px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);padding:0 14px;margin:0}
-.hub-how>summary{list-style:none;cursor:pointer;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--color-text-info);padding:11px 0;display:flex;align-items:center;gap:8px}
+.hub-how>summary{list-style:none;cursor:pointer;font-size:12px;font-weight:600;color:var(--color-text-info);padding:11px 0;display:flex;align-items:center;gap:8px}
 .hub-how>summary::-webkit-details-marker{display:none}
 .hub-how>summary::after{content:"";width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(-45deg);transition:transform .15s}
 .hub-how[open]>summary::after{transform:rotate(45deg)}
@@ -131,7 +133,7 @@ h1{font-size:clamp(24px,4vw,32px);line-height:1.15;letter-spacing:-0.02em;font-w
 
 .controls{margin:22px 0 0;display:flex;flex-wrap:wrap;gap:14px 20px;align-items:flex-end}
 .ctrl{display:flex;flex-direction:column;gap:6px}
-.ctrl > span{font-size:11.5px;font-weight:660;letter-spacing:.04em;text-transform:uppercase;color:var(--color-text-tertiary)}
+.ctrl > span{font-size:12px;font-weight:660;color:var(--color-text-tertiary)}
 .seg{display:inline-flex;border:1px solid var(--color-border-primary);border-radius:9px;overflow:hidden}
 .seg button{font-family:inherit;font-size:13.5px;font-weight:560;padding:8px 14px;border:0;background:transparent;color:var(--color-text-secondary);cursor:pointer;transition:background .12s,color .12s}
 .seg button + button{border-left:1px solid var(--color-border-primary)}
@@ -155,7 +157,7 @@ select.filter{font-family:inherit;font-size:13.5px;padding:8px 30px 8px 12px;bor
 .pop-meta a:hover{text-decoration:underline}
 
 .legend{position:absolute;left:12px;bottom:12px;z-index:2;background:var(--color-background-primary);border:1px solid var(--color-border-primary);border-radius:10px;box-shadow:0 4px 16px rgba(0,0,0,.12);padding:11px 13px;font-size:12px;max-width:210px}
-.legend .lt{font-size:11px;font-weight:680;letter-spacing:.03em;text-transform:uppercase;color:var(--color-text-tertiary);margin-bottom:8px}
+.legend .lt{font-size:12px;font-weight:680;color:var(--color-text-tertiary);margin-bottom:8px}
 .legend .row{display:flex;align-items:center;gap:8px;margin:4px 0;color:var(--color-text-secondary)}
 .legend .sw{width:14px;height:14px;border-radius:3px;flex-shrink:0}
 .count{margin:14px 0 0;font-size:13px;color:var(--color-text-tertiary)}
@@ -181,9 +183,9 @@ select.filter{font-family:inherit;font-size:13.5px;padding:8px 30px 8px 12px;bor
 </style>
 </head>
 <body>
-<div class="nav"><div class="nav-inner"><a class="nav-brand" href="/"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>SG HDB Resale</a><button class="nav-toggle" id="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button><div class="nav-links" id="nav-links"><a class="nav-link" href="/towns/">Towns</a><a class="nav-link" href="/search">Search</a><a class="nav-link active" href="/map">Map</a><a class="nav-link" href="/calculators">Calculators</a><a class="nav-link" href="/guides/">Guides</a><div class="nav-group"><button type="button" class="nav-link nav-group-btn" aria-haspopup="true" aria-expanded="false">Dashboard<svg class="nav-caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="nav-menu" role="menu"><a class="nav-menu-link" href="/overview" role="menuitem">Overview</a><a class="nav-menu-link" href="/this-year" role="menuitem">This Year</a><a class="nav-menu-link" href="/find-a-flat" role="menuitem">Find a Flat</a><a class="nav-menu-link" href="/analysis-by-town" role="menuitem">Analysis by Town</a><a class="nav-menu-link" href="/by-district" role="menuitem">By District</a><a class="nav-menu-link" href="/insights" role="menuitem">Insights</a></div></div><div class="nav-group"><button type="button" class="nav-link nav-group-btn" aria-haspopup="true" aria-expanded="false">More<svg class="nav-caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="nav-menu" role="menu"><a class="nav-menu-link" href="/this-month" role="menuitem">This Month</a><a class="nav-menu-link" href="/million-dollar-flats" role="menuitem">Million-Dollar Flats</a><a class="nav-menu-link" href="/resale-price-index" role="menuitem">Resale Price Index</a></div></div></div><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme"></button></div></div>
+<a class="skip" href="#main">Skip to content</a><div class="nav"><div class="nav-inner"><a class="nav-brand" href="/"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>SG HDB Resale</a><button class="nav-toggle" id="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button><div class="nav-links" id="nav-links"><a class="nav-link" href="/towns/">Towns</a><a class="nav-link" href="/search">Search</a><a class="nav-link active" href="/map">Map</a><a class="nav-link" href="/calculators">Calculators</a><a class="nav-link" href="/guides/">Guides</a><div class="nav-group"><button type="button" class="nav-link nav-group-btn" aria-haspopup="true" aria-expanded="false">Dashboard<svg class="nav-caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="nav-menu" role="menu"><a class="nav-menu-link" href="/overview" role="menuitem">Overview</a><a class="nav-menu-link" href="/this-year" role="menuitem">This Year</a><a class="nav-menu-link" href="/find-a-flat" role="menuitem">Find a Flat</a><a class="nav-menu-link" href="/analysis-by-town" role="menuitem">Analysis by Town</a><a class="nav-menu-link" href="/by-district" role="menuitem">By District</a><a class="nav-menu-link" href="/insights" role="menuitem">Insights</a></div></div><div class="nav-group"><button type="button" class="nav-link nav-group-btn" aria-haspopup="true" aria-expanded="false">More<svg class="nav-caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="nav-menu" role="menu"><a class="nav-menu-link" href="/this-month" role="menuitem">This Month</a><a class="nav-menu-link" href="/million-dollar-flats" role="menuitem">Million-Dollar Flats</a><a class="nav-menu-link" href="/resale-price-index" role="menuitem">Resale Price Index</a></div></div></div><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme"></button></div></div>
 
-<main class="wrap">
+<main id="main" class="wrap">
   <p class="kicker">Resale price map</p>
   <div class="hubhead hubhead-top">
 <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span class="sep">&rsaquo;</span><a href="/#roadmap">Buyer's roadmap</a><span class="sep">&rsaquo;</span><span class="here">Map</span></nav>
@@ -191,7 +193,7 @@ select.filter{font-family:inherit;font-size:13.5px;padding:8px 30px 8px 12px;bor
 <h1>The island, priced by the block</h1>
   <p class="standfirst">Every HDB block with a recorded resale since 2024, mapped on Singapore's own base map. Switch between total price and price per square foot, and tap any block to see what actually changed hands.</p>
 <div class="hubhead hubhead-body">
-<p class="hub-purpose">See location at a glance: HDB resale prices across the island as a heatmap &mdash; where&rsquo;s dear, where&rsquo;s not.</p>
+<p class="hub-purpose">See location at a glance: HDB resale prices across the island as a heatmap - where&rsquo;s dear, where&rsquo;s not.</p>
 <details class="hub-how" open>
 <summary>How to read this page</summary>
 <div class="hub-how-body">

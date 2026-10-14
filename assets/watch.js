@@ -45,7 +45,7 @@ var css=''+
 '.wbtn{display:inline-flex;align-items:center;gap:6px;font:inherit;font-size:13px;font-weight:600;padding:6px 12px;border-radius:999px;border:1px solid var(--color-border-primary);background:var(--color-background-primary);color:var(--color-text-secondary);cursor:pointer;line-height:1.2;transition:border-color .12s,color .12s,background .12s;white-space:nowrap}'+
 '.wbtn[hidden]{display:none}.watchrow{margin:18px 0 0}'+
 '.wbtn:hover{border-color:var(--color-text-info);color:var(--color-text-info)}'+
-'.wbtn[aria-pressed="true"]{color:#b07a00;border-color:#e3c46b;background:rgba(240,190,60,.12)}'+
+'.wbtn[aria-pressed="true"]{color:#8a5f00;border-color:#e3c46b;background:rgba(240,190,60,.12)}'+
 '.wbtn[aria-pressed="true"] svg{fill:currentColor}'+
 '.wbtn-sm{padding:4px;border:none;background:transparent;border-radius:6px;vertical-align:-3px;margin-right:4px}'+
 '.wst{display:inline-flex;align-items:flex-start}.wst .wbtn-sm{margin:-4px 4px -4px -4px;flex:none}'+
