@@ -116,32 +116,50 @@ a{color:var(--color-text-info)}
 
 <div class="wrap">
   <h1>About SG HDB Resale</h1>
-  <p class="lede">SG HDB Resale is a free, independent site about HDB resale prices. It is meant for people buying a resale flat, people thinking of selling, and anyone curious about the market.</p>
+  <p class="lede">SG HDB Resale is a free, independent site about HDB resale prices, run by one person. It is for people buying a resale flat, people thinking of selling, and anyone who wants to understand the market from the actual sales rather than from headlines.</p>
 
-  <p>The official resale records are public, but they come as large spreadsheets that are hard to use. This site cleans and combines them so you can look up things like <em>what a 4-room flat costs in a particular town</em>, <em>how much more flats near an MRT station sell for</em>, or <em>which districts have risen fastest</em>, and see the figures they are based on.</p>
+  <h2>Why I built it</h2>
+  <p>In 2025 it felt like almost every other day the news reported another all-time high for HDB resale prices, and million-dollar flats went from rare to routine. I kept wondering whether these were just headlines written to draw readers, or whether the numbers really told that story. So I went to the source.</p>
+  <p>There is a personal reason too. I am planning to buy a resale flat myself in 2028, and three years of research and analysis felt about right to prepare, especially to understand how much savings and cash I will need when the time comes.</p>
+  <p>The official record of every resale is public, but it comes as large spreadsheets, and the questions I had were hard to answer from them: what does a 4-room flat in this town really go for, is this asking price high for the street, how much does a shorter lease take off the price, and how much more do I pay to live near an MRT station? So I cleaned up the data and built the tools I wanted to use. The ones I use most are the <a href="/map">Map</a> and <a href="/search">Search</a>, to see which areas, and how close to a train station, I can realistically afford.</p>
+  <p>What I hope this site becomes is one place where first-time buyers can find what they need to know about buying a resale flat, with the real statistics laid out in full, so that they can form their own judgement about Singapore's housing market instead of relying on headlines alone.</p>
 
   <h2>Where the numbers come from</h2>
   <p>Every figure on this site comes from official, public sources:</p>
   <ul>
     <li><strong>Resale transactions</strong> - the full record of HDB resale flat sales published on <a href="https://data.gov.sg" target="_blank" rel="noopener">data.gov.sg</a>, covering every registered sale from 2012 onward.</li>
-    <li><strong>Locations and MRT distances</strong> - flat blocks are geocoded and matched to the nearest MRT station using <a href="https://www.onemap.gov.sg" target="_blank" rel="noopener">OneMap</a>, Singapore's official map service.</li>
+    <li><strong>Locations and MRT distances</strong> - each block is located and matched to its nearest MRT station using <a href="https://www.onemap.gov.sg" target="_blank" rel="noopener">OneMap</a>, Singapore's official map service.</li>
+    <li><strong>Resale Price Index</strong> - HDB's quarterly index, also published on data.gov.sg.</li>
+    <li><strong>Calculator rules</strong> - stamp duty rates from IRAS, and grant amounts and loan rules as published by HDB and the Monetary Authority of Singapore.</li>
   </ul>
-  <p>The data is refreshed weekly, picking up the latest sales shortly after data.gov.sg publishes them.</p>
+
+  <h2>How I check it</h2>
+  <p>Raw public data needs care before it is useful. These are the checks behind the pages:</p>
+  <ul>
+    <li><strong>Updated every week.</strong> The site checks data.gov.sg for new sales every week and rebuilds every page from the full record. If a download ever comes back with fewer sales than the last one, the update is held back instead of published.</li>
+    <li><strong>Months are only called complete when they are.</strong> Sales for a month keep arriving for several weeks afterwards, so a month is only treated as complete once its data has been downloaded on or after the 7th of the following month. Until then it is labelled as partial.</li>
+    <li><strong>Small samples are shown, not hidden.</strong> Where only a few flats sold, the number of sales is shown next to the median so you can judge how much weight to give it. Comparisons built on too few sales are left out.</li>
+    <li><strong>The lease adjustment is estimated, not borrowed.</strong> The lease-adjusted price per square foot used on several pages comes from a lease-decay curve estimated from over 300,000 resale transactions, holding town, flat type, sale period and floor constant.</li>
+    <li><strong>Calculator rules are re-checked every January</strong>, and whenever IRAS or HDB announce a change. Each calculator shows the date its rules were last reviewed.</li>
+  </ul>
+  <p>I build and run the site with the help of AI coding tools. The analysis choices and the final wording are mine, and every figure is computed from the public data, not generated.</p>
 
   <h2>How to read the numbers</h2>
-  <p>A few things to know when reading the figures:</p>
   <ul>
-    <li><strong>Medians, not averages.</strong> Every price shown is a median - the middle of the range - which is far less skewed by a handful of unusually high or low sales than an average would be.</li>
-    <li><strong>Distance to the MRT is straight-line.</strong> When you see "distance to MRT", it's the direct, as-the-crow-flies distance from the block to the nearest station - not walking distance, which is usually a little longer.</li>
-    <li><strong>This year is year-to-date.</strong> The current year only includes sales registered so far, so it's a partial picture that fills in as the year goes on.</li>
-    <li><strong>Small samples are shown, not hidden.</strong> Where only a few flats sold, the sale count is shown next to the median so you can judge how much weight to give it.</li>
+    <li><strong>Medians, not averages.</strong> Every price shown is a median, the middle sale, which is far less skewed by a few unusually high or low sales than an average.</li>
+    <li><strong>Distance to the MRT is straight-line.</strong> It is the direct distance from the block to the nearest station, not the walking distance, which is usually a little longer.</li>
+    <li><strong>This year is year-to-date.</strong> The current year only includes sales registered so far, so it fills in as the year goes on.</li>
+    <li><strong>Past sales, not valuations.</strong> Every figure describes what flats have sold for. Floor, facing, condition and renovation can put any single flat well above or below its town or street.</li>
   </ul>
 
+  <h2>Corrections</h2>
+  <p>If you spot something wrong, please tell me. I check every report, and when a figure or a statement on the site turns out to be wrong, I fix it.</p>
+
   <h2>What this site is not</h2>
-  <p>This is an independent project, free to use and supported by advertising. It is <strong>not affiliated with the Housing &amp; Development Board (HDB)</strong> or any Singapore government agency. The figures are general information, not financial, legal or property advice, and should not be the only thing you rely on when buying or selling.</p>
+  <p>This is an independent project, free to use and supported by advertising. It is <strong>not affiliated with the Housing &amp; Development Board (HDB)</strong> or any Singapore government agency. I am not a property agent, valuer or financial adviser, and nothing here is financial, legal or property advice. Use it alongside your HFE letter, your bank or HDB, and a lawyer when you buy or sell.</p>
 
   <h2>Get in touch</h2>
-  <p>If something looks wrong, or you have an idea for the site, please get in touch at <a href="mailto:firenowsg@gmail.com">firenowsg@gmail.com</a>.</p>
+  <p>Corrections, questions and ideas for the site are all welcome at <a href="mailto:firenowsg@gmail.com">firenowsg@gmail.com</a>.</p>
   <p class="muted">For how your data is handled, see the <a href="/privacy">Privacy Policy</a>.</p>
 </div>
 <script>
